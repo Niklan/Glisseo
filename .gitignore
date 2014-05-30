@@ -35,3 +35,6 @@ xmlrpc.php
 /profiles
 /scripts
 /themes
+
+# Block project files.
+.idea
