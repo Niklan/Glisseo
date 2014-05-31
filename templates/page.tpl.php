@@ -30,26 +30,8 @@
 
     <?php print render($page['header']); ?>
 
-    <div id="navigation">
-      <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation">
-          <?php
-          print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'class' => array('links'),
-            ),
-            'heading' => array(
-              'text' => t('Main menu'),
-              'level' => 'h2',
-              'class' => array('element-invisible'),
-            ),
-          )); ?>
-        </nav>
-      <?php endif; ?>
+    <?php print render($page['navigation']); ?>
 
-      <?php print render($page['navigation']); ?>
-    </div>
   </header>
 
   <div id="main">
