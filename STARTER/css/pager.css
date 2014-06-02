@@ -1,0 +1,31 @@
+/**
+ * Pager style.
+ */
+.pager {
+    margin: 0px auto;
+    padding: 0px;
+    list-style: none outside none;
+    display: table;
+}
+.pager li {
+    float: left;
+    margin: 0 5px;
+}
+.pager .pager-item a {
+    color: black;
+}
+.pager .pager-current {
+    display: inline-block;
+    border: 3px solid #3996CF;
+    border-radius: 30px;
+    width: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -4px;
+}
+.pager .pager-next a,
+.pager .pager-last a,
+.pager .pager-first a,
+.pager .pager-previous a {
+    color: #3996CF;
+}

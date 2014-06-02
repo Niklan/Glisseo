@@ -1,0 +1,108 @@
+/**
+ * Form elements.
+ */
+input {
+    display: inline-block;
+    vertical-align: baseline;
+    outline: none;
+}
+input[type="submit"],
+input[type="button"],
+.button {
+    background-color: rgba(255, 255, 255, 1);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(210, 210, 210, 1) rgba(209, 209, 209, 1) rgba(209, 209, 209, 1);
+    font-weight: bold;
+    padding: 6px 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    color: rgba(86, 86, 86, 1);
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    cursor: pointer;
+}
+input[type="submit"]:focus,
+input[type="button"]:focus,
+.button:focus {
+    box-shadow: 0px 0px 1px 2px rgba(227, 227, 227, 0.75), 0px 1px 1px rgba(0, 0, 0, 0.14), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+}
+#edit-submit,
+.button.submit {
+    background-color: rgba(80, 162, 78, 1);
+    border-color: rgba(55, 125, 41, 1) rgba(44, 135, 45, 1) rgba(30, 119, 31, 1);
+    color: white;
+}
+#edit-submit:focus,
+.button.submit:focus {
+    box-shadow: 0px 0px 1px 2px rgba(121, 197, 93, 0.75), 0px 1px 1px rgba(21, 62, 0, 0.86), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+}
+#edit-preview {
+    background-color: #4E69A2;
+    border-color: #435A8B #3C5488 #334C83;
+    color: white
+}
+#edit-preview:focus {
+    box-shadow: 0px 0px 1px 2px rgba(88, 144, 255, 0.75), 0px 1px 1px rgba(0, 0, 0, 0.15), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+}
+#edit-delete {
+    background-color: rgba(224, 61, 61, 1);
+    border-color: rgba(192, 46, 46, 1) rgba(162, 45, 45, 1) rgba(134, 74, 74, 1);
+    color: white;
+}
+#edit-delete:focus {
+    box-shadow: 0px 0px 1px 2px rgba(255, 88, 88, 0.75), 0px 1px 1px rgba(0, 0, 0, 0.15), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    font-size: 12px;
+    line-height: 16px;
+    border: 1px solid #D3D6DB;
+    color: #141823;
+    background: #fefefe;
+    padding: 7px;
+    margin-bottom: 5px;
+    transition: all 300ms;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.05) inset;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    background: #ffffff;
+    color: #444444;
+    outline: none;
+    border: 1px solid #3996CF;
+    transition: all 300ms;
+}
+input.error,
+select.error {
+    border: 1px solid red;
+}
+select {
+    background: white;
+    padding: 5px 8px;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.05) inset;
+    border: 1px solid #D1D1D1;
+    outline: none;
+    border-radius: 2px;
+}
+select:focus {
+    border-color: #3996CF;
+}
+html.js input.form-autocomplete {
+    background-position: 100% 8px;
+    transition: none;
+}
+html.js input.throbbing {
+    background-position: 100% -12px;
+    transition: none;
+}
+label {
+    margin-bottom: 5px;
+}

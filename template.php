@@ -16,8 +16,6 @@ if (theme_get_setting('glisseo_rebuild_registry') && !defined('MAINTENANCE_MODE'
  * Implements template_preprocess_html().
  */
 function glisseo_preprocess_html(&$variables) {
-  //dpm($variables);
-
   // HTML Attributes
   $html_attributes = array(
     'lang' => $variables['language']->language,
