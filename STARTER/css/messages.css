@@ -15,7 +15,7 @@ div.messages:before {
     display: block;
     width: 70px;
     background: transparent;
-    height: 1000px;
+    height: 10000px;
     position: absolute;
     left: 0;
     top: 0;
