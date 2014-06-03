@@ -4,7 +4,7 @@
  * HTML for a single Drupal page.
  */
 ?>
-<div id="page">
+<div id="page" class="site-width">
 
   <header id="header" role="banner">
     <?php if ($logo): ?>

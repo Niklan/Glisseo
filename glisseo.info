@@ -22,3 +22,8 @@ features[] = comment_user_picture
 features[] = favicon
 features[] = main_menu
 features[] = secondary_menu
+
+settings[glisseo_rebuild_registry] = 0
+settings[glisseo_body_classes]     = 1
+settings[glisseo_new_checkboxes]   = 1
+settings[glisseo_new_radios]       = 1

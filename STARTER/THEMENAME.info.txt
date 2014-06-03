@@ -35,4 +35,7 @@ features[] = main_menu
 features[] = secondary_menu
 
 ; Set default values for theme-setings.php variables.
-;settings[themename_variable]  = 0
+settings[glisseo_rebuild_registry] = 0
+settings[glisseo_body_classes]     = 1
+settings[glisseo_new_checkboxes]   = 1
+settings[glisseo_new_radios]       = 1

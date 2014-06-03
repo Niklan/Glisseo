@@ -16,7 +16,7 @@
 @import "messages.css";
 
 /**
- * Extra emotional styles. You can remove them if don't need it.
+ * Extra additional styles. You can remove them if don't need it.
  */
 * {
     -moz-box-sizing: border-box;
@@ -69,4 +69,8 @@ div#toolbar a#edit-shortcuts {
     position: absolute;
     top: 0;
     right: 0;
+}
+.site-width {
+    width: 1024px;
+    margin: 0 auto;
 }
