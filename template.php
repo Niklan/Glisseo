@@ -32,6 +32,35 @@ function glisseo_preprocess_html(&$variables) {
     }
     $variables['rdf_namespaces'] = ' prefix="' . implode(' ', $prefixes) . '"';
   }
+
+  // Add template suggestions for 404 and 403 errors.
+  // F.e.: html--404.tpl.php
+  $status = drupal_get_http_header("status");
+  if($status == "404 Not Found") {
+    dpm($variables);
+    $variables['theme_hook_suggestions'][] = 'html__404';
+  }
+
+  if($status == "403 Forbidden") {
+    $variables['theme_hook_suggestions'][] = 'html__403';
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function glisseo_preprocess_page(&$variables, $hook) {
+  // Add template suggestions for 404 and 403 errors.
+  // F.e.: page--404.tpl.php
+  $status = drupal_get_http_header("status");
+  if($status == "404 Not Found") {
+    $variables['theme_hook_suggestions'][] = 'page__404';
+  }
+
+  if($status == "403 Forbidden") {
+    $variables['theme_hook_suggestions'][] = 'page__403';
+  }
+
 }
 
 /**
@@ -89,4 +118,16 @@ function glisseo_theme($existing, $type, $theme, $path) {
   }
 
   return $theme;
+}
+
+/**
+ * Implements theme_textarea().
+ * Disable grippie.
+ */
+function glisseo_textarea($variables) {
+  if (theme_get_setting('glisseo_disable_grippie')) {
+    $variables['element']['#resizable'] = FALSE;
+  }
+
+  return theme_textarea($variables);
 }

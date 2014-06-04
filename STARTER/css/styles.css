@@ -23,6 +23,11 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+a.tabledrag-handle .handle {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
 div:after,
 header:after,
 aside:after,
@@ -69,6 +74,12 @@ div#toolbar a#edit-shortcuts {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: sans-serif;
 }
 .site-width {
     width: 1024px;

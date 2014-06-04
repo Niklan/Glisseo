@@ -63,6 +63,14 @@ function glisseo_form_system_theme_settings_alter(&$form, $form_state, $form_id 
     '#default_value' => theme_get_setting('glisseo_new_radios')
   );
 
+  $form['developers_settings']['glisseo_disable_grippie'] = array(
+    '#weight' => 5,
+    '#type' => 'checkbox',
+    '#title' => t('Disable textarea grippie.'),
+    '#description' => t('Modern browser support textarea resize out the box. You can disable default grippie.'),
+    '#default_value' => theme_get_setting('glisseo_disable_grippie')
+  );
+
   // @TODO: manage all files without custom code.
   // This is some workaround for allow submit theme form with managed_file.
   //$theme = $GLOBALS['theme_key'];
