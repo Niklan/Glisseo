@@ -1,7 +1,9 @@
 /**
  * Form elements.
  */
-input {
+input,
+.container-inline .form-item,
+.container-inline .form-select {
     display: inline-block;
     vertical-align: baseline;
     outline: none;
@@ -9,49 +11,99 @@ input {
 input[type="submit"],
 input[type="button"],
 .button {
-    background-color: rgba(255, 255, 255, 1);
+    background: rgb(254,254,254);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(238,238,238,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(254,254,254,1)), color-stop(100%,rgba(238,238,238,1)));
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%,rgba(238,238,238,1) 100%);
+    background: -o-linear-gradient(top, rgba(254,254,254,1) 0%,rgba(238,238,238,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,254,254,1) 0%,rgba(238,238,238,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,254,254,1) 0%,rgba(238,238,238,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#eeeeee',GradientType=0 );
     border-width: 1px;
     border-style: solid;
-    border-color: rgba(210, 210, 210, 1) rgba(209, 209, 209, 1) rgba(209, 209, 209, 1);
-    font-weight: bold;
+    border-color: #c3c3c3 #aeaeae #939393;
+    font-weight: normal;
     padding: 6px 10px;
     margin-right: 10px;
     border-radius: 3px;
-    color: rgba(86, 86, 86, 1);
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+    color: #333;
     font-size: 12px;
 }
 input[type="submit"]:hover,
-input[type="button"]:hover {
+input[type="button"]:hover,
+.button:hover {
     cursor: pointer;
+    background: rgb(254,254,254);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNmY1ZjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(254,254,254,1) 1%, rgba(246,245,243,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(254,254,254,1)), color-stop(100%,rgba(246,245,243,1)));
+    background: -webkit-linear-gradient(top, rgba(254,254,254,1) 1%,rgba(246,245,243,1) 100%);
+    background: -o-linear-gradient(top, rgba(254,254,254,1) 1%,rgba(246,245,243,1) 100%);
+    background: -ms-linear-gradient(top, rgba(254,254,254,1) 1%,rgba(246,245,243,1) 100%);
+    background: linear-gradient(to bottom, rgba(254,254,254,1) 1%,rgba(246,245,243,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#f6f5f3',GradientType=0 );
+}
+input[type="submit"]:active,
+input[type="button"]:active,
+.button:active {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21) inset;
+    background: #fefefe;
 }
 input[type="submit"]:focus,
 input[type="button"]:focus,
 .button:focus {
-    box-shadow: 0px 0px 1px 2px rgba(227, 227, 227, 0.75), 0px 1px 1px rgba(0, 0, 0, 0.14), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
 }
 #edit-submit,
 .button.submit {
-    background-color: rgba(80, 162, 78, 1);
-    border-color: rgba(55, 125, 41, 1) rgba(44, 135, 45, 1) rgba(30, 119, 31, 1);
+    background: rgb(137,220,108);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg5ZGM2YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2MGIxNDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(137,220,108,1) 0%, rgba(96,177,68,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137,220,108,1)), color-stop(100%,rgba(96,177,68,1)));
+    background: -webkit-linear-gradient(top, rgba(137,220,108,1) 0%,rgba(96,177,68,1) 100%);
+    background: -o-linear-gradient(top, rgba(137,220,108,1) 0%,rgba(96,177,68,1) 100%);
+    background: -ms-linear-gradient(top, rgba(137,220,108,1) 0%,rgba(96,177,68,1) 100%);
+    background: linear-gradient(to bottom, rgba(137,220,108,1) 0%,rgba(96,177,68,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#89dc6c', endColorstr='#60b144',GradientType=0 );
     color: white;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.17);
+    border-color: #5ca941;
 }
 #edit-submit:focus,
 .button.submit:focus {
-    box-shadow: 0px 0px 1px 2px rgba(121, 197, 93, 0.75), 0px 1px 1px rgba(21, 62, 0, 0.86), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 0px 1px 2px rgba(121, 197, 93, 0.75), 0px 1px 1px rgba(21, 62, 0, 0.86);
 }
 #edit-preview {
-    background-color: #4E69A2;
-    border-color: #435A8B #3C5488 #334C83;
-    color: white
+    background: rgb(244,236,90);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0ZWM1YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWRlMTciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(244,236,90,1) 0%, rgba(229,222,23,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,236,90,1)), color-stop(100%,rgba(229,222,23,1)));
+    background: -webkit-linear-gradient(top, rgba(244,236,90,1) 0%,rgba(229,222,23,1) 100%);
+    background: -o-linear-gradient(top, rgba(244,236,90,1) 0%,rgba(229,222,23,1) 100%);
+    background: -ms-linear-gradient(top, rgba(244,236,90,1) 0%,rgba(229,222,23,1) 100%);
+    background: linear-gradient(to bottom, rgba(244,236,90,1) 0%,rgba(229,222,23,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4ec5a', endColorstr='#e5de17',GradientType=0 );
+    color: #333;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.47);
+    border-color: #B9B313;
 }
 #edit-preview:focus {
-    box-shadow: 0px 0px 1px 2px rgba(88, 144, 255, 0.75), 0px 1px 1px rgba(0, 0, 0, 0.15), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
+    box-shadow: 0px 0px 1px 2px rgba(229,222,23,.7), 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 #edit-delete {
-    background-color: rgba(224, 61, 61, 1);
-    border-color: rgba(192, 46, 46, 1) rgba(162, 45, 45, 1) rgba(134, 74, 74, 1);
+    background: rgb(245,129,105);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y1ODE2OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOTRlMmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(245,129,105,1) 0%, rgba(233,78,43,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(245,129,105,1)), color-stop(100%,rgba(233,78,43,1)));
+    background: -webkit-linear-gradient(top, rgba(245,129,105,1) 0%,rgba(233,78,43,1) 100%);
+    background: -o-linear-gradient(top, rgba(245,129,105,1) 0%,rgba(233,78,43,1) 100%);
+    background: -ms-linear-gradient(top, rgba(245,129,105,1) 0%,rgba(233,78,43,1) 100%);
+    background: linear-gradient(to bottom, rgba(245,129,105,1) 0%,rgba(233,78,43,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f58169', endColorstr='#e94e2b',GradientType=0 );
     color: white;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.17);
+    border-color: rgb(167, 56, 29);
 }
 #edit-delete:focus {
     box-shadow: 0px 0px 1px 2px rgba(255, 88, 88, 0.75), 0px 1px 1px rgba(0, 0, 0, 0.15), inset 0px 1px 2px 0px rgba(0, 0, 0, 0.21);
@@ -132,6 +184,29 @@ label {
 }
 .vertical-tabs ul.vertical-tabs-list .selected strong {
     color: #5890FF;
+}
+
+/* Fieldsets */
+fieldset {
+    border: 1px solid #D0D0D0;
+    padding: 15px;
+    position: relative;
+    margin: 15px 0px;
+}
+fieldset .fieldset-legend {
+    font-weight: bold;
+    margin-top: 5px;
+    position: absolute;
+    text-transform: uppercase;
+}
+fieldset .fieldset-wrapper {
+    margin: 20px 0px 0 0;
+}
+html.js fieldset.collapsed {
+    border-width: 1px;
+}
+html.js fieldset.collapsible .fieldset-legend {
+    padding-left: 15px;
 }
 
 /* Glisseo checkbox */
@@ -221,17 +296,17 @@ input[type="radio"].glisseo-radio {
     display: inline-block;
     vertical-align: middle;
     border-radius: 30px;
-    border: 1px solid #D0D0D0;
+    border: 1px solid #a0a0a0;
     box-shadow: none;
-    background: rgb(246,247,248);
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2ZjdmOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWZlZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, rgba(246,247,248,1) 0%, rgba(254,254,254,1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,247,248,1)), color-stop(100%,rgba(254,254,254,1)));
-    background: -webkit-linear-gradient(top, rgba(246,247,248,1) 0%,rgba(254,254,254,1) 100%);
-    background: -o-linear-gradient(top, rgba(246,247,248,1) 0%,rgba(254,254,254,1) 100%);
-    background: -ms-linear-gradient(top, rgba(246,247,248,1) 0%,rgba(254,254,254,1) 100%);
-    background: linear-gradient(to bottom, rgba(246,247,248,1) 0%,rgba(254,254,254,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f7f8', endColorstr='#fefefe',GradientType=0 );
+    background: rgb(252,252,252);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZjZmNmYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMGYwZjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(240,240,240,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(240,240,240,1)));
+    background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(240,240,240,1) 100%);
+    background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(240,240,240,1) 100%);
+    background: -ms-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(240,240,240,1) 100%);
+    background: linear-gradient(to bottom, rgba(252,252,252,1) 0%,rgba(240,240,240,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#f0f0f0',GradientType=0 );
     transition: all 0.17s ease 0s;
 }
 .glisseo-radio-wrapper:hover {
@@ -245,6 +320,10 @@ input[type="radio"].glisseo-radio {
     background: none repeat scroll 0% 0% rgba(72, 72, 72, 1);
     margin: 4px auto;
     opacity: 0;
+    transition: all 0.17s ease 0s;
+}
+input[type="radio"].glisseo-radio:checked ~ .glisseo-radio-wrapper {
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.22) inset;
     transition: all 0.17s ease 0s;
 }
 input[type="radio"].glisseo-radio:checked ~ .glisseo-radio-wrapper .glisseo-radio-mark {

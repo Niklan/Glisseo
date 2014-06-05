@@ -37,7 +37,6 @@ function glisseo_preprocess_html(&$variables) {
   // F.e.: html--404.tpl.php
   $status = drupal_get_http_header("status");
   if($status == "404 Not Found") {
-    dpm($variables);
     $variables['theme_hook_suggestions'][] = 'html__404';
   }
 

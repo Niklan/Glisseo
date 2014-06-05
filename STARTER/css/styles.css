@@ -77,9 +77,9 @@ div#toolbar a#edit-shortcuts {
 }
 
 body {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.7;
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
 }
 .site-width {
     width: 1024px;

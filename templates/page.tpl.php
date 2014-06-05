@@ -16,10 +16,10 @@
     <?php if ($site_name || $site_slogan): ?>
       <div id="name-and-slogan">
         <?php if ($site_name): ?>
-          <h1 id="site-name">
+          <h2 id="site-name">
             <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"
                rel="home"><span><?php print $site_name; ?></span></a>
-          </h1>
+          </h2>
         <?php endif; ?>
 
         <?php if ($site_slogan): ?>
