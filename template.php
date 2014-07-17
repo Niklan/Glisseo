@@ -95,32 +95,28 @@ function glisseo_preprocess_node(&$variables) {
 }
 
 /**
- * Implements hook_theme_registry_alter().
- */
-function drupalife_store_theme_registry_alter(&$theme_registry) {
-  $theme_path = path_to_theme();
-  // For subthemes.
-  $dl_theme_path = drupal_get_path('theme', 'glisseo');
+* Implements hook_theme().
+*/
+function glisseo_theme($existing, $type, $theme, $path) {
+  $theme = array();
 
   // Rewrite checkboxes.
   if (theme_get_setting('glisseo_new_checkboxes')) {
-    if (isset($theme_registry['checkbox'])) {
-      $theme_registry['checkbox']['type'] = 'theme';
-      $theme_registry['checkbox']['theme path'] = $dl_theme_path;
-      $theme_registry['checkbox']['template'] = $theme_path . '/templates/fields/field--type-checkbox';
-      unset($theme_registry['checkbox']['function']);
-    }
+    $theme['checkbox'] = array(
+      'render element' => 'element',
+      'template' => 'templates/fields/field--type-checkbox',
+    );
   }
 
   // Rewrite radios.
   if (theme_get_setting('glisseo_new_radios')) {
-    if (isset($theme_registry['radio'])) {
-      $theme_registry['radio']['type'] = 'theme';
-      $theme_registry['radio']['theme path'] = $dl_theme_path;
-      $theme_registry['radio']['template'] = $theme_path . '/templates/fields/field--type-radio';
-      unset($theme_registry['radio']['function']);
-    }
+    $theme['radio'] = array(
+      'render element' => 'element',
+      'template' => 'templates/fields/field--type-radio',
+    );
   }
+
+  return $theme;
 }
 
 /**

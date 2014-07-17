@@ -14,7 +14,7 @@
 ?>
 <article class="<?php print $clean_classes; ?>"<?php print $attributes; ?>>
 
-  <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
+  <?php if ($title_prefix || $title_suffix || $display_submitted || !$page && $title): ?>
     <header>
       <?php print render($title_prefix); ?>
       <?php if (!$page && $title): ?>
