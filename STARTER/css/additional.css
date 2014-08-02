@@ -23,7 +23,6 @@ article:after {
     float: none;
 }
 h1,h2,h3,h4,h5,h6 {
-    color: #626975;
     line-height: normal;
 }
 h1,h2,h3,h4,h5,h6,p {
@@ -34,6 +33,9 @@ h1 {
 }
 h2 {
     font-size: 18px;
+}
+ul li.leaf, ol li.leaf {
+    list-style: none none;
 }
 /* Fix whitespace under image. */
 img {
