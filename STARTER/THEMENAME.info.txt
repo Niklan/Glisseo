@@ -5,6 +5,11 @@ description = Glisseo starter theme. Here you journey begins.
 core        = 7.x
 base theme  = glisseo
 
+; Remove system styles, cuz we have own.
+stylesheets[all][] = system.menus.css
+stylesheets[all][] = system.messages.css
+stylesheets[all][] = system.theme.css
+
 ; Here you can attach your own styles.
 stylesheets[all][] = css/styles.css
 

@@ -22,20 +22,23 @@ article:after {
     clear: both;
     float: none;
 }
-h1,h2,h3,h4,h5,h6 {
-    line-height: normal;
-}
-h1,h2,h3,h4,h5,h6,p {
-    margin: 10px 0;
-}
 h1 {
-    font-size: 20px;
+    font-size: 2em;
 }
 h2 {
-    font-size: 18px;
+    font-size: 1.875em;
 }
-ul li.leaf, ol li.leaf {
-    list-style: none none;
+h3 {
+    font-size: 1.5em;
+}
+h4, h5, h6 {
+    font-size: 1.25em;
+}
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1.4;
+}
+h1,h2,h3,h4,h5,h6,p {
+    margin: 1rem 0;
 }
 /* Fix whitespace under image. */
 img {
