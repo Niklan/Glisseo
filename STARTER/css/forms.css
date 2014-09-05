@@ -32,7 +32,7 @@ button,
 .button-submit,
 .button-preview,
 .button-delete {
-    padding: .5rem 1rem;
+    padding: .5em 1em;
     margin: 0;
     border: 1px solid transparent;
     display: inline-block;
@@ -46,6 +46,7 @@ button,
     font-size: 100%;
     transition: all 170ms;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /**
@@ -76,7 +77,7 @@ button.active,
     outline: none;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) inset;
     border-color: rgba(191, 191, 191, 1);
-    background: rgba(246, 246, 246, 1);
+    background: rgba(233, 233, 233, 1);
     color: #333;
 }
 
@@ -164,7 +165,7 @@ input[type="submit"].active,
 #edit-submit.active,
 .button-submit:active,
 .button-submit.active {
-    background: rgba(9, 210, 57, 1);
+    background: rgba(7, 186, 50, 1);
     color: white;
     border-color: rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) inset;
@@ -247,7 +248,7 @@ input[type="preview"].active,
 #edit-preview.active,
 .button-preview:active,
 .button-preview.active {
-    background: rgba(249, 130, 20, 1);
+    background: rgb(201, 103, 37);
     color: white;
     border-color: rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) inset;
@@ -270,7 +271,6 @@ input[type="preview"].disabled,
 .button-preview.disabled {
     cursor: not-allowed;
     background: rgba(243, 192, 146, 1);
-    font-size: 100%;
     color: rgba(250, 250, 250, 1);
     text-shadow: none;
 }
@@ -330,7 +330,7 @@ input[type="delete"].active,
 #edit-delete.active,
 .button-delete:active,
 .button-delete.active {
-    background: rgba(224, 24, 0, 1);
+    background: rgb(194, 24, 0);
     color: white;
     border-color: rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2) inset;
@@ -390,50 +390,40 @@ input[type="delete"].disabled:focus,
     border-color: transparent;
 }
 
+/**
+ * Inputs.
+ */
 input[type="text"],
 input[type="password"],
 input[type="email"],
-textarea {
-    font-size: 12px;
-    line-height: 16px;
-    border: 1px solid #D3D6DB;
-    color: #141823;
-    background: #fefefe;
-    padding: 7px;
-    margin-bottom: 5px;
-    transition: all 300ms;
+textarea,
+select {
+    font-size: 100%;
+    border: 1px solid rgba(188, 188, 188, 1);
+    padding: 0.5em;
     border-radius: 2px;
-    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.05) inset;
+    background: none repeat scroll 0% 0% #FFF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1) inset;
+    transition: all 170ms;
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
-textarea:focus {
-    background: #ffffff;
-    color: #444444;
-    outline: none;
-    border: 1px solid #3996CF;
-    transition: all 300ms;
+textarea:focus,
+select:focus{
+    outline: medium none;
+    border: 1px solid rgba(16, 161, 200, 1);
+    transition: all 170ms;
 }
 
 input.error,
-select.error {
-    border: 1px solid red;
+select.error,
+textarea.error {
+    border: 1px solid #F00;
+    background: rgba(255, 3, 3, 0.03);
 }
 
-select {
-    background: white;
-    padding: 5px 8px;
-    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.05) inset;
-    border: 1px solid #D1D1D1;
-    outline: none;
-    border-radius: 2px;
-}
-
-select:focus {
-    border-color: #3996CF;
-}
 
 html.js input.form-autocomplete {
     background-position: 100% 8px;

@@ -17,7 +17,7 @@
 @import "additional.css";
 
 /**
- * Some of needed px in em.
+ * Some of needed px in em/rem.
  * 12px - 0.750em
  * 13px - 0.813em
  * 14px - 0.875em
@@ -28,7 +28,7 @@
  * 22px - 1.375em
  */
 body {
-    font-size: 0.875em;
+    font-size: 0.875rem;
     line-height: 1.7;
     font-family: Arial, sans-serif;
     padding: 1em;
