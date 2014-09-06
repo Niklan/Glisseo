@@ -92,6 +92,16 @@ function glisseo_preprocess_node(&$variables) {
 
   // Generate clean classes variable.
   $variables['clean_classes'] = implode(' ', $variables['clean_classes_array']);
+
+  // Work with Node object.
+  $node = $variables['node'];
+  // Save field values to variables.
+  foreach ($node as $label => $data) {
+    // Is label is field.
+    if (preg_match("/field_(.*)?/i", $label, $matches)) {
+      $variables[$label] = field_get_items('node', $node, $label);
+    }
+  }
 }
 
 /**
