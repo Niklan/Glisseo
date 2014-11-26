@@ -5,7 +5,7 @@
  */
 ?>
 <?php if ($content): ?>
-  <aside id="sidebar-second" class="sidebar">
+  <aside id="sidebar-second" class="sidebar" role="complementary">
     <?php print $content; ?>
   </aside>
 <?php endif; ?>

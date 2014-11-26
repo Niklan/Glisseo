@@ -16,20 +16,5 @@
 @import "messages.css";
 @import "additional.css";
 
-/**
- * Some of needed px in em/rem.
- * 12px - 0.750em
- * 13px - 0.813em
- * 14px - 0.875em
- * 15px - 0.938em
- * 16px - 1em
- * 18px - 1.125em
- * 20px - 1.250em
- * 22px - 1.375em
- */
-body {
-    font-size: 0.875rem;
-    line-height: 1.7;
-    font-family: Arial, sans-serif;
-    padding: 1em;
-}
+
+

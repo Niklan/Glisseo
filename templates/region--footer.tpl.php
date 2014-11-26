@@ -5,7 +5,7 @@
  */
 ?>
 <?php if ($content): ?>
-  <footer id="footer" class="footer">
+  <footer id="footer" class="footer" role="contentinfo">
     <?php print $content; ?>
   </footer>
 <?php endif; ?>

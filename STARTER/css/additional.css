@@ -6,61 +6,108 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 a.tabledrag-handle .handle {
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
+
 div:after,
 header:after,
 aside:after,
 ul:after,
 section:after,
-article:after {
+article:after,
+main:after,
+footer:after {
     content: '';
     display: block;
     clear: both;
     float: none;
 }
+
+html {
+    font-size: 1em;
+}
+
+body {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    font-family: Arial, sans-serif;
+    padding: 1em;
+}
+
+p {
+    margin-bottom: 1.3em;
+}
+
+h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    font-weight: inherit;
+    line-height: 1.2;
+}
+
 h1 {
-    font-size: 2em;
+    margin-top: 0;
+    font-size: 3.157em;
 }
+
 h2 {
-    font-size: 1.875em;
+    font-size: 2.369em;
 }
+
 h3 {
-    font-size: 1.5em;
+    font-size: 1.777em;
 }
-h4, h5, h6 {
-    font-size: 1.25em;
+
+h4 {
+    font-size: 1.333em;
 }
-h1,h2,h3,h4,h5,h6 {
-    line-height: 1.4;
+
+small, .font_small {
+    font-size: 0.75em;
 }
-h1,h2,h3,h4,h5,h6,p {
-    margin: 1rem 0;
+
+ul, ol {
+    margin-left: 1em;
 }
+
 /* Fix whitespace under image. */
 img {
     vertical-align: bottom;
     max-width: 100%;
 }
+
 .toolbar-home:after {
     float: none;
     display: none;
 }
+
 #toolbar-home {
     float: left;
 }
+
 #toolbar ul:after {
     content: '.';
     float: none;
     display: none;
     clear: none;
 }
+
 div#toolbar a#edit-shortcuts {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+#admin-menu * {
+    -moz-box-sizing: padding-box;
+    -webkit-box-sizing: padding-box;
+    box-sizing: padding-box;
+}
+
+#admin-menu *:after {
+    display: none;
 }
 
