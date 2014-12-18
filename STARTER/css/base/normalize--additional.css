@@ -1,5 +1,7 @@
 /**
+ * @file
  * Extra additional styles. You can remove them if don't need it.
+ * Mostly of it, for fixing problems caused by normalize.
  */
 * {
     -moz-box-sizing: border-box;
@@ -75,8 +77,10 @@ ul, ol {
 
 /* Fix whitespace under image. */
 img {
-    vertical-align: bottom;
     max-width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: bottom;
 }
 
 .toolbar-home:after {
