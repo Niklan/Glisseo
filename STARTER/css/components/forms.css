@@ -1,4 +1,5 @@
 /**
+ * @file
  * Form elements.
  */
 
@@ -42,11 +43,11 @@ button,
     cursor: pointer;
     box-shadow: none;
     font-size: 100%;
-    transition: all 170ms;
+    transition: all 333ms;
     text-decoration: none;
     font-weight: bold;
     border: none;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 /**
@@ -421,19 +422,18 @@ input[type="password"],
 input[type="email"],
 textarea,
 select {
-    font-size: 100%;
-    border: none;
-    padding: 0.5em;
-    background: none repeat scroll 0% 0% #FFF;
-    box-shadow: 0px 0px 0px 2px #BDC3C7 inset;
-    transition: all 170ms;
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #E1E8ED;
+    border-radius: 3px;
+    box-sizing: border-box;
+    max-width: 100%;
 }
 
 input.error,
 select.error,
 textarea.error {
-    border: none;
-    box-shadow: 0px 0px 0px 2px #e74c3c inset;
+    border-color: #e74c3c;
 }
 
 input[type="text"]:focus,
@@ -442,8 +442,8 @@ input[type="email"]:focus,
 textarea:focus,
 select:focus {
     outline: medium none;
-    box-shadow: 0px 0px 0px 2px #2ecc71 inset;
-    transition: all 170ms;
+    border-color: #66B5D2;
+    box-shadow: 0px 0px 0px 1px rgba(0, 132, 180, 0.7) inset;
 }
 
 /* Vertical tabs */
