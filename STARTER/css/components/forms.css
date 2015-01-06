@@ -466,6 +466,7 @@ select:focus {
 
 .vertical-tabs .vertical-tabs-list .vertical-tab-button a {
     color: rgba(80, 74, 74, 1);
+    border: none;
 }
 
 .vertical-tabs .vertical-tabs-list .vertical-tab-button.selected {

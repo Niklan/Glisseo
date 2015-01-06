@@ -41,7 +41,7 @@ body {
 }
 
 ol, ul {
-    margin: 0 0 0 1rem;
+    margin: 1em 0 1em 1.45em;
     padding: 0;
 }
 
@@ -50,33 +50,27 @@ p {
 }
 
 h1, h2, h3, h4 {
-    margin: 0 0 0.5em;
-    font-weight: inherit;
+    margin: 0em 0 0.5em;
+    font-weight: 500;
     line-height: 1.2;
+    color: rgba(0,0,0,.8);
 }
 
 h1 {
-    font-size: 3.157em;
+    margin-top: 0;
+    font-size: 2rem;
 }
 
-h2 {
-    font-size: 2.369em;
-}
+h2 {font-size: 1.714rem;}
 
-h3 {
-    font-size: 1.777em;
-}
+h3 {font-size: 1.28rem;}
 
-h4 {
-    font-size: 1.333em;
-}
+h4 {font-size: 1.071rem;}
+
+h5 {font-size: 1rem;}
 
 small, .font_small {
     font-size: 0.75em;
-}
-
-ul, ol {
-    margin-left: 1em;
 }
 
 /* Fix whitespace under image. */

@@ -70,7 +70,7 @@
     color: #585858;
 }*/
 ul.tabs.primary {
-    margin: 0;
+    margin: 1rem 0;
     padding: 0;
     list-style: none;
     border-bottom: 1px solid #E0E0E0;

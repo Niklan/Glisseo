@@ -571,7 +571,7 @@
 /**
  * xl - extra large - 1100px
  */
-@media screen and (min-width: 68.75em) {
+@media screen and (min-width: 80em) {
     .gl-s-xl-1,
     .gl-s-xl-1-1,
     .gl-s-xl-1-2,
