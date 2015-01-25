@@ -25,6 +25,8 @@ ul.tabs.primary li a {
     color: #666;
     display: block;
     padding: .5rem .75rem;
+    border: none;
+    text-decoration: none;
 }
 ul.tabs.primary li.active a,
 ul.tabs.primary li:hover a {

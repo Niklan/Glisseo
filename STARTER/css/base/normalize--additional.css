@@ -15,64 +15,6 @@ a.tabledrag-handle .handle {
     box-sizing: content-box;
 }
 
-div:after,
-header:after,
-aside:after,
-ul:after,
-section:after,
-article:after,
-main:after,
-footer:after {
-    content: '';
-    display: block;
-    clear: both;
-    float: none;
-}
-
-html {
-    font-size: 1em;
-}
-
-body {
-    font-size: 0.875rem;
-    line-height: 1.7;
-    font-family: Arial, sans-serif;
-    padding: 1em;
-}
-
-ol, ul {
-    margin: 1em 0 1em 1.45em;
-    padding: 0;
-}
-
-p {
-    margin: 1em 0;
-}
-
-h1, h2, h3, h4 {
-    margin: 0em 0 0.5em;
-    font-weight: 500;
-    line-height: 1.2;
-    color: rgba(0,0,0,.8);
-}
-
-h1 {
-    margin-top: 0;
-    font-size: 2rem;
-}
-
-h2 {font-size: 1.714rem;}
-
-h3 {font-size: 1.28rem;}
-
-h4 {font-size: 1.071rem;}
-
-h5 {font-size: 1rem;}
-
-small, .font_small {
-    font-size: 0.75em;
-}
-
 /* Fix whitespace under image. */
 img {
     max-width: 100%;
@@ -113,3 +55,14 @@ div#toolbar a#edit-shortcuts {
     display: none;
 }
 
+label {
+    display: block;
+}
+
+label.option {
+    display: inline-block;
+}
+
+.form-item {
+    margin-bottom: 0.5rem;
+}

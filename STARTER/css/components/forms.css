@@ -17,7 +17,6 @@ input,
 :focus {
     outline: none;
 }
-
 ::-moz-focus-inner {
     border: 0;
 }
@@ -29,317 +28,174 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"],
 button,
-.button,
-.button-normal,
-.button-submit,
-.button-preview,
-.button-delete {
+.gl.button,
+.gl.button.normal,
+.gl.button.submit,
+.gl.button.reset,
+.gl.button.delete {
+    cursor: pointer;
     display: inline-block;
-    line-height: normal;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #c3c3c3 #aeaeae #939393;
+    border: none;
+    vertical-align: baseline;
+    color: #111111;
+    margin: 0em 0.5em 0.25em 0em;
+    text-transform: none;
+    text-shadow: none;
     font-weight: normal;
-    padding: .5em 1em;
-    border-radius: 3px;
-    color: #333;
+    line-height: 1;
+    font-style: normal;
     font-size: 100%;
+    text-align: center;
+    text-decoration: none;;
+    padding: .5em 1em;
+    background: #ffffff linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+    border-radius: 3px;
+    box-shadow: 0 1px 0 1px rgba(255, 255, 255, 0.3) inset, 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
 }
 
 /**
- * Normal button.
+ * Normal button style.
  */
 input[type="button"],
-input[type="reset"],
 button,
-.button-normal {
-    background: rgb(254, 254, 254);
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZWVlZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(238, 238, 238, 1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(254, 254, 254, 1)), color-stop(100%, rgba(238, 238, 238, 1)));
-    background: -webkit-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(238, 238, 238, 1) 100%);
-    background: -o-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(238, 238, 238, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(238, 238, 238, 1) 100%);
-    background: linear-gradient(to bottom, rgba(254, 254, 254, 1) 0%, rgba(238, 238, 238, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eeeeee', GradientType=0);
-    border-color: #c3c3c3 #aeaeae #939393;
+.gl.button,
+.gl.button.normal {
+    /* Here will apply default styles which same is we need. */
+    transition: all 200ms;
 }
 
 input[type="button"]:hover,
-input[type="reset"]:hover,
 button:hover,
-.button:hover,
-.button-normal:hover {
-    cursor: pointer;
-    background: rgb(254, 254, 254);
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNmY1ZjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, rgba(254, 254, 254, 1) 1%, rgba(246, 245, 243, 1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(254, 254, 254, 1)), color-stop(100%, rgba(246, 245, 243, 1)));
-    background: -webkit-linear-gradient(top, rgba(254, 254, 254, 1) 1%, rgba(246, 245, 243, 1) 100%);
-    background: -o-linear-gradient(top, rgba(254, 254, 254, 1) 1%, rgba(246, 245, 243, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(254, 254, 254, 1) 1%, rgba(246, 245, 243, 1) 100%);
-    background: linear-gradient(to bottom, rgba(254, 254, 254, 1) 1%, rgba(246, 245, 243, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#f6f5f3', GradientType=0);
+.gl.button:hover,
+.gl.button.normal:hover {
+    background: #e8e8e8 none;
+    transition: all 200ms;
 }
 
 input[type="button"]:active,
-input[type="button"].active,
-input[type="reset"]:active,
-input[type="reset"].active,
 button:active,
-button.active,
-.button:active,
-.button.active,
-.button-normal:active,
-.button-normal.active {
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21) inset;
-    background: #fefefe;
-}
-
-input[type="button"]:focus,
-input[type="button"].focus,
-input[type="reset"]:focus,
-input[type="reset"].focus,
-button:focus,
-button.focus,
-.button:focus,
-.button.focus,
-.button-normal:focus,
-.button-normal.focus {
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+.gl.button:active,
+.gl.button.normal:active {
+    background: #cccccc none;
+    color: rgba(0, 0, 0, 0.8);
+    transition: all 200ms;
 }
 
 input[type="button"]:disabled,
-input[type="button"].disabled,
-input[type="reset"]:disabled,
-input[type="reset"].disabled,
 button:disabled,
-button.disabled,
-.button:disabled,
-.button.disabled,
-.button-normal:disabled,
-.button-normal.disabled {
+.gl.button:disabled,
+.gl.button.normal:disabled {
+    background: #cccccc none;
+    color: rgba(0, 0, 0, 0.8);
     cursor: not-allowed;
-    background: rgba(249, 249, 249, 1);
-    font-size: 100%;
-    color: rgba(183, 183, 183, 1);
+    box-shadow: none;
 }
 
 /**
- * Submit button.
+ * Submit button style.
  */
 input[type="submit"],
-#edit-submit,
-.button-submit {
-    background: rgb(137, 220, 108);
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg5ZGM2YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2MGIxNDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, rgba(137, 220, 108, 1) 0%, rgba(96, 177, 68, 1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(137, 220, 108, 1)), color-stop(100%, rgba(96, 177, 68, 1)));
-    background: -webkit-linear-gradient(top, rgba(137, 220, 108, 1) 0%, rgba(96, 177, 68, 1) 100%);
-    background: -o-linear-gradient(top, rgba(137, 220, 108, 1) 0%, rgba(96, 177, 68, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(137, 220, 108, 1) 0%, rgba(96, 177, 68, 1) 100%);
-    background: linear-gradient(to bottom, rgba(137, 220, 108, 1) 0%, rgba(96, 177, 68, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#89dc6c', endColorstr='#60b144', GradientType=0);
+.gl.button.submit {
+    background-color: rgb(105, 211, 68);
     color: white;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.17);
-    border-color: #5ca941;
-    box-shadow: inset 0 1px 0px 0px rgba(255, 255, 255, 0.37)
+    border: 1px solid;
+    border-color: #69C543 #60AA26 #6A9521;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+    transition: all 200ms;
 }
 
 input[type="submit"]:hover,
-#edit-submit:hover,
-.button-submit:hover {
-    background: #82d863;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzgyZDg2MyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1Y2FkM2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, #82d863 0%, #5cad3c 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #82d863), color-stop(100%, #5cad3c));
-    background: -webkit-linear-gradient(top, #82d863 0%, #5cad3c 100%);
-    background: -o-linear-gradient(top, #82d863 0%, #5cad3c 100%);
-    background: -ms-linear-gradient(top, #82d863 0%, #5cad3c 100%);
-    background: linear-gradient(to bottom, #82d863 0%, #5cad3c 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#82d863', endColorstr='#5cad3c', GradientType=0);
+.gl.button.submit:hover {
+    background-color: rgb(109, 223, 70);
+    transition: all 200ms;
 }
 
 input[type="submit"]:active,
-input[type="submit"].active,
-#edit-submit:active,
-#edit-submit.active,
-.button-submit:active,
-.button-submit.active {
-    background: #5BA33E;
-    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.19) !important;
-}
-
-input[type="submit"]:focus,
-input[type="submit"].focus,
-#edit-submit:focus,
-#edit-submit.focus,
-.button-submit:focus,
-.button-submit.focus {
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+.gl.button.submit:active {
+    background-color: rgb(99, 198, 65);
+    transition: all 200ms;
 }
 
 input[type="submit"]:disabled,
-input[type="submit"].disabled,
-#edit-submit:disabled,
-#edit-submit.disabled,
-.button-submit:disabled,
-.button-submit.disabled {
+.gl.button.submit:disabled {
+    border-color: transparent;
+    background: rgb(106, 181, 79) none;
     cursor: not-allowed;
-    background: rgba(140, 197, 143, 1);
-    font-size: 100%;
-    color: rgba(250, 250, 250, 1);
-    text-shadow: none;
+    box-shadow: none;
 }
 
 /**
- * Preview button.
+ * Reset button style.
  */
-input[type="preview"],
-#edit-preview,
-input.button-preview,
-.button-preview {
-    background: rgb(244, 236, 90);
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0ZWM1YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWRlMTciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, rgba(244, 236, 90, 1) 0%, rgba(229, 222, 23, 1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(244, 236, 90, 1)), color-stop(100%, rgba(229, 222, 23, 1)));
-    background: -webkit-linear-gradient(top, rgba(244, 236, 90, 1) 0%, rgba(229, 222, 23, 1) 100%);
-    background: -o-linear-gradient(top, rgba(244, 236, 90, 1) 0%, rgba(229, 222, 23, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(244, 236, 90, 1) 0%, rgba(229, 222, 23, 1) 100%);
-    background: linear-gradient(to bottom, rgba(244, 236, 90, 1) 0%, rgba(229, 222, 23, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4ec5a', endColorstr='#e5de17', GradientType=0);
-    color: #333;
-    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.47);
-    border-color: #B9B313;
-    box-shadow: inset 0 1px 0px 0px rgba(255, 255, 255, 0.37)
+input[type="reset"],
+.gl.button.reset,
+#edit-preview {
+    color: #111;
+    background-color: #f4cc67;
+    border: 1px solid;
+    border-color: #C59F43 #AA8326 #957321;
+    text-shadow: 0 -1px 0px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+    transition: all 200ms;
 }
 
-input[type="preview"]:hover,
-#edit-preview:hover,
-.button-preview:hover,
-input.button-preview:hover {
-    background: #f2e41f;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YyZTQxZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMmQ3MDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, #f2e41f 0%, #e2d700 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2e41f), color-stop(100%, #e2d700));
-    background: -webkit-linear-gradient(top, #f2e41f 0%, #e2d700 100%);
-    background: -o-linear-gradient(top, #f2e41f 0%, #e2d700 100%);
-    background: -ms-linear-gradient(top, #f2e41f 0%, #e2d700 100%);
-    background: linear-gradient(to bottom, #f2e41f 0%, #e2d700 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2e41f', endColorstr='#e2d700', GradientType=0);
+input[type="reset"]:hover,
+.gl.button.reset:hover,
+#edit-preview:hover {
+    background-color: #f5d175;
+    transition: all 200ms;
 }
 
-input[type="preview"]:active,
-input[type="preview"].active,
-#edit-preview:active,
-#edit-preview.active,
-.button-preview:active,
-.button-preview.active,
-input.button-preview:active,
-input.button-preview.active {
-    background: #f2e41f;
-    color: #333;
-    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.19) !important;
+input[type="reset"]:active,
+.gl.button.reset:active,
+#edit-preview:active {
+    background-color: #f2c146;
+    transition: all 200ms;
 }
 
-input[type="preview"]:focus,
-input[type="preview"].focus,
-#edit-preview:focus,
-#edit-preview.focus,
-.button-preview:focus,
-.button-preview.focus,
-input.button-preview:focus,
-input.button-preview.focus {
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-}
-
-input[type="preview"]:disabled,
-input[type="preview"].disabled,
-#edit-preview:disabled,
-#edit-preview.disabled,
-.button-preview:disabled,
-.button-preview.disabled,
-input.button-preview:disabled,
-input.button-preview.disabled {
+input[type="reset"]:disabled,
+.gl.button.reset:disabled,
+#edit-preview:disabled {
+    border-color: transparent;
+    background: rgb(161, 152, 53) none;
+    color: rgba(0, 0, 0, 0.8);
     cursor: not-allowed;
-    background: #E7DE65;
-    color: #333;
-    text-shadow: none;
+    box-shadow: none;
 }
 
 /**
- * Delete button.
+ * Delete button style.
  */
-input[type="delete"],
-#edit-delete,
-.button-delete,
-input.button-delete {
-    background: rgb(245, 129, 105);
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y1ODE2OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOTRlMmIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, rgba(245, 129, 105, 1) 0%, rgba(233, 78, 43, 1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245, 129, 105, 1)), color-stop(100%, rgba(233, 78, 43, 1)));
-    background: -webkit-linear-gradient(top, rgba(245, 129, 105, 1) 0%, rgba(233, 78, 43, 1) 100%);
-    background: -o-linear-gradient(top, rgba(245, 129, 105, 1) 0%, rgba(233, 78, 43, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(245, 129, 105, 1) 0%, rgba(233, 78, 43, 1) 100%);
-    background: linear-gradient(to bottom, rgba(245, 129, 105, 1) 0%, rgba(233, 78, 43, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f58169', endColorstr='#e94e2b', GradientType=0);
+.gl.button.delete,
+#edit-delete {
+    background-color: #ff4a4d;
     color: white;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.17);
-    border-color: rgb(167, 56, 29);
-    box-shadow: inset 0 1px 0px 0px rgba(255, 255, 255, 0.37)
+    border: 1px solid;
+    border-color: #C54343 #AA2626 #952121;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.2) inset;
+    transition: all 200ms;
 }
 
-input[type="delete"]:hover,
-#edit-delete:hover,
-.button-delete:hover,
-input.button-delete:hover {
-    background: #f46346;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0NjM0NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlODJlMDQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top, #f46346 0%, #e82e04 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f46346), color-stop(100%, #e82e04));
-    background: -webkit-linear-gradient(top, #f46346 0%, #e82e04 100%);
-    background: -o-linear-gradient(top, #f46346 0%, #e82e04 100%);
-    background: -ms-linear-gradient(top, #f46346 0%, #e82e04 100%);
-    background: linear-gradient(to bottom, #f46346 0%, #e82e04 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f46346', endColorstr='#e82e04', GradientType=0);
+.gl.button.delete:hover,
+#edit-delete:hover {
+    background-color: #ff3a36;
+    transition: all 200ms;
 }
 
-input[type="delete"]:active,
-input[type="delete"].active,
-#edit-delete:active,
-#edit-delete.active,
-.button-delete:active,
-.button-delete.active,
-input.button-delete:active,
-input.button-delete.active {
-    background: #f46346;
-    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.19) !important;
+.gl.button.delete:active,
+#edit-delete:active {
+    background-color: #d14346;
+    transition: all 200ms;
 }
 
-input[type="delete"]:focus,
-input[type="delete"].focus,
-#edit-delete:focus,
-#edit-delete.focus,
-.button-delete:focus,
-.button-delete.focus,
-input.button-delete:focus,
-input.button-delete.focus {
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
-}
-
-input[type="delete"]:disabled,
-input[type="delete"].disabled,
-#edit-delete:disabled,
-#edit-delete.disabled,
-.button-delete:disabled,
-.button-delete.disabled,
-input.button-delete:disabled,
-input.button-delete.disabled {
+.gl.button.delete:disabled,
+#edit-delete:disabled {
+    border-color: transparent;
+    background: #d14346 none;
     cursor: not-allowed;
-    background: rgba(229, 132, 120, 1);
-    font-size: 100%;
-    color: rgba(250, 250, 250, 1);
-    text-shadow: none;
+    box-shadow: none;
 }
 
 /**
@@ -365,11 +221,11 @@ select {
     background: white;
     padding: 0.5em 0.6em;
     display: inline-block;
-    border: 1px solid #E1E8ED;
+    border: 1px solid #ccc;
     border-radius: 3px;
     box-sizing: border-box;
     max-width: 100%;
-    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 
 input.error,
