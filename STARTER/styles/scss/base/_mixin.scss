@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Mixin file
+ */
+
+// Import functions.
+@import "functions";
+
+/**
+ * Font size calculation.
+ */
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
