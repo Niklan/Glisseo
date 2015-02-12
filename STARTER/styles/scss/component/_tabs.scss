@@ -87,3 +87,30 @@ ul.tabs {
     margin-bottom: 15px;
   }
 }
+
+// Vertical tabs.
+.vertical-tabs {
+  .vertical-tabs-list {
+    * {
+      text-decoration: none !important;
+      outline: 0 !important;
+    }
+
+    .vertical-tab-button {
+      @include linear-gradient(#fefefe, #f6f7f8);
+
+      a {
+        color: rgba(80, 74, 74, 1);
+        border: none;
+      }
+
+      &.selected {
+        background: white;
+
+        strong {
+          color: $linkColor;
+        }
+      }
+    }
+  }
+}
