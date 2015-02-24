@@ -11,7 +11,7 @@ stylesheets[all][] = system.messages.css
 stylesheets[all][] = system.theme.css
 
 ; Here you can attach your own styles.
-stylesheets[all][] = css/theme/theme.css
+stylesheets[all][] = styles/css/theme.css
 
 ; Here tou can attach your scripts.
 ;scripts[] = js/script.js
