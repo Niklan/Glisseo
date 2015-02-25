@@ -13,10 +13,11 @@
 @import "base/typography";
 
 // Layouts
-@import "layouts/susy/susy"; // If you don't need susy, jjust remove.
+@import "layouts/susy/susy";
 
 // Component
 @import "component/buttons";
+@import "component/font-awesome/font-awesome";
 @import "component/checkboxes";
 @import "component/fieldsets";
 @import "component/inputs";

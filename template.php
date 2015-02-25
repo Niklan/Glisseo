@@ -47,6 +47,7 @@ function glisseo_preprocess_html(&$variables) {
 
 /**
  * Implements hook_preprocess_page().
+ * @TODO: automate sidebar variable generate.
  */
 function glisseo_preprocess_page(&$variables, $hook) {
   // Add template suggestions for 404 and 403 errors.
@@ -60,6 +61,13 @@ function glisseo_preprocess_page(&$variables, $hook) {
     $variables['theme_hook_suggestions'][] = 'page__403';
   }
 
+  // Sidebar First.
+  $sidebar_first = render($variables['page']['sidebar_first']);
+  $variables['sidebar_first'] = $sidebar_first;
+  
+  // Sidebar Second.
+  $sidebar_second = render($variables['page']['sidebar_second']);
+  $variables['sidebar_second'] = $sidebar_second;
 }
 
 /**

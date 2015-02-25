@@ -1,8 +1,7 @@
 /**
- * @file
- * Typography styles.
- */
-
+* @file
+* Typography styles.
+*/
 html {
   font-size: 1rem; // Hardcoded, because we need inherit user font-size.
 }
@@ -18,15 +17,12 @@ a {
   color: $linkColor;
   @if $linkDecoration == true {
     text-decoration: underline;
-  }
-  @else {
+  } @else {
     text-decoration: none;
   }
-
   &:hover {
     color: $linkColorHover;
   }
-
   &:visited {
     color: $linkColorVisited;
   }
@@ -103,4 +99,21 @@ small, .font_small {
 hr {
   border: 0px solid rgba(0, 0, 0, .1);
   border-top-width: 1px;
+}
+
+label {
+  display: block;
+}
+
+pre {
+  code {
+    font-family: consolas, monospace, monospaced;
+  }
+}
+
+blockquote {
+  border-left: 4px solid #DDD;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  color: #777;
 }
