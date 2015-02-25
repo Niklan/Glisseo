@@ -28,17 +28,14 @@
 
 </header>
 
-  <?php
-  ?>
-
+<main id="main">
   <?php
   // Print first sidebar, if it exist.
-  $sidebar_first = render($page['sidebar_first']);
   if ($sidebar_first) {
     print $sidebar_first;
   } ?>
 
-  <div id="content" role="main">
+  <section id="content" role="main">
     <?php print render($page['highlighted']); ?>
     <?php print $breadcrumb; ?>
     <?php print render($title_prefix); ?>
@@ -54,11 +51,10 @@
     <?php endif; ?>
     <?php print render($page['content']); ?>
     <?php print $feed_icons; ?>
-  </div>
+  </section>
 
   <?php
   // Print second sidebar, if it exist.
-  $sidebar_second = render($page['sidebar_second']);
   if ($sidebar_second) {
     print $sidebar_second;
   } ?>
