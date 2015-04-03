@@ -26,16 +26,17 @@
  * @ingroup views_templates
  */
 ?>
-<div class="view <?php print $css_name; ?> <?php print $view->current_display; ?>">
+<section
+  class="view <?php print $css_name; ?> <?php print $view->current_display; ?>">
 <?php print render($title_prefix); ?>
 <?php if ($title): ?>
   <?php print $title; ?>
 <?php endif; ?>
 <?php print render($title_suffix); ?>
 <?php if ($header): ?>
-  <div class="view-header">
+  <header class="header">
     <?php print $header; ?>
-  </div>
+  </header>
 <?php endif; ?>
 
 <?php if ($exposed): ?>
@@ -45,15 +46,15 @@
 <?php endif; ?>
 
 <?php if ($attachment_before): ?>
-  <div class="attachment attachment-before">
+  <section class="attachment attachment-before">
     <?php print $attachment_before; ?>
-  </div>
+  </section>
 <?php endif; ?>
 
 <?php if ($rows): ?>
-  <div class="<?php print $css_name; ?>-list">
+  <section class="content">
     <?php print $rows; ?>
-  </div>
+  </section>
 <?php elseif ($empty): ?>
   <div class="view-empty">
     <?php print $empty; ?>
@@ -65,9 +66,9 @@
 <?php endif; ?>
 
 <?php if ($attachment_after): ?>
-  <div class="attachment attachment-after">
+  <section class="attachment attachment-after">
     <?php print $attachment_after; ?>
-  </div>
+  </section>
 <?php endif; ?>
 
 <?php if ($more): ?>
@@ -75,9 +76,9 @@
 <?php endif; ?>
 
 <?php if ($footer): ?>
-  <div class="view-footer">
+  <footer class="view-footer">
     <?php print $footer; ?>
-  </div>
+  </footer>
 <?php endif; ?>
 
 <?php if ($feed_icon): ?>
@@ -86,4 +87,4 @@
   </div>
 <?php endif; ?>
 
-</div><?php /* class view */ ?>
+</section><?php /* class view */ ?>
