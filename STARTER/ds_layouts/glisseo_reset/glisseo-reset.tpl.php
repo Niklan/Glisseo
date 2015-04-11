@@ -4,7 +4,7 @@
  * Question full layout.
  */
 ?>
-<<?php print $layout_wrapper; ?> <?php print $layout_attributes; ?> class="<?php $clean_classes ? print $clean_classes: false; ?>">
+<<?php print $layout_wrapper; ?> <?php print $layout_attributes; ?> class="<?php print $classes; ?>">
   <?php print render($title_suffix['contextual_links']); ?>
 
   <?php if ($main): ?>
