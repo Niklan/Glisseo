@@ -23,11 +23,12 @@ select {
   padding: 0.45em 0.6em;
   display: inline-block;
   border: 1px solid #D3D6DB;
-  border-radius: 0;
+  border-radius: 2px;
   box-sizing: border-box;
   max-width: 100%;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  margin: 0 pxToRem(5px) pxToRem(5px) 0;
+  margin: pxToRem(5px) 0;
+  transition: all 200ms ease;
 
   &.error {
     border-color: #e74c3c;
@@ -35,8 +36,9 @@ select {
 
   &:focus {
     outline: medium none;
-    border-color: #66B5D2;
-    box-shadow: 0px 0px 0px 1px rgba(0, 132, 180, 0.7) inset, inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+    border-color: $colorMalibu;
+    box-shadow: 0px 0px 3px 0px $colorHummingBird, inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+    transition: all 200ms ease;
   }
 
   &:disabled {

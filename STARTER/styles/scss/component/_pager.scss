@@ -20,7 +20,7 @@
 
     a {
       padding: 0 1rem;
-      color: $colorBoulder;
+      color: $colorEbonyClay;
       text-decoration: none;
       line-height: 2rem;
     }
@@ -37,9 +37,14 @@
 
   .pager-current {
     padding: 0 1rem;
-    color: $colorBoulder;
+    color: $colorEbonyClay;
     text-decoration: none;
     line-height: 2rem;
     background: #F9F9F9;
+  }
+
+  .pager-ellipsis {
+    line-height: 2rem;
+    padding: 0 1rem;
   }
 }

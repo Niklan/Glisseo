@@ -5,14 +5,28 @@
 
 // Typography variables.
 $baseHeaderSize: 30px;
-$baseFontSize: 16px;
-$baseFontFamily: "Source Sans Pro", sans-serif;;
-$baseLineHeight: 1.3;
+$baseFontSize: 14px;
+$baseFontFamily: Arial, sans-serif;;
+$baseLineHeight: 1.5;
 $baseFontColor: #3b3b3b;
-$siteWidth: 1024px;
+$siteWidth: 1200px;
 
-// Color-schemes.
-// Links.
+/**
+ * Messages colors.
+ */
+$messageErrorBackground: #F2DEDE;
+$messageErrorBorder: #EBCCD1;
+$messageErrorColor: #A94442;
+$messageStatusBackground: #DFF0D8;
+$messageStatusBorder: #D6E9C6;
+$messageStatusColor: #3C763D;
+$messageWarningBackground: #FCF8E3;
+$messageWarningBorder: #FAEBCC;
+$messageWarningColor: #8A6D3B;
+
+/**
+ * Link colors.
+ */
 $linkColor: #4a90d9;
 $linkColorHover: #276ea3;
 $linkColorVisited: #58a8ff;

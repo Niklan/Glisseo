@@ -7,8 +7,7 @@ table {
   margin: 1em 0;
   border: 1px solid #d0d0d0;
   box-shadow: none;
-  border-radius: .25rem;
-  color: rgba(0,0,0,.8);
+  color: $baseFontColor;
   border-collapse: separate;
   border-spacing: 0;
 
@@ -16,14 +15,13 @@ table {
     tr {
       th {
         cursor: auto;
-        background: #f0f0f0;
         text-align: left;
         color: rgba(0,0,0,.8);
         padding: .7em .8em;
         vertical-align: middle;
         font-weight: 700;
         text-transform: none;
-        border-bottom: 1px solid #d4d4d5;
+        border-bottom: 2px solid #ddd;
         border-left: none;
 
         &:first-child {
@@ -50,6 +48,14 @@ table {
         td {
           border-top: none;
         }
+      }
+    }
+  }
+
+  &.table-striped {
+    > tbody {
+      > tr:nth-of-type(2n+1) {
+        background-color: #F9F9F9;
       }
     }
   }
