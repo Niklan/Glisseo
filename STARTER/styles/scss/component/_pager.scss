@@ -3,7 +3,7 @@
  * Pager styles.
  */
 .pager {
-  margin: .5rem auto;
+  margin: 1rem auto;
   padding: 0px;
   list-style: none outside none;
   display: table;
@@ -18,9 +18,9 @@
     background: transparent;
     transition: background 200ms;
 
-    a {
+    a{
       padding: 0 1rem;
-      color: $colorEbonyClay;
+      color: $colorBoulder;
       text-decoration: none;
       line-height: 2rem;
     }
@@ -35,16 +35,19 @@
     }
   }
 
+  .pager-ellipsis {
+    padding: 0 1rem;
+    color: $colorBoulder;
+    text-decoration: none; 
+    line-height: 2rem;
+  }
+
   .pager-current {
     padding: 0 1rem;
-    color: $colorEbonyClay;
+    color: $colorBoulder;
     text-decoration: none;
     line-height: 2rem;
     background: #F9F9F9;
   }
-
-  .pager-ellipsis {
-    line-height: 2rem;
-    padding: 0 1rem;
-  }
 }
+
