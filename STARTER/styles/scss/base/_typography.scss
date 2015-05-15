@@ -7,24 +7,20 @@ html {
 }
 
 body {
-  @include fontSize($baseFontSize);
-  font-family: $baseFontFamily;
-  line-height: $baseLineHeight;
-  color: $baseFontColor;
+  @include font-size($font-size-base);
+  font-family: $font-family-base:;
+  line-height: $line-height-computed;
+  color: $text-color;
 }
 
 a {
-  color: $linkColor;
-  @if $linkDecoration == true {
-    text-decoration: underline;
-  } @else {
-    text-decoration: none;
-  }
+  color: $link-color;
+  text-decoration: $link-hover-decoration;
   &:hover {
-    color: $linkColorHover;
+    color: $link-hover-color;
   }
   &:visited {
-    color: $linkColorVisited;
+    color: $link-visited-color;
   }
 }
 
@@ -42,8 +38,8 @@ h1,
 h2,
 h3,
 h4 {
-  margin: calc(2rem - .2em) 0 1rem;
-  line-height: $baseLineHeight
+  margin: 0 0 ($line-height-computed + "px") 0;
+  line-height: $line-height-computed;
 }
 
 .subheader {
@@ -53,47 +49,29 @@ h4 {
 }
 
 h1 {
-  @include fontSize($baseHeaderSize);
-  .subheader {
-    @extend .subheader;
-    @include fontSize($baseHeaderSize / 1.5);
-  }
+  @include font-size($font-size-h1);
 }
-
 h2 {
-  @include fontSize($baseHeaderSize * .9);
-  .subheader {
-    @extend .subheader;
-    @include fontSize(($baseHeaderSize * .9) / 1.5);
-  }
+  @include font-size($font-size-h2);
 }
-
 h3 {
-  @include fontSize($baseHeaderSize * .8);
-  .subheader {
-    @extend .subheader;
-    @include fontSize(($baseHeaderSize * .8) / 1.5);
-  }
+  @include font-size($font-size-h3);
 }
-
 h4 {
-  @include fontSize($baseHeaderSize * .7);
-  .subheader {
-    @extend .subheader;
-    @include fontSize(($baseHeaderSize * .7) / 1.5);
-  }
+  @include font-size($font-size-h4);
 }
-
 h5 {
-  @include fontSize($baseHeaderSize * .6);
-  .subheader {
-    @extend .subheader;
-    @include fontSize(($baseHeaderSize * .6) / 1.5);
-  }
+  @include font-size($font-size-h5);
+}
+h6 {
+  @include font-size($font-size-h6);
 }
 
-small, .font_small {
-  font-size: 0.75em;
+small, .text-small {
+  font-size:  pxtorem($font-size-small);
+}
+big, .text-big {
+  font-size:  pxtorem($font-size-large);
 }
 
 hr {
@@ -107,7 +85,7 @@ label {
 
 pre {
   code {
-    font-family: consolas, monospace, monospaced;
+    font-family: $font-family-monospace;
   }
 }
 
