@@ -113,31 +113,6 @@ function glisseo_preprocess_node(&$variables) {
 }
 
 /**
-* Implements hook_theme().
-*/
-function glisseo_theme($existing, $type, $theme, $path) {
-  $theme = array();
-
-  // Rewrite checkboxes.
-  if (theme_get_setting('glisseo_new_checkboxes')) {
-    $theme['checkbox'] = array(
-      'render element' => 'element',
-      'template' => 'templates/fields/field--type-checkbox',
-    );
-  }
-
-  // Rewrite radios.
-  if (theme_get_setting('glisseo_new_radios')) {
-    $theme['radio'] = array(
-      'render element' => 'element',
-      'template' => 'templates/fields/field--type-radio',
-    );
-  }
-
-  return $theme;
-}
-
-/**
  * Implements theme_textarea().
  * Disable grippie.
  */

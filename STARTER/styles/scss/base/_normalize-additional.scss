@@ -12,6 +12,11 @@
   border: 0;
 }
 
+::selection {
+  background: $selection-bg;
+  color: $selection-color;
+}
+
 // Fix whitespace under image. 
 img {
   max-width: 100%;
