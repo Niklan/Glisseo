@@ -6,8 +6,8 @@
 
 // Base
 @import "base/normalize";
-@import "base/normalize-additional";
 @import "base/variables";
+@import "base/base";
 @import "base/functions";
 @import "base/mixin";
 @import "base/typography";
@@ -22,7 +22,7 @@
 @import "component/font-awesome/font-awesome";
 @import "component/checkboxes";
 @import "component/fieldsets";
-@import "component/inputs";
+@import "component/forms";
 @import "component/messages";
 @import "component/pager";
 @import "component/tabs";

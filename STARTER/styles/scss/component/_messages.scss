@@ -14,20 +14,20 @@
   border: 1px solid transparent;
 
   &.error {
-    border-color: $messageErrorBorder;
-    background-color: $messageErrorBackground;
-    color: $messageErrorColor;
+    border-color: $message-error-border;
+    background-color: $message-error-bg;
+    color: $message-error-color;
   }
 
   &.status {
-    border-color: $messageStatusBorder;
-    background-color: $messageStatusBackground;
-    color: $messageStatusColor;
+    border-color: $message-status-border;
+    background-color: $message-status-bg;
+    color: $message-status-color;
   }
 
   &.warning {
-    border-color: $messageWarningBorder;
-    background-color: $messageWarningBackground;
-    color: $messageWarningColor;
+    border-color: $message-warning-border;
+    background-color: $message-warning-bg;
+    color: $message-warning-color;
   }
 }

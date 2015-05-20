@@ -8,19 +8,19 @@
   list-style: none outside none;
   display: table;
   background: #ffffff;
-  border: 1px solid $colorGallery;
+  border: 1px solid $gray-light;
   border-radius: 4px;
   overflow: hidden;
 
   li {
     float: left;
-    border-right: 1px solid $colorGallery;
+    border-right: 1px solid $gray-light;
     background: transparent;
     transition: background 200ms;
 
     a{
       padding: 0 1rem;
-      color: $colorBoulder;
+      color: $gray-light;
       text-decoration: none;
       line-height: 2rem;
     }
@@ -37,17 +37,16 @@
 
   .pager-ellipsis {
     padding: 0 1rem;
-    color: $colorBoulder;
-    text-decoration: none; 
+    color: $gray-light;
+    text-decoration: none;
     line-height: 2rem;
   }
 
   .pager-current {
     padding: 0 1rem;
-    color: $colorBoulder;
+    color: $gray-light;
     text-decoration: none;
     line-height: 2rem;
     background: #F9F9F9;
   }
 }
-

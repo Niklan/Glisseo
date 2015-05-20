@@ -1,6 +1,6 @@
 /**
  * @file
- * Custom normalize styles.
+ * Here styled base elements and over fixes.
  */
 
 // Disable Mozilla's border.
@@ -17,7 +17,7 @@
   color: $selection-color;
 }
 
-// Fix whitespace under image. 
+// Fix whitespace under image.
 img {
   max-width: 100%;
   height: auto;
@@ -35,8 +35,3 @@ label {
     display: inline;
   }
 }
-
-.form-item {
-  margin: 0.75rem 0;
-}
-

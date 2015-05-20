@@ -1,6 +1,6 @@
 /**
  * @file
- * Variables.
+ * In this file stored global variables. You can adjast values on your needs.
  */
 
 /**
@@ -19,24 +19,24 @@ $gray-light:   lighten($gray-base, 46.7%);
 $gray-lighter: lighten($gray-base, 93.5%);
 
 // Links
-$link-color: #4a90d9;
-$link-hover-color: #276ea3;
-$link-visited-color: $link-color;
+$link-color:            #4a90d9;
+$link-hover-color:      #276ea3;
+$link-visited-color:    $link-color;
 $link-hover-decoration: none;
 
 $text-color: $gray-dark;
 $body-bg:    white;
 
-$selection-bg: $gray-lighter;
+$selection-bg:    $gray-lighter;
 $selection-color: inherit;
 
 /**
  * Typography.
  */
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif;
-$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:        $font-family-sans-serif;
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:       $font-family-sans-serif;
 
 $font-size-base:  14px;
 $font-size-large: ceil($font-size-base * 1.25);
@@ -46,12 +46,15 @@ $font-size-h1: floor($font-size-base * 2.6);
 $font-size-h2: floor($font-size-base * 2.15);
 $font-size-h3: ceil($font-size-base * 1.7);
 $font-size-h4: ceil($font-size-base * 1.25);
-$font-size-h5: $font-size-base
+$font-size-h5: $font-size-base;
 $font-size-h6: ceil($font-size-base * 0.85);
 
 // Unit-less cuz used in buttons, inputs, etc.
 $line-height-base:     1.428571429;
 $line-height-computed: floor($line-height-base * $font-size-base);
+// Used in compontents.
+$line-height-large: 1.3333333;
+$line-height-small: 1.5;
 
 // Headers default settings.
 $headings-font-family:    inherit !default;
@@ -59,17 +62,60 @@ $headings-font-weight:    500 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
 
+// <mark> tag.
+$mark-bg: #DFF0D8;
+
+// Blockqoutes.
+$blockquote-font-size:    ($font-size-base * 1.25) !default;
+$blockquote-border-color: $gray-lighter !default;
+
+// <hr> tag.
+$hr-border: $gray-lighter !default;
+
 /**
  * Messages colors.
  */
-$message-error-bg: #F2DEDE;
+$message-error-bg:     #F2DEDE;
 $message-error-border: #EBCCD1;
-$message-error-color: #A94442;
+$message-error-color:  #A94442;
 
-$message-status-bg: #DFF0D8;
+$message-status-bg:     #DFF0D8;
 $message-status-border: #D6E9C6;
-$message-status-color: #3C763D;
+$message-status-color:  #3C763D;
 
-$message-warning-bg: #FCF8E3;
+$message-warning-bg:     #FCF8E3;
 $message-warning-border: #FAEBCC;
-$message-warning-color: #8A6D3B;
+$message-warning-color:  #8A6D3B;
+
+/**
+ * Components.
+ */
+// Paddings.
+$padding-base-vertical:   6px !default;
+$padding-base-horizontal: 12px !default;
+
+$padding-large-vertical:   10px !default;
+$padding-large-horizontal: 16px !default;
+
+$padding-small-vertical:   5px !default;
+$padding-small-horizontal: 10px !default;
+
+$padding-xs-vertical:   1px !default;
+$padding-xs-horizontal: 5px !default;
+
+// Border radius.
+$border-radius-small: 3px !default;
+$border-radius-base:  4px !default;
+$border-radius-large: 6px !default;
+
+/**
+ * Forms.
+ */
+$form-item-padding: 10px !default;
+
+$input-height-base:  $line-height-computed + ($padding-base-vertical * 2) + 2 !default;
+$input-height-large: ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2 !default;
+$input-height-small: floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2 !default;
+
+$input-bg:           #fcfcfa;
+$input-border-color: #999 #b8b8b8 #b8b8b8 #b8b8b8;
