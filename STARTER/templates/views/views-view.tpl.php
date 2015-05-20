@@ -27,64 +27,64 @@
  */
 ?>
 <section
-  class="view <?php print $css_name; ?> <?php print $view->current_display; ?>">
-<?php print render($title_prefix); ?>
-<?php if ($title): ?>
-  <?php print $title; ?>
-<?php endif; ?>
-<?php print render($title_suffix); ?>
-<?php if ($header): ?>
-  <header class="header">
-    <?php print $header; ?>
-  </header>
-<?php endif; ?>
+  class="view-<?php print $css_name; ?>-<?php print $view->current_display; ?>">
+  <?php print render($title_prefix); ?>
+  <?php if ($title): ?>
+    <?php print $title; ?>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
+  <?php if ($header): ?>
+    <header class="header">
+      <?php print $header; ?>
+    </header>
+  <?php endif; ?>
 
-<?php if ($exposed): ?>
-  <div class="view-filters">
-    <?php print $exposed; ?>
-  </div>
-<?php endif; ?>
+  <?php if ($exposed): ?>
+    <section class="filters">
+      <?php print $exposed; ?>
+    </section>
+  <?php endif; ?>
 
-<?php if ($attachment_before): ?>
-  <section class="attachment attachment-before">
-    <?php print $attachment_before; ?>
-  </section>
-<?php endif; ?>
+  <?php if ($attachment_before): ?>
+    <section class="attachment attachment-before">
+      <?php print $attachment_before; ?>
+    </section>
+  <?php endif; ?>
 
-<?php if ($rows): ?>
-  <section class="content">
-    <?php print $rows; ?>
-  </section>
-<?php elseif ($empty): ?>
-  <div class="view-empty">
-    <?php print $empty; ?>
-  </div>
-<?php endif; ?>
+  <?php if ($rows): ?>
+    <section class="content">
+      <?php print $rows; ?>
+    </section>
+  <?php elseif ($empty): ?>
+    <section class="view-empty">
+      <?php print $empty; ?>
+    </section>
+  <?php endif; ?>
 
-<?php if ($pager): ?>
-  <?php print $pager; ?>
-<?php endif; ?>
+  <?php if ($pager): ?>
+    <?php print $pager; ?>
+  <?php endif; ?>
 
-<?php if ($attachment_after): ?>
-  <section class="attachment attachment-after">
-    <?php print $attachment_after; ?>
-  </section>
-<?php endif; ?>
+  <?php if ($attachment_after): ?>
+    <section class="attachment attachment-after">
+      <?php print $attachment_after; ?>
+    </section>
+  <?php endif; ?>
 
-<?php if ($more): ?>
-  <?php print $more; ?>
-<?php endif; ?>
+  <?php if ($more): ?>
+    <?php print $more; ?>
+  <?php endif; ?>
 
-<?php if ($footer): ?>
-  <footer class="view-footer">
-    <?php print $footer; ?>
-  </footer>
-<?php endif; ?>
+  <?php if ($footer): ?>
+    <footer class="footer">
+      <?php print $footer; ?>
+    </footer>
+  <?php endif; ?>
 
-<?php if ($feed_icon): ?>
-  <div class="feed-icon">
-    <?php print $feed_icon; ?>
-  </div>
-<?php endif; ?>
+  <?php if ($feed_icon): ?>
+    <div class="feed-icon">
+      <?php print $feed_icon; ?>
+    </div>
+  <?php endif; ?>
 
-</section><?php /* class view */ ?>
+</section>
