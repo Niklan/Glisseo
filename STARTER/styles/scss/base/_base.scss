@@ -17,6 +17,10 @@
   color: $selection-color;
 }
 
+body {
+  background: $body-bg;
+}
+
 // Fix whitespace under image.
 img {
   max-width: 100%;
