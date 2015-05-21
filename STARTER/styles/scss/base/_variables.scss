@@ -6,7 +6,7 @@
 /**
  * Sizes.
  */
-$site-width: 1200px;
+$site-width: 1100px;
 
 /**
  * Colors presets.
@@ -17,6 +17,15 @@ $gray-dark:    lighten($gray-base, 20%);
 $gray:         lighten($gray-base, 33.5%);
 $gray-light:   lighten($gray-base, 46.7%);
 $gray-lighter: lighten($gray-base, 93.5%);
+
+/**
+ * Branding.
+ */
+$brand-primary: #337ab7;
+$brand-success: #5cb85c !default;
+$brand-info:    #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger:  #d9534f !default;
 
 // Links
 $link-color:            #4a90d9;
@@ -119,3 +128,32 @@ $input-height-small: floor($font-size-small * $line-height-small) + ($padding-sm
 
 $input-bg:           #fcfcfa;
 $input-border-color: #999 #b8b8b8 #b8b8b8 #b8b8b8;
+
+/**
+ * Buttons.
+ */
+$btn-font-weight: normal !default;
+
+$btn-default-color:  #333 !default;
+$btn-default-bg:     #fff !default;
+$btn-default-border: #ccc !default;
+
+$btn-primary-color:  #fff !default;
+$btn-primary-bg:     $brand-primary !default;
+$btn-primary-border: darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color:  #fff !default;
+$btn-success-bg:     $brand-success !default;
+$btn-success-border: darken($btn-success-bg, 5%) !default;
+
+$btn-warning-color:  #fff !default;
+$btn-warning-bg:     $brand-warning !default;
+$btn-warning-border: darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color:  #fff !default;
+$btn-danger-bg:     $brand-danger !default;
+$btn-danger-border: darken($btn-danger-bg, 5%) !default;
+
+$btn-info-color:  #fff !default;
+$btn-info-bg:     $brand-info !default;
+$btn-info-border: darken($btn-info-bg, 5%) !default;
