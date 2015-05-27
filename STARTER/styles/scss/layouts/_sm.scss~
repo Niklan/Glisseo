@@ -1,9 +1,0 @@
-/**
- * @file
- *
- * SM media query styles.
- */
-
-@include breakpointt($sm-media) {
-  // Your styles here.
-}

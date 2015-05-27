@@ -1,9 +1,0 @@
-/**
- * @file
- *
- * MD media query styles.
- */
-
-@include breakpointt($md-media) {
-  // Your styles here.
-}
