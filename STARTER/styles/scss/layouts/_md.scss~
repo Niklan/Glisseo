@@ -4,6 +4,6 @@
  * MD media query styles.
  */
 
-@include breakpoint($md-media) {
+@include breakpointt($md-media) {
   // Your styles here.
 }

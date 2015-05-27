@@ -4,6 +4,6 @@
  * LG media query styles.
  */
 
-@include breakpoint($lg-media) {
+@include breakpointt($lg-media) {
   // Your styles here.
 }

@@ -1,7 +1,7 @@
 .breadcrumb {
   color: $breadcrumb-color;
   background: $breadcrumb-bg;
-  padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+  padding: $breadcrumb-padding-horizontal $breadcrumb-padding-vertical;
   margin-bottom: $breadcrumb-margin-bottom;
   border-radius: $border-radius-base;
   .delimiter {

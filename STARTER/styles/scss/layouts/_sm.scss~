@@ -4,6 +4,6 @@
  * SM media query styles.
  */
 
-@include breakpoint($sm-media) {
+@include breakpointt($sm-media) {
   // Your styles here.
 }
