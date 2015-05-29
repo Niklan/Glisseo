@@ -22,10 +22,11 @@
 @import "layouts/lg";
 
 // Component
+@import "component/font-awesome/font-awesome";
 @import "component/breadcrumbs";
 @import "component/buttons";
-@import "component/font-awesome/font-awesome";
 @import "component/checkboxes";
+@import "component/contextual-links";
 @import "component/fieldsets";
 @import "component/forms";
 @import "component/messages";

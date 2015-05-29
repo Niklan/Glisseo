@@ -6,7 +6,7 @@
 /**
  * Sizes.
  */
-$site-width: 1100px;
+$site-width: 1100px !default;
 // Media sizes.
 $xs-media: max-width 768px;
 $sm-media: 768px;
@@ -51,7 +51,7 @@ $font-family-serif:      Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif;
 
-$font-size-base:  14px;
+$font-size-base:  16px;
 $font-size-large: ceil($font-size-base * 1.25);
 $font-size-small: ceil($font-size-base * 0.85);
 
@@ -171,3 +171,13 @@ $breadcrumb-margin-bottom:      15px !default;
 $breadcrumb-bg:                 #f5f5f5 !default;
 $breadcrumb-color:              #777 !default;
 $breadcrumb-delimiter-color:    #ccc !default;
+
+/**
+ * Contextual links.
+ */
+$contextual-links-bg:            white;
+$contextual-links-border:        1px solid #ddd;
+$contextual-links-border-radius: 4px 0 4px 4px;
+$contextual-links-hover-bg:      #f2f2f2;
+$contextual-links-color:         inherit;
+$contextual-links-box-shadow:    0 5px 10px 0 rgba(black, .2);
