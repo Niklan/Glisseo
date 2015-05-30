@@ -22,18 +22,13 @@
     </div>
   <?php endif; ?>
 
-  <?php print render($page['header']); ?>
-
   <?php print render($page['navigation']); ?>
-
 </header>
 
 <main id="main">
-  <?php
-  // Print first sidebar, if it exist.
-  if ($sidebar_first) {
-    print $sidebar_first;
-  } ?>
+  <?php if ($page['sidebar_fist']): ?>
+  	<?php print render($page['sidebar_first']); ?>
+  <?php endif; ?>
 
   <section id="content" role="main">
     <?php print render($page['highlighted']); ?>
@@ -53,12 +48,9 @@
     <?php print $feed_icons; ?>
   </section>
 
-  <?php
-  // Print second sidebar, if it exist.
-  if ($sidebar_second) {
-    print $sidebar_second;
-  } ?>
-
+  <?php if ($page['sidebar_second']): ?>
+  	<?php print render($page['sidebar_second']); ?>
+  <?php endif; ?>
 </main>
 
 <?php print render($page['footer']); ?>
