@@ -38,16 +38,17 @@ function glisseo_preprocess_html(&$variables) {
   $status = drupal_get_http_header("status");
   if($status == "404 Not Found") {
     $variables['theme_hook_suggestions'][] = 'html__404';
+    $variables['classes_array'][] = drupal_html_class('page-404');
   }
 
   if($status == "403 Forbidden") {
     $variables['theme_hook_suggestions'][] = 'html__403';
+    $variables['classes_array'][] = drupal_html_class('page-403');
   }
 }
 
 /**
  * Implements hook_preprocess_page().
- * @TODO: automate sidebar variable generate.
  */
 function glisseo_preprocess_page(&$variables, $hook) {
   // Add template suggestions for 404 and 403 errors.
@@ -60,14 +61,6 @@ function glisseo_preprocess_page(&$variables, $hook) {
   if($status == "403 Forbidden") {
     $variables['theme_hook_suggestions'][] = 'page__403';
   }
-
-  // Sidebar First.
-  $sidebar_first = render($variables['page']['sidebar_first']);
-  $variables['sidebar_first'] = $sidebar_first;
-  
-  // Sidebar Second.
-  $sidebar_second = render($variables['page']['sidebar_second']);
-  $variables['sidebar_second'] = $sidebar_second;
 }
 
 /**
