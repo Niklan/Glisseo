@@ -27,7 +27,7 @@
  */
 ?>
 <section
-  class="view-<?php print $css_name; ?>-<?php print $view->current_display; ?>">
+  class="view-<?php print $css_name; ?>-<?php print str_replace('_', '-', $view->current_display); ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
