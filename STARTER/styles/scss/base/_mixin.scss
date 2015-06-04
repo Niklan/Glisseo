@@ -108,10 +108,9 @@
 /**
  * flex-flow: <'flex-direction'> || <'flex-wrap'>
  */
- @mixin flex-flow($flow: (row nowrap)) {
- 	-webkit-flex-flow: $flow;
- 	-moz-flex-flow: $flow;
- 	-ms-flex-flow: $flow;
- 	flex-flow: $flow;
- }
- 
+@mixin flex-flow($flow: (row nowrap)) {
+	-webkit-flex-flow: $flow;
+	-moz-flex-flow: $flow;
+	-ms-flex-flow: $flow;
+	flex-flow: $flow;
+}

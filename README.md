@@ -7,12 +7,15 @@ Glisseo provides good starting points for creating your Drupal theme from scratc
 ## What is Glisseo
 
 *  SCSS preprocessor for better CSS experience.
-*  Susy for creating website much faster with flexible grids.
-*  FontAwesome for using SVG icons.
-*  Breakpoint for making your site responsive.
-*  Drupal 8 CSS standarts. 
+*  (optional) Susy for creating website much faster with flexible grids.
+*  (optional) FontAwesome for using SVG icons.
+*  (optional) Breakpoint for making your site responsive.
+*  Drupal 8 CSS standarts.
 *  Good structure.
-*  Predefined DisplaySuite layouts.
-*  Clear Views templates with more semantic code (footer, section, header).
+*  (optional) Predefined DisplaySuite layouts.
+*  (optional) Clear Views templates with more semantic code (footer, section, header).
+*  (optional) [Animate.css](http://daneden.github.io/animate.css/) for visual effects.
 
 and much more..
+
+(optional) - you can use or not this features. Remove it from theme not destroy it.
