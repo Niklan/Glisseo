@@ -2,7 +2,6 @@
  * @file
  * Mixin file
  */
-
 // Import functions.
 @import "functions";
 
@@ -21,11 +20,11 @@
   background-color: $toColor; /* Fallback Color */
   background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
   background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
-  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
-  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
-  background-image:         linear-gradient(top, $fromColor, $toColor);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+  background-image: -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image: -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image: -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image: linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
 /**
@@ -68,18 +67,15 @@
   @if $direction == row-reverse {
     -webkit-box-direction: reverse;
     -webkit-box-orient: horizontal
-  }
-  @else if $direction == column {
+  } @else if $direction == column {
     -webkit-box-direction: normal;
-  	-webkit-box-orient: vertical;
-  }
-  @else if $direction == column-reverse {
+    -webkit-box-orient: vertical;
+  } @else if $direction == column-reverse {
     -webkit-box-direction: reverse;
-  	-webkit-box-orient: vertical;
-  }
-  @else {
+    -webkit-box-orient: vertical;
+  } @else {
     -webkit-box-direction: normal;
-  	-webkit-box-orient: horizontal;
+    -webkit-box-orient: horizontal;
   }
   -webkit-flex-direction: $direction;
   -moz-flex-direction: $direction;
@@ -97,10 +93,9 @@
   -webkit-flex-wrap: $wrap;
   -moz-flex-wrap: $wrap;
   @if $wrap == nowrap {
-  	-ms-flex-wrap: none;
-  }
-  @else {
-  	-ms-flex-wrap: $wrap;
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $wrap;
   }
   flex-wrap: $wrap;
 }
@@ -118,17 +113,17 @@
 /**
  * order: <integer>
  */
- @mixin order($order: 0) {
+@mixin order($order: 0) {
   -webkit-box-ordinal-group: $order + 1;
   -ms-flex-order: $order;
   -webkit-order: $order;
   -moz-order: $order;
   order: $order;
- }
+}
 
- /**
-  * flex-grow: <number>
-  */
+/**
+ * flex-grow: <number>
+ */
 @mixin flex-grow($grow: 0) {
   -webkit-box-flex: $grow;
   -webkit-flex-grow: $grow;
@@ -164,7 +159,7 @@
   $fg-boxflex: $fg;
 
   @if type-of($fg) == 'list' {
-  	$fg-boxflex: nth($fg, 1);
+    $fg-boxflex: nth($fg, 1);
   }
 
   -webkit-box-flex: $fg-boxflex;
@@ -204,14 +199,14 @@
  */
 @mixin align-items($value: stretch) {
   @if $value == flex-start {
-  	-webkit-box-align: start;
-  	-ms-flex-align: start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
   } @else if $value == flex-end {
-  	-webkit-box-align: end;
-  	-ms-flex-align: end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
   } @else {
-  	-webkit-box-align: $value;
-  	-ms-flex-align: $value;
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
   }
   -webkit-align-items: $value;
   -moz-align-items: $value;
@@ -225,11 +220,11 @@
   -webkit-align-self: $value;
   -moz-align-self: $value;
   @if $value == flex-start {
-  	-ms-flex-item-align: start;
+    -ms-flex-item-align: start;
   } @else if $value == flex-end {
-  	-ms-flex-item-align: end;
+    -ms-flex-item-align: end;
   } @else {
-  	-ms-flex-item-align: $value;
+    -ms-flex-item-align: $value;
   }
   align-self: $value;
 }
@@ -241,11 +236,11 @@
   -webkit-align-content: $value;
   -moz-align-content: $value;
   @if $value == flex-start {
-  	-ms-flex-line-pack: start;
+    -ms-flex-line-pack: start;
   } @else if $value == flex-end {
-  	-ms-flex-line-pack: end;
+    -ms-flex-line-pack: end;
   } @else {
-  	-ms-flex-line-pack: $value;
+    -ms-flex-line-pack: $value;
   }
   align-content: $value;
 }
