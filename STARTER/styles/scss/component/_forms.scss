@@ -80,3 +80,12 @@ label {
     color: lighten($text-color, 25%);
   }
 }
+
+.form-actions {
+  input[type="submit"] {
+    margin-right: pxtorem($padding-xs-horizontal);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
