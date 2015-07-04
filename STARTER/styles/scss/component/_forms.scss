@@ -22,7 +22,7 @@ textarea,
 select {
   display: block;
   max-width: 100%;
-  width: 100%;
+  width: auto;
   height: $input-height-base;
   padding: $padding-base-vertical $padding-base-horizontal;
   line-height: $line-height-base;
