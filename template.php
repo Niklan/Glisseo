@@ -38,10 +38,12 @@ function glisseo_preprocess_html(&$variables) {
   $status = drupal_get_http_header("status");
   if($status == "404 Not Found") {
     $variables['theme_hook_suggestions'][] = 'html__404';
+    $variables['classes_array'][] = drupal_html_class('page-404');
   }
 
   if($status == "403 Forbidden") {
     $variables['theme_hook_suggestions'][] = 'html__403';
+    $variables['classes_array'][] = drupal_html_class('page-403');
   }
 }
 
