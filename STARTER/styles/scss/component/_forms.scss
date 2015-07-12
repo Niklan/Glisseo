@@ -60,6 +60,20 @@ textarea {
   height: auto;
 }
 
+select {
+  @include gradient-vertical(white, #f9f9f9);
+  box-shadow: $select-box-shadow;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $select-border-color;
+
+  &:focus {
+    @include gradient-vertical(white, #f9f9f9);
+    border-color: $select-border-color-focus;
+    box-shadow: $select-box-shadow-focus;
+  }
+}
+
 label {
   display: inline-block;
   max-width: 100%;
