@@ -11,7 +11,7 @@ $site-width: 1100px !default;
 $xs-media: max-width 768px;
 $sm-media: 768px;
 $md-media: 992px;
-$lg-media: 1200px;
+$lg-media: min-width 1200px;
 
 /**
  * Colors presets.
@@ -22,6 +22,9 @@ $gray-dark:    lighten($gray-base, 20%);
 $gray:         lighten($gray-base, 33.5%);
 $gray-light:   lighten($gray-base, 46.7%);
 $gray-lighter: lighten($gray-base, 93.5%);
+
+$brand-main: #f44336;
+$brand-border-color: #E8E8E8;
 
 /**
  * Branding.
@@ -36,9 +39,6 @@ $brand-danger:  #d9534f !default;
 $link-color:            #4a90d9;
 $link-hover-color:      #276ea3;
 $link-hover-decoration: none;
-
-$text-color: $gray-dark;
-$body-bg:    white;
 
 $selection-bg:    $gray-lighter;
 $selection-color: inherit;
@@ -130,8 +130,18 @@ $input-height-base:  $line-height-computed + ($padding-base-vertical * 2) + 2 !d
 $input-height-large: ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2 !default;
 $input-height-small: floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2 !default;
 
-$input-bg:           #fcfcfa;
+// Input default state.
+$input-bg:           white;
 $input-border-color: #999 #b8b8b8 #b8b8b8 #b8b8b8;
+$input-box-shadow:   inset 0 1px 1px rgba(black, .1);
+// input:focus
+$input-bg-focus:           white;
+$input-border-color-focus: rgba(114, 165, 208, 1);
+$input-box-shadow-focus:   inset 0 1px 1px rgba(black, .1);
+// input:disabled
+$input-cursor-disabled: not-allowed;
+$input-bg-disabled:     rgb(250, 250, 250);
+$input-color-disabled:  rgba(163, 163, 163, 1);
 
 /**
  * Buttons.
