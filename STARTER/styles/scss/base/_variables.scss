@@ -136,8 +136,8 @@ $input-border-color: #999 #b8b8b8 #b8b8b8 #b8b8b8;
 $input-box-shadow:   inset 0 1px 1px rgba(black, .1);
 // input:focus
 $input-bg-focus:           white;
-$input-border-color-focus: rgba(114, 165, 208, 1);
-$input-box-shadow-focus:   inset 0 1px 1px rgba(black, .1);
+$input-border-color-focus: #2780f8;
+$input-box-shadow-focus:   $input-box-shadow, 0 0px 7px rgba(#2780f8, .15);
 // input:disabled
 $input-cursor-disabled: not-allowed;
 $input-bg-disabled:     rgb(250, 250, 250);
