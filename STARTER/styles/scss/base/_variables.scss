@@ -198,3 +198,15 @@ $contextual-links-border-radius: 4px 0 4px 4px;
 $contextual-links-hover-bg:      #f2f2f2;
 $contextual-links-color:         inherit;
 $contextual-links-box-shadow:    0 5px 10px 0 rgba(black, .2);
+
+/**
+ * Vertical tabs.
+ */
+$vertical-tabs-bg:                    white;
+$vertical-tabs-list-bg:               #fbfaf8;
+$vertical-tabs-button-color:          #555459;
+$vertical-tabs-button-color-selected: white;
+$vertical-tabs-button-bg-selected:    #439fe0;
+$vertical-tabs-button-text-shadow:    0 1px 0 rgba(0,0,0,.1);
+$vertical-tabs-list-border:           1px solid #DDD;
+
