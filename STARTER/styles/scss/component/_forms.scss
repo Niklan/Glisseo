@@ -98,3 +98,13 @@ label {
     color: lighten($text-color, 25%);
   }
 }
+
+.form-actions {
+  input {
+    margin: 0 pxtorem(6px) 0 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
