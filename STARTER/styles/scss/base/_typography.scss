@@ -15,9 +15,10 @@ body {
 
 a {
   color: $link-color;
-  text-decoration: $link-hover-decoration;
+  text-decoration: $link-decoration;
   &:hover {
     color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
   }
 }
 
