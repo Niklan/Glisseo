@@ -38,8 +38,8 @@
 }
 .highlight-info {
   @extend .highlight;
-  color: $highlight-color;
-  background: $highlight-bg;
+  color: $highlight-info-color;
+  background: $highlight-info-bg;
 }
 .highlight-success {
   @extend .highlight;
@@ -53,6 +53,6 @@
 }
 .highlight-error {
   @extend .highlight;
-  color: $highlight-success-color;
+  color: $highlight-error-color;
   background: $highlight-error-bg;
 }
