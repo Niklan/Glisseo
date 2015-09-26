@@ -29,6 +29,6 @@ $susy: (
   vertical-align: middle;
 }
 .inline-block-tight {
-  @@extend .inline-block;
+  @extend .inline-block;
   margin-right: 5px;
 }
