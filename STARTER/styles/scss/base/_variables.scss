@@ -46,9 +46,9 @@ $ui-site-color-3: green;
 /**
  * Text colors.
  */
-$text-color:           $gray-light;
-$text-color-subtle:    $gray;
-$text-color-highlight: $gray-lighter;
+$text-color:           $gray;
+$text-color-subtle:    $gray-light;
+$text-color-highlight: $gray-darken;
 $text-color-info:      $brand-info;
 $text-color-success:   $brand-success;
 $text-color-warning:   $brand-warning;
