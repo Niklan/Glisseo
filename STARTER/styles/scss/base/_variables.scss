@@ -1,10 +1,11 @@
 /**
  * @file
  * In this file stored global variables. You can adjast values on your needs.
+ * This exercises all UI components and acts as styleguide.
  */
 
 /**
- * Sizes.
+ * Site width sizes such as container width and media query breakpoints.
  */
 $site-width: 1100px !default;
 // Media sizes.
@@ -14,7 +15,7 @@ $md-media: 992px;
 $lg-media: min-width 1200px;
 
 /**
- * Colors presets.
+ * Base colors.
  */
 $gray-base:    #000;
 $gray-darken:  lighten($gray-base, 13.5%);
@@ -33,10 +34,44 @@ $brand-primary: #49A5DE;
 $brand-success: #5cb85c !default;
 $brand-info:    #5bc0de !default;
 $brand-warning: #f0ad4e !default;
-$brand-danger:  #d9534f !default;
+$brand-error:   #d9534f !default;
 
+/**
+ * Site colors.
+ */
+$ui-site-color-1: red;
+$ui-site-color-2: blue;
+$ui-site-color-3: green;
+
+/**
+ * Text colors.
+ */
+$text-color:           $gray-light;
+$text-color-subtle:    $gray;
+$text-color-highlight: $gray-lighter;
+$text-color-info:      $brand-info;
+$text-color-success:   $brand-success;
+$text-color-warning:   $brand-warning;
+$text-color-error:     $brand-error;
+
+/**
+ * Highlight colors.
+ */
+$highlight-color:         #d7dae0;
+$highlight-bg:            #31363f;
+$highlight-info-color:    rgba($brand-info, .5);
+$highlight-info-bg:       $brand-info;
+$highlight-success-color: rgba($brand-success, .5);
+$highlight-success-bg:    $brand-success;
+$highlight-warning-color: rgba($brand-warning, .5);
+$highlight-warning-bg:    $brand-warning;
+$highlight-error-color:   rgba($brand-error, .5);
+$highlight-error-bg:      $brand-error;
+
+/**
+ * Background colors.
+ */
 $body-bg:    white;
-$text-color: $gray-light;
 
 // Links
 $link-color:            #4a90d9;
@@ -53,7 +88,7 @@ $selection-color: inherit;
 $font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family-base:       $font-family-sans-serif;
+$font-family:            $font-family-sans-serif;
 
 $font-size-base:  16px;
 $font-size-large: ceil($font-size-base * 1.25);
@@ -87,7 +122,7 @@ $blockquote-font-size:    ($font-size-base * 1.25) !default;
 $blockquote-border-color: $gray-lighter !default;
 
 // <hr> tag.
-$hr-border: $gray-lighter !default;
+$hr-border-color: $gray-lighter !default;
 
 /**
  * Messages colors.
@@ -107,7 +142,6 @@ $message-warning-color:  #8A6D3B;
 /**
  * Components.
  */
-// Paddings.
 $padding-base-vertical:   6px !default;
 $padding-base-horizontal: 12px !default;
 
@@ -120,7 +154,11 @@ $padding-small-horizontal: 10px !default;
 $padding-xs-vertical:   1px !default;
 $padding-xs-horizontal: 5px !default;
 
-// Border radius.
+$icon-padding: 6px !default;
+
+/**
+ * Border radius sizes.
+ */
 $border-radius-small: 3px !default;
 $border-radius-base:  4px !default;
 $border-radius-large: 6px !default;
@@ -133,7 +171,6 @@ $form-item-padding: 10px !default;
 $input-height-base:  $line-height-computed + ($padding-base-vertical * 2) + 2 !default;
 $input-height-large: ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2 !default;
 $input-height-small: floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2 !default;
-
 // Input default state.
 $input-bg:           white;
 $input-border-color: #999 #b8b8b8 #b8b8b8 #b8b8b8;
@@ -176,7 +213,7 @@ $btn-warning-bg:     $brand-warning !default;
 $btn-warning-border: darken($btn-warning-bg, 5%) !default;
 
 $btn-danger-color:  #fff !default;
-$btn-danger-bg:     $brand-danger !default;
+$btn-danger-bg:     $brand-error !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-info-color:  #fff !default;
@@ -192,6 +229,7 @@ $breadcrumb-margin-bottom:      15px !default;
 $breadcrumb-bg:                 #f5f5f5 !default;
 $breadcrumb-color:              #777 !default;
 $breadcrumb-delimiter-color:    #ccc !default;
+$breadcrumb-font-size:          $font-size-base;
 
 /**
  * Contextual links.
