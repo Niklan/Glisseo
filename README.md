@@ -1,6 +1,6 @@
 # Glisseo
 
-Glisseo is a base theme for Drupal 7 with starterkit theme.
+Glisseo is a base theme for Drupal 8 with starterkit theme.
 
 Glisseo provides good starting points for creating your Drupal theme from scratch.
 
