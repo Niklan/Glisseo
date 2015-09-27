@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Glisseo theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function glisseo_preprocess_html(&$variables) {
+
+}

@@ -1,0 +1,118 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a single page.
+ *
+ */
+#}
+<div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
+      <div class="section layout-container clearfix">
+        {{ page.secondary_menu }}
+        {% if logo %}
+          <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home" id="logo">
+            <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
+          </a>
+        {% endif %}
+        {% if site_name or site_slogan %}
+          <div id="name-and-slogan"{% if hide_site_name and hide_site_slogan %} class="visually-hidden"{% endif %}>
+            {% if site_name %}
+              {% if title %}
+                <div id="site-name"{% if hide_site_name %} class="visually-hidden"{% endif %}>
+                  <strong>
+                    <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home"><span>{{ site_name }}</span></a>
+                  </strong>
+                </div>
+              {# Use h1 when the content title is empty #}
+              {% else %}
+                <h1 id="site-name"{% if hide_site_name %} class="visually-hidden" {% endif %}>
+                  <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home"><span>{{ site_name }}</span></a>
+                </h1>
+              {% endif %}
+            {% endif %}
+            {% if site_slogan %}
+              <div id="site-slogan"{% if hide_site_slogan %} class="visually-hidden"{% endif %}>
+                {{ site_slogan }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {{ page.header }}
+        {{ page.primary_menu }}
+      </div>
+    </header>
+    {% if page.highlighted %}
+      <div class="highlighted">
+        <aside class="layout-container section clearfix" role="complementary">
+          {{ page.highlighted }}
+        </aside>
+      </div>
+    {% endif %}
+    {% if page.featured_top %}
+      <div class="featured-top">
+        <aside class="featured-top__inner section layout-container clearfix" role="complementary">
+          {{ page.featured_top }}
+        </aside>
+      </div>
+    {% endif %}
+    <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+      <div id="main" class="layout-main clearfix">
+        {{ page.breadcrumb }}
+        <main id="content" class="column main-content" role="main">
+          <section class="section">
+            <a id="main-content" tabindex="-1"></a>
+            {{ title_prefix }}
+            {% if title %}
+              <h1 class="title page-title">
+                {{ title }}
+              </h1>
+            {% endif %}
+            {{ title_suffix }}
+            {{ page.content }}
+          </section>
+        </main>
+        {% if page.sidebar_first %}
+          <div id="sidebar-first" class="column sidebar">
+            <aside class="section" role="complementary">
+              {{ page.sidebar_first }}
+            </aside>
+          </div>
+        {% endif %}
+        {% if page.sidebar_second %}
+          <div id="sidebar-second" class="column sidebar">
+            <aside class="section" role="complementary">
+              {{ page.sidebar_second }}
+            </aside>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
+      <div class="featured-bottom">
+        <aside class="layout-container clearfix" role="complementary">
+          {{ page.featured_bottom_first }}
+          {{ page.featured_bottom_second }}
+          {{ page.featured_bottom_third }}
+        </aside>
+      </div>
+    {% endif %}
+    <footer class="site-footer">
+      <div class="layout-container">
+        {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+          <div class="site-footer__top clearfix">
+            {{ page.footer_first }}
+            {{ page.footer_second }}
+            {{ page.footer_third }}
+            {{ page.footer_fourth }}
+          </div>
+        {% endif %}
+        {% if page.footer_fifth %}
+          <div class="site-footer__bottom">
+            {{ page.footer_fifth }}
+          </div>
+        {% endif %}
+      </div>
+    </footer>
+  </div>
+</div>
