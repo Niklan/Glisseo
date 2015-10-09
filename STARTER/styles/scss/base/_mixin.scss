@@ -10,7 +10,7 @@
  */
 @mixin font-size($size) {
   font-size: $size;
-  font-size: pxtorem($size);
+  font-size: rem($size);
 }
 
 /**
