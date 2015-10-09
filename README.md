@@ -14,7 +14,6 @@ Glisseo provides good starting points for creating your Drupal theme from scratc
 *  Good structure.
 *  (optional) Predefined DisplaySuite layouts.
 *  (optional) Clear Views templates with more semantic code (footer, section, header).
-*  (optional) [Animate.css](http://daneden.github.io/animate.css/) [SASS port](https://github.com/geoffgraham/animate.scss) for visual effects.
 *  Flexbox mixins with old syntax support.
 
 and much more..
