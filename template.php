@@ -67,6 +67,12 @@ function glisseo_preprocess_html(&$variables) {
     if (isset($matches[2][0]) && $matches[2][0] == 'sidebar' && $blocks = block_get_blocks_by_region($region_key)) {
       $region_classes[] = drupal_html_class($region_key);
     }
+    // For Context module.
+    elseif (function_exists('context_get_plugin') && $reaction = context_get_plugin('reaction', 'block')) {
+      if (!empty($reaction->block_get_blocks_by_region($region_key))) {
+        $region_classes[] = drupal_html_class($region_key);
+      }
+    }
   }
 
   if (empty($region_classes)) {
