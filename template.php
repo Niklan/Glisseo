@@ -24,6 +24,20 @@ function glisseo_preprocess_html(&$variables) {
 
   $variables['html_attributes'] = drupal_attributes($html_attributes);
 
+  // Remove other classes. But we save some classes from core.
+  $safe_classes = array(
+    'front',
+    'not-front',
+    'not-logged-in',
+    'logged-in',
+  );
+
+  foreach ($variables['classes_array'] as $key => $class) {
+    if (!in_array($class, $safe_classes)) {
+      unset($variables['classes_array'][$key]);
+    }
+  }
+
   // RDF namespaces.
   if ($variables['rdf_namespaces']) {
     $prefixes = array();
@@ -36,14 +50,32 @@ function glisseo_preprocess_html(&$variables) {
   // Add template suggestions for 404 and 403 errors.
   // F.e.: html--404.tpl.php
   $status = drupal_get_http_header("status");
-  if($status == "404 Not Found") {
+  if ($status == "404 Not Found") {
     $variables['theme_hook_suggestions'][] = 'html__404';
     $variables['classes_array'][] = drupal_html_class('page-404');
   }
 
-  if($status == "403 Forbidden") {
+  if ($status == "403 Forbidden") {
     $variables['theme_hook_suggestions'][] = 'html__403';
     $variables['classes_array'][] = drupal_html_class('page-403');
+  }
+
+  $region_classes = array();
+  // Get all region list for this theme.
+  foreach (system_region_list($GLOBALS['theme']) as $region_key => $region_name) {
+    preg_match_all("/(.*)(sidebar)(.*)/", $region_key, $matches);
+    if (isset($matches[2][0]) && $matches[2][0] == 'sidebar' && $blocks = block_get_blocks_by_region($region_key)) {
+      $region_classes[] = drupal_html_class($region_key);
+    }
+  }
+
+  if (empty($region_classes)) {
+    $variables['classes_array'][] = 'no-sidebars';
+  }
+  else {
+    foreach ($region_classes as $class) {
+      $variables['classes_array'][] = $class;
+    }
   }
 }
 
@@ -55,11 +87,11 @@ function glisseo_preprocess_page(&$variables, $hook) {
   // Add template suggestions for 404 and 403 errors.
   // F.e.: page--404.tpl.php
   $status = drupal_get_http_header("status");
-  if($status == "404 Not Found") {
+  if ($status == "404 Not Found") {
     $variables['theme_hook_suggestions'][] = 'page__404';
   }
 
-  if($status == "403 Forbidden") {
+  if ($status == "403 Forbidden") {
     $variables['theme_hook_suggestions'][] = 'page__403';
   }
 }
