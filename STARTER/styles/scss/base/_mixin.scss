@@ -9,7 +9,7 @@
  * Font size calculation.
  */
 @mixin font-size($size) {
-  font-size: $size;
+  font-size: #{strip-unit($size)}px;
   font-size: rem($size);
 }
 
