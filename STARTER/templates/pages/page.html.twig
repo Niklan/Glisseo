@@ -50,9 +50,9 @@
  * @ingroup themeable
  */
 #}
-<div class="layout-container">
+<section id="app">
 
-  <header role="banner">
+  <header id="header" role="banner">
     {{ page.header }}
   </header>
 
@@ -65,31 +65,24 @@
 
   {{ page.help }}
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <main id="main" role="main">
 
-    <div class="layout-content">
+    <section id="content">
       {{ page.content }}
-    </div>{# /.layout-content #}
+    </section>{# /.layout-content #}
 
     {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
+      <aside id="sidebar-first" role="complementary">
         {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
       </aside>
     {% endif %}
 
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
+    <footer id="footer" role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endif %}
 
-</div>{# /.layout-container #}
+</section>{# /#app #}
