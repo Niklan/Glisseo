@@ -57,11 +57,11 @@ h6 { @include font-size($font-size-h6); }
 
 small,
 .text-small {
-  font-size: pxtorem($font-size-small);
+  font-size: rem($font-size-small);
 }
 big,
 .text-big {
-  font-size: pxtorem($font-size-large);
+  font-size: rem($font-size-large);
 }
 
 hr {

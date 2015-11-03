@@ -9,8 +9,8 @@
  * Font size calculation.
  */
 @mixin font-size($size) {
-  font-size: $size;
-  font-size: pxtorem($size);
+  font-size: #{strip-unit($size)}px;
+  font-size: rem($size);
 }
 
 /**
