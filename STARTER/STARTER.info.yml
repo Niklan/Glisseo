@@ -6,8 +6,9 @@ base theme: glisseo
 description: 'Glisseo is a base theme for fast and easy start to theme your project.'
 package: Glisseo
 core: 8.x
+# Don't forget to change this line.
 libraries:
-  - starter/global-styling
+  - STARTER/global-styling
 regions:
   navigation: Navigation
   content: Content
