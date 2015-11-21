@@ -14,9 +14,16 @@ Glisseo provides good starting points for creating your Drupal theme from scratc
 *  Good structure.
 *  (optional) Predefined DisplaySuite layouts.
 *  (optional) Clear Views templates with more semantic code (footer, section, header).
-*  (optional) [Animate.css](http://daneden.github.io/animate.css/) [SASS port](https://github.com/geoffgraham/animate.scss) for visual effects.
 *  Flexbox mixins with old syntax support.
 
 and much more..
 
 (optional) - you can use or not this features. Remove it from theme not destroy it.
+
+
+## How to use it.
+
+1. Download and place the glisseo folder to /themes
+2. Copy STARTER theme and place it in /themes as well.
+3. Rename folder to your theme name, f.e. 'mytheme'.
+4. Don't forget to do this also in filenames with UPPERCASE names STARTER.
