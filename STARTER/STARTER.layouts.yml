@@ -1,6 +1,7 @@
 glisseo_reset:
   label: Glisseo - Reset
   category: Glisseo
+  class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
   template: templates/ds-layouts/glisseo-reset/glisseo-reset
   icon: templates/ds-layouts/glisseo-reset/glisseo-reset.png
