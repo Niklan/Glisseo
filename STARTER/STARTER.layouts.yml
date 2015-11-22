@@ -2,8 +2,8 @@ glisseo_reset:
   label: Glisseo - Reset
   category: Glisseo
   type: partial
-  template: templates/ds_layouts/glisseo-reset/glisseo-reset
-  icon: templates/ds_layouts/glisseo_reset/glisseo-reset.png
+  template: templates/ds-layouts/glisseo-reset/glisseo-reset
+  icon: templates/ds-layouts/glisseo-reset/glisseo-reset.png
   regions:
     content:
       label: Content
