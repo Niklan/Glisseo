@@ -90,7 +90,7 @@ $font-family-serif:      Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family:            $font-family-sans-serif;
 
-$font-size-base:  16px;
+$font-size-base:  15px;
 $font-size-large: ceil($font-size-base * 1.25);
 $font-size-small: ceil($font-size-base * 0.85);
 
@@ -172,9 +172,10 @@ $input-height-base:  $line-height-computed + ($padding-base-vertical * 2) + 2 !d
 $input-height-large: ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2 !default;
 $input-height-small: floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2 !default;
 // Input default state.
-$input-bg:           white;
-$input-border-color: #999 #b8b8b8 #b8b8b8 #b8b8b8;
-$input-box-shadow:   inset 0 1px 1px rgba(black, .1);
+$input-bg:            white;
+$input-border-color:  #999 #b8b8b8 #b8b8b8 #b8b8b8;
+$input-box-shadow:    inset 0 1px 1px rgba(black, .1);
+$input-border-radius: $border-radius-small;
 // input:focus
 $input-bg-focus:           white;
 $input-border-color-focus: #2780f8;
