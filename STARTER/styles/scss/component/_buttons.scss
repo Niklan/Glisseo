@@ -17,12 +17,11 @@ button,
   font-weight: $btn-font-weight;
   padding: $padding-base-vertical $padding-base-horizontal;
   line-height: $line-height-base;
-  border-radius: $border-radius-small;
   color: $btn-default-color;
   background: $btn-default-bg;
   border: 1px solid $btn-default-border;
   box-sizing: border-box;
-  border-radius: $border-radius-small;
+  border-radius: $btn-border-radius;
   text-align: center;
 }
 
