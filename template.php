@@ -69,7 +69,8 @@ function glisseo_preprocess_html(&$variables) {
     }
     // For Context module.
     elseif (function_exists('context_get_plugin') && $reaction = context_get_plugin('reaction', 'block')) {
-      if (!empty($reaction->block_get_blocks_by_region($region_key))) {
+      $region_blocks = $reaction->block_get_blocks_by_region($region_key);
+      if (!empty($region_blocks)) {
         $region_classes[] = drupal_html_class($region_key);
       }
     }
