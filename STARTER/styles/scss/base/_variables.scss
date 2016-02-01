@@ -14,108 +14,9 @@ $sm-media: 768px;
 $md-media: 992px;
 $lg-media: min-width 1200px;
 
-/**
- * Base colors.
- */
-$gray-base:    #000;
-$gray-darken:  lighten($gray-base, 13.5%);
-$gray-dark:    lighten($gray-base, 20%);
-$gray:         lighten($gray-base, 33.5%);
-$gray-light:   lighten($gray-base, 46.7%);
-$gray-lighter: lighten($gray-base, 93.5%);
-
-$brand-main: #f44336;
-$brand-border-color: #E8E8E8;
-
-/**
- * Branding.
- */
-$brand-primary: #49A5DE;
-$brand-success: #5cb85c !default;
-$brand-info:    #5bc0de !default;
-$brand-warning: #f0ad4e !default;
-$brand-error:   #d9534f !default;
-
-/**
- * Site colors.
- */
-$ui-site-color-1: red;
-$ui-site-color-2: blue;
-$ui-site-color-3: green;
-
-/**
- * Text colors.
- */
-$text-color:           $gray-dark;
-$text-color-subtle:    $gray-light;
-$text-color-highlight: $gray-darken;
-$text-color-info:      $brand-info;
-$text-color-success:   $brand-success;
-$text-color-warning:   $brand-warning;
-$text-color-error:     $brand-error;
-
-/**
- * Highlight colors.
- */
-$highlight-color:         #d7dae0;
-$highlight-bg:            #31363f;
-$highlight-info-color:    lighten($brand-info, 40%);
-$highlight-info-bg:       $brand-info;
-$highlight-success-color: lighten($brand-success, 40%);
-$highlight-success-bg:    $brand-success;
-$highlight-warning-color: lighten($brand-warning, 40%);
-$highlight-warning-bg:    $brand-warning;
-$highlight-error-color:   lighten($brand-error, 40%);
-$highlight-error-bg:      $brand-error;
-
-/**
- * Background colors.
- */
-$body-bg:    white;
-
-// Links
-$link-color:            #4a90d9;
-$link-decoration:       none;
-$link-hover-color:      #276ea3;
-$link-hover-decoration: none;
-
-$selection-bg:    $gray-lighter;
-$selection-color: inherit;
-
-/**
- * Typography.
- */
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family:            $font-family-sans-serif;
-
-$font-size-base:  15px;
-$font-size-large: ceil($font-size-base * 1.25);
-$font-size-small: ceil($font-size-base * 0.85);
-
-$font-size-h1: floor($font-size-base * 2.15);
-$font-size-h2: floor($font-size-base * 1.75);
-$font-size-h3: ceil($font-size-base * 1.5);
-$font-size-h4: ceil($font-size-base * 1.25);
-$font-size-h5: $font-size-base;
-$font-size-h6: ceil($font-size-base * 0.85);
-
-// Unit-less cuz used in buttons, inputs, etc.
-$line-height-base:     1.428571429;
-$line-height-computed: floor($line-height-base * $font-size-base);
-// Used in compontents.
-$line-height-large: 1.3333333;
-$line-height-small: 1.5;
-
-// Headers default settings.
-$headings-font-family:    inherit !default;
-$headings-font-weight:    500 !default;
-$headings-line-height:    1.1 !default;
-$headings-color:          inherit !default;
-
-// <mark> tag.
-$mark-bg: #DFF0D8;
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/components";
 
 // Blockqoutes.
 $blockquote-font-size:    ($font-size-base * 1.25) !default;
@@ -139,29 +40,11 @@ $message-warning-bg:     #FCF8E3;
 $message-warning-border: #FAEBCC;
 $message-warning-color:  #8A6D3B;
 
-/**
- * Components.
- */
-$padding-base-vertical:   6px !default;
-$padding-base-horizontal: 12px !default;
 
-$padding-large-vertical:   10px !default;
-$padding-large-horizontal: 16px !default;
-
-$padding-small-vertical:   5px !default;
-$padding-small-horizontal: 10px !default;
-
-$padding-xs-vertical:   1px !default;
-$padding-xs-horizontal: 5px !default;
-
-$icon-padding: 6px !default;
 
 /**
  * Border radius sizes.
  */
-$border-radius-small: 3px !default;
-$border-radius-base:  4px !default;
-$border-radius-large: 6px !default;
 
 /**
  * Forms.
