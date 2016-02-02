@@ -33,3 +33,10 @@ $headings-font-family:    inherit !default;
 $headings-font-weight:    500 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
+
+// Blockqoutes.
+$blockquote-font-size:    ($font-size-base * 1.25) !default;
+$blockquote-border-color: $gray-lighter !default;
+
+// <hr> tag.
+$hr-border-color: $gray-lighter !default;
