@@ -8,9 +8,12 @@
 /**
  * Font size calculation.
  */
-@mixin font-size($size) {
-  font-size: #{strip-unit($size)}px;
-  font-size: rem($size);
+@mixin font-size($size, $computeLineHeight: false) {
+ font-size: #{strip-unit($size)}px;
+ font-size: rem($size);
+ @if $computeLineHeight == true {
+   line-height: #{floor($line-height-base * $size)}px;
+ }
 }
 
 /**
