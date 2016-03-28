@@ -24,20 +24,6 @@ function glisseo_preprocess_html(&$variables) {
 
   $variables['html_attributes'] = drupal_attributes($html_attributes);
 
-  // Remove other classes. But we save some classes from core.
-  $safe_classes = array(
-    'front',
-    'not-front',
-    'not-logged-in',
-    'logged-in',
-  );
-
-  foreach ($variables['classes_array'] as $key => $class) {
-    if (!in_array($class, $safe_classes)) {
-      unset($variables['classes_array'][$key]);
-    }
-  }
-
   // RDF namespaces.
   if ($variables['rdf_namespaces']) {
     $prefixes = array();
