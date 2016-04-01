@@ -46,8 +46,9 @@ select {
     transition: all 200ms linear;
   }
 
-  &:disabled {
-    cursor: $input-cursor-disabled;
+  &:disabled,
+  &:read-only {
+    cursor: not-allowed;
     background: $input-bg-disabled;
     font-size: 100%;
     color: $input-color-disabled;
