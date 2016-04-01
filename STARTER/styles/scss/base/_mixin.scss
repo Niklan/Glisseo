@@ -274,6 +274,7 @@
  * Button style generator.
  */
 @mixin button-variant($color, $background, $border) {
+  @extend .btn;
   color: $color;
   background-color: $background;
   border-color: $border;
