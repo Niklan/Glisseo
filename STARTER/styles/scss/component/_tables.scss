@@ -1,61 +1,145 @@
 /**
  * Tables style.
  */
+
 table {
+  background: $table-bg;
+}
+
+caption {
+  padding-top: $table-cell-padding;
+  padding-bottom: $table-cell-padding;
+  color: $text-color-subtle;
+  text-align: left;
+}
+
+th {
+  text-align: left;
+}
+
+.table {
   width: 100%;
-  background: #fff;
-  margin: 1em 0;
-  border: 1px solid #d0d0d0;
-  box-shadow: none;
-  color: $text-color;
-  border-collapse: separate;
-  border-spacing: 0;
-
-  thead {
-    tr {
-      th {
-        cursor: auto;
-        text-align: left;
-        color: rgba(0,0,0,.8);
-        padding: .7em .8em;
-        vertical-align: middle;
-        font-weight: 700;
-        text-transform: none;
-        border-bottom: 2px solid #ddd;
-        border-left: none;
-
-        &:first-child {
-          border-top-left-radius: .25rem;
-        }
-
-        &:last-child {
-          border-top-right-radius: .25rem;
-        }
+  max-width: 100%;
+  margin-bottom: $line-height-computed;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-cell-padding;
+        line-height: $line-height-base;
+        vertical-align: top;
+        border-top: 1px solid $table-border-color;
       }
     }
   }
 
-  tbody {
-    tr {
-      td {
-        padding: .7em .8em;
-        text-align: left;
-        vertical-align: middle;
-        border-top: 1px solid #d4d4d5;
-      }
+  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $table-border-color;
+  }
 
-      &:first-child {
-        td {
-          border-top: none;
-        }
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
       }
     }
   }
 
-  &.table-striped {
-    > tbody {
-      > tr:nth-of-type(2n+1) {
-        background-color: #F9F9F9;
+  > tbody + tbody {
+    border-top: 2px solid $table-border-color;
+  }
+
+  .table {
+    background-color: $body-bg;
+  }
+}
+
+// Table with lower padding size.
+.table-condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: $table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+// Zebra.
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: $table-bg-accent;
+  }
+}
+
+// Hover effect.
+.table-hover {
+  > tbody > tr:hover {
+    background-color: $table-bg-hover;
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%; // Workaround for IE9 bug
+
+  @include breakpoint($xs-media) {
+    width: 100%;
+    margin-bottom: ($line-height-computed * 0.75);
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid $table-border-color;
+
+    > .table {
+      margin-bottom: 0;
+
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    > .table-bordered {
+      border: 0;
+
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
       }
     }
   }
