@@ -44,3 +44,5 @@ xmlrpc.php
 .idea
 # Block system file.
 .directory
+# Node.js
+node_modules/
