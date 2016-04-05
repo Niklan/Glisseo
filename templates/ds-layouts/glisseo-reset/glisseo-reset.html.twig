@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Glisseo reset template.
+ *
+ * Available variables:
+ * - content
+ */
+#}
+<{{ outer_wrapper }} class="{{ attributes.class }}" {{ attributes }} >
+{% if title_suffix.contextual_links is not null %}
+    {{ title_suffix.contextual_links }}
+{% endif %}
+
+  {{ content }}
+</{{ outer_wrapper }}>
+
+{% if drupal_render_children is not null %}
+    {{ drupal_render_children }}
+{% endif %}
