@@ -19,3 +19,7 @@ $icon-padding: 6px !default;
 $border-radius-small: 3px !default;
 $border-radius-base:  4px !default;
 $border-radius-large: 6px !default;
+
+// FontAwesome - rewrite to real path of font folder.
+$fa-font-path: '../scss/component/font-awesome/fonts';
+
