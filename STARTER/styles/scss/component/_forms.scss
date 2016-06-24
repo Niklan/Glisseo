@@ -47,7 +47,7 @@ select {
   }
 
   &:disabled,
-  &:read-only {
+  &[readonly] {
     cursor: not-allowed;
     background: $input-bg-disabled;
     font-size: 100%;
@@ -66,6 +66,7 @@ select {
   border-width: 1px;
   border-style: solid;
   border-color: $select-border-color;
+  cursor: pointer;
 
   &:focus {
     @include gradient-vertical(white, #f9f9f9);

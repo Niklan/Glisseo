@@ -19,3 +19,20 @@ Glisseo provides good starting points for creating your Drupal theme from scratc
 and much more..
 
 (optional) - you can use or not this features. Remove it from theme not destroy it.
+
+## Want to use image sprites?
+
+I recommend to use gulp.spritesmith.
+
+Install it:
+
+~~~bash
+npm install --save-dev gulp.spritesmith
+~~~
+
+Your gulpfile.js should look like
+
+~~~javascript
+
+
+~~~
