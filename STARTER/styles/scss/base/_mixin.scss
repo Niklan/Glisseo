@@ -8,12 +8,13 @@
 /**
  * Font size calculation.
  */
-@mixin font-size($size, $computeLineHeight: false) {
- font-size: #{strip-unit($size)}px;
- font-size: rem($size);
- @if $computeLineHeight == true {
-   line-height: #{floor($line-height-base * $size)}px;
- }
+@mixin font-size($size, $computeLineHeight: true) {
+  $prepared-size: strip-unit($size);
+  font-size: #{$prepared-size}px;
+  font-size: rem($size);
+  @if $computeLineHeight == true {
+    line-height: #{floor($line-height-base * $prepared-size)}px;
+  }
 }
 
 /**
@@ -295,7 +296,7 @@
     border-color: darken($border, 12%);
 
     &:hover,
-    &:focus{
+    &:focus {
       color: $color;
       background-color: darken($background, 17%);
       border-color: darken($border, 25%);
@@ -309,3 +310,4 @@
     }
   }
 }
+
