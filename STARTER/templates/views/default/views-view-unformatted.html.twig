@@ -21,12 +21,15 @@
   <h3>{{ title }}</h3>
 {% endif %}
 {% for row in rows %}
-  {%
-    set row_classes = [
-      default_row_class ? 'views-row',
-    ]
-  %}
-  <div{{ row.attributes.addClass(row_classes) }}>
+  {% if default_row_class %}
+    {% set default_class = row.attributes.addClass('views-row') %}
+  {% endif %}
+
+  {% if row.attributes.class is not empty %}
+    <div{{ row.attributes }}>
+  {% endif %}
     {{ row.content }}
-  </div>
+  {% if row.attributes.class is not empty %}
+    </div>
+  {% endif %}
 {% endfor %}
