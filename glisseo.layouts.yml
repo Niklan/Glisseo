@@ -1,1 +1,10 @@
-# You can define Layouts here.
+glisseo_reset:
+  label: Glisseo - Reset
+  category: Glisseo
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/ds-layout/glisseo-reset/glisseo-reset
+  icon: templates/ds-layout/glisseo-reset/glisseo-reset.png
+  regions:
+    content:
+      label: Content

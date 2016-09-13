@@ -17,6 +17,8 @@ $susy: (
   global-box-sizing: border-box,
 );
 
+@include border-box-sizing();
+
 /**
  * Some blocks classes.
  */
