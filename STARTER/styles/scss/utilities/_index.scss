@@ -3,9 +3,6 @@
  * Importing Utilities files.
  */
 
-@import "breakpoint/breakpoint",
-        "susy/susy",
-        "variables/index",
-        "font-awesome/font-awesome",
+@import "variables/index",
         "functions",
         "mixins";
