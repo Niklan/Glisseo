@@ -1,0 +1,29 @@
+.breadcrumbs {
+  color: $breadcrumb-color;
+  background: $breadcrumb-bg;
+  padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
+  margin-bottom: $breadcrumb-margin-bottom;
+  border-radius: $border-radius-base;
+  font-size: $breadcrumb-font-size;
+  .delimiter {
+    color: $breadcrumb-delimiter-color;
+  }
+
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        &:after {
+          content: '››';
+          display: inline-block;
+          color: $breadcrumb-delimiter-color;
+        }
+      }
+    }
+  }
+}
