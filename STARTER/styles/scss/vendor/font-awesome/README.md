@@ -2,7 +2,7 @@
 
 Font Awesome integration.
 
-Version: 4.3.1
+Version: 4.6.3
 
 Usage from SCSS
 
@@ -13,4 +13,10 @@ Usage from SCSS
     @extend .fa-drupal;
   }
 }
+~~~
+
+or
+
+~~~scss
+@include icon('drupal');
 ~~~
