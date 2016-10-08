@@ -3,9 +3,13 @@
  * Define the breakpoints at which your layout will change, adapting to different screen sizes.
  */
 
-$site-width: 1100px !default;
+$site-width: 1200px !default;
+$site-width-sm: 768px;
+$site-width-md: 1024px;
+$site-width-lg: 1200px;
+
 // Media sizes.
 $xs-media: max-width 767px;
-$sm-media: 768px;
-$md-media: 992px;
+$sm-media: 768px 1023px;
+$md-media: min-width 1024px;
 $lg-media: min-width 1200px;

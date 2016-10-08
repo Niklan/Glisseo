@@ -9,13 +9,13 @@ $input-height-large: ceil($font-size-large * $line-height-large) + ($padding-lar
 $input-height-small: floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2 !default;
 // Input default state.
 $input-bg:            white;
-$input-border-color:  #c3c3c3;
-$input-box-shadow:    inset 0 1px 3px rgba(black, .1);
+$input-border-color:  rgba(34,36,38,.15);
+$input-box-shadow:    none;
 $input-border-radius: $border-radius-small;
 // input:focus
 $input-bg-focus:           white;
-$input-border-color-focus: darken($input-border-color, 15%);
-$input-box-shadow-focus:   $input-box-shadow, 0 0px 7px rgba(#2780f8, .15);
+$input-border-color-focus: #85B7D9;
+$input-box-shadow-focus:   none;
 // input:disabled
 $input-bg-disabled:     rgb(250, 250, 250);
 $input-color-disabled:  rgba(163, 163, 163, 1);

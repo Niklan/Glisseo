@@ -2,18 +2,24 @@
  * @file
  * Mixin file
  */
-// Import functions.
-@import "functions";
 
 /**
- * Font size calculation.
+ * Font size with line-height.
  */
-@mixin font-size($size, $computeLineHeight: false) {
- font-size: #{strip-unit($size)}px;
- font-size: rem($size);
- @if $computeLineHeight == true {
-   line-height: #{floor($line-height-base * $size)}px;
- }
+@mixin font-size($size) {
+  font-size: $size;
+  line-height: #{floor($line-height-base * $size)};
+}
+
+/**
+ * Font size calculation with rem.
+ */
+@mixin font-size-rem($size, $computeLineHeight: false) {
+  font-size: #{strip-unit($size)}px;
+  font-size: rem($size);
+  @if $computeLineHeight == true {
+    line-height: #{floor($line-height-base * $size)}px;
+  }
 }
 
 /**
@@ -273,30 +279,30 @@
 /**
  * Button style generator.
  */
-@mixin button-variant($color, $background, $border) {
+@mixin button-variant($background, $border: transparent, $color-dark: $btn-font-color-dark, $color-light: $btn-font-color-light) {
   @extend .btn;
-  color: $color;
+  color: color-contrast($background, $color-dark, $color-light);
   background-color: $background;
   border-color: $border;
 
   &:focus {
-    color: $color;
+    color: color-contrast($background, $color-dark, $color-light);
     background-color: darken($background, 10%);
     border-color: darken($border, 25%);
   }
   &:hover {
-    color: $color;
+    color: color-contrast($background, $color-dark, $color-light);
     background-color: darken($background, 10%);
     border-color: darken($border, 12%);
   }
   &:active {
-    color: $color;
+    color: color-contrast($background, $color-dark, $color-light);
     background-color: darken($background, 10%);
     border-color: darken($border, 12%);
 
     &:hover,
     &:focus{
-      color: $color;
+      color: color-contrast($background, $color-dark, $color-light);
       background-color: darken($background, 17%);
       border-color: darken($border, 25%);
     }
@@ -307,5 +313,65 @@
       background-color: $background;
       border-color: $border;
     }
+  }
+}
+
+/**
+ * Mixin for xs media.
+ */
+@mixin media-xs {
+  @include breakpoint($xs-media) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for sm media.
+ */
+@mixin media-sm {
+  @include breakpoint($sm-media) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for md media.
+ */
+@mixin media-md {
+  @include breakpoint($md-media) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for lg media.
+ */
+@mixin media-lg {
+  @include breakpoint($lg-media) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for xs and sm media.
+ */
+@mixin media-xs-sm {
+  @include breakpoint(($xs-media, $sm-media)) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for susy container of all media breakpoints.
+ */
+@mixin media-containers($sm: $site-width-sm, $md: $site-width-md, $lg: $site-width-lg) {
+  @include media-sm {
+    @include container($sm);
+  }
+  @include media-md {
+    @include container($md);
+  }
+  @include media-lg {
+    @include container($lg);
   }
 }
