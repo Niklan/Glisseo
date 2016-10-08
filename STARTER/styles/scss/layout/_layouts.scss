@@ -18,19 +18,3 @@ $susy: (
 );
 
 @include border-box-sizing();
-
-/**
- * Some blocks classes.
- */
-.block {
-  margin-bottom: 10px;
-}
-.inline-block {
-  margin-right: 10px;
-  display: inline-block;
-  vertical-align: middle;
-}
-.inline-block-tight {
-  @extend .inline-block;
-  margin-right: 5px;
-}
