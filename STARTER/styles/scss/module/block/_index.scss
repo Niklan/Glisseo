@@ -1,8 +1,1 @@
 // @import "file-name";
-body {
-  color: blue;
-
-  @include media-md {
-    color: red;
-  }
-}
