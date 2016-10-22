@@ -316,6 +316,8 @@
 @mixin button-variant($background, $border: transparent, $color-dark: $btn-font-color-dark, $color-light: $btn-font-color-light) {
   @extend .btn;
   @include _background-switcher($background);
+  border-width: 1px;
+  border-style: solid;
   @include _border-switcher($border);
   color: color-contrast($background, $color-dark, $color-light);
 
