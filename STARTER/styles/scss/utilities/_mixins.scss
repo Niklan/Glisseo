@@ -7,8 +7,8 @@
  * Font size with line-height.
  */
 @mixin font-size($size) {
-  font-size: $size;
-  line-height: #{floor($line-height-base * $size)};
+  font-size: #{strip-unit($size)}px;
+  line-height: #{strip-unit(floor($line-height-base * $size))}px;
 }
 
 /**
@@ -277,41 +277,75 @@
 }
 
 /**
+ * You can pass single color as string or array with two colors.
+ * If you pass array, background will be gradient, if not, flat color.
+ */
+@mixin _background-switcher($background, $darken: 0) {
+  @if type_of($background) == 'list' {
+    @include gradient-vertical(darken(nth($background, 1), $darken), darken(nth($background, 2), $darken));
+  }
+  @else {
+    background-color: darken($background, $darken);
+  }
+}
+
+/**
+ * As css implementation of border-color, just for passed variable. If single - border color will be single colored, if
+ * more than two, so border will be different color according to css specification of border-color.
+ */
+@mixin _border-switcher($border, $darken: 0) {
+  @if type_of($border) == 'list' {
+    @if length($border) == 2 {
+      border-color: darken(nth($border, 1), $darken) darken(nth($border, 2));
+    }
+    @else if length($border) == 3 {
+      border-color: darken(nth($border, 1), $darken) darken(nth($border, 2), $darken) darken(nth($border, 3), $darken);
+    }
+    @else if length($border) == 4 {
+      border-color: darken(nth($border, 1), $darken) darken(nth($border, 2), $darken) darken(nth($border, 3), $darken) darken(nth($border, 4), $darken);
+    }
+  }
+  @else {
+    border-color: darken($border, $darken);
+  }
+}
+
+/**
  * Button style generator.
  */
 @mixin button-variant($background, $border: transparent, $color-dark: $btn-font-color-dark, $color-light: $btn-font-color-light) {
   @extend .btn;
+  @include _background-switcher($background);
+  @include _border-switcher($border);
   color: color-contrast($background, $color-dark, $color-light);
-  background-color: $background;
-  border-color: $border;
 
   &:focus {
+    @include _background-switcher($background, 5%);
+    @include _border-switcher($border, 25%);
     color: color-contrast($background, $color-dark, $color-light);
-    background-color: darken($background, 10%);
-    border-color: darken($border, 25%);
   }
   &:hover {
+    @include _background-switcher($background, 5%);
+    @include _border-switcher($border, 12%);
     color: color-contrast($background, $color-dark, $color-light);
-    background-color: darken($background, 10%);
-    border-color: darken($border, 12%);
   }
   &:active {
+    @include _background-switcher($background, 5%);
+    @include _border-switcher($border, 12%);
     color: color-contrast($background, $color-dark, $color-light);
-    background-color: darken($background, 10%);
-    border-color: darken($border, 12%);
 
     &:hover,
-    &:focus{
+    &:focus {
+      @include _background-switcher($background, 15%);
+      @include _border-switcher($border, 25%);
       color: color-contrast($background, $color-dark, $color-light);
-      background-color: darken($background, 17%);
-      border-color: darken($border, 25%);
     }
   }
   &[disabled] {
     &:hover,
     &:focus {
-      background-color: $background;
-      border-color: $border;
+      @include _background-switcher($background, 5%);
+      @include _border-switcher($border);
     }
   }
 }
@@ -373,5 +407,24 @@
   }
   @include media-lg {
     @include container($lg);
+  }
+}
+
+/**
+ * Mixin for FontAwesome icons.
+ */
+@mixin icon($name, $position: before) {
+  &:#{$position} {
+    content: $name;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    @if $position == before {
+      margin-right: 0.4em;
+    } @else {
+      margin-left: 0.4em;
+    }
   }
 }
