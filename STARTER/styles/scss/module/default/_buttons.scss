@@ -13,25 +13,17 @@
   font-weight: $btn-font-weight;
   padding: $padding-base-vertical $padding-base-horizontal;
   line-height: $line-height-base;
-  color: color-contrast($btn-default-bg);
-  background: $btn-default-bg;
-  border: 1px solid $btn-default-border;
   box-sizing: border-box;
   border-radius: $btn-border-radius;
   text-align: center;
-}
-
-/**
- * Default button style.
- */
-.btn {
-  @extend .btn;
+  color: color-contrast($btn-default-bg);
   @include button-variant($btn-default-bg, $btn-default-border);
 }
 
 /**
  * Submit and primary button style.
  */
+.form-submit,
 .btn-primary {
   @extend .btn;
   @include button-variant($btn-primary-bg, $btn-primary-border);
