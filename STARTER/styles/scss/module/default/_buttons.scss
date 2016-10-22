@@ -6,10 +6,7 @@
 /**
  * Default styles and resets for all buttons used as base for all others.
  */
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-button,
+
 .btn {
   cursor: pointer;
   display: inline-block;
@@ -28,8 +25,6 @@ button,
 /**
  * Default button style.
  */
-input[type="button"],
-button,
 .btn {
   @extend .btn;
   @include button-variant($btn-default-bg, $btn-default-border);
@@ -38,7 +33,6 @@ button,
 /**
  * Submit and primary button style.
  */
-input[type="submit"],
 .btn-primary {
   @extend .btn;
   @include button-variant($btn-primary-bg, $btn-primary-border);
