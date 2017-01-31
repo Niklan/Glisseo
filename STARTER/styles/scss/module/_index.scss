@@ -1,4 +1,6 @@
-@import "extenders",
-        "default/index",
-        "node/index",
-        "block/index";
+@import "extenders";
+@import "default/index";
+@import "node/index";
+@import "block/index";
+@import "views/index";
+@import "taxonomy-term/index";
