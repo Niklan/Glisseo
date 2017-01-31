@@ -398,11 +398,20 @@
 }
 
 /**
+ * Mixin for sm and md media.
+ */
+@mixin media-sm-md {
+  @include breakpoint(($sm-media, $md-media)) {
+    @content;
+  }
+}
+
+/**
  * Mixin for susy container of all media breakpoints.
  */
 @mixin media-containers($sm: $site-width-sm, $md: $site-width-md, $lg: $site-width-lg) {
   @include media-sm {
-    @include container($sm);
+    width: 100%;
   }
   @include media-md {
     @include container($md);
