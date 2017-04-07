@@ -10,9 +10,9 @@ var paths = {
 };
 
 gulp.task('sass', function () {
-  gulp.src(paths.css)
+  return gulp.src(paths.css)
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./styles/css/'));
 });
