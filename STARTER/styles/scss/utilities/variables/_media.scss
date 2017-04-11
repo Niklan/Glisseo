@@ -3,13 +3,31 @@
  * Define the breakpoints at which your layout will change, adapting to different screen sizes.
  */
 
-$site-width: 1200px !default;
-$site-width-sm: 768px;
-$site-width-md: 1024px;
-$site-width-lg: 1200px;
+// Minimum width for breakpoints.
+$media-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
 
-// Media sizes.
-$xs-media: max-width 767px;
-$sm-media: 768px 1023px;
-$md-media: min-width 1024px;
-$lg-media: min-width 1200px;
+// Gutters for container.
+$media-gutter-width: (
+  xs: 30px,
+  sm: 30px,
+  md: 30px,
+  lg: 30px,
+  xl: 30px,
+) !default;
+
+
+// Maximum width for container.
+// @see mixin media-containers-max-width()
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+

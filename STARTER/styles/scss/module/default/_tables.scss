@@ -92,7 +92,7 @@ th {
   overflow-x: auto;
   min-height: 0.01%; // Workaround for IE9 bug
 
-  @include breakpoint($xs-media) {
+  @include media-breakpoint-only(xs) {
     width: 100%;
     margin-bottom: ($line-height-computed * 0.75);
     overflow-y: hidden;

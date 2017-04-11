@@ -353,75 +353,6 @@
 }
 
 /**
- * Mixin for xs media.
- */
-@mixin media-xs {
-  @include breakpoint($xs-media) {
-    @content;
-  }
-}
-
-/**
- * Mixin for sm media.
- */
-@mixin media-sm {
-  @include breakpoint($sm-media) {
-    @content;
-  }
-}
-
-/**
- * Mixin for md media.
- */
-@mixin media-md {
-  @include breakpoint($md-media) {
-    @content;
-  }
-}
-
-/**
- * Mixin for lg media.
- */
-@mixin media-lg {
-  @include breakpoint($lg-media) {
-    @content;
-  }
-}
-
-/**
- * Mixin for xs and sm media.
- */
-@mixin media-xs-sm {
-  @include breakpoint(($xs-media, $sm-media)) {
-    @content;
-  }
-}
-
-/**
- * Mixin for sm and md media.
- */
-@mixin media-sm-md {
-  @include breakpoint(($sm-media, $md-media)) {
-    @content;
-  }
-}
-
-/**
- * Mixin for susy container of all media breakpoints.
- */
-@mixin media-containers($sm: $site-width-sm, $md: $site-width-md, $lg: $site-width-lg) {
-  @include media-sm {
-    width: 100%;
-  }
-  @include media-md {
-    @include container($md);
-  }
-  @include media-lg {
-    @include container($lg);
-  }
-}
-
-/**
  * Mixin for FontAwesome icons.
  */
 @mixin icon($name, $position: before) {
@@ -438,4 +369,100 @@
       margin-left: 0.4em;
     }
   }
+}
+
+/**
+ * Apply styles for provided breakpoint and higher.
+ * @example
+ *   media-breakpoint-up(md)
+ *   Will apply style to 768px and higher.
+ */
+@mixin media-breakpoint-up($name, $breakpoints: $media-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/**
+ * Apply styles for provided breakpoint and lower.
+ * @example
+ *   media-breakpoint-down(md)
+ *   Will apply style to 768px and lowe.
+ */
+@mixin media-breakpoint-down($name, $breakpoints: $media-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/**
+ * Apply styles between two provided breakpoints.
+ * @example
+ *   media-breakpoint-between(md, lg)
+ *   Will apply style between 768px and 1199px.
+ */
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $media-breakpoints) {
+  @include media-breakpoint-up($lower, $breakpoints) {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+/**
+ * Apply styles only for provided breakpoint.
+ * @example
+ *   media-breakpoint-only(md)
+ *   Will apply style between 768px and 991px.
+ */
+@mixin media-breakpoint-only($name, $breakpoints: $media-breakpoints) {
+  @include media-breakpoint-between($name, $name, $breakpoints) {
+    @content;
+  }
+}
+
+/**
+ * Container maximize width allowed for container without gutters.
+ */
+@mixin media-containers-max-width($max-widths: $container-max-widths, $breakpoints: $media-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      width: $container-max-width;
+      max-width: 100%;
+    }
+  }
+}
+
+/**
+ * Gutters with centering for container.
+ */
+@mixin media-container-gutters($gutters: $media-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint in map-keys($gutters) {
+    @include media-breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left:  ($gutter / 2);
+    }
+  }
+}
+
+/**
+ * Container max width with centering and gutters.
+ */
+@mixin media-container() {
+  @include media-containers-max-width();
+  @include media-container-gutters();
 }
