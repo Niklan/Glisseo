@@ -22,7 +22,7 @@ $font-size-h6:    ceil($font-size-base * 0.85);
 
 // Line height.
 // Unit-less cuz used in buttons, inputs, etc.
-$line-height-base:     1.428571429;
+$line-height-base:     1.5 !default;
 $line-height-computed: floor($line-height-base * $font-size-base);
 // Used in compontents.
 $line-height-large: 1.3333333;

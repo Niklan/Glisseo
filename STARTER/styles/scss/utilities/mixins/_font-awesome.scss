@@ -1,0 +1,18 @@
+/**
+ * Mixin for FontAwesome icons.
+ */
+@mixin fa-icon($name, $position: before) {
+  &:#{$position} {
+    content: $name;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    @if $position == before {
+      margin-right: 0.4em;
+    } @else {
+      margin-left: 0.4em;
+    }
+  }
+}

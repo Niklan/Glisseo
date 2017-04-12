@@ -7,17 +7,20 @@
  * Default styles and resets for all buttons used as base for all others.
  */
 .btn {
-  cursor: pointer;
   display: inline-block;
-  vertical-align: middle;
   font-weight: $btn-font-weight;
-  padding: $padding-base-vertical $padding-base-horizontal;
-  line-height: $line-height-base;
-  box-sizing: border-box;
-  border-radius: $btn-border-radius;
+  line-height: $input-btn-line-height;
   text-align: center;
-  color: color-contrast($btn-default-bg);
-  @include button-variant($btn-default-bg, $btn-default-border);
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  font-size: $font-size-base;
+  border-radius: $btn-border-radius;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 
 /**
@@ -26,7 +29,7 @@
 .form-submit,
 .btn-primary {
   @extend .btn;
-  @include button-variant($btn-primary-bg, $btn-primary-border);
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
 /**
@@ -35,7 +38,7 @@
 .btn-warning,
 #edit-preview {
   @extend .btn;
-  @include button-variant($btn-warning-bg, $btn-warning-border);
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
 }
 
 /**
@@ -44,7 +47,7 @@
 .btn-danger,
 #edit-delete {
   @extend .btn;
-  @include button-variant($btn-danger-bg, $btn-danger-border);
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
 /**
@@ -52,7 +55,7 @@
  */
 .btn-success {
   @extend .btn;
-  @include button-variant($btn-success-bg, $btn-success-border);
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
 /**
@@ -60,5 +63,5 @@
  */
 .btn-info {
   @extend .btn;
-  @include button-variant($btn-info-bg, $btn-info-border);
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }

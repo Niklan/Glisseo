@@ -20,30 +20,38 @@ input[autofocus],
 input[required],
 textarea,
 select {
+  $active-border: darken($input-border, 12%);
+
   display: block;
   max-width: 100%;
   width: auto;
-  padding: $padding-base-vertical $padding-base-horizontal;
-  line-height: $line-height-base;
-  background: $input-bg;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  line-height: $input-btn-line-height;
+  background-color: $input-bg;
   border-width: 1px;
   border-style: solid;
-  border-color: $input-border-color;
+  border-color: $input-border;
   border-radius: $input-border-radius;
-  box-shadow: $input-box-shadow;
   box-sizing: border-box;
+  transition: all .2s ease-in-out;
+  @if ($input-enable-shadows) {
+    box-shadow: $input-box-shadow;
+  }
 
   &.error {
     border-color: #e74c3c;
   }
 
+  &:focus,
+  &:hover {
+    border-color: $active-border;
+  }
+
   &:focus {
     outline: medium none;
-    border-color: $input-border-color-focus;
-    box-shadow: $input-box-shadow-focus;
-    background: $input-bg-focus;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+    @if ($input-enable-shadows) {
+      box-shadow: $input-focus-box-shadow;
+    }
   }
 
   &:disabled {
@@ -60,17 +68,7 @@ textarea {
 }
 
 select {
-  @include gradient-vertical(white, #f9f9f9);
-  box-shadow: $select-box-shadow;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $select-border-color;
-
-  &:focus {
-    @include gradient-vertical(white, #f9f9f9);
-    border-color: $select-border-color-focus;
-    box-shadow: $select-box-shadow-focus;
-  }
+  @include gradient-y(white, #f9f9f9);
 }
 
 label {
