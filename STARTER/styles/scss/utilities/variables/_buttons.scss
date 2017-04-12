@@ -3,25 +3,37 @@
  * Buttons background, borders and colors.
  */
 
-$btn-font-weight:      normal !default;
-$btn-font-color-dark:  #333 !default;
-$btn-font-color-light: #fff !default;
+$input-btn-padding-y:   8px !default;
+$input-btn-padding-x:   16px !default;
+$input-btn-line-height: $line-height-base !default;
 
+$btn-font-weight:       normal !default;
+$btn-enable-shadows:    true !default;
+$btn-box-shadow:        inset 0 1px 0 rgba(white,.15), 0 1px 1px !default;
+$btn-focus-box-shadow:  0 0 0 2px rgba($brand-primary, .25) !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba(black,.125) !default;
+$btn-border-radius:     $border-radius-small !default;
+
+$btn-default-color:  #333 !default;
 $btn-default-bg:     #fff !default;
 $btn-default-border: #ccc !default;
-$btn-border-radius:  $border-radius-small;
 
-$btn-primary-bg:     $brand-primary !default;
+$btn-primary-color:  white !default;
+$btn-primary-bg:     #2185d0 !default;
 $btn-primary-border: transparent !default;
 
+$btn-success-color:  white !default;
 $btn-success-bg:     $brand-success !default;
 $btn-success-border: darken($btn-success-bg, 5%) !default;
 
+$btn-warning-color:  white !default;
 $btn-warning-bg:     $brand-warning !default;
 $btn-warning-border: darken($btn-warning-bg, 5%) !default;
 
+$btn-danger-color:  white !default;
 $btn-danger-bg:     $brand-error !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
+$btn-info-color:  white !default;
 $btn-info-bg:     $brand-info !default;
 $btn-info-border: darken($btn-info-bg, 5%) !default;

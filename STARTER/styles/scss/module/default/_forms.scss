@@ -23,8 +23,8 @@ select {
   display: block;
   max-width: 100%;
   width: auto;
-  padding: $padding-base-vertical $padding-base-horizontal;
-  line-height: $line-height-base;
+  padding: $input-btn-padding-y $input-btn-padding-x;
+  line-height: $input-btn-line-height;
   background: $input-bg;
   border-width: 1px;
   border-style: solid;
@@ -60,14 +60,14 @@ textarea {
 }
 
 select {
-  @include gradient-vertical(white, #f9f9f9);
+  @include gradient-y(white, #f9f9f9);
   box-shadow: $select-box-shadow;
   border-width: 1px;
   border-style: solid;
   border-color: $select-border-color;
 
   &:focus {
-    @include gradient-vertical(white, #f9f9f9);
+    @include gradient-y(white, #f9f9f9);
     border-color: $select-border-color-focus;
     box-shadow: $select-box-shadow-focus;
   }
