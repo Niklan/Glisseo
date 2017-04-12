@@ -1,5 +1,5 @@
 <p align="center">
- <h1 align="center">glisseo</h1>
+ <h3 align="center">Glisseo</h3>
 
  <p align="center">
    Base theme for Drupal width starterkit.
