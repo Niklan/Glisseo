@@ -1,13 +1,10 @@
 <p align="center">
- <h3 align="center">Glisseo</h3>
+ <img src="logo.svg" align="center" alt="Glisseo Logo">
 
  <p align="center">
-   Base theme for Drupal width starterkit.
+   Base theme for Drupal with starterkit.
  </p>
 </p>
-
-
-Glisseo provides good starting points for creating your Drupal theme from scratch.
 
 ## Quick start
 
@@ -19,20 +16,21 @@ Glisseo provides good starting points for creating your Drupal theme from scratc
 ## What's this
 
 *  SCSS preprocessor for better CSS experience.
-*  (optional) Susy for creating website much faster with flexible grids.
-*  (optional) FontAwesome for using SVG icons.
-*  (optional) Breakpoint for making your site responsive.
+*  Susy for creating website much faster with flexible grids.
+*  FontAwesome for using SVG icons.
+*  Breakpoint for making your site responsive.
 *  Drupal 8 CSS standarts.
 *  Good structure.
-*  (optional) Predefined DisplaySuite layouts.
-*  (optional) Clear Views templates with more semantic code (footer, section, header).
+*  Predefined DisplaySuite layouts.
+*  Clear Views templates with more semantic code (footer, section, header).
 *  Flexbox mixins with old syntax support.
+*  Lots of other mixins and functions that will make your theming easier and enjoyable.
+*  and much more..
 
-and much more..
-
-(optional) - you can use or not this features. Remove it from theme not destroy it.
+Due of the theme structure, where all parts are separated of each other, you can disable most of them without any pain and consequences, just remove import line and delete files. Theme is highly customazible and you can easly replace any part of it by your needs.
 
 
-## Table of contents
+## Documentation
 
-todo
+*  [Getting started](docs/getting-started.md)
+*  [Responsive guide](docs/responsive-guide.md)

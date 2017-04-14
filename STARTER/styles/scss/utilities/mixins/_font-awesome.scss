@@ -1,7 +1,7 @@
 /**
  * Mixin for FontAwesome icons.
  */
-@mixin fa-icon($name, $position: before) {
+@mixin icon($name, $position: before) {
   &:#{$position} {
     content: $name;
     font-family: FontAwesome;
