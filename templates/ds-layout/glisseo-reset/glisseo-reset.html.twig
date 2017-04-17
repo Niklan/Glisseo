@@ -7,11 +7,10 @@
  * - content
  */
 #}
-<{{ outer_wrapper }} class="{{ attributes.class }}" {{ attributes }} >
+<{{ outer_wrapper }} {{ attributes.setAttribute('class', new_classes) }} >
 {% if title_suffix.contextual_links is not null %}
     {{ title_suffix.contextual_links }}
 {% endif %}
-
   {{ content }}
 </{{ outer_wrapper }}>
 
