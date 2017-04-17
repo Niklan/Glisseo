@@ -1,5 +1,5 @@
 <p align="center">
- <img src="logo.svg" align="center" alt="Glisseo Logo">
+ <img src="https://rawgit.com/Niklan/Glisseo/8.x-1.x/logo.svg" align="center" alt="Glisseo Logo">
 
  <p align="center">
    Base theme for Drupal with starterkit.
