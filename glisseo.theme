@@ -10,7 +10,8 @@
  */
 function glisseo_preprocess_glisseo_reset(&$variables) {
   $entity = $variables['content']['#entity'];
-  $new_classes = $variables['attributes']['class'];
+  // Support for contextual classes.
+  $new_classes = !empty($variables['attributes']['class']) ? $variables['attributes']['class'] : [];
   $entity_type = $entity->getEntityTypeId();
   $bundle = $entity->bundle();
   $view_mode = $variables['content']['#view_mode'];
