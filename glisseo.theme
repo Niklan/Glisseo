@@ -15,14 +15,14 @@ function glisseo_preprocess_glisseo_reset(&$variables) {
   $entity_type = $entity->getEntityTypeId();
   $bundle = $entity->bundle();
   $view_mode = $variables['content']['#view_mode'];
-  $new_classes[] = $entity_type;
-  $new_classes[] = "$bundle-$view_mode";
+  $new_classes[] = str_replace('_', '-', $entity_type);
+  $new_classes[] = str_replace('_', '-', "$bundle-$view_mode");
 
   switch ($entity_type) {
     case 'node':
-      $new_classes[] = $entity->isPromoted() ? : 'promoted';
-      $new_classes[] = $entity->isSticky() ? : 'sticky';
-      $new_classes[] = !$entity->isPublished() ? : 'unpublished';
+      $new_classes[] = $entity->isPromoted() ? 'promoted' : '';
+      $new_classes[] = $entity->isSticky() ? 'sticky' : '';
+      $new_classes[] = !$entity->isPublished() ? 'unpublished' : '';
       break;
   }
 

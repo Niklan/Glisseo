@@ -5,8 +5,8 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
-  scss: './styles/scss/**',
-  css: './styles/scss/styles.scss'
+  scss: 'styles/scss/**',
+  css: 'styles/scss/styles.scss'
 };
 
 gulp.task('sass', function () {
