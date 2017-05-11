@@ -58,9 +58,11 @@ function glisseo_preprocess_glisseo_reset(&$variables) {
  * Adds body classes if certain regions have content.
  */
 function glisseo_preprocess_html(&$variables) {
-  // @TODO maybe better handle all sidebar_* regions and add class with
-  // replacing count to words.
-  if (!empty($variables['page']['sidebar_first'])) {
-    $variables['attributes']['class'][] = 'layout-sidebar-left';
+  if (theme_get_setting('glisseo_sidebars_add_classes')) {
+    foreach ($variables['page'] as $element_key => $element) {
+      if (preg_match("/sidebar_(.+)/", $element_key)) {
+        $variables['attributes']['class'][] = 'layout-' . str_replace('_', '-', $element_key);
+      }
+    }
   }
 }
