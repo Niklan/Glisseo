@@ -1,0 +1,17 @@
+{
+  "name": "drupal/glisseo",
+  "description": "Base theme for Drupal with SCSS and SUSY.",
+  "type": "drupal-theme",
+  "homepage": "https://github.com/Niklan/Glisseo",
+  "authors": [
+    {
+      "name": "Nikita Malyshev (Niklan)",
+      "homepage": "https://niklan.net/"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/Niklan/Glisseo/issues"
+  },
+  "license": "GPL-2.0+",
+  "require": { }
+}
