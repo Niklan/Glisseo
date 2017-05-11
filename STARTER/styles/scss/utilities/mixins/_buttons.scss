@@ -41,3 +41,33 @@
     }
   }
 }
+
+/**
+ * Outline button variant.
+ */
+@mixin button-outline-variant($color, $color-hover: #fff) {
+  @extend .btn;
+  color: $color;
+  background-color: transparent;
+  background-image: none;
+  border-color: $color;
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+
+  &:focus {
+    @if ($btn-enable-shadows) {
+      box-shadow: $btn-focus-box-shadow;
+    }
+  }
+
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+  }
+}

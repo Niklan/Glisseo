@@ -3,9 +3,10 @@
  * Buttons background, borders and colors.
  */
 
-$input-btn-padding-y:   8px !default;
-$input-btn-padding-x:   16px !default;
-$input-btn-line-height: 1.25 !default;
+$input-btn-padding-y:    8px !default;
+$input-btn-padding-x:    16px !default;
+$input-btn-line-height:  1.25 !default;
+$input-btn-border-width: 1px !default;
 
 // Small button
 $input-btn-padding-y-sm:   4px !default;
@@ -19,7 +20,7 @@ $input-btn-line-height-lg: 1.5 !default;
 
 $btn-font-weight:       normal !default;
 $btn-enable-shadows:    true !default;
-$btn-box-shadow:        inset 0 1px 0 rgba(white,.15), 0 1px 1px !default;
+$btn-box-shadow:        0 1px 1px rgba(black, .125) !default;
 $btn-focus-box-shadow:  0 0 0 2px rgba($brand-primary, .25) !default;
 $btn-active-box-shadow: inset 0 3px 5px rgba(black, .125) !default;
 $btn-border-radius:     $border-radius-small !default;

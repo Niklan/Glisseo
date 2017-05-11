@@ -63,6 +63,10 @@ select {
   }
 }
 
+input[type="checkbox"] {
+  display: inline-block;
+}
+
 textarea {
   height: auto;
 }
@@ -78,7 +82,7 @@ label {
   font-weight: bold;
 }
 
-.label-inline {
+.field-label-inline {
   display: inline-block;
 }
 

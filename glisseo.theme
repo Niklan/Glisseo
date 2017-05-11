@@ -5,26 +5,62 @@
  * Functions to support theming in the Glisseo theme.
  */
 
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function glisseo_preprocess_region(&$variables) {
+  $region = $variables['region'];
+
+  if ($region == 'header') {
+    $attributes = new Attribute;
+    $attributes->setAttribute('id', 'header');
+    $attributes->setAttribute('role', 'banner');
+    $variables['attributes'] = $attributes;
+  }
+}
+
 /**
  * Implements hook_preprocess_HOOK().
  */
 function glisseo_preprocess_glisseo_reset(&$variables) {
-  $entity = $variables['content']['#entity'];
-  // Support for contextual classes.
-  $new_classes = !empty($variables['attributes']['class']) ? $variables['attributes']['class'] : [];
-  $entity_type = $entity->getEntityTypeId();
-  $bundle = $entity->bundle();
-  $view_mode = $variables['content']['#view_mode'];
-  $new_classes[] = str_replace('_', '-', $entity_type);
-  $new_classes[] = str_replace('_', '-', "$bundle-$view_mode");
+  if (isset($variables['content']['#entity']) && $entity = $variables['content']['#entity']) {
+    // Support for contextual classes.
+    $new_classes = !empty($variables['attributes']['class']) ? $variables['attributes']['class'] : [];
+    $entity_type = $entity->getEntityTypeId();
+    $bundle = $entity->bundle();
+    $view_mode = $variables['content']['#view_mode'];
+    $new_classes[] = str_replace('_', '-', $entity_type);
+    $new_classes[] = str_replace('_', '-', "$bundle-$view_mode");
 
-  switch ($entity_type) {
-    case 'node':
-      $new_classes[] = $entity->isPromoted() ? 'promoted' : '';
-      $new_classes[] = $entity->isSticky() ? 'sticky' : '';
-      $new_classes[] = !$entity->isPublished() ? 'unpublished' : '';
-      break;
+    switch ($entity_type) {
+      case 'node':
+        $new_classes[] = $entity->isPromoted() ? 'promoted' : '';
+        $new_classes[] = $entity->isSticky() ? 'sticky' : '';
+        $new_classes[] = !$entity->isPublished() ? 'unpublished' : '';
+        break;
+    }
+
+    // This is allows to add this classes via third party preprocesses,
+    // especially from modules, which preprocess called earlier.
+    if (!empty($variables['new_classes'])) {
+      $variables['new_classes'] = array_merge($variables['new_classes'], $new_classes);
+    }
+    else {
+      $variables['new_classes'] = $new_classes;
+    }
   }
+}
 
-  $variables['new_classes'] = $new_classes;
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ * Adds body classes if certain regions have content.
+ */
+function glisseo_preprocess_html(&$variables) {
+  // @TODO maybe better handle all sidebar_* regions and add class with
+  // replacing count to words.
+  if (!empty($variables['page']['sidebar_first'])) {
+    $variables['attributes']['class'][] = 'layout-sidebar-left';
+  }
 }

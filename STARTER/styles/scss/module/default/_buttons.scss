@@ -14,12 +14,10 @@
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  border: 1px solid transparent;
+  border: $input-btn-border-width solid transparent;
   padding: $input-btn-padding-y $input-btn-padding-x;
   font-size: $font-size-base;
   border-radius: $btn-border-radius;
-  transition: all .2s ease-in-out;
-  cursor: pointer;
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 
