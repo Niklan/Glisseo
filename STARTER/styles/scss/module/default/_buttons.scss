@@ -26,7 +26,6 @@
  */
 .form-submit,
 .btn-primary {
-  @extend .btn;
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
@@ -35,7 +34,6 @@
  */
 .btn-warning,
 #edit-preview {
-  @extend .btn;
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
 }
 
@@ -44,7 +42,6 @@
  */
 .btn-danger,
 #edit-delete {
-  @extend .btn;
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
@@ -52,7 +49,6 @@
  * Success button style.
  */
 .btn-success {
-  @extend .btn;
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
@@ -60,6 +56,5 @@
  * Info button style.
  */
 .btn-info {
-  @extend .btn;
   @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }

@@ -1,5 +1,5 @@
 glisseo_reset:
-  label: Glisseo - Reset
+  label: Reset
   category: Glisseo
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
