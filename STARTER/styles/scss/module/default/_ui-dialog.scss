@@ -43,6 +43,22 @@
 
     .ui-dialog-titlebar-close {
       float: right;
+      background: none;
+      width: auto;
+
+      .ui-icon {
+        @include icon($fa-var-close);
+
+        &:before {
+          margin: 0;
+        }
+      }
+
+      .ui-button-text {
+        padding: 0;
+        font-size: $font-family;
+        line-height: $line-height-base;
+      }
     }
   }
 

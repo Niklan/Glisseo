@@ -36,9 +36,9 @@ function glisseo_preprocess_glisseo_reset(&$variables) {
 
     switch ($entity_type) {
       case 'node':
-        $new_classes[] = $entity->isPromoted() ? 'promoted' : '';
-        $new_classes[] = $entity->isSticky() ? 'sticky' : '';
-        $new_classes[] = !$entity->isPublished() ? 'unpublished' : '';
+        $entity->isPromoted() ? $new_classes[] = 'promoted' : NULL;
+        $entity->isSticky() ? $new_classes[] = 'sticky' : NULL;
+        !$entity->isPublished() ? $new_classes[] = 'unpublished' : NULL;
         break;
     }
 
@@ -49,20 +49,6 @@ function glisseo_preprocess_glisseo_reset(&$variables) {
     }
     else {
       $variables['new_classes'] = $new_classes;
-    }
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for HTML document templates.
- * Adds body classes if certain regions have content.
- */
-function glisseo_preprocess_html(&$variables) {
-  if (theme_get_setting('glisseo_sidebars_add_classes')) {
-    foreach ($variables['page'] as $element_key => $element) {
-      if (preg_match("/sidebar_(.+)/", $element_key)) {
-        $variables['attributes']['class'][] = 'layout-' . str_replace('_', '-', $element_key);
-      }
     }
   }
 }

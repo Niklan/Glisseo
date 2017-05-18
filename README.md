@@ -34,3 +34,4 @@ Due of the theme structure, where all parts are separated of each other, you can
 
 *  [Getting started](docs/getting-started.md)
 *  [Responsive guide](docs/responsive-guide.md)
+*  [Live reload files](docs/live-reload.md)

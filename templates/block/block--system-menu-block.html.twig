@@ -31,10 +31,10 @@ set classes = [
   plugin_id|clean_class,
 ]
 %}
-<div{{ attributes.addClass(classes) }}>
+<nav{{ attributes.addClass(classes).setAttribute('role', 'navigation') }}>
   {{ title_prefix }}
   {% if label %}
-    <div{{ title_attributes }}>{{ label }}</div>
+    <div{{ title_attributes.addClass('title') }}>{{ label }}</div>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
@@ -42,4 +42,4 @@ set classes = [
       {{ content }}
     </div>
   {% endblock %}
-</div>
+</nav>
