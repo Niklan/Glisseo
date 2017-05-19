@@ -34,4 +34,5 @@ Due of the theme structure, where all parts are separated of each other, you can
 
 *  [Getting started](docs/getting-started.md)
 *  [Responsive guide](docs/responsive-guide.md)
-*  [Live reload files](docs/live-reload.md)
+*  [LiveReload and BroswerSync integration](docs/live-reload.md)
+*  [Tips, tricks and snippets](docs/tips-tricks-snippets.md)
