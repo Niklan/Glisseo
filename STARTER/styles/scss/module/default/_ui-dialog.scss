@@ -45,6 +45,7 @@
       float: right;
       background: none;
       width: auto;
+      border: none;
 
       .ui-icon {
         @include icon($fa-var-close);

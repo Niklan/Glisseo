@@ -3,7 +3,8 @@
 ## Table of contents
 
 * [Vendor and .gitignore](#vendor-gitignore)
-* [Add sidebar classes to <body>](#sidebar-classes)
+* [Add sidebar classes to body](#sidebar-classes)
+* [Add expanded class to menu items with depth](#menu-depth-classes)
 
 <a name="vendor-gitignore"></a>
 
@@ -33,6 +34,27 @@ function THEMENAME_theme_preprocess_html(&$variables) {
   foreach ($variables['page'] as $element_key => $element) {
     if (preg_match("/sidebar_(.+)/", $element_key)) {
       $variables['attributes']['class'][] = 'layout-' . str_replace('_', '-', $element_key);
+    }
+  }
+}
+~~~
+
+<a name="menu-depth-classes"></a>
+
+## Add expanded class to menu items with depth
+
+If you want to add class to `<li>` element with outher items, use one of this snippets.
+
+### Only for first depth items
+
+~~~php
+/**
+ * Impelemnts hook_preprocess_HOOK().
+ */
+function THEMENAME_preprocess_menu__main(&$variables) {
+  foreach ($variables['items'] as $k => &$v) {
+    if (count($v['below']) > 0) {
+      $v['attributes']->addClass('expanded');
     }
   }
 }
