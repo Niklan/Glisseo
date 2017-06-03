@@ -66,6 +66,7 @@
   .ui-dialog-content {
     padding: $dialog-content-padding;
     border: none;
+    overflow: auto;
   }
 
   .ui-dialog-buttonpane {
