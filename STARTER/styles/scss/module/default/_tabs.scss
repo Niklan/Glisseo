@@ -1,83 +1,30 @@
 /**
  * Tabs style.
  */
-ul.tabs {
+.primary-tabs {
   @include susy-clearfix;
-  // Primary tabs.
-  &.primary {
-    background: $primary-tabs-bg;
-    margin: $primary-tabs-margin;
-    padding: 0;
-    list-style: none;
-    border-bottom: 1px solid $primary-tabs-inactive-color;
+  background: $primary-tabs-bg;
+  margin: $primary-tabs-margin;
+  list-style: none;
 
-    li {
-      float: left;
-      &.active {
-        margin-bottom: -1px;
-        border-bottom: 3px solid $primary-tabs-active-color;
-      }
-      a {
-        color: $primary-tabs-inactive-color;
-        display: block;
-        padding: .5rem .75rem;
-        border: none;
-        text-decoration: none;
-      }
+  li {
+    float: left;
 
-      &.active a,
-      &:hover a {
-        color: $primary-tabs-active-color;
-        transition: all 500ms;
-      }
-    }
-  }
-
-  // Secondary.
-  &.secondary {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-bottom: 1px solid #E0E0E0;
-
-    &:after {
-      content: '';
+    a {
       display: block;
-      float: none;
-      clear: both;
-    }
+      color: $primary-tabs-task-color;
+      background: $primary-tabs-task-background;
+      padding: $primary-tabs-padding;
 
-    li {
-      float: left;
-      display: block;
-      border: none;
-      padding: 0;
-      margin: 0;
-
-      a {
-        display: block;
-        margin: 0;
-        color: #4E5665;
-        padding: 10px 15px;
-        border: none;
-        box-shadow: none;
-        transition: box-shadow 200ms;
+      &:hover {
+        background: darken($primary-tabs-task-background, 5%);
       }
 
-      &.active a {
-        background: white;
-        box-shadow: inset 0px -2px 0px #6D6D6D;
-      }
-
-      &.hover a {
-        box-shadow: inset 0px -2px 0px #6D6D6D;
-        transition: box-shadow 200ms;
+      &.is-active {
+        color: $primary-tabs-task-active-color;
+        background: $primary-tabs-task-active-background;
       }
     }
-  }
-
-  &:last-child {
-    margin-bottom: 15px;
   }
 }
 
