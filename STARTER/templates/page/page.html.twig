@@ -54,8 +54,6 @@
 
   {{ page.header }}
   {{ page.navigation }}
-  {{ page.highlighted }}
-  {{ page.help }}
 
   <main id="main" role="main">
     {{ page.content }}
@@ -68,10 +66,6 @@
 
   </main>
 
-  {% if page.footer %}
-    <footer id="footer" role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  {{ page.footer }}
 
 </section>{# /#app #}

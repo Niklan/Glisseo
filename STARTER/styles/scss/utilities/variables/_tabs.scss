@@ -12,12 +12,12 @@ $vertical-tabs-button-text-shadow:    0 1px 0 rgba(0,0,0,.1);
 $vertical-tabs-list-border:           1px solid #DDD;
 
 // Primary tabs.
-$primary-tabs-bg: #f9f9f9;
+$primary-tabs-bg: #ccc;
 $primary-tabs-margin: 0 0 16px 0;
+$primary-tabs-padding: 10px;
 $primary-tabs-inactive-color: #bdc3c7;
 $primary-tabs-task-background: white;
 $primary-tabs-task-color: black;
-$primary-tabs-padding: 6px 12px;
+$primary-tabs-tab-padding: 6px 12px;
 $primary-tabs-task-active-color: black;
 $primary-tabs-task-active-background: #f5f5f5;
-

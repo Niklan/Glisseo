@@ -5,6 +5,7 @@
   @include susy-clearfix;
   background: $primary-tabs-bg;
   margin: $primary-tabs-margin;
+  padding: $primary-tabs-padding;
   list-style: none;
 
   li {
@@ -14,7 +15,7 @@
       display: block;
       color: $primary-tabs-task-color;
       background: $primary-tabs-task-background;
-      padding: $primary-tabs-padding;
+      padding: $primary-tabs-tab-padding;
 
       &:hover {
         background: darken($primary-tabs-task-background, 5%);
@@ -56,4 +57,3 @@
     }
   }
 }
-
