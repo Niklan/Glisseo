@@ -32,8 +32,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload'); // new
 
 var paths = {
-  scss: 'styles/scss/**',
-  css: 'styles/scss/styles.scss'
+  scss: 'assets/scss/**',
+  css: 'assets/scss/styles.scss'
 };
 
 gulp.task('sass', function () {
@@ -41,7 +41,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./styles/css/'))
+    .pipe(gulp.dest('./assets/css/'))
     .pipe(livereload({ start: true })); // new
 });
 
@@ -78,8 +78,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 
 var paths = {
-  scss: 'styles/scss/**',
-  css: 'styles/scss/styles.scss'
+  scss: 'assets/scss/**',
+  css: 'assets/scss/styles.scss'
 };
 
 gulp.task('serve', ['sass'], function() {
@@ -96,7 +96,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./styles/css/'))
+    .pipe(gulp.dest('./assets/css/'))
     .pipe(browserSync.stream());
 });
 

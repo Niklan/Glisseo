@@ -2,4 +2,4 @@ global-styling:
   version: 1.x
   css:
     theme:
-      styles/css/styles.css: {}
+      assets/css/styles.css: {}
