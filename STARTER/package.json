@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Niklan/Glisseo#readme",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",

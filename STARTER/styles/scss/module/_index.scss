@@ -1,6 +1,12 @@
-@import "extenders";
+/**
+ * @file
+ * Import all subfolders.
+ */
+
 @import "default/index";
 @import "node/index";
 @import "block/index";
 @import "views/index";
 @import "taxonomy-term/index";
+@import "theme/index";
+@import "other/index";

@@ -1,4 +1,18 @@
+/**
+ * http://oddbird.net/susy/
+ */
 @import "../../../node_modules/susy/sass/susy";
 @import "../../../node_modules/susy/sass/plugins/svg-grid";
+
+/**
+ * Normalize.css
+ * @see https://necolas.github.io/normalize.css/
+ */
 @import "../../node_modules/normalize.css/normalize.css";
-@import "font-awesome/index";
+
+/**
+ * FontAwesome
+ * @see http://fontawesome.io
+ */
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+@import "../../../node_modules/font-awesome/scss/font-awesome";
