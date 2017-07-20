@@ -6,6 +6,7 @@ base theme: glisseo
 description: 'Glisseo is a base theme for fast and easy start to theme your project.'
 package: Glisseo
 core: 8.x
+hidden: true # REMOVE IT
 libraries:
   - STARTER/global-styling
 regions:
