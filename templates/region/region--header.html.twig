@@ -13,6 +13,7 @@
  */
 #}
 {% set attributes = attributes.setAttribute('id', 'header') %}
+{% set attributes = attributes.addClass('region-header') %}
 {% set attributes = attributes.setAttribute('role', 'banner') %}
 {% if content %}
   <header{{ attributes }}>

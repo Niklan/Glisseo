@@ -2,3 +2,25 @@
  * @file
  * Main layouts and styles for #app and other elements inside.
  */
+
+#header {
+  .container {
+    @include media-container;
+  }
+}
+
+#main {
+  @extend .clearfix;
+  @include media-container;
+
+  .region-sidebar-first {
+    float: left;
+    width: span(3);
+    margin-right: gutter();
+  }
+
+  .region-content {
+    float: right;
+    width: span(9);
+  }
+}

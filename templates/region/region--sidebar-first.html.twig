@@ -12,13 +12,11 @@
  * @see template_preprocess_region()
  */
 #}
-{% set attributes = attributes.setAttribute('id', 'content') %}
-{% set attributes = attributes.addClass('region-content') %}
-{% set attributes = attributes.setAttribute('role', 'contentinfo') %}
+{% set attributes = attributes.setAttribute('id', 'sidebar-first') %}
+{% set attributes = attributes.addClass('region-sidebar-first') %}
+{% set attributes = attributes.setAttribute('role', 'complementary') %}
 {% if content %}
-  <footer {{ attributes }}>
-    <div class="container">
-      {{ content }}
-    </div>
-  </footer>
+  <aside{{ attributes }}>
+    {{ content }}
+  </aside>
 {% endif %}
