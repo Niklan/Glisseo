@@ -1,20 +1,18 @@
 /**
  * @file
  * Layout settings.
+ *
+ * @see http://oddbird.net/susy/docs/index.html
  */
 
-// Susy settings.
-// Check out more info: http://susy.readthedocs.org/en/latest/settings/
+/**
+ * @see http://oddbird.net/susy/docs/a-config.html#variable--susy
+ */
 $susy: (
-  output: float,
-  math: fluid,
-  container: auto,
-  container-position: center,
-  last-flow: to,
-  columns: 12,
-  gutters: .25,
-  gutter-position: after,
-  global-box-sizing: border-box,
+  'columns': susy-repeat(12),
+  'gutters': .25,
+  'spread': 'narrow',
+  'container-spread': 'narrow',
 );
 
-@include border-box-sizing();
+* { box-sizing: border-box; }

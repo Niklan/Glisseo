@@ -23,7 +23,6 @@
   }
 
   .ui-widget-header {
-    @include susy-clearfix;
     border-radius: $dialog-border-radius;
     background: $dialog-header-background;
     color: $dialog-header-color;
@@ -70,7 +69,6 @@
   }
 
   .ui-dialog-buttonpane {
-    @include susy-clearfix;
     background: $dialog-buttonpane-background;
     padding: $dialog-buttonpane-padding;
     @if ($dialog-buttonpane-border-only-top) {

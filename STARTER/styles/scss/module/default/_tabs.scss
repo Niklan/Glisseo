@@ -2,7 +2,6 @@
  * Tabs style.
  */
 .primary-tabs {
-  @include susy-clearfix;
   background: $primary-tabs-bg;
   margin: $primary-tabs-margin;
   padding: $primary-tabs-padding;

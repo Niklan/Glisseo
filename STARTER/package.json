@@ -21,7 +21,8 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-sourcemaps": "^1.6.0",
+    "susy": "^3.0.0"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"

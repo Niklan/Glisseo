@@ -117,23 +117,25 @@ In most cases it's all about using three mixins: susy-clearfix, span and gallery
 
 By default theme provide basic settings for SUSY for 12 column grid system. You can edit those settings in *styles/scss/layout/_layouts.scss*.
 
-### susy-clearfix
+### clearfix
 
 This mixin is like `.clearfix` class, which you apply to container element, inside which will be grid columns.
 
 ```scss
 .container {
-  @include susy-clearfix;
+  @include clearfix;
 }
 ```
 
-### span()
+### span() mixin
 
 This is your weapon, this mixin is so powerful, so below covered just simple use of it. With him you creates columns, pass grid size as argument. As mentiout above, the default layout is 12 grid system, so you can pass any number from 1 to 12 included.
 
+This mixin is handmaded as backport of Susy2, and works around susy functions.
+
 ```scss
 .container {
-  @include susy-clearfix;
+  @include clearfix;
   
   .left {
     @include span(4);
@@ -145,7 +147,7 @@ This is your weapon, this mixin is so powerful, so below covered just simple use
 }
 ```
 
-Example above is equivalent for markup like this.
+Example above is equivalent for markup like this (f.e. Bootstrap and other grids).
 
 ```html
 <div class="container">
@@ -162,6 +164,53 @@ Example above is equivalent for markup like this.
 ```
 
 But you don't need this markup at all, you can use existing classes of current site markup and define all of this in SCSS.
+
+## span(), gutter() functions
+
+This functions used to create `span()` mixin above. In Susy 3 you can easly use it without mixns. So the example above can looks like:
+
+```scss
+.container {
+  @include clearfix;
+  
+  .left {
+    float: left;
+    width: span(4);
+    margin-right: gutter();
+  }
+  
+  .right {
+    float: right;
+    width: span(8 last);
+  }
+}
+```
+
+There is some benefits of using functions over mixin. At first, it's looks more clear and read better, and second, they can be used with flexbox, css grids, tables and so on.
+
+```scss
+.flex { 
+  flex: 1 1 span(3 of 12); 
+}
+```
+
+## span-flexbox()
+
+This mixin is the same as `span()` but using flexbox. This also uses [default mixins](../STARTER/styles/scss/utilities/mixins/_flexbox.scss) for flexbox backward capability.
+
+```scss
+.container {
+  @include flexbox;
+  
+  .left {
+    @include span-flexbox(4);
+  }
+  
+  .right {
+    @include span-flexbox(8);
+  }
+}
+```
 
 ## Combine media breakpoints and susy
 
@@ -199,7 +248,7 @@ Together, this couple of mixins can help you do whatever you wants.
     }
     
     @include media-breakpoint-up(xl) {
-      @include span(8 lasts);
+      @include span(8 last);
     }
   }
 }

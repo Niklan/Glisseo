@@ -1,0 +1,43 @@
+/**
+ * @file
+ * Helper mixins for using with grids.
+ */
+
+/**
+ * Backport of SUSY 2 span() mixin.
+ */
+@mixin span(
+  $span,
+  $config: $susy
+) {
+  width: span($span, $config);
+
+  @if index($span, 'last') {
+    float: right;
+  } @else {
+    float: left;
+    margin-right: gutter();
+  }
+}
+
+/**
+ * Add grid for debugging grids.
+ */
+@mixin susy-svg-grid(
+  $grid: $susy,
+  $colors: $brand-main,
+  $offset: null
+) {
+  background: susy-svg-grid($grid, $colors, $offset) no-repeat scroll;
+}
+
+/**
+ * Clearfix mixin.
+ */
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
