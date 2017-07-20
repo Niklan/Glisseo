@@ -9,20 +9,6 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Template\Attribute;
 
 /**
- * Implements hook_preprocess_region().
- */
-function glisseo_preprocess_region(&$variables) {
-  $region = $variables['region'];
-
-  if ($region == 'header') {
-    $attributes = new Attribute;
-    $attributes->setAttribute('id', 'header');
-    $attributes->setAttribute('role', 'banner');
-    $variables['attributes'] = $attributes;
-  }
-}
-
-/**
  * Implements hook_preprocess_HOOK().
  */
 function glisseo_preprocess_glisseo_reset(&$variables) {
