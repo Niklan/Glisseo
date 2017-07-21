@@ -2,6 +2,7 @@
  * Tabs style.
  */
 .primary-tabs {
+  @include clearfix;
   background: $primary-tabs-bg;
   margin: $primary-tabs-margin;
   padding: $primary-tabs-padding;

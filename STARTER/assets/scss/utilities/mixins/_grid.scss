@@ -21,6 +21,18 @@
 }
 
 /**
+ * Same as span, but using flexbox.
+ */
+@mixin span-flexbox(
+  $span,
+  $config: ()
+) {
+  flex: 1 1 span($span, $config);
+  // split the gutter on each side of the element…
+  padding: gutter($span, $config) / 2;
+}
+
+/**
  * Add grid for debugging grids.
  */
 @mixin susy-svg-grid(
@@ -29,6 +41,24 @@
   $offset: null
 ) {
   background: susy-svg-grid($grid, $colors, $offset) no-repeat scroll;
+}
+
+/**
+ * Backport of SUSY 2 gallery() mixin.
+ */
+@mixin gallery($size) {
+  $columns: susy-get('columns');
+  $column-sum: 0;
+  @each $column in $columns {
+    $column-sum: $column-sum + $column;
+  }
+  float: left;
+  margin-right: gutter();
+  width: span($column-sum / $size);
+
+  &:nth-child(#{$size}n + #{$size}) {
+    margin-right: 0;
+  }
 }
 
 /**

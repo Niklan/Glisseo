@@ -12,8 +12,8 @@
  * @see template_preprocess_region()
  */
 #}
-{% set attributes = attributes.setAttribute('id', 'content') %}
-{% set attributes = attributes.addClass('region-content') %}
+{% set attributes = attributes.setAttribute('id', 'footer') %}
+{% set attributes = attributes.addClass('region-footer') %}
 {% set attributes = attributes.setAttribute('role', 'contentinfo') %}
 {% if content %}
   <footer {{ attributes }}>
