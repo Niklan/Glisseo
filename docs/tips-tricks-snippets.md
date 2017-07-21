@@ -30,7 +30,7 @@ Add this to your `includes/structure.inc`.
  * Implements hook_preprocess_HOOK() for HTML document templates.
  * Adds body classes if certain regions have content.
  */
-function THEMENAME_theme_preprocess_html(&$variables) {
+function THEMENAME_preprocess_html(&$variables) {
   foreach ($variables['page'] as $element_key => $element) {
     if (preg_match("/sidebar_(.+)/", $element_key)) {
       $variables['attributes']['class'][] = 'layout-' . str_replace('_', '-', $element_key);

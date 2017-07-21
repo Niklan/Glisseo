@@ -8,6 +8,7 @@
 
   color: $color;
   background-color: $background;
+  background-image: none;
   border-color: $border;
   @if ($btn-enable-shadows) {
     box-shadow: $btn-box-shadow;

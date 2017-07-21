@@ -15,18 +15,3 @@ regions:
   content: Content
   sidebar_first: 'Sidebar first'
   footer: Footer
-
-
-# We disable those libraries, because we have own styles in this theme.
-libraries-override:
-  core/jquery.ui.dialog:
-    css:
-      component:
-        assets/vendor/jquery.ui/themes/base/dialog.css: false
-
-  core/jquery.ui:
-    css:
-      component:
-        assets/vendor/jquery.ui/themes/base/core.css: false
-      theme:
-        assets/vendor/jquery.ui/themes/base/theme.css: false
