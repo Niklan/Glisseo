@@ -27,8 +27,7 @@
 #}
 {%
 set classes = [
-  'block',
-  plugin_id|clean_class,
+  'block--' ~ plugin_id|clean_class,
 ]
 %}
 <nav{{ attributes.addClass(classes).setAttribute('role', 'navigation') }}>

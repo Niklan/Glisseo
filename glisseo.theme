@@ -6,7 +6,6 @@
  */
 
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Template\Attribute;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -18,8 +17,7 @@ function glisseo_preprocess_glisseo_reset(&$variables) {
     $entity_type = $entity->getEntityTypeId();
     $bundle = $entity->bundle();
     $view_mode = $variables['content']['#view_mode'];
-    $new_classes[] = Html::cleanCssIdentifier($entity_type);
-    $new_classes[] = Html::cleanCssIdentifier("$bundle-$view_mode");
+    $new_classes[] = Html::cleanCssIdentifier("$entity_type--$bundle--$view_mode");
 
     switch ($entity_type) {
       case 'node':
