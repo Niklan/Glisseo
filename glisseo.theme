@@ -17,7 +17,8 @@ function glisseo_preprocess_glisseo_reset(&$variables) {
     $entity_type = $entity->getEntityTypeId();
     $bundle = $entity->bundle();
     $view_mode = $variables['content']['#view_mode'];
-    $new_classes[] = Html::cleanCssIdentifier("$entity_type--$bundle--$view_mode");
+    $new_classes[] = Html::cleanCssIdentifier("$entity_type--$bundle");
+    $new_classes[] = Html::cleanCssIdentifier("view-mode--$view_mode");
 
     switch ($entity_type) {
       case 'node':
