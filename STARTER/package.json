@@ -24,9 +24,13 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "normalize.css": "^7.0.0",
-    "susy": "^3.0.0"
+    "susy": "^3.0.0",
+    "gulp-autoprefixer": "^4.0.0"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12"
   }
 }

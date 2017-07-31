@@ -12,6 +12,10 @@ var paths = {
 gulp.task('sass', function () {
   return gulp.src(paths.css)
     .pipe(sourcemaps.init())
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+      }))
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./assets/css/'));
