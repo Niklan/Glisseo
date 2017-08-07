@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+  set classes = [
+    node.isPromoted() ? 'promoted',
+    node.isSticky() ? 'sticky',
+    not node.isPublished() ? 'unpublished',
+    'node--' ~ node.bundle|clean_class,
+    view_mode ? 'view-mode--' ~ view_mode|clean_class
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  <header>
+    {{ title_prefix }}
+    {% if not page %}
+      <h2{{ title_attributes.addClass('title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% if display_submitted %}
+      <div class="meta">
+        {{ author_picture }}
+        <span{{ author_attributes }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        </span>
+        {{ metadata }}
+      </div>
+    {% endif %}
+  </header>
+
+  <div{{ content_attributes }}>
+    {{ content }}
+  </div>
+</article>

@@ -22,10 +22,10 @@
 {% block messages %}
   {% for type, messages in message_list %}
     {%
-    set classes = [
-    'messages',
-    type,
-    ]
+      set classes = [
+        'messages',
+        type,
+      ]
     %}
     <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
       {% if type == 'error' %}
