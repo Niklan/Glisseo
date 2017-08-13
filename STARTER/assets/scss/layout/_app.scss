@@ -13,13 +13,13 @@
   @extend .clearfix;
   @include media-container;
 
-  .region-sidebar-first {
+  .region--sidebar-first {
     float: left;
     width: span(3);
     margin-right: gutter();
   }
 
-  .region-content {
+  .region--content {
     float: right;
     width: span(9);
   }

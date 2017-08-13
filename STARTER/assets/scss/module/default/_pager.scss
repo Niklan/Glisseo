@@ -2,51 +2,34 @@
  * @file
  * Pager styles.
  */
-.pager {
-  margin: 1rem auto;
-  padding: 0px;
+.pager__items {
+  margin: $pager-list-margin;
+  padding: $pager-list-padding;
   list-style: none outside none;
   display: table;
-  background: #ffffff;
-  border: 1px solid $gray-light;
-  border-radius: 4px;
+  background: #FFF;
   overflow: hidden;
 
-  li {
-    float: left;
-    border-right: 1px solid $gray-light;
-    background: transparent;
-    transition: background 200ms;
+  .pager__item {
+    display: inline-block;
+    color: $pager-item-color;
+    margin: $pager-item-margin;
+    padding: $pager-item-padding;
 
-    a{
-      padding: 0 1rem;
-      color: $gray-light;
+    a {
+      display: block;
+      border-bottom: $pager-item-link-border-bottom;
+      padding: $pager-item-link-padding;
+      font-weight: $pager-item-link-font-weight;
       text-decoration: none;
-      line-height: 2rem;
+      color: $pager-item-link-color;
     }
 
-    &:hover {
-      background: #F9F9F9;
-      transition: background 200ms;
+    &.is-active {
+      a {
+        border-bottom-color: $pager-item-link-border-active-color;
+        color: $pager-item-link-active-color;
+      }
     }
-
-    &:last-child {
-      border: none;
-    }
-  }
-
-  .pager-ellipsis {
-    padding: 0 1rem;
-    color: $gray-light;
-    text-decoration: none;
-    line-height: 2rem;
-  }
-
-  .pager-current {
-    padding: 0 1rem;
-    color: $gray-light;
-    text-decoration: none;
-    line-height: 2rem;
-    background: #F9F9F9;
   }
 }

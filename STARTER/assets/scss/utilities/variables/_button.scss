@@ -21,8 +21,6 @@ $input-btn-line-height-lg: 1.5 !default;
 $btn-font-weight:       normal !default;
 $btn-enable-shadows:    true !default;
 $btn-box-shadow:        0 1px 1px rgba(black, .125) !default;
-$btn-focus-box-shadow:  0 0 0 2px rgba($brand-primary, .25) !default;
-$btn-active-box-shadow: inset 0 3px 5px rgba(black, .125) !default;
 $btn-border-radius:     $border-radius-small !default;
 
 $btn-default-color:  #333 !default;
@@ -30,7 +28,7 @@ $btn-default-bg:     #fff !default;
 $btn-default-border: #ccc !default;
 
 $btn-primary-color:  white !default;
-$btn-primary-bg:     #2185d0 !default;
+$btn-primary-bg:     $brand-primary !default;
 $btn-primary-border: transparent !default;
 
 $btn-success-color:  white !default;

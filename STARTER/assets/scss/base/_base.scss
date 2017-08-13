@@ -30,17 +30,14 @@ img {
   vertical-align: bottom;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-  margin: 0 0 0.1rem 0;
-
-  &.option {
-    font-weight: normal;
-    display: inline;
+.clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
   }
 }
 
-#admin-menu .admin-menu-search input {
-  height: auto;
+.inline {
+  display: inline-block;
 }

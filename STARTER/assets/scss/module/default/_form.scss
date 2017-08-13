@@ -20,8 +20,6 @@ input[autofocus],
 input[required],
 textarea,
 select {
-  $active-border: darken($input-border, 12%);
-
   display: block;
   max-width: 100%;
   width: auto;
@@ -33,22 +31,19 @@ select {
   border-color: $input-border;
   border-radius: $input-border-radius;
   box-sizing: border-box;
-  transition: all .2s ease-in-out;
+  transition: all .15s ease-in-out;
   @if ($input-enable-shadows) {
     box-shadow: $input-box-shadow;
   }
 
   &.error {
-    border-color: #e74c3c;
-  }
-
-  &:focus,
-  &:hover {
-    border-color: $active-border;
+    border-color: $brand-error;
   }
 
   &:focus {
     outline: medium none;
+    border-color: $input-border-focus;
+
     @if ($input-enable-shadows) {
       box-shadow: $input-focus-box-shadow;
     }
@@ -72,37 +67,44 @@ textarea {
 }
 
 select {
-  @include gradient-y(white, #f9f9f9);
+  @include gradient-y(white, #F9F9F9);
 }
 
 label {
   display: inline-block;
   max-width: 100%;
-  margin-bottom: rem(5);
-  font-weight: bold;
-}
+  margin-bottom: .5rem;
 
-.field-label-inline {
-  display: inline-block;
+  @if ($label-required-enabled) {
+    &.form-required {
+      &:after {
+        content: $label-required-content;
+        display: inline-block;
+        color: $label-required-color;
+        margin: $label-required-margin;
+      }
+    }
+  }
 }
 
 /**
  * Drupal specific styles.
  */
 .form-item {
-  margin: 0;
-  padding: 0 0 $form-item-padding 0;
+  margin: 0 0 1rem;
+
   .description {
     display: block;
     margin-top: 5px;
-    margin-bottom: 10px;
-    color: lighten($text-color, 25%);
+    margin-bottom: .25rem;
+    color: $text-color-subtle;
   }
 }
 
 .form-actions {
   input {
-    margin: 0 rem(6) 0 0;
+    margin: 0 .5rem 0 0;
+
     &:last-child {
       margin: 0;
     }
@@ -110,7 +112,7 @@ label {
 }
 
 // Fix tabledrag handle.
-a.tabledrag-handle .handle {		
-  height: rem(24);		
-  width: rem(20);		
+a.tabledrag-handle .handle {
+  height: rem(24);
+  width: rem(20);
 }

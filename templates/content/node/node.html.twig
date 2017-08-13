@@ -10,10 +10,10 @@
   set classes = [
     'node',
     'node--' ~ node.bundle|clean_class,
-    view_mode ? 'view-mode--' ~ view_mode|clean_class
+    view_mode ? 'view-mode--' ~ view_mode|clean_class,
     node.isPromoted() ? 'promoted',
     node.isSticky() ? 'sticky',
-    not node.isPublished() ? 'unpublished',
+    not node.isPublished() ? 'unpublished'
   ]
 %}
 <article{{ attributes.addClass(classes) }}>

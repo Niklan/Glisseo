@@ -4,6 +4,9 @@
 
 table {
   background: $table-bg;
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-hover;
 }
 
 caption {
@@ -20,7 +23,10 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: $line-height-computed;
+  margin-bottom: 1rem;
+  border-spacing: 0;
+  border-collapse: collapse;
+
   > thead,
   > tbody,
   > tfoot {
@@ -38,17 +44,6 @@ th {
   > thead > tr > th {
     vertical-align: bottom;
     border-bottom: 2px solid $table-border-color;
-  }
-
-  > caption + thead,
-  > colgroup + thead,
-  > thead:first-child {
-    > tr:first-child {
-      > th,
-      > td {
-        border-top: 0;
-      }
-    }
   }
 
   > tbody + tbody {

@@ -6,7 +6,7 @@
 /**
  * Default styles and resets for all buttons used as base for all others.
  */
-.btn {
+.button {
   display: inline-block;
   font-weight: $btn-font-weight;
   line-height: $input-btn-line-height;
@@ -25,14 +25,15 @@
  * Submit and primary button style.
  */
 .form-submit,
-.btn-primary {
+.button-primary,
+.button-action {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
 /**
  * Warning and preview buttons style.
  */
-.btn-warning,
+.button-warning,
 #edit-preview {
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
 }
@@ -40,7 +41,7 @@
 /**
  * Danger and delete button style.
  */
-.btn-danger,
+.button-danger,
 #edit-delete {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
@@ -48,13 +49,13 @@
 /**
  * Success button style.
  */
-.btn-success {
+.button-success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
 /**
  * Info button style.
  */
-.btn-info {
+.button-info {
   @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }

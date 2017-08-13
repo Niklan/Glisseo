@@ -2,7 +2,7 @@
  * Button style generator.
  */
 @mixin button-variant($color, $background, $border: transparent) {
-  @extend .btn;
+  @extend .button;
   $active-background: darken($background, 10%);
   $active-border: darken($border, 12%);
 
@@ -10,6 +10,7 @@
   background-color: $background;
   background-image: none;
   border-color: $border;
+  transition: all .15s ease-in-out;
   @if ($btn-enable-shadows) {
     box-shadow: $btn-box-shadow;
   }
@@ -23,13 +24,14 @@
 
   &:focus {
     @if ($btn-enable-shadows) {
-      box-shadow: $btn-focus-box-shadow;
+      box-shadow: 0 0 0 3px rgba($background, .5);
     }
   }
 
   &:disabled {
     background-color: $background;
     border-color: $border;
+    opacity: .65;
   }
 
   &:active {
@@ -38,7 +40,7 @@
     background-image: none;
     border-color: $active-border;
     @if ($btn-enable-shadows) {
-      box-shadow: $btn-active-box-shadow;
+      box-shadow: 0 0 0 3px rgba($background, .5);
     }
   }
 }
@@ -53,6 +55,7 @@
   background-image: none;
   border-color: $color;
   box-shadow: none;
+  transition: all .15s ease-in-out;
 
   &:hover,
   &:focus {
@@ -63,12 +66,13 @@
 
   &:focus {
     @if ($btn-enable-shadows) {
-      box-shadow: $btn-focus-box-shadow;
+      box-shadow: 0 0 0 3px rgba($color, .5);
     }
   }
 
   &:disabled {
     color: $color;
     background-color: transparent;
+    opacity: .65;
   }
 }
