@@ -7,6 +7,7 @@
  */
 #}
 {% set attributes = attributes.setAttribute('id', 'sidebar-first') %}
+{% set attributes = attributes.addClass('region') %}
 {% set attributes = attributes.addClass('region--sidebar-first') %}
 {% if content %}
   <aside{{ attributes }}>

@@ -8,11 +8,12 @@
 #}
 {%
   set classes = [
+    'node',
+    'node--' ~ node.bundle|clean_class,
+    view_mode ? 'view-mode--' ~ view_mode|clean_class
     node.isPromoted() ? 'promoted',
     node.isSticky() ? 'sticky',
     not node.isPublished() ? 'unpublished',
-    'node--' ~ node.bundle|clean_class,
-    view_mode ? 'view-mode--' ~ view_mode|clean_class
   ]
 %}
 <article{{ attributes.addClass(classes) }}>

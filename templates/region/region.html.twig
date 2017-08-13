@@ -7,6 +7,7 @@
  */
 #}
 {% set attributes = attributes.setAttribute('id', region|clean_class) %}
+{% set attributes = attributes.addClass('region') %}
 {% set attributes = attributes.addClass('region--' ~ region|clean_class) %}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
