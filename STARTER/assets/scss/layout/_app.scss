@@ -10,7 +10,6 @@
 }
 
 #main {
-  @extend .clearfix;
   @include media-container;
   display: flex;
 
