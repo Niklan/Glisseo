@@ -91,10 +91,5 @@
  */
 @mixin media-container($with-gutters: false) {
   @include media-containers-max-width();
-  @if ($with-gutters) {
-    @include media-container-gutters();
-  } @else {
-    margin-right: auto;
-    margin-left: auto;
-  }
+  @include media-container-gutters();
 }
