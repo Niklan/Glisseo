@@ -81,7 +81,7 @@
     @include media-breakpoint-up($breakpoint) {
       $gutter: map-get($gutters, $breakpoint);
       padding-right: ($gutter / 2);
-      padding-left:  ($gutter / 2);
+      padding-left: ($gutter / 2);
     }
   }
 }
@@ -89,7 +89,12 @@
 /**
  * Container max width with centering and gutters.
  */
-@mixin media-container() {
+@mixin media-container($with-gutters: false) {
   @include media-containers-max-width();
-  @include media-container-gutters();
+  @if ($with-gutters) {
+    @include media-container-gutters();
+  } @else {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }

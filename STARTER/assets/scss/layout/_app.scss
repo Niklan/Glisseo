@@ -12,15 +12,14 @@
 #main {
   @extend .clearfix;
   @include media-container;
+  display: flex;
 
   .region--sidebar-first {
-    float: left;
-    width: span(3);
+    flex: 1 1 span(3);
     margin-right: gutter();
   }
 
   .region--content {
-    float: right;
-    width: span(9);
+    flex: 1 1 span(9);
   }
 }
