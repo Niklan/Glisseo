@@ -2,9 +2,8 @@
  * @file
  * This file contain all imports and compile to final file.
  */
-
-@import "utilities/index";
-@import "base/index";
-@import "layout/index";
-@import "component/index";
-@import "module/index";
+@import "utilities/all";
+@import "base/all";
+@import "layout/all";
+@import "component/all";
+@import "module/all";
