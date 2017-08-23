@@ -1,6 +1,10 @@
 /**
- * Mixin for FontAwesome icons.
+ * FontAwesome
+ * @see http://fontawesome.io
  */
+$fa-font-path: "../../node_modules/font-awesome/fonts";
+@import "../../../../node_modules/font-awesome/scss/font-awesome";
+
 @mixin icon($name, $position: before) {
   &:#{$position} {
     content: $name;

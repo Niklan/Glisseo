@@ -1,0 +1,153 @@
+/**
+ * @file
+ * Global variables.
+ */
+
+// UI colors.
+$ui-site-color-1: red;
+$ui-site-color-2: blue;
+$ui-site-color-3: green;
+
+// Background color for <body>.
+$body-bg: #fff;
+
+// Base colors.
+$gray-base:    #000;
+$gray-darken:  lighten($gray-base, 13.5%);
+$gray-dark:    lighten($gray-base, 20%);
+$gray:         lighten($gray-base, 33.5%);
+$gray-light:   lighten($gray-base, 46.7%);
+$gray-lighter: lighten($gray-base, 93.5%);
+
+// Branding.
+$brand-main:         #f44336;
+$brand-border-color: #E8E8E8;
+$brand-primary:      #3F51B5;
+$brand-success:      #4CAF50 !default;
+$brand-info:         #29B6F6 !default;
+$brand-warning:      #FF9800 !default;
+$brand-error:        #F44336 !default;
+
+// Typo colors.
+// Global text color on <body>.
+$text-color:           $gray-dark;
+$text-color-subtle:    $gray-light;
+$text-color-highlight: $gray-darken;
+$text-color-info:      $brand-info;
+$text-color-success:   $brand-success;
+$text-color-warning:   $brand-warning;
+$text-color-error:     $brand-error;
+
+// Links
+$link-color:            #3f51b5;
+$link-decoration:       none;
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: none;
+
+// Background and text colors for selected elements.
+$selection-bg:    #673AB7;
+$selection-color: white;
+
+// Highlight colors.
+$highlight-color:         #d7dae0;
+$highlight-bg:            #31363f;
+$highlight-info-color:    lighten($brand-info, 40%);
+$highlight-info-bg:       $brand-info;
+$highlight-success-color: lighten($brand-success, 40%);
+$highlight-success-bg:    $brand-success;
+$highlight-warning-color: lighten($brand-warning, 40%);
+$highlight-warning-bg:    $brand-warning;
+$highlight-error-color:   lighten($brand-error, 40%);
+$highlight-error-bg:      $brand-error;
+
+// <mark> tag.
+$mark-bg: #FFF9C4;
+
+/**
+ * Typography.
+ */
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family:            $font-family-sans-serif;
+
+// Font sizes.
+$font-size-base:  14px;
+$font-size-large: ceil($font-size-base * 1.25);
+$font-size-small: ceil($font-size-base * 0.85);
+$font-size-h1:    floor($font-size-base * 2);
+$font-size-h2:    floor($font-size-base * 1.75);
+$font-size-h3:    ceil($font-size-base * 1.5);
+$font-size-h4:    ceil($font-size-base * 1.25);
+$font-size-h5:    $font-size-base;
+$font-size-h6:    ceil($font-size-base * 0.85);
+
+// Line height.
+// Unit-less cuz used in buttons, inputs, etc.
+$line-height-base:     1.5 !default;
+$line-height-computed: floor($line-height-base * $font-size-base);
+// Used in compontents.
+$line-height-large: 1.3333333;
+$line-height-small: 1.5;
+
+// Headers default settings.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+// Blockqoutes.
+$blockquote-font-size:    ($font-size-base * 1.25) !default;
+$blockquote-border-color: $gray-lighter !default;
+
+// <hr> tag.
+$hr-border-color: $gray-lighter !default;
+
+/**
+ * Media breakpoints.
+ */
+// Minimum width for breakpoints.
+$media-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// Gutters for container.
+$media-gutter-width: (
+  xs: 30px,
+  sm: 30px,
+  md: 30px,
+  lg: 30px,
+  xl: 30px,
+) !default;
+
+// Maximum width for container.
+// @see mixin media-containers-max-width()
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+/**
+ * Other components.
+ */
+// Paddings.
+$padding-base-vertical:   6px !default;
+$padding-base-horizontal: 12px !default;
+$padding-large-vertical:   10px !default;
+$padding-large-horizontal: 16px !default;
+$padding-small-vertical:   5px !default;
+$padding-small-horizontal: 10px !default;
+$padding-xs-vertical:   1px !default;
+$padding-xs-horizontal: 5px !default;
+$icon-padding: 6px !default;
+
+// Border radius.
+$border-radius-small: 3px !default;
+$border-radius-base:  4px !default;
+$border-radius-large: 6px !default;

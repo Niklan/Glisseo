@@ -1,3 +1,14 @@
+/**
+ * @file
+ * Contextual links.
+ */
+$contextual-links-bg:            white;
+$contextual-links-border:        1px solid #ddd;
+$contextual-links-border-radius: 4px 0 4px 4px;
+$contextual-links-hover-bg:      #f2f2f2;
+$contextual-links-color:         inherit;
+$contextual-links-box-shadow:    0 5px 10px 0 rgba(black, .2);
+
 .contextual-region {
   .contextual-links {
     background: $contextual-links-bg;
