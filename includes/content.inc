@@ -5,7 +5,6 @@
  * Theme preprocesses for taxonomy term.
  */
 
-
 /**
  * Implements hook_theme_suggsetions_HOOK_alter().
  *
