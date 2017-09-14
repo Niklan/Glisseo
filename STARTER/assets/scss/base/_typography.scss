@@ -2,12 +2,66 @@
 * @file
 * Typography styles.
 */
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family:            $font-family-sans-serif;
+
+// Font sizes.
+$font-size-base:  14px;
+$font-size-large: ceil($font-size-base * 1.25);
+$font-size-small: ceil($font-size-base * 0.85);
+$font-size-h1:    floor($font-size-base * 2);
+$font-size-h2:    floor($font-size-base * 1.75);
+$font-size-h3:    ceil($font-size-base * 1.5);
+$font-size-h4:    ceil($font-size-base * 1.25);
+$font-size-h5:    $font-size-base;
+$font-size-h6:    ceil($font-size-base * 0.85);
+
+// Line height.
+// Unit-less cuz used in buttons, inputs, etc.
+$line-height-base:     1.5 !default;
+$line-height-computed: floor($line-height-base * $font-size-base);
+
+// Headers default settings.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+// Typo colors.
+// Global text color on <body>.
+$text-color:           $gray-dark;
+$text-color-subtle:    $gray-light;
+$text-color-highlight: $gray-darken;
+$text-color-info:      $brand-info;
+$text-color-success:   $brand-success;
+$text-color-warning:   $brand-warning;
+$text-color-error:     $brand-error;
+
+// Links
+$link-color:            #3f51b5;
+$link-decoration:       none;
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: none;
+
+// <mark> tag.
+$mark-bg: #FFF9C4;
+
+// Blockqoutes.
+$blockquote-font-size:    ($font-size-base * 1.15) !default;
+$blockquote-border-color: $gray-lighter !default;
+
+// <hr> tag.
+$hr-border-color: $gray-lighter !default;
+
 html {
   font-size: 1rem; // Hardcoded, because we need inherit user font-size.
 }
 
 body {
-  @include font-size($font-size-base);
+  font-size: $font-size-base;
+  line-height: $line-height-base;
   font-family: $font-family;
   color: $text-color;
 }
@@ -60,11 +114,11 @@ h6 { font-size: $font-size-h6; }
 
 small,
 .text-small {
-  font-size: rem($font-size-small);
+  font-size: $font-size-small;
 }
 big,
 .text-big {
-  font-size: rem($font-size-large);
+  font-size: $font-size-large;
 }
 
 hr {

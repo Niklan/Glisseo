@@ -2,6 +2,16 @@
  * @file
  * Text classes.
  */
+$highlight-color:         #d7dae0;
+$highlight-bg:            #31363f;
+$highlight-info-color:    lighten($brand-info, 40%);
+$highlight-info-bg:       $brand-info;
+$highlight-success-color: lighten($brand-success, 40%);
+$highlight-success-bg:    $brand-success;
+$highlight-warning-color: lighten($brand-warning, 40%);
+$highlight-warning-bg:    $brand-warning;
+$highlight-error-color:   lighten($brand-error, 40%);
+$highlight-error-bg:      $brand-error;
 
 /**
  * text-* classes.
