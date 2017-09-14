@@ -10,7 +10,9 @@
 {% set attributes = attributes.addClass('region') %}
 {% set attributes = attributes.addClass('region--' ~ region|clean_class) %}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    {{ content }}
-  </div>
+  {% block content %}
+    <div{{ attributes.addClass(classes) }}>
+      {{ content }}
+    </div>
+  {% endblock %}
 {% endif %}
