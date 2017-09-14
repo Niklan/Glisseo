@@ -80,7 +80,7 @@ $dialog-buttonpane-buttons-align-right: true !default;
       border: none;
 
       .ui-icon {
-        @include icon($fa-var-close);
+        @include fa-icon($fa-var-close);
 
         &:before {
           margin: 0;
