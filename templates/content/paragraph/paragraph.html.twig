@@ -1,0 +1,23 @@
+{#
+  /**
+   * @file
+   * Theme override to paragraph.
+   *
+   * @see template_preprocess_paragraph()
+   */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'view-mode--' ~ view_mode|clean_class,
+  ]
+%}
+{% block paragraph %}
+  {% set attributes = attributes.setAttribute('id', ('paragraph-' ~ paragraph.id())|clean_id) %}
+  <div{{ attributes.addClass(classes).addClass(additional_classes) }}>
+    {% block content %}
+      <div class="paragraph-inner">{{ content }}</div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
