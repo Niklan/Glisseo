@@ -11,3 +11,14 @@
   padding: 0;
   list-style: none;
 }
+
+/**
+ * Clearfix.
+ */
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

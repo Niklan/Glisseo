@@ -37,7 +37,7 @@ $secondary-tabs-task-active-background:  $link-color;
 $secondary-tabs-tab-border:              3px solid $link-color;
 
 .primary-tabs {
-  @extend .clearfix;
+  @include clearfix;
   background: $primary-tabs-bg;
   margin: $primary-tabs-margin;
   padding: $primary-tabs-padding;
@@ -72,7 +72,7 @@ $secondary-tabs-tab-border:              3px solid $link-color;
 }
 
 .secondary-tabs {
-  @extend .clearfix;
+  @include clearfix;
   background: $secondary-tabs-bg;
   margin: $secondary-tabs-margin;
   padding: $secondary-tabs-padding;
