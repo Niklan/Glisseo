@@ -16,7 +16,7 @@ You can integrate them in theme in several easy steps:
     $mdi-font-path: "../../node_modules/mdi/fonts";
     @import "../../../../node_modules/mdi/scss/materialdesignicons";
 
-    @mixin mdi-icon($name, $position: before) {
+    @mixin mdi-icon($name, $position: before, $margin-size: 0.4em) {
         &:#{$position} {
             content: mdi($name);
             font-family: $mdi-font-name;
@@ -25,9 +25,9 @@ You can integrate them in theme in several easy steps:
             display: inline-block;
             text-decoration: inherit;
             @if $position == before {
-                margin-right: 0.4em;
+                margin-right: $margin-size;
             } @else {
-                margin-left: 0.4em;
+                margin-left: $margin-size;
             }
         }
     }

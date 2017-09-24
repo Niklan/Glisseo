@@ -5,7 +5,7 @@
 $fa-font-path: "../../node_modules/font-awesome/fonts";
 @import "../../../../node_modules/font-awesome/scss/font-awesome";
 
-@mixin fa-icon($name, $position: before) {
+@mixin fa-icon($name, $position: before, $margin-size: 0.4em) {
   &:#{$position} {
     content: $name;
     font-family: FontAwesome;
@@ -14,9 +14,9 @@ $fa-font-path: "../../node_modules/font-awesome/fonts";
     display: inline-block;
     text-decoration: inherit;
     @if $position == before {
-      margin-right: 0.4em;
+      margin-right: $margin-size;
     } @else {
-      margin-left: 0.4em;
+      margin-left: $margin-size;
     }
   }
 }
