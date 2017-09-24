@@ -33,7 +33,7 @@ Add this to your `includes/structure.inc`.
 function THEMENAME_preprocess_html(&$variables) {
   foreach ($variables['page'] as $element_key => $element) {
     if (preg_match("/sidebar_(.+)/", $element_key)) {
-      $variables['attributes']['class'][] = 'layout-' . str_replace('_', '-', $element_key);
+      $variables['attributes']['class'][] = 'is-layout-' . str_replace('_', '-', $element_key);
     }
   }
 }
@@ -56,7 +56,7 @@ Add this to your `includes/menu.inc`.
 function THEMENAME_preprocess_menu__main(&$variables) {
   foreach ($variables['items'] as $k => &$v) {
     if (count($v['below']) > 0) {
-      $v['attributes']->addClass('expanded');
+      $v['attributes']->addClass('is-expanded');
     }
   }
 }
@@ -86,7 +86,7 @@ function THEMENAME_preprocess_html(&$variables) {
           }
         }
 
-        $variables['attributes']['class'][] = 'page-is-fullpage';
+        $variables['attributes']['class'][] = 'is-fullpage';
       }
     }
   }

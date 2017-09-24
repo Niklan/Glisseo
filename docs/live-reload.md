@@ -1,9 +1,58 @@
-# Live reload files
+# BrowserSync and LiveReload
 
-Do you want to automatically update you page and styles in brwoser when they changed? This documentation for you!
+Do you want to automatically update you page and styles in browser when they changed? This documentation for you!
 
-Note! In insctructions belows i meant that all commands executed from your STARTER theme root folder!
+Note! In instructions belows all commands must be executed from your STARTER theme root folder!
 
+## Browsersync
+
+The much complex and better solution. It can reload not only styles and the page, it can also sync page scrolling within multiple devices.
+
+### Installation
+
+~~~bash
+npm install browser-sync --save-dev
+~~~
+
+### Edit gulpfile.js
+
+~~~js
+'use strict';
+
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
+
+var paths = {
+  scss: 'assets/scss/**',
+  css: 'assets/scss/styles.scss'
+};
+
+gulp.task('serve', ['sass'], function() {
+  browserSync.init({
+    proxy: "http://DOMAIN.dev", // Don't forget to change.
+    noOpen: false
+  });
+
+  gulp.watch(paths.scss, ['sass']);
+});
+
+gulp.task('sass', function () {
+  return gulp.src(paths.css)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest('./assets/css/'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('watch', function () {
+  gulp.watch(paths.scss, ['sass']);
+});
+
+gulp.task('default', ['serve']);
+~~~
 
 ## LiveReload
 
@@ -56,53 +105,3 @@ gulp.task('default', ['watch', 'sass']);
 ### Tips and tricks
 
 * If you have some problem with styles revert back to previous state after successful update, then open Chrome dev tools, and tick `Disable cache` on the network tab.
-
-## Browsersync
-
-The much complex and better solution. It can reload not only styles and the page, it can also sync page scrolling within multiple devices.
-
-### Installation
-
-~~~bash
-npm install browser-sync --save-dev
-~~~
-
-### Edit gulpfile.js
-
-~~~js
-'use strict';
-
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync').create();
-
-var paths = {
-  scss: 'assets/scss/**',
-  css: 'assets/scss/styles.scss'
-};
-
-gulp.task('serve', ['sass'], function() {
-  browserSync.init({
-    proxy: "http://DOMAIN.dev", // Don't forget to change.
-    noOpen: false
-  });
-
-  gulp.watch(paths.scss, ['sass']);
-});
-
-gulp.task('sass', function () {
-  return gulp.src(paths.css)
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./assets/css/'))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('watch', function () {
-  gulp.watch(paths.scss, ['sass']);
-});
-
-gulp.task('default', ['serve']);
-~~~

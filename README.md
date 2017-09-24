@@ -34,6 +34,6 @@ Due of the theme structure, where all parts are separated of each other, you can
 
 *  [Getting started](docs/getting-started.md)
 *  [Responsive guide](docs/responsive-guide.md)
-*  [LiveReload and BroswerSync integration](docs/live-reload.md)
+*  [BrowserSync and LiveReload integration](docs/live-reload.md)
 *  [Tips, tricks and snippets](docs/tips-tricks-snippets.md)
 *  [Material Design icons integration](docs/material-design-icons.md)

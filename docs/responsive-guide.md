@@ -88,7 +88,6 @@ body {
 }
 ```
 
-
 #### media-breakpoint-up() and media-breakpoint-down()
 
 **Use**: `@include media-breakpoint-up(lg) { @content }`
@@ -127,42 +126,6 @@ This mixin is like `.clearfix` class, which you apply to container element, insi
 }
 ```
 
-### span() mixin
-
-This is your weapon, this mixin is so powerful, so below covered just simple use of it. With him you creates columns, pass grid size as argument. As mentiout above, the default layout is 12 grid system, so you can pass any number from 1 to 12 included.
-
-This mixin is handmaded as backport of Susy2, and works around susy functions.
-
-```scss
-.container {
-  @include clearfix;
-  
-  .left {
-    @include span(4);
-  }
-  
-  .right {
-    @include span(8 last);
-  }
-}
-```
-
-Example above is equivalent for markup like this (f.e. Bootstrap and other grids).
-
-```html
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-      content
-    </div>
-    
-    <div class="col-8">
-      content
-    </div>
-  </div>
-</div>
-```
-
 But you don't need this markup at all, you can use existing classes of current site markup and define all of this in SCSS.
 
 ## span(), gutter() functions
@@ -186,31 +149,24 @@ This functions used to create `span()` mixin above. In Susy 3 you can easly use 
 }
 ```
 
-There is some benefits of using functions over mixin. At first, it's looks more clear and read better, and second, they can be used with flexbox, css grids, tables and so on.
-
-```scss
-.flex { 
-  flex: 1 1 span(3 of 12); 
-}
-```
-
-## span-flexbox()
-
-This mixin is the same as `span()` but using flexbox. This also uses [default mixins](../STARTER/styles/scss/utilities/mixins/_flexbox.scss) for flexbox backward capability.
+#### Flexbox example.
 
 ```scss
 .container {
-  @include flexbox;
+  display: flex;
   
   .left {
-    @include span-flexbox(4);
+    flex: 0 1 span(4);
+    margin-right: gutter();
   }
   
   .right {
-    @include span-flexbox(8);
+    flex: 0 1 span(8);
   }
 }
 ```
+
+**Tip!** Sometimes, when you are using flexbox you can drop in problem when container is much wider than you are set and it extends whole site. This is flexbox "bug" (behaviour) you just need to set `min-width: 0` to flex element which is extends over width. By default `flex` parameter set `min-width: auto` and this is cause the problem. Be aware of it!
 
 ## Combine media breakpoints and susy
 
@@ -230,25 +186,27 @@ Together, this couple of mixins can help you do whatever you wants.
 
 ```scss
 .news {
-  @include susy-clearfix;
+  display: flex;
   
   .left {
+    margin-right: gutter();
+    
     @include media-breakpoint-between(md, lg) {
-      @include span(6);
+      flex: 0 1 span(6);
     }
     
     @include media-breakpoint-up(xl) {
-      @include span(4);
+      flex: 0 1 span(4);
     }
   }
   
   .left {
     @include media-breakpoint-between(md, lg) {
-      @include span(6 last);
+      flex: 0 1 span(6);
     }
     
     @include media-breakpoint-up(xl) {
-      @include span(8 last);
+      flex: 0 1 span(8);
     }
   }
 }
