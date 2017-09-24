@@ -11,11 +11,12 @@
     'node',
     'node--' ~ node.bundle|clean_class,
     view_mode ? 'view-mode--' ~ view_mode|clean_class,
-    node.isPromoted() ? 'promoted',
-    node.isSticky() ? 'sticky',
-    not node.isPublished() ? 'unpublished'
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished'
   ]
 %}
+
 <article{{ attributes.addClass(classes) }}>
   <header>
     {{ title_prefix }}

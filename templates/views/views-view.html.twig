@@ -8,9 +8,13 @@
 #}
 {%
   set classes = [
+    'view',
+    'view--' ~ id|clean_class,
+    'display-id--' ~ display_id|clean_class,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title }}
