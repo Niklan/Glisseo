@@ -10,12 +10,12 @@
   set classes = [
     'field',
     'field--' ~ field_name|clean_class,
+    label_display == 'visually_hidden' ?: 'is-label-' ~ label_display|clean_class,
   ]
 %}
 {%
   set title_classes = [
     'label',
-    label_display == 'visually_hidden' ?: label_display,
     label_display == 'visually_hidden' ? 'visually-hidden',
   ]
 %}
