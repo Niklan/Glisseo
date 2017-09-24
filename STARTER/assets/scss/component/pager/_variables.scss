@@ -1,0 +1,14 @@
+$pager-list-margin:     1rem auto;
+$pager-list-padding:    0;
+$pager-list-background: #FFF;
+
+$pager-item-color: #8C8C8C;
+$pager-item-margin: 0;
+$pager-item-padding: 0 .25rem;
+
+$pager-item-link-border-bottom: 3px solid transparent;
+$pager-item-link-border-active-color: darken($link-color, 20%);
+$pager-item-link-padding: 0 .25rem .25rem;
+$pager-item-link-font-weight: 600;
+$pager-item-link-color: $link-color;
+$pager-item-link-active-color: darken($link-color, 20%);
