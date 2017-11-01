@@ -6,7 +6,7 @@
  */
 
 /**
- * Implements hook_theme_suggsetions_HOOK_alter().
+ * Implements hook_theme_suggestions_HOOK_alter().
  *
  * This hook add new theme hook suggestion for taxonomy terms:
  *  - taxonomy-term--VIEW.html.twig.
@@ -26,4 +26,18 @@ function glisseo_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables
     }
   }
   $suggestions[] = 'taxonomy_term__' . $taxonomy_term->id() . '__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * This hook add new theme hook suggestion for paragraphs:
+ *  - paragraph--paragraphid--viewmode.html.twig
+ *  - paragraph--paragraphid.html.twig
+ */
+function funnykid_theme_suggestions_paragraph_alter(&$suggestion, $variables, $hook) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $view_mode = $variables['elements']['#view_mode'];
+  $suggestion[] = 'paragraph__' . $paragraph->id();
+  $suggestion[] = 'paragraph__' . $paragraph->id() . '__' . $view_mode;
 }
