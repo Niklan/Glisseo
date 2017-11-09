@@ -1,12 +1,7 @@
 {
   "name": "drupal/glisseo",
-  "description": "Base theme with simple starte theme.",
-  // This is before theme will be ready for production.
-  // This is done for store base theme in /themes/custom for
-  // support this folder by your Git repository. So you can
-  // easly disable dependency for Composer and do not give
-  // update to base theme which can broke something.
-  "type": "drupal-custom-theme",
+  "description": "Base theme with simple starter theme.",
+  "type": "drupal-theme",
   "homepage": "https://www.drupal.org/project/glisseo",
   "authors": [
     {
