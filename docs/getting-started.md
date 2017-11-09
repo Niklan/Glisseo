@@ -20,12 +20,30 @@ You can install them separately or use package.json from root of your theme.
 
 ### Auto installtion
 
+**yarn**
+
+~~~bash
+cd /theme/THEMENAME
+yarn install
+~~~
+
+**npm**
+
 ~~~bash
 cd /theme/THEMENAME
 npm install
 ~~~
 
 ### Manual install
+
+**yarn**
+
+~~~bash
+cd /theme/THEMENAME
+yarn add gulp gulp-sass gulp-sourcemaps
+~~~
+
+**npm**
 
 ~~~bash
 cd /theme/THEMENAME

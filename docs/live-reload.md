@@ -10,6 +10,14 @@ The much complex and better solution. It can reload not only styles and the page
 
 ### Installation
 
+**yarn**
+
+~~~bash
+yarn add browser-sync --save-dev
+~~~
+
+**npm**
+
 ~~~bash
 npm install browser-sync --save-dev
 ~~~
