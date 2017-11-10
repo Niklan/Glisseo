@@ -1,8 +1,7 @@
-
 /**
- * Default styles and resets for all buttons used as base for all others.
+ * Generates button base styles.
  */
-.button {
+ %button {
   display: inline-block;
   font-weight: $btn-font-weight;
   line-height: $input-btn-line-height;
@@ -14,6 +13,12 @@
   padding: $input-btn-padding-y $input-btn-padding-x;
   font-size: $font-size-base;
   border-radius: $btn-border-radius;
+}
+
+/**
+ * Default button.
+ */
+.button {
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 
