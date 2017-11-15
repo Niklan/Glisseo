@@ -9,7 +9,7 @@ $dialog-border: 1px solid #c1c1c1 !default;
 $dialog-color: $text-color !default;
 $dialog-background: white !default;
 
-$dialog-header-background: $gray-lighter !default;
+$dialog-header-background: gray('500') !default;
 $dialog-header-color: $text-color !default;
 $dialog-header-padding: 8px 16px !default;
 $dialog-header-border-only-bottom: true !default;
@@ -21,7 +21,7 @@ $dialog-title-size: $font-size-base !default;
 
 $dialog-content-padding: 16px !default;
 
-$dialog-buttonpane-background: $gray-lighter !default;
+$dialog-buttonpane-background: gray('500') !default;
 $dialog-buttonpane-border-only-top: true !default;
 $dialog-buttonpane-border: 1px solid #c1c1c1 !default;
 $dialog-buttonpane-padding: 8px 16px !default;

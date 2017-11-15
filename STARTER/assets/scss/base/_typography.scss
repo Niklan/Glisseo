@@ -31,9 +31,9 @@ $headings-color:          inherit !default;
 
 // Typo colors.
 // Global text color on <body>.
-$text-color:           $gray-dark;
-$text-color-subtle:    $gray-light;
-$text-color-highlight: $gray-darken;
+$text-color:           #333;
+$text-color-subtle:    gray('500');
+$text-color-highlight: gray('600');
 $text-color-info:      theme-color('info');
 $text-color-success:   theme-color('success');
 $text-color-warning:   theme-color('warning');
@@ -50,10 +50,10 @@ $mark-bg: #FFF9C4;
 
 // Blockqoutes.
 $blockquote-font-size:    ($font-size-base * 1.15) !default;
-$blockquote-border-color: $gray-lighter !default;
+$blockquote-border-color: gray('500') !default;
 
 // <hr> tag.
-$hr-border-color: $gray-lighter !default;
+$hr-border-color: gray('500') !default;
 
 html {
   font-size: 1rem; // Hardcoded, because we need inherit user font-size.
