@@ -9,6 +9,7 @@ No changes has been made.
 ### Starter theme
 
 - Button component base style moved from `.button` class to placeholder `%button`. This is more flexible solution because of `@extend .class` can broke in some behaviors with ordering.
+- In /assets/utilities/_all.scss function and variables is swapped. Function is now has higher priority. It's allow to use functions inside variables.
 
 ## 1.0-alpha1
 
