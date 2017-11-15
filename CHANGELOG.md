@@ -10,6 +10,10 @@ No changes has been made.
 
 - Button component base style moved from `.button` class to placeholder `%button`. This is more flexible solution because of `@extend .class` can broke in some behaviors with ordering.
 - In /assets/utilities/_all.scss function and variables is swapped. Function is now has higher priority. It's allow to use functions inside variables.
+- Colors like -site-color-1 and so forth is replaced by single variable -colors which is array.
+- Added new function theme-color(). This functions return color by his key from -colors array. Bootstrap like.
+- Added new function theme-color-level(). This function returns color mixing by his key and level. 0 - is the same color, negative values will desature color, positive is opposite. Bootstrap like.
+- All base colors variables was replaced by functions.
 
 ## 1.0-alpha1
 
