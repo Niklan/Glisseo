@@ -22,6 +22,7 @@ No changes has been made.
 - Some default colors were replaced by new `color()` function.
 - `color-contrast()` function is renamed to `color-yiq()`.
 - Added two new variables `$yiq-text-dark` and `$yiq-text-light`. They used in `color-yiq()` function as default values.
+- Pointless readme files in assets folder, which created for keep folders in repo were removed and replaced by hidden files `.gitkeep`.
 
 ## 1.0-alpha1
 
