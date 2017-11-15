@@ -60,7 +60,6 @@ $colors: map-merge((
   'gray-dark':  $gray-800
 ), $colors);
 
-
 // Colors used in theme. Such as text colors, buttons, links and so on.
 // Here is main colors of the theme. If you want to add custom color just for
 // special usage, use $colors instead.
@@ -76,9 +75,12 @@ $theme-colors: map-merge((
 
 $theme-color-interval: 8% !default;
 
+$yiq-text-dark: $gray-900 !default;
+$yiq-text-light: $white !default;
+
 // Background and text colors for selected elements.
-$selection-bg:    #8bc34a !default;
-$selection-color: white !default;
+$selection-bg:    theme-color('primary') !default;
+$selection-color: color-yiq($selection-bg) !default;
 
 // Border radius.
 $border-radius-small: 3px !default;

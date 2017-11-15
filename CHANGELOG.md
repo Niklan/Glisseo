@@ -20,6 +20,8 @@ No changes has been made.
 - Added `$colors` variable for all others colors. Bootstrap alike.
 - Added new function `color()`. Returns color by his key. Bootstrap alike.
 - Some default colors were replaced by new `color()` function.
+- `color-contrast()` function is renamed to `color-yiq()`.
+- Added two new variables `$yiq-text-dark` and `$yiq-text-light`. They used in `color-yiq()` function as default values.
 
 ## 1.0-alpha1
 
