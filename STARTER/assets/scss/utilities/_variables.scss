@@ -4,9 +4,7 @@
  */
 
 // UI colors.
-$ui-site-color-1: red;
-$ui-site-color-2: blue;
-$ui-site-color-3: green;
+$theme-colors: () !default;
 
 // Background color for <body>.
 $body-bg: #fff;
@@ -20,22 +18,316 @@ $gray-light:   lighten($gray-base, 46.7%);
 $gray-lighter: lighten($gray-base, 93.5%);
 
 // Branding.
-$brand-main:         #f44336;
-$brand-border-color: #E8E8E8;
-$brand-primary:      #3F51B5;
-$brand-success:      #4CAF50 !default;
-$brand-info:         #29B6F6 !default;
-$brand-warning:      #FF9800 !default;
-$brand-error:        #F44336 !default;
+$theme-colors: map-merge((
+  'primary':   #4caf50,
+  'secondary': #4caf50,
+  'border':    #e0e0e0,
+  'success':   #4CAF50,
+  'info':      #29B6F6,
+  'warning':   #FF9800,
+  'error':     #F44336,
+), $theme-colors);
+
+$theme-color-interval: 8% !default;
 
 // Background and text colors for selected elements.
-$selection-bg:    #673AB7;
+$selection-bg:    #8bc34a;
 $selection-color: white;
+
+/**
+ * Typography.
+ */
+$font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family:            $font-family-sans-serif;
+
+// Font sizes.
+$font-size-base:  14px;
+$font-size-large: ceil($font-size-base * 1.25);
+$font-size-small: ceil($font-size-base * 0.85);
+$font-size-h1:    floor($font-size-base * 2);
+$font-size-h2:    floor($font-size-base * 1.75);
+$font-size-h3:    ceil($font-size-base * 1.5);
+$font-size-h4:    ceil($font-size-base * 1.25);
+$font-size-h5:    $font-size-base;
+$font-size-h6:    ceil($font-size-base * 0.85);
+
+// Line height.
+// Unit-less cuz used in buttons, inputs, etc.
+$line-height-base:     1.5 !default;
+$line-height-computed: floor($line-height-base * $font-size-base);
+
+// Headers default settings.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    400 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          #383838 !default;
+
+// Typo colors.
+// Global text color on <body>.
+$text-color:           #333;
+$text-color-subtle:    $gray-light;
+$text-color-highlight: $gray-darken;
+$text-color-info:      theme-color('info');
+$text-color-success:   theme-color('success');
+$text-color-warning:   theme-color('warning');
+$text-color-error:     theme-color('error');
+
+// Links
+$link-color:            hsl(209, 100%, 37%);
+$link-decoration:       none;
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: none;
+
+// <mark> tag.
+$mark-bg: #FFF9C4;
+
+// Blockqoutes.
+$blockquote-font-size:    ($font-size-base * 1.15) !default;
+$blockquote-border-color: $gray-lighter !default;
+
+// <hr> tag.
+$hr-border-color: $gray-lighter !default;
 
 // Border radius.
 $border-radius-small: 3px !default;
 $border-radius-base:  4px !default;
 $border-radius-large: 6px !default;
+
+/**
+ * Breadcrumbs.
+ */
+$breadcrumb-padding-vertical:   0 !default;
+$breadcrumb-padding-horizontal: 0 !default;
+$breadcrumb-margin-bottom:      16px !default;
+$breadcrumb-bg:                 none !default;
+$breadcrumb-delimiter-content:  '/' !default;
+$breadcrumb-delimiter-color:    #ccc !default;
+$breadcrumb-link-color:         $gray !default;
+$breadcrumb-link-border-enable: false !default;
+$breadcrumb-link-border-color:  rgba($gray-light, .3) !default;
+$breadcrumb-font-size:          13px;
+
+/**
+ * Buttons.
+ */
+$input-btn-padding-y:    8px !default;
+$input-btn-padding-x:    16px !default;
+$input-btn-line-height:  1.25 !default;
+$input-btn-border-width: 1px !default;
+
+// Small button
+$input-btn-padding-y-sm:   4px !default;
+$input-btn-padding-x-sm:   8px !default;
+$input-btn-line-height-sm: 1.5 !default;
+
+// Large buttons
+$input-btn-padding-y-lg:   8px !default;
+$input-btn-padding-x-lg:   16px !default;
+$input-btn-line-height-lg: 1.5 !default;
+
+$btn-font-weight:       normal !default;
+$btn-enable-shadows:    true !default;
+$btn-box-shadow:        0 1px 1px rgba(black, .125) !default;
+$btn-border-radius:     $border-radius-small !default;
+
+$btn-default-color:  #333 !default;
+$btn-default-bg:     #fff !default;
+$btn-default-border: #ccc !default;
+
+$btn-primary-color:  white !default;
+$btn-primary-bg:     theme-color('primary') !default;
+$btn-primary-border: transparent !default;
+
+$btn-success-color:  white !default;
+$btn-success-bg:     theme-color('success') !default;
+$btn-success-border: theme-color-level('success', 1) !default;
+
+$btn-warning-color:  white !default;
+$btn-warning-bg:     theme-color('warning') !default;
+$btn-warning-border: theme-color-level('warning', 1) !default;
+
+$btn-danger-color:  white !default;
+$btn-danger-bg:     theme-color('error') !default;
+$btn-danger-border: theme-color-level('error', 1) !default;
+
+$btn-info-color:  white !default;
+$btn-info-bg:     theme-color('info') !default;
+$btn-info-border: theme-color-level('error', 1) !default;
+
+/**
+ * Contextual links.
+ */
+$contextual-links-bg:            white;
+$contextual-links-border:        1px solid #ddd;
+$contextual-links-border-radius: 4px 0 4px 4px;
+$contextual-links-hover-bg:      #f2f2f2;
+$contextual-links-color:         inherit;
+$contextual-links-box-shadow:    0 5px 10px 0 rgba(black, .2);
+
+/**
+ * Forms.
+ */
+$input-bg:                white !default;
+$input-border:            rgba(34,36,38,.15) !default;
+$input-border-focus:      theme-color('primary');
+$input-enable-shadows:    false !default;
+$input-box-shadow:        0 0 0 0 transparent !default;
+$input-focus-box-shadow:  0 0 0 3px rgba(theme-color('primary'), .5) !default;
+$input-border-radius:     $border-radius-small;
+
+$input-bg-disabled:     rgb(250, 250, 250);
+$input-color-disabled:  rgba(163, 163, 163, 1);
+
+$label-required-enabled: true;
+$label-required-content: '*';
+$label-required-color:   theme-color('error');
+$label-required-margin:  0 0 0 .25rem;
+
+/**
+ * Messages.
+ */
+$message-padding-y:     1rem;
+$message-padding-x:     1rem;
+$message-border-width:  1px;
+$message-border-radius: $border-radius-small;
+$message-margin:        0 0 1rem;
+
+$message-default-bg:  #FAFAFA;
+$message-default-border: #EEEEEE;
+$message-default-color: #5D5D5D;
+
+$message-error-bg:     #FFF6F6;
+$message-error-border: #E0B4B4;
+$message-error-color:  #9F3A38;
+
+$message-status-bg:     #FCFFF5;
+$message-status-border: #A3C293;
+$message-status-color:  #2C662D;
+
+$message-warning-bg:     #FFFAF3;
+$message-warning-border: #C9BA9B;
+$message-warning-color:  #573A08;
+
+/**
+ * Pager.
+ */
+$pager-list-margin:     1rem auto;
+$pager-list-padding:    0;
+$pager-list-background: #FFF;
+
+$pager-item-color: #8C8C8C;
+$pager-item-margin: 0;
+$pager-item-padding: 0 .25rem;
+
+$pager-item-link-border-bottom: 3px solid transparent;
+$pager-item-link-border-active-color: darken($link-color, 20%);
+$pager-item-link-padding: 0 .25rem .25rem;
+$pager-item-link-font-weight: 600;
+$pager-item-link-color: $link-color;
+$pager-item-link-active-color: darken($link-color, 20%);
+
+/**
+ * Table.
+ */
+// Padding for <th>s and <td>s.
+$table-cell-padding: .75rem;
+// Padding for cells in .table-condensed.
+$table-condensed-cell-padding: 5px;
+// Default background color used for all tables.
+$table-bg: transparent;
+// Background color used for .table-striped.
+$table-bg-accent: #f9f9f9;
+// Background color used for .table-hover.
+$table-bg-hover: #f5f5f5;
+$table-bg-active: $table-bg-hover;
+// Border color for table and cell borders.
+$table-border-color: #e9ecef;
+
+/**
+ * Tabs.
+ */
+// Vertical tabs.
+$vertical-tabs-bg:                    white;
+$vertical-tabs-list-bg:               #fbfaf8;
+$vertical-tabs-button-color:          #555459;
+$vertical-tabs-button-color-selected: white;
+$vertical-tabs-button-bg-selected:    #439fe0;
+$vertical-tabs-button-text-shadow:    0 1px 0 rgba(0,0,0,.1);
+$vertical-tabs-list-border:           1px solid #DDD;
+
+// Primary tabs.
+$primary-tabs-bg:                      #F5F5F5;
+$primary-tabs-margin:                  0 0 1rem;
+$primary-tabs-padding:                 .25rem;
+$primary-tabs-inactive-color:          #bdc3c7;
+$primary-tabs-task-background:         white;
+$primary-tabs-task-color:              $text-color;
+$primary-tabs-tab-padding:             .5rem;
+$primary-tabs-task-active-color:       black;
+$primary-tabs-task-active-background:  #F5F5F5;
+$primary-tabs-tab-border:              1px solid #CCC;
+$primary-tabs-tab-border-remove-right: true;
+
+// Secondary tabs.
+$secondary-tabs-bg:                      transparent;
+$secondary-tabs-margin:                  0 0 1rem;
+$secondary-tabs-padding:                 .25rem;
+$secondary-tabs-inactive-color:          #bdc3c7;
+$secondary-tabs-task-background:         transparent;
+$secondary-tabs-task-color:              $link-color;
+$secondary-tabs-tab-padding:             .5rem;
+$secondary-tabs-tab-margin:              0 .5rem 0 0;
+$secondary-tabs-task-active-color:       white;
+$secondary-tabs-task-active-background:  $link-color;
+$secondary-tabs-tab-border:              3px solid $link-color;
+
+/**
+ * Text.
+ */
+$highlight-color:         #d7dae0;
+$highlight-bg:            #31363f;
+$highlight-info-color:    lighten(theme-color('info'), 40%);
+$highlight-info-bg:       theme-color('info');
+$highlight-success-color: lighten(theme-color('success'), 40%);
+$highlight-success-bg:    theme-color('success');
+$highlight-warning-color: lighten(theme-color('warning'), 40%);
+$highlight-warning-bg:    theme-color('warning');
+$highlight-error-color:   lighten(theme-color('error'), 40%);
+$highlight-error-bg:      theme-color('error');
+
+/**
+ * Ui dialog.
+ */
+$dialog-overlay-background: black !default;
+$dialog-overlay-opacity: .25 !default;
+
+$dialog-enable-shadows:    true !default;
+$dialog-box-shadow: 0 0 0 2px rgba(black, .15) !default;
+$dialog-border-radius: 0 !default;
+$dialog-padding: 0 !default;
+$dialog-border: 1px solid #c1c1c1 !default;
+$dialog-color: $text-color !default;
+$dialog-background: white !default;
+
+$dialog-header-background: $gray-lighter !default;
+$dialog-header-color: $text-color !default;
+$dialog-header-padding: 8px 16px !default;
+$dialog-header-border-only-bottom: true !default;
+$dialog-header-border: 1px solid #c1c1c1 !default;
+
+$dialog-title-color: #333 !default;
+$dialog-title-weight: bold !default;
+$dialog-title-size: $font-size-base !default;
+
+$dialog-content-padding: 16px !default;
+
+$dialog-buttonpane-background: $gray-lighter !default;
+$dialog-buttonpane-border-only-top: true !default;
+$dialog-buttonpane-border: 1px solid #c1c1c1 !default;
+$dialog-buttonpane-padding: 8px 16px !default;
+$dialog-buttonpane-buttons-align-right: true !default;
 
 /**
  * Media breakpoints.

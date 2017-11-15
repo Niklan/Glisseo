@@ -32,7 +32,7 @@ select {
   }
 
   &.error {
-    border-color: $brand-error;
+    border-color: theme-color('error');
   }
 
   &:focus {
