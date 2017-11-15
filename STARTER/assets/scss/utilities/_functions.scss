@@ -84,6 +84,13 @@
 /**
  * Return color by his key.
  */
+@function color($key: 'blue') {
+  @return map-get($colors, $key);
+}
+
+/**
+ * Return color by his key.
+ */
 @function theme-color($key: 'primary') {
   @return map-get($theme-colors, $key);
 }

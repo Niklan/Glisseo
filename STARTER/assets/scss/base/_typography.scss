@@ -40,9 +40,9 @@ $text-color-warning:   theme-color('warning');
 $text-color-error:     theme-color('error');
 
 // Links
-$link-color:            #3f51b5;
+$link-color:            theme-color('primary');
 $link-decoration:       none;
-$link-hover-color:      darken($link-color, 15%);
+$link-hover-color:      theme-color-level('primary', 4);
 $link-hover-decoration: none;
 
 // <mark> tag.

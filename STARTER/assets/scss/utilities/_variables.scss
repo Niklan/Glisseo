@@ -1,13 +1,10 @@
 /**
  * @file
- * Global variables.
+ * Global default variables.
  */
 
-// UI colors.
-$theme-colors: () !default;
-
 // Background color for <body>.
-$body-bg: #fff;
+$body-bg: #fff !default;
 
 // Base colors.
 $white:    #fff !default;
@@ -35,9 +32,42 @@ $grays: map-merge((
   '900': $gray-900
 ), $grays);
 
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+$colors: map-merge((
+  'blue':       $blue,
+  'indigo':     $indigo,
+  'purple':     $purple,
+  'pink':       $pink,
+  'red':        $red,
+  'orange':     $orange,
+  'yellow':     $yellow,
+  'green':      $green,
+  'teal':       $teal,
+  'cyan':       $cyan,
+  'white':      $white,
+  'gray':       $gray-600,
+  'gray-dark':  $gray-800
+), $colors);
+
+
+// Colors used in theme. Such as text colors, buttons, links and so on.
+// Here is main colors of the theme. If you want to add custom color just for
+// special usage, use $colors instead.
+$theme-colors: () !default;
 $theme-colors: map-merge((
-  'primary':   #4caf50,
-  'secondary': #4caf50,
+  'primary':   $blue,
+  'secondary': $gray-600,
   'success':   #4CAF50,
   'info':      #29B6F6,
   'warning':   #FF9800,
@@ -47,8 +77,8 @@ $theme-colors: map-merge((
 $theme-color-interval: 8% !default;
 
 // Background and text colors for selected elements.
-$selection-bg:    #8bc34a;
-$selection-color: white;
+$selection-bg:    #8bc34a !default;
+$selection-color: white !default;
 
 // Border radius.
 $border-radius-small: 3px !default;
