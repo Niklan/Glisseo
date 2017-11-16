@@ -2,7 +2,7 @@
  * FontAwesome
  * @see http://fontawesome.io
  */
-$fa-font-path: "../../node_modules/font-awesome/fonts";
+$fa-font-path: "../../node_modules/font-awesome/fonts" !default;
 @import "../../../../node_modules/font-awesome/scss/font-awesome";
 
 @mixin fa-icon($name, $position: before, $margin-size: 0.4em) {

@@ -26,6 +26,7 @@ No changes has been made.
 - `base/_base.scss` is moved to personal folder `base/global`.
 - Added variables to control focus outline and set default value. It's [bad practice](http://www.outlinenone.com) to ignore them, so they are back now!
 - `base/_typography.scss` is moved to personal folder `base/typography`.
+- Added !default to all variables. They now overridable in external files.
 
 ## 1.0-alpha1
 
