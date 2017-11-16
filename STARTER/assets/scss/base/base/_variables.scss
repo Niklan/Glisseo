@@ -1,0 +1,8 @@
+// It's a good practice to leave focus on element. If you disable it make sure
+// you have other visual implementation for focused elements!
+// @see http://www.outlinenone.com/
+$focus-outline-width: 2px !default;
+$focus-outline-style: solid !default;
+$focus-outline-color: rgba(theme-color('primary'), .3) !default;
+
+$body-bg: white !default;;
