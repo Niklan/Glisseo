@@ -27,6 +27,8 @@ No changes has been made.
 - Added variables to control focus outline and set default value. It's [bad practice](http://www.outlinenone.com) to ignore them, so they are back now!
 - `base/_typography.scss` is moved to personal folder `base/typography`.
 - Added !default to all variables. They now overridable in external files.
+- Cleaned utilities directory.
+- Variables is now has several files. By default `_global.scss` to all global default variables and `_custom.scss` with your overridden variables and new ones. You still can edit variables directly, because it's all in your custom theme and can't brake anything else. All depends on your preferences.
 
 ## 1.0-alpha1
 
