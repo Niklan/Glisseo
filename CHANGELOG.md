@@ -25,7 +25,7 @@ No changes has been made.
 - Pointless readme files in assets folder, which created for keep folders in repo were removed and replaced by hidden files `.gitkeep`.
 - `base/_base.scss` is moved to personal folder `base/base`.
 - Added variables to control focus outline and set default value. It's [bad practice](http://www.outlinenone.com) to ignore them, so they are back now!
-
+- `base/_typography.scss` is moved to personal folder `base/typography`.
 
 ## 1.0-alpha1
 
