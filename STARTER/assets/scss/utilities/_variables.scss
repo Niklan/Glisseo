@@ -75,10 +75,6 @@ $theme-color-interval: 8% !default;
 $yiq-text-dark: $gray-900 !default;
 $yiq-text-light: $white !default;
 
-// Background and text colors for selected elements.
-$selection-bg:    theme-color('primary') !default;
-$selection-color: color-yiq($selection-bg) !default;
-
 // Border radius.
 $border-radius-small: 3px !default;
 $border-radius-base:  4px !default;
