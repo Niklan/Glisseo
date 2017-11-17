@@ -1,7 +1,7 @@
 /**
  * Button style generator.
  */
- @mixin button-variant($color, $background, $border: transparent) {
+@mixin button-variant($color, $background, $border: transparent) {
   @extend %button;
   $active-background: darken($background, 10%);
   $active-border: darken($border, 12%);
@@ -23,6 +23,7 @@
   }
 
   &:focus {
+    outline: none;
     @if ($btn-enable-shadows) {
       box-shadow: 0 0 0 3px rgba($background, .5);
     }
