@@ -1,6 +1,16 @@
 # Changelog
 
-## Master (changes maded since last release)
+## Master (changes made since last release)
+
+### Base theme
+
+No changes has been made.
+
+### Starter theme
+
+No changes has been made.
+
+## 1.0-alpha2
 
 ### Base theme
 
