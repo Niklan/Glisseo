@@ -28,3 +28,14 @@
   $remSize: strip-unit($size) / 16;
   @return #{$remSize}rem;
 }
+
+
+/**
+ * Return gap size.
+ *
+ * This functions is used in default styles as "rule of 8px".
+ * @see https://medium.com/wayfair-design/more-padding-please-b95e19422acc
+ */
+@function gap($size: 1) {
+  @return $gap-size * $size;
+}

@@ -75,6 +75,9 @@ $theme-color-interval: 8% !default;
 $yiq-text-dark: $gray-900 !default;
 $yiq-text-light: $white !default;
 
+// @see gap() function for more information.
+$gap-size: 8px;
+
 // Border radius.
 $border-radius-small: 3px !default;
 $border-radius-base:  4px !default;
