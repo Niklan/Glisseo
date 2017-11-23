@@ -19,20 +19,20 @@
 *  Susy for creating website much faster with flexible grids.
 *  FontAwesome for using SVG icons.
 *  Breakpoint for making your site responsive.
-*  Drupal 8 CSS standarts.
+*  [SMACSS alike architecture, improved to Drupal experience.](docs/scss-architecture.md)
 *  Good structure.
-*  Predefined DisplaySuite layouts.
 *  Clear Views templates with more semantic code (footer, section, header).
 *  Flexbox mixins with old syntax support.
 *  Lots of other mixins and functions that will make your theming easier and enjoyable.
 *  and much more..
 
-Due of the theme structure, where all parts are separated of each other, you can disable most of them without any pain and consequences, just remove import line and delete files. Theme is highly customazible and you can easly replace any part of it by your needs.
+Due of the theme structure, where all parts are separated of each other, you can disable most of them without any pain and consequences, just remove import line and delete files. Theme is highly customazible and you can easily replace any part of it by your needs.
 
 
 ## Documentation
 
 *  [Getting started](docs/getting-started.md)
+*  [SCSS architecture](docs/scss-architecture.md)
 *  [Responsive guide](docs/responsive-guide.md)
 *  [BrowserSync and LiveReload integration](docs/live-reload.md)
 *  [Tips, tricks and snippets](docs/tips-tricks-snippets.md)

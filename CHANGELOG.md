@@ -10,6 +10,8 @@ No changes has been made.
 
 - Added new variable `$gap-size` with default value of `8px`.
 - Added new function `gap()` which will be used by default in theme for "rule of 8px". You can read about this technique [here](https://medium.com/wayfair-design/more-padding-please-b95e19422acc).
+- Added information about [SCSS architecture](docs/scss-architecture.md) in this theme.
+- Removed default README.md files from scss folders.
 - `/assets/scss/base/typography` was improved and reworked. Added new variables, edited old, some styles were removed to follow rules of base folder.
 
 ## 1.0-alpha2
