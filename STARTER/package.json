@@ -19,18 +19,18 @@
   },
   "homepage": "https://github.com/Niklan/Glisseo#readme",
   "dependencies": {
-    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "normalize.css": "^7.0.0",
-    "susy": "^3.0.0",
-    "gulp-autoprefixer": "^4.0.0"
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "mdi": "^2.1.19",
+    "normalize.css": "^8.0.0",
+    "susy": "^3.0.3"
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.12"
+    "browser-sync": "^2.23.6"
   }
 }
