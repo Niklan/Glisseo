@@ -16,6 +16,9 @@ No changes has been made.
 - Added new variable `$gray-50` and color for it.
 - All gray colors was replaced with material design gray palette.
 - Improve `media-container()` mixin. Now it supports argument `$with-gutters: true` which allows to disable gutters and include only width of container.
+- Material Design Icons is now default icon font in theme. FontAwesome dependency were removed and added documentation how to take them back.
+- All dependency libraries was updated.
+- Added font-family parameter on all `input` element form default variable. This will override normalize font reset.
 
 ## 1.0-alpha2
 
