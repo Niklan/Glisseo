@@ -15,6 +15,7 @@ No changes has been made.
 - `/assets/scss/base/typography` was improved and reworked. Added new variables, edited old, some styles were removed to follow rules of base folder.
 - Added new variable `$gray-50` and color for it.
 - All gray colors was replaced with material design gray palette.
+- Improve `media-container()` mixin. Now it supports argument `$with-gutters: true` which allows to disable gutters and include only width of container.
 
 ## 1.0-alpha2
 
