@@ -13,6 +13,8 @@ No changes has been made.
 - Added information about [SCSS architecture](docs/scss-architecture.md) in this theme.
 - Removed default README.md files from scss folders.
 - `/assets/scss/base/typography` was improved and reworked. Added new variables, edited old, some styles were removed to follow rules of base folder.
+- Added new variable `$gray-50` and color for it.
+- All gray colors was replaced with material design gray palette.
 
 ## 1.0-alpha2
 
