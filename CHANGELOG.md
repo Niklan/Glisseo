@@ -8,7 +8,7 @@ No changes has been made.
 
 ### Starter theme
 
-No changes has been made.
+- Added new variable `$input-color` and added to inputs.
 
 ## 1.0-alpha3
 
