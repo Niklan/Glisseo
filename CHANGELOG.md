@@ -4,7 +4,9 @@
 
 ### Base theme
 
-No changes has been made.
+**This changes can be incompatible with previous versions.**
+
+- Removed ds-reset layout.
 
 ### Starter theme
 
