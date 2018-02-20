@@ -7,6 +7,7 @@
 **This changes can be incompatible with previous versions.**
 
 - Removed ds-reset layout.
+- Added default layout templates with corrected markup.
 
 ### Starter theme
 
