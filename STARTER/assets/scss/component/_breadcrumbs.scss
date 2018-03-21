@@ -1,3 +1,14 @@
+$breadcrumb-padding-vertical:   gap() !default;
+$breadcrumb-padding-horizontal: gap(2) !default;
+$breadcrumb-margin-bottom:      gap(2) !default;
+$breadcrumb-bg:                 gray('100') !default;
+$breadcrumb-delimiter-content:  '/' !default;
+$breadcrumb-delimiter-color:    gray('500') !default;
+$breadcrumb-link-color:         $link-color !default;
+$breadcrumb-link-border-enable: false !default;
+$breadcrumb-link-border-color:  rgba($link-color, .5) !default;
+$breadcrumb-font-size:          $font-size-base !default;
+
 .breadcrumbs {
   background: $breadcrumb-bg;
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;

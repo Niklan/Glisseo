@@ -4,14 +4,16 @@
 
 ### Base theme
 
-**This changes can be incompatible with previous versions.**
-
-- Removed ds-reset layout.
+- **Possible incompatible change.** Removed ds-reset layout.
 - Added default layout templates with corrected markup.
+- **Incompatible change**. Refactoring all templates and markup to satisfy [Drupal 8 CSS architecture](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8) (OOCSS).
 
 ### Starter theme
 
 - Added new variable `$input-color` and added to inputs.
+- All base styles was reworked to respect refactoring to OOCSS.
+- Installed `gulp-sass-glob` and updated gulpfile to use it.
+- SCSS folder is restructured for `gulp-sass-glob`. Now we have only one import file `styles.scss`, there are no more `_all.scss` inside any folder! You can now just create new `_file.scss` and it will be compiled! The splitting for components and base style to `_styles.scss`, `_variables.scss` and `_mixins.scss` is now removed and they are in a single file. This is done because gulp-sass-glob can't respect order and it will crash. The auto-include is much preferable than this splitting.
 
 ## 1.0-alpha3
 
