@@ -14,11 +14,10 @@
   display: flex;
 
   .region--sidebar-first {
-    flex: 1 1 span(3);
-    margin-right: gutter();
+    lost-column: 3/12;
   }
 
   .region--content {
-    flex: 1 1 span(9);
+    lost-column: 9/12;
   }
 }

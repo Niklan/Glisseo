@@ -108,67 +108,16 @@ body {
 }
 ```
 
-## SUSY
+## Lost
 
-For grid systems this theme provided SUSY mixins. They are very powerful and flexible. They keep your HTML clean of container and grid classes, and let you to define all your grid inside styles.
+[Official site and documentation](http://lostgrid.org)
 
-In most cases it's all about using three mixins: susy-clearfix, span and gallery. But it can do much-much more.
+@TODO
 
-By default theme provide basic settings for SUSY for 12 column grid system. You can edit those settings in *styles/scss/layout/_layouts.scss*.
 
-### clearfix
+## Combine media breakpoints and Lost
 
-This mixin is like `.clearfix` class, which you apply to container element, inside which will be grid columns.
-
-```scss
-.container {
-  @include clearfix;
-}
-```
-
-But you don't need this markup at all, you can use existing classes of current site markup and define all of this in SCSS.
-
-## span(), gutter() functions
-
-This functions used to create `span()` mixin above. In Susy 3 you can easly use it without mixns. So the example above can looks like:
-
-```scss
-.container {
-  @include clearfix;
-  
-  .left {
-    float: left;
-    width: span(4);
-    margin-right: gutter();
-  }
-  
-  .right {
-    float: right;
-    width: span(8 last);
-  }
-}
-```
-
-#### Flexbox example.
-
-```scss
-.container {
-  display: flex;
-  
-  .left {
-    flex: 0 1 span(4);
-    margin-right: gutter();
-  }
-  
-  .right {
-    flex: 0 1 span(8);
-  }
-}
-```
-
-**Tip!** Sometimes, when you are using flexbox you can drop in problem when container is much wider than you are set and it extends whole site. This is flexbox "bug" (behaviour) you just need to set `min-width: 0` to flex element which is extends over width. By default `flex` parameter set `min-width: auto` and this is cause the problem. Be aware of it!
-
-## Combine media breakpoints and susy
+@TODO
 
 Together, this couple of mixins can help you do whatever you wants.
 

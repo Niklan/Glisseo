@@ -33,19 +33,3 @@ yarn install
 cd /theme/THEMENAME
 npm install
 ~~~
-
-### Manual install
-
-**yarn**
-
-~~~bash
-cd /theme/THEMENAME
-yarn add gulp gulp-sass gulp-sourcemaps
-~~~
-
-**npm**
-
-~~~bash
-cd /theme/THEMENAME
-npm install gulp gulp-sass gulp-sourcemaps
-~~~
