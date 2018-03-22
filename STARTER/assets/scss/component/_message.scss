@@ -42,15 +42,15 @@ $message-warning-color:  #573A08 !default;
   border: $message-border-width solid transparent;
   @include message-variant($message-default-bg, $message-default-border, $message-default-color);
 
-  &.error {
+  &--error {
     @include message-variant($message-error-bg, $message-error-border, $message-error-color);
   }
 
-  &.status {
+  &--status {
     @include message-variant($message-status-bg, $message-status-border, $message-status-color);
   }
 
-  &.warning {
+  &--warning {
     @include message-variant($message-warning-bg, $message-warning-border, $message-warning-color);
   }
 }

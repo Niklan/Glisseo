@@ -7,6 +7,11 @@
 - **Possible incompatible change.** Removed ds-reset layout.
 - Added default layout templates with corrected markup.
 - **Incompatible change**. Refactoring all templates and markup to satisfy [Drupal 8 CSS architecture](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8) (OOCSS).
+- Fixed previously added suggestions for paragraphs:
+  - paragraph--{ID}--{VIEW_MODE}.html.twig
+  - paragraph--{ID}.html.twig
+- Added suggestion to block content type:
+  - block--{BLOCK_TYPE}.html.twig
 
 ### Starter theme
 

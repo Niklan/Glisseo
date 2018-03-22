@@ -32,12 +32,29 @@ function glisseo_theme_suggestions_taxonomy_term_alter(&$suggestions, $variables
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * This hook add new theme hook suggestion for paragraphs:
- *  - paragraph--paragraphid--viewmode.html.twig
- *  - paragraph--paragraphid.html.twig
+ *  - paragraph--{ID}--{VIEW_MODE}.html.twig
+ *  - paragraph--{ID}.html.twig
  */
-function funnykid_theme_suggestions_paragraph_alter(&$suggestion, $variables, $hook) {
+function glisseo_theme_suggestions_paragraph_alter(&$suggestion, $variables, $hook) {
   $paragraph = $variables['elements']['#paragraph'];
   $view_mode = $variables['elements']['#view_mode'];
   $suggestion[] = 'paragraph__' . $paragraph->id();
   $suggestion[] = 'paragraph__' . $paragraph->id() . '__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add new theme hook suggestion by block content type.
+ *  - block--{BLOCK_TYPE}.html.twig
+ */
+function glisseo_theme_suggestions_block_alter(&$suggestions, $variables, $hook) {
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $block = $variables['elements']['content']['#block_content'];
+    $last_suggestion = end($suggestions);
+    // Temporary remove it from suggestion, it must be at the end.
+    unset($suggestions[count($suggestions) - 1]);
+    $suggestions[] = 'block__' . $block->bundle();
+    $suggestions[] = $last_suggestion;
+  }
 }
