@@ -5,8 +5,6 @@ $breadcrumb-bg:                 gray('100') !default;
 $breadcrumb-delimiter-content:  '/' !default;
 $breadcrumb-delimiter-color:    gray('500') !default;
 $breadcrumb-link-color:         $link-color !default;
-$breadcrumb-link-border-enable: false !default;
-$breadcrumb-link-border-color:  rgba($link-color, .5) !default;
 $breadcrumb-font-size:          $font-size-base !default;
 
 .breadcrumbs {
@@ -15,42 +13,62 @@ $breadcrumb-font-size:          $font-size-base !default;
   margin-bottom: $breadcrumb-margin-bottom;
   border-radius: $border-radius-base;
   font-size: $breadcrumb-font-size;
+  display: flex;
 
-  .delimiter {
-    color: $breadcrumb-delimiter-color;
+  &__path {
+    display: inline;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      flex-grow: 0;
+      flex-shrink: 1;
+    }
   }
 
-  ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  &__item {
+    &::after {
+      margin: 0 4px;
+      content: $breadcrumb-delimiter-content;
+      color: $breadcrumb-delimiter-color;
+    }
 
-    li {
-      display: inline-block;
+    &.is-link {
+      color: $breadcrumb-link-color;
+    }
 
-      &:not(:last-child) {
-        &:after {
+    &.is-current {
+      &::after {
+        display: none;
+      }
+
+      @include media-breakpoint-down(sm) {
+        &::before {
+          margin: 0 4px;
           content: $breadcrumb-delimiter-content;
-          display: inline-block;
           color: $breadcrumb-delimiter-color;
         }
       }
+    }
 
-      a {
-        color: $breadcrumb-link-color;
-
-        @if ($breadcrumb-link-border-enable) {
-          border-bottom: 1px solid $breadcrumb-link-border-color;
-        }
-
-        &:hover {
-          color: darken($breadcrumb-link-color, 10%);
-
-          @if ($breadcrumb-link-border-enable) {
-            border-color: darken($breadcrumb-link-border-color, 12%);
-          }
+    @include media-breakpoint-down(sm) {
+      &:last-child {
+        &::after {
+          display: none;
         }
       }
+    }
+  }
+
+  &__current {
+    display: inline;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+      flex-grow: 1;
+      flex-shrink: 0;
     }
   }
 }
