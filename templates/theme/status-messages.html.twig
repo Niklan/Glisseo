@@ -24,7 +24,7 @@
     {%
       set classes = [
         'messages',
-        type,
+        'messages--' ~ type,
       ]
     %}
     <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
@@ -35,9 +35,9 @@
           <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
         {% endif %}
         {% if messages|length > 1 %}
-          <ul class="list">
+          <ul class="messages__items">
             {% for message in messages %}
-              <li class="item">{{ message }}</li>
+              <li class="messages__item">{{ message }}</li>
             {% endfor %}
           </ul>
         {% else %}

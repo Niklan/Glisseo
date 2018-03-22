@@ -15,11 +15,11 @@
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <div{{ title_attributes.addClass('title') }}>{{ label }}</div>
+    <div{{ title_attributes.addClass('block__title') }}>{{ label }}</div>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    <div{{ content_attributes.addClass('content') }}>
+    <div{{ content_attributes.addClass('block__content') }}>
       {{ content }}
     </div>
   {% endblock %}

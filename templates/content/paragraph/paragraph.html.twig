@@ -17,7 +17,7 @@
   {% set attributes = attributes.setAttribute('id', ('paragraph-' ~ paragraph.id())|clean_id) %}
   <div{{ attributes.addClass(classes).addClass(additional_classes) }}>
     {% block content %}
-      <div class="paragraph-inner">{{ content }}</div>
+      <div class="paragraph__content">{{ content }}</div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

@@ -21,7 +21,7 @@
   {{ title_suffix }}
 
   {% if header %}
-    <header>
+    <header class="view__header">
       {{ header }}
     </header>
   {% endif %}
@@ -29,7 +29,7 @@
   {{ exposed }}
   {{ attachment_before }}
 
-  <div class="content">
+  <div class="view__content">
     {{ rows }}
     {{ empty }}
   </div>
@@ -39,7 +39,7 @@
   {{ more }}
 
   {% if footer %}
-    <footer>
+    <footer class="view__footer">
       {{ footer }}
     </footer>
   {% endif %}
