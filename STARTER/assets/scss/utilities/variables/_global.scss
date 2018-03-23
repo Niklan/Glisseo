@@ -80,10 +80,81 @@ $yiq-text-light: $white !default;
 // @see gap() function for more information.
 $gap-size: 8px;
 
+// Font
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family:            $font-family-sans-serif !default;
+
+// Text
+$text-color:           #333  !default;
+$text-color-subtle:    gray('500') !default;
+$text-color-highlight: gray('600') !default;
+$text-color-info:      theme-color('info') !default;
+$text-color-success:   theme-color('success') !default;
+$text-color-warning:   theme-color('warning') !default;
+$text-color-error:     theme-color('error') !default;
+
 // Border radius.
 $border-radius-small: 3px !default;
 $border-radius-base:  4px !default;
 $border-radius-large: 6px !default;
+
+// Typography
+// Font sizes.
+$font-size-base:  16px !default;
+$font-size-large: 125% !default;
+$font-size-small: 80% !default;
+$font-size-h1:    floor($font-size-base * 2) !default;
+$font-size-h2:    floor($font-size-base * 1.75) !default;
+$font-size-h3:    ceil($font-size-base * 1.5) !default;
+$font-size-h4:    ceil($font-size-base * 1.25) !default;
+$font-size-h5:    $font-size-base !default;
+$font-size-h6:    ceil($font-size-base * 0.85) !default;
+
+// Line height.
+// Unit-less cuz used in buttons, inputs, etc.
+$line-height-base:     1.5 !default;
+$line-height-computed: floor($line-height-base * $font-size-base) !default;
+
+$paragraph-margins: 0 0 gap(2) !default;
+
+// Headings default settings.
+$headings-font-family:    inherit !default;
+$headings-font-weight:    500 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+$headings-primary-margin-top:      gap(4) !default;
+$headings-primary-margin-bottom:   gap(2) !default;
+$headings-secondary-margin-top:    gap(3) !default;
+$headings-secondary-margin-bottom: gap(2) !default;
+
+// Links
+$link-color:            theme-color('primary') !default;
+$link-decoration:       none !default;
+$link-hover-color:      theme-color-level('primary', 4) !default;
+$link-hover-decoration: none !default;
+
+// <mark> tag.
+$mark-bg:      #FFF9C4 !default;
+$mark-padding: .2em !default;
+
+// Blockqoutes.
+$blockquote-font-size:    110% !default;
+$blockquote-border-size:  4px !default;
+$blockquote-border-color: gray('400') !default;
+$blockquote-paddings:     gap() gap(2) !default;
+$blockquote-margins:      0 0 gap(2) !default;
+
+// <hr> tag.
+$hr-border-color:  gray('500') !default;
+$hr-margin-top:    gap(2) !default;
+$hr-margin-bottom: gap(2) !default;
+
+// <ol> <ul> tags.
+$list-margins:  gap() 0 gap() gap(2) !default;
+$list-paddings: 0 !default;
 
 /**
  * Media breakpoints.

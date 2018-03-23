@@ -11,13 +11,25 @@
 
 #main {
   @include media-container;
-  display: flex;
+  lost-flex-container: row;
 
   .region--sidebar-first {
-    lost-column: 3/12;
+    @include media-breakpoint-up(lg) {
+      lost-column: 3/12 100px;
+    }
+
+    @include media-breakpoint-down(md) {
+      lost-column: 6/12;
+    }
   }
 
   .region--content {
-    lost-column: 9/12;
+    @include media-breakpoint-up(lg) {
+      lost-column: 9/12;
+    }
+
+    @include media-breakpoint-down(md) {
+      lost-column: 6/12;
+    }
   }
 }
