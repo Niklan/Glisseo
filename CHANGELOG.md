@@ -23,6 +23,7 @@
 - Added PostCSS.
 - `gulp-autoprefixier` replaced by `autoprefixier` from PostCSS.
 - SUSY is removed, to replace it added [Lost Grid](http://lostgrid.org) for PostCSS.
+- Added templates for local actions.
 
 ## 1.0-alpha3
 
