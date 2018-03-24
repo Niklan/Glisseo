@@ -17,3 +17,11 @@ function glisseo_preprocess_menu_local_action(&$variables) {
   }
   $classes[] = 'local-actions__link';
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function glisseo_preprocess_menu_local_task(&$variables) {
+  $classes = &$variables['link']['#options']['attributes']['class'];
+  $classes[] = 'tabs__menu-item-link';
+}

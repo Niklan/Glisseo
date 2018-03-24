@@ -1,3 +1,13 @@
+// @todo
 .local-actions {
+  padding: 0;
+  margin: 0 0 gap(3);
+  list-style: none;
+  display: flex;
 
+  &__item {
+    &:not(:last-child) {
+      margin-right: gap();
+    }
+  }
 }

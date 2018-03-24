@@ -6,6 +6,7 @@
     margin-top: 5px;
     margin-bottom: .25rem;
     color: $text-color-subtle;
+    font-size: 85%;
   }
 }
 
@@ -17,10 +18,4 @@
       margin: 0;
     }
   }
-}
-
-// Fix tabledrag handle.
-a.tabledrag-handle .handle {
-  height: rem(24);
-  width: rem(20);
 }

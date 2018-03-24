@@ -143,3 +143,9 @@ th {
     }
   }
 }
+
+// Fix tabledrag handle.
+a.tabledrag-handle .handle {
+  height: rem(24);
+  width: rem(20);
+}
