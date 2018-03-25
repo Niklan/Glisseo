@@ -1,12 +1,30 @@
+$label-required-enabled: true !default;
+$label-required-content: '*' !default;
+$label-required-color:   theme-color('error') !default;
+$label-required-margin:  0 0 0 .25rem !default;
+
 .form-item {
   margin: 0 0 1rem;
 
-  .description {
+  &__description {
     display: block;
     margin-top: 5px;
     margin-bottom: .25rem;
     color: $text-color-subtle;
     font-size: 85%;
+  }
+
+  &__label {
+    @if ($label-required-enabled) {
+      &.is-required {
+        &:after {
+          content: $label-required-content;
+          display: inline-block;
+          color: $label-required-color;
+          margin: $label-required-margin;
+        }
+      }
+    }
   }
 }
 
