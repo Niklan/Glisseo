@@ -3,22 +3,16 @@
  * Main layouts and styles for #app and other elements inside.
  */
 
-#header {
-  .container {
-    @include media-container;
-  }
-}
-
 #main {
   @include media-container;
   lost-flex-container: row;
 
   .region--sidebar-first {
     @include media-breakpoint-up(lg) {
-      lost-column: 3/12 100px;
+      lost-column: 3/12;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-between(sm, md) {
       lost-column: 6/12;
     }
   }
@@ -28,8 +22,9 @@
       lost-column: 9/12;
     }
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-between(sm, md) {
       lost-column: 6/12;
     }
   }
 }
+

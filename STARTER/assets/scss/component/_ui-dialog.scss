@@ -111,7 +111,7 @@ $dialog-buttonpane-buttons-align-right: true !default;
       }
 
       .button {
-        @extend .button-primary;
+        @extend .button--primary;
 
         .ui-button-text {
           padding: 0;

@@ -150,15 +150,15 @@ $btn-info-border: darken($btn-info-bg, 5%) !default;
  * Submit and primary button style.
  */
 .form-submit,
-.button-primary,
-.button-action {
+.button--primary,
+.button--action {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
 /**
  * Warning and preview buttons style.
  */
-.button-warning,
+.button--warning,
 #edit-preview {
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
 }
@@ -174,13 +174,13 @@ $btn-info-border: darken($btn-info-bg, 5%) !default;
 /**
  * Success button style.
  */
-.button-success {
+.button--success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
 }
 
 /**
  * Info button style.
  */
-.button-info {
+.button--info {
   @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }

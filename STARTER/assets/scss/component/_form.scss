@@ -1,15 +1,15 @@
 $label-required-enabled: true !default;
 $label-required-content: '*' !default;
 $label-required-color:   theme-color('error') !default;
-$label-required-margin:  0 0 0 .25rem !default;
+$label-required-margin:  0 0 0 4px !default;
 
 .form-item {
-  margin: 0 0 1rem;
+  margin: 0 0 gap(2);
 
   &__description {
     display: block;
-    margin-top: 5px;
-    margin-bottom: .25rem;
+    margin-top: gap();
+    margin-bottom: gap();
     color: $text-color-subtle;
     font-size: 85%;
   }
@@ -36,4 +36,18 @@ $label-required-margin:  0 0 0 .25rem !default;
       margin: 0;
     }
   }
+}
+
+.filter-wrapper {
+  margin-top: gap(-2);
+}
+
+.form-item__label {
+  &.option {
+    margin-bottom: 0;
+  }
+}
+
+.form-item--radio {
+  margin-bottom: 0;
 }
