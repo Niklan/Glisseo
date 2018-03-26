@@ -8,9 +8,10 @@ $table-border-color: #e9ecef !default;
 
 table {
   background: $table-bg;
-  @extend .table;
-  @extend .table-striped;
-  @extend .table-hover;
+  @extend %table;
+  @extend %table-striped;
+  @extend %table-condensed;
+  @extend %table-hover;
 }
 
 caption {
@@ -24,7 +25,7 @@ th {
   text-align: left;
 }
 
-.table {
+%table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1rem;
@@ -53,14 +54,10 @@ th {
   > tbody + tbody {
     border-top: 2px solid $table-border-color;
   }
-
-  .table {
-    background-color: $body-bg;
-  }
 }
 
 // Table with lower padding size.
-.table-condensed {
+%table-condensed {
   > thead,
   > tbody,
   > tfoot {
@@ -74,20 +71,20 @@ th {
 }
 
 // Zebra.
-.table-striped {
+%table-striped {
   > tbody > tr:nth-of-type(odd) {
     background-color: $table-bg-accent;
   }
 }
 
 // Hover effect.
-.table-hover {
+%table-hover {
   > tbody > tr:hover {
     background-color: $table-bg-hover;
   }
 }
 
-.table-responsive {
+.table-responsive-container {
   overflow-x: auto;
   min-height: 0.01%; // Workaround for IE9 bug
 
@@ -148,4 +145,24 @@ th {
 a.tabledrag-handle .handle {
   height: rem(24);
   width: rem(20);
+}
+
+.table {
+  @extend %table;
+}
+
+.table--condensed {
+  @extend %table-condensed;
+}
+
+.table--srippted {
+  @extend %table-striped;
+}
+
+.table--stripped {
+  @extend %table-striped;
+}
+
+.table--hover {
+  @extend %table-hover;
 }
