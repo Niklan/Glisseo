@@ -2,35 +2,3 @@
  * @file
  * Styles which you want to use more than few times and they always the same.
  */
-@keyframes check-icon {
-  0% {
-    stroke-dashoffset: 745.74853515625;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-#form-submitted-message {
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: green;
-  padding: 32px 0;
-
-  .icon {
-    margin-bottom: 16px;
-
-    svg {
-      width: 100px;
-
-      .checkmark {
-        width: 100px;
-        stroke: green;
-        stroke-dashoffset: 745.74853515625;
-        stroke-dasharray: 745.74853515625;
-        animation: check-icon 2s ease-out forwards;
-      }
-    }
-  }
-}

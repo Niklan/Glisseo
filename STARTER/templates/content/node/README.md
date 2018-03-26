@@ -1,2 +1,0 @@
- 
-Place for node templates.

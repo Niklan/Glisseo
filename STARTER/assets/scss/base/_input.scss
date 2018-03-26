@@ -47,6 +47,8 @@ select {
   border-radius: $input-border-radius;
   box-sizing: border-box;
   transition: all .15s ease-in-out;
+  font: inherit;
+
   @if ($input-enable-shadows) {
     box-shadow: $input-box-shadow;
   }
