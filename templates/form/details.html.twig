@@ -14,7 +14,7 @@
  * @see template_preprocess_details()
  */
 #}
-<details{{ attributes }}>
+<details{{ attributes.addClass('form-item') }}>
   {%
     set summary_classes = [
       required ? 'js-form-required',
@@ -27,12 +27,14 @@
   {%- endif -%}
 
   {% if errors %}
-    <div>
+    <div class="form-wrapper__errors">
       {{ errors }}
     </div>
   {% endif %}
 
-  {{ description }}
-  {{ children }}
-  {{ value }}
+  <div class="form-wrapper__content">
+    {{ description }}
+    {{ children }}
+    {{ value }}
+  </div>
 </details>
