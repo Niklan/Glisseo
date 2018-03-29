@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'product',
+    'product--' ~ product_entity.bundle()|clean_class,
+    'view-mode--' ~ elements['#view_mode']|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {{- product|without('variation_attributes') -}}
+</article>
