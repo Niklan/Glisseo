@@ -20,6 +20,16 @@
 }
 
 /**
+ * Return mixed color by his key.
+ */
+@function color-level($color-name: 'primary', $level: 0) {
+  $color: color($color-name);
+  $color-base: if($level > 0, #000, #fff);
+  $level: abs($level);
+  @return mix($color-base, $color, $level * $theme-color-interval);
+}
+
+/**
  * Return color by his key.
  */
 @function theme-color($key: 'primary') {

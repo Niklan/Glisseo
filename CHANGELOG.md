@@ -29,6 +29,7 @@
 - SUSY is removed, to replace it added [Lost Grid](http://lostgrid.org) for PostCSS.
 - Added templates for local actions.
 - Many of elements reworked and restyled.
+- Added SCSS function `color-level()` with same functionality as `theme-color-level()`.
 
 ## 1.0-alpha3
 
