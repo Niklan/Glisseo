@@ -1,30 +1,30 @@
 $dialog-overlay-background: black !default;
-$dialog-overlay-opacity: .25 !default;
+$dialog-overlay-opacity:    .80 !default;
 
-$dialog-enable-shadows:    true !default;
-$dialog-box-shadow: 0 0 0 2px rgba(black, .15) !default;
-$dialog-border-radius: 0 !default;
-$dialog-padding: 0 !default;
-$dialog-border: 1px solid #c1c1c1 !default;
-$dialog-color: $text-color !default;
-$dialog-background: white !default;
+$dialog-enable-shadows:    false !default;
+$dialog-box-shadow:        0 4px 8px 2px rgba(black, .3) !default;
+$dialog-border-radius:     4px !default;
+$dialog-padding:           0 !default;
+$dialog-border:            transparent !default;
+$dialog-color:             $text-color !default;
+$dialog-background:        white !default;
 
-$dialog-header-background: gray('100') !default;
-$dialog-header-color: $text-color !default;
-$dialog-header-padding: 8px 16px !default;
+$dialog-header-background:         transparent !default;
+$dialog-header-color:              $text-color !default;
+$dialog-header-padding:            gap(2) gap(2) gap() !default;
 $dialog-header-border-only-bottom: true !default;
-$dialog-header-border: 1px solid #c1c1c1 !default;
+$dialog-header-border:             none !default;
 
-$dialog-title-color: #333 !default;
+$dialog-title-color:  #333 !default;
 $dialog-title-weight: bold !default;
-$dialog-title-size: $font-size-base !default;
+$dialog-title-size:   $font-size-base !default;
 
-$dialog-content-padding: 16px !default;
+$dialog-content-padding: 0 gap(2) !default;
 
-$dialog-buttonpane-background: gray('100') !default;
-$dialog-buttonpane-border-only-top: true !default;
-$dialog-buttonpane-border: 1px solid #c1c1c1 !default;
-$dialog-buttonpane-padding: 8px 16px !default;
+$dialog-buttonpane-background:          transparent !default;
+$dialog-buttonpane-border-only-top:     true !default;
+$dialog-buttonpane-border:              none !default;
+$dialog-buttonpane-padding:             0 gap(2) gap(2) !default;
 $dialog-buttonpane-buttons-align-right: true !default;
 
 .ui-widget-overlay {
@@ -44,7 +44,7 @@ $dialog-buttonpane-buttons-align-right: true !default;
   color: $dialog-color;
   padding: $dialog-padding;
   border-radius: $dialog-border-radius;
-  border: $dialog-border;
+  border: $dialog-border !important;
   max-width: 100%;
   font-size: $font-size-base;
   @if ($dialog-enable-shadows) {
@@ -74,8 +74,18 @@ $dialog-buttonpane-buttons-align-right: true !default;
       background: none;
       width: auto;
       border: none;
+      text-indent: 0;
+      @include mdi-icon('window-close', before, 0);
+      font-size: 28px;
+      line-height: 1;
+
+      &:before {
+        position: relative;
+        top: -6px;
+      }
 
       .ui-icon {
+        display: none;
         &:before {
           margin: 0;
         }
@@ -106,12 +116,16 @@ $dialog-buttonpane-buttons-align-right: true !default;
     }
 
     .ui-dialog-buttonset {
-      @if ($dialog-buttonpane-buttons-align-right) {
-        float: right;
-      }
+      float: none;
+      display: table;
+      margin: 0 auto;
 
       .button {
-        @extend .button--primary;
+        @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+        padding: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
 
         .ui-button-text {
           padding: 0;
