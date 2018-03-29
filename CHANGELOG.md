@@ -15,6 +15,7 @@
 - Slightly updated logo colors. For base theme and starter the svg logo is now contains objects, not the text because of font face that can be missed on systems.
 - Added new templates from stable theme.
 - **Possible incompatible change.** Added default **commerce-product.html.twig** template.
+- Added `data-hook-suggestion` for input fields support.
 
 ### Starter theme
 
