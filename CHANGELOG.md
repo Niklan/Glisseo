@@ -4,6 +4,12 @@
 
 ### Base theme
 
+## Starter theme
+
+## 1.0-alpha4
+
+### Base theme
+
 - **Possible incompatible change.** Removed ds-reset layout.
 - Added default layout templates with corrected markup.
 - **Incompatible change**. Refactoring all templates and markup to satisfy [Drupal 8 CSS architecture](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8) (OOCSS).
