@@ -50,11 +50,20 @@ function glisseo_theme_suggestions_paragraph_alter(&$suggestion, $variables, $ho
  */
 function glisseo_theme_suggestions_block_alter(&$suggestions, $variables, $hook) {
   if (isset($variables['elements']['content']['#block_content'])) {
-    $block = $variables['elements']['content']['#block_content'];
-    $last_suggestion = end($suggestions);
-    // Temporary remove it from suggestion, it must be at the end.
-    unset($suggestions[count($suggestions) - 1]);
-    $suggestions[] = 'block__' . $block->bundle();
-    $suggestions[] = $last_suggestion;
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add new theme hook suggestion to comment type.
+ *  - comment--{BUNDLE}--{VIEW_MODE}.html.twig
+ */
+function glisseo_theme_theme_suggestions_comment_alter(array &$suggestions, array $variables) {
+  $elements = $variables['elements'];
+  $comment = $elements['#comment'];
+  $view_mode = $elements['#view_mode'];
+  $bundle = $comment->bundle();
+  $suggestions[] = 'comment__' . $bundle . '__' . $view_mode;
 }

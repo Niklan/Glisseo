@@ -26,10 +26,11 @@
  * @see comment_preprocess_field()
  */
 #}
+<a id="comments"></a>
 <section{{ attributes.addClass('comments') }}>
   {% if comments and not label_hidden %}
     {{ title_prefix }}
-    <h2{{ title_attributes.addClass('comments__title') }}>{{ label }}</h2>
+    <h2{{ title_attributes.addClass('comments__title') }}>{{ label|t }}</h2>
     {{ title_suffix }}
   {% endif %}
 

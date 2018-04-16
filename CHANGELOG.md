@@ -4,7 +4,22 @@
 
 ### Base theme
 
-## Starter theme
+- Added new theme hook suggestion for comment `comment--{BUNDLE}--{VIEW_MODE}.html.twig`.
+- Added `<a id="comments"></a>` in field--comment.html.twig.
+- Added classes for comment template.
+- field--comment.html.twig label is now translatable.
+- Removed includes/layouts.inc. There was preprocess for old reset layout. After remove it, file was not needed.
+
+### Starter theme
+
+- `@lost cycle` changed from `none` to `auto`.
+- `global-styling` library is renamed to `global-assets`.
+- Added `$blockquote-bg` variable.
+- Removed default white background from pager.
+- Added `$mark-color` variable.
+- Set `font-size: $font-size-base;` for `code` element. This will override normalize.
+- Added `color: $input-color;` for `textarea` element.
+- Removed `$susy` variable. Which was forgotten.
 
 ## 1.0-alpha4
 

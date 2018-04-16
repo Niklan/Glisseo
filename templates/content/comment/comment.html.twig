@@ -64,8 +64,16 @@
  * @see template_preprocess_comment()
  */
 #}
-
-<article{{ attributes.addClass('js-comment', 'comment') }}>
+{%
+  set classes = [
+    'comment',
+    'comment--' ~ comment.bundle|clean_class,
+    'comment--' ~ comment.getCommentedEntityTypeId|clean_class ~ '--' ~ comment.getCommentedEntity.bundle|clean_class,
+    'view-mode--' ~ elements['#view_mode'],
+    'is-' ~ status,
+  ]
+%}
+<article{{ attributes.addClass('js-comment', classes) }}>
   {#
     Hide the "new" indicator by default, let a piece of JavaScript ask the
     server which comments are new for the user. Rendering the final "new"

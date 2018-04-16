@@ -139,6 +139,7 @@ $link-hover-decoration: none !default;
 // <mark> tag.
 $mark-bg:      #FFF9C4 !default;
 $mark-padding: .2em !default;
+$mark-color:   inherit !default;
 
 // Blockqoutes.
 $blockquote-font-size:    110% !default;
@@ -146,6 +147,7 @@ $blockquote-border-size:  4px !default;
 $blockquote-border-color: gray('400') !default;
 $blockquote-paddings:     gap() gap(2) !default;
 $blockquote-margins:      0 0 gap(2) !default;
+$blockquote-bg:           transparent !default;
 
 // <hr> tag.
 $hr-border-color:  gray('500') !default;

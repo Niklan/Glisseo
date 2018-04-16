@@ -78,6 +78,11 @@ hr {
 mark {
   padding: $mark-padding;
   background-color: $mark-bg;
+  color: $mark-color;
+}
+
+code {
+  font-size: $font-size-base;
 }
 
 pre {
@@ -91,4 +96,5 @@ blockquote {
   margin: $blockquote-margins;
   font-size: $blockquote-font-size;
   border-left: $blockquote-border-size solid $blockquote-border-color;
+  background: $blockquote-bg;
 }

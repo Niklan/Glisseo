@@ -18,7 +18,6 @@ $pager-item-link-active-color: darken($link-color, 20%) !default;
   padding: $pager-list-padding;
   list-style: none outside none;
   display: table;
-  background: #FFF;
   overflow: hidden;
 
   .pager__item {
