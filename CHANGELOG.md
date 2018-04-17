@@ -4,6 +4,12 @@
 
 ### Base theme
 
+### Starter theme
+
+## 1.0-alpha5
+
+### Base theme
+
 - Added new theme hook suggestion for comment `comment--{BUNDLE}--{VIEW_MODE}.html.twig`.
 - Added `<a id="comments"></a>` in field--comment.html.twig.
 - Added classes for comment template.
