@@ -1,4 +1,4 @@
-global-assets:
+global_assets:
   version: 1.x
   css:
     theme:
