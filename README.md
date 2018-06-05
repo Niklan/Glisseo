@@ -16,6 +16,7 @@
 ## What's this
 
 *  SCSS preprocessor for better CSS experience.
+*  Configured [stylelint](https://stylelint.io/) for control coding standards across the project.
 *  [Lost Grid](http://lostgrid.org) for creating website much faster with flexible grids.
 *  [Material Design Icons](https://materialdesignicons.com/) for using SVG icons.
 *  Breakpoint for making your site responsive.

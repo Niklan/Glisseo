@@ -7,6 +7,7 @@
 ### Starter theme
 
 - `global-assets` is renamed to `global_assets` to be in same style as theme and module names called `theme_name/global_assets`.
+- Added [stylelint](https://stylelint.io/) configuration.
 
 ## 1.0-alpha5
 
