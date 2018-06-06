@@ -1,7 +1,6 @@
-/**
- * @file
- * Global default variables.
- */
+// =============================================================================
+// Variables.
+// =============================================================================
 
 // Base colors.
 $white:    #fff !default;
@@ -164,7 +163,7 @@ $list-paddings: 0 !default;
 // Minimum width for breakpoints.
 $media-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 468px,
   md: 768px,
   lg: 992px,
   xl: 1200px
@@ -182,7 +181,7 @@ $media-gutter-width: (
 // Maximum width for container.
 // @see mixin media-containers-max-width()
 $container-max-widths: (
-  sm: 540px,
+  sm: 420px,
   md: 720px,
   lg: 960px,
   xl: 1140px

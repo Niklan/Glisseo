@@ -101,7 +101,7 @@ rules:
   no-invalid-double-slash-comments: false
   no-missing-end-of-source-newline: true
   no-unknown-animations: true
-  number-leading-zero: never
+  number-leading-zero: always
   number-max-precision: 3
   number-no-trailing-zeros: true
   property-blacklist: null
@@ -133,7 +133,7 @@ rules:
   selector-max-combinators: null
   selector-max-compound-selectors: null
   selector-max-empty-lines: 0
-  selector-max-id: 1
+  selector-max-id: 0
   selector-max-pseudo-class: null
   selector-max-specificity: null
   selector-max-type: 1
