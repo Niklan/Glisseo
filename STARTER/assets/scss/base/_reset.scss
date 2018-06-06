@@ -11,7 +11,11 @@ $selection-color: color-yiq($selection-bg) !default;
 // Body
 $body-bg: white !default;
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  // Workaround for flexboxes.
+  min-width: 0;
+}
 
 // It's a good practice to leave focus on element. If you disable it make sure
 // you have other visual implementation for focused elements!

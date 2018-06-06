@@ -2,8 +2,10 @@
  * @file
  * This file contain all imports and compile to final file.
  */
-@import "utilities/**/*.scss";
+@import "settings/*.scss";
+@import "tools/**/*.scss";
+@import "generic/*.scss";
 @import "base/*.scss";
-@import "component/*.scss";
-@import "layout/*.scss";
-@import "module/**/*.scss";
+@import "objects/*.scss";
+@import "components/**/*.scss";
+@import "utilities/*.scss";
