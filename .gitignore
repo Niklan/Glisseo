@@ -2,3 +2,5 @@
 .idea
 # Block system file.
 .directory
+
+yarn.lock
