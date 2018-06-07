@@ -1,7 +1,11 @@
+// =============================================================================
+// Additional reset after normalize.css.
+// =============================================================================
+
 // Focus
 $focus-outline-width:  2px !default;
 $focus-outline-style:  dashed !default;
-$focus-outline-color:  rgba(theme-color('primary'), .3) !default;
+$focus-outline-color:  rgba(theme-color('primary'), 0.3) !default;
 $focus-outline-offset: 3px !default;
 
 // Background and text colors for selected elements.
@@ -9,7 +13,7 @@ $selection-bg:    theme-color('primary') !default;
 $selection-color: color-yiq($selection-bg) !default;
 
 // Body
-$body-bg: white !default;
+$body-bg: #ffffff !default;
 
 * {
   box-sizing: border-box;
