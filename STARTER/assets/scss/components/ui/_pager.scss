@@ -1,8 +1,12 @@
-$pager-list-margin:     1rem auto !default;
-$pager-list-padding:    0 !default;
-$pager-list-background: #FFF !default;
+// =============================================================================
+// Drupal hook theme pager.
+// =============================================================================
 
-$pager-item-color: #8C8C8C !default;
+$pager-list-margin: 1rem auto !default;
+$pager-list-padding: 0 !default;
+$pager-list-background: #ffffff !default;
+
+$pager-item-color: #8c8c8c !default;
 $pager-item-margin: 0 !default;
 $pager-item-padding: 0 .25rem !default;
 

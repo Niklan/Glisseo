@@ -24,7 +24,7 @@ rules:
   block-opening-brace-space-before: never-single-line
   color-hex-case: lower
   color-hex-length: long
-  color-named: always-where-possible
+  color-named: never
   color-no-hex: false
   color-no-invalid-hex: true
   comment-empty-line-before: always

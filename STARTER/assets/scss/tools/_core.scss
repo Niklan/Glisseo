@@ -2,6 +2,9 @@
 // Mixins and functions.
 // =============================================================================
 
+// Settings.
+@import "../settings/core";
+
 // Functions.
 @import "functions/colors";
 @import "functions/math";
@@ -12,4 +15,3 @@
 @import "mixins/gradient";
 @import "mixins/media-breakpoint";
 @import "mixins/typography";
-

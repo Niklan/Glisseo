@@ -16,6 +16,7 @@ This release is all about SCSS and styles quality and management. Most significa
 - Imports are back and sass-glob is not used anymore. This is cost of ITCSS architecture which is awesome!
 - Single styles.css is now split to 5 separated files according to ITCSS weight. Also there is now 4 libraries for styles which included in their own groups.
 - Material Design Icons package changed from mdi to @mdi/font to support new packages and icons.
+- Added commented example in STARTER libraries how to import Google Fonts correctly.
 
 ## 1.0-alpha5
 

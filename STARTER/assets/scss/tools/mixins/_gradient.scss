@@ -1,7 +1,7 @@
 // =====================================
 // Left to right.
 // =====================================
-@mixin gradient-x($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+@mixin gradient-x($start-color: #555555, $end-color: #333333, $start-percent: 0%, $end-percent: 100%) {
   background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent);
   background-repeat: repeat-x;
 }
@@ -17,7 +17,7 @@
 // =====================================
 // Top to bottom.
 // =====================================
-@mixin gradient-y($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+@mixin gradient-y($start-color: #555555, $end-color: #333333, $start-percent: 0%, $end-percent: 100%) {
   background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
   background-repeat: repeat-x;
 }
@@ -33,7 +33,7 @@
 // =====================================
 // Top to bottom from specified angle.
 // =====================================
-@mixin gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg) {
+@mixin gradient-directional($start-color: #555555, $end-color: #333333, $deg: 45deg) {
   background-image: linear-gradient($deg, $start-color, $end-color);
   background-repeat: repeat-x;
 }
@@ -41,7 +41,7 @@
 // =====================================
 // Radial gradient.
 // =====================================
-@mixin gradient-radial($inner-color: #555, $outer-color: #333) {
+@mixin gradient-radial($inner-color: #555555, $outer-color: #333333) {
   background-image: radial-gradient(circle, $inner-color, $outer-color);
   background-repeat: no-repeat;
 }

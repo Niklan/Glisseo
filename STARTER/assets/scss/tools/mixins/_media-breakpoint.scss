@@ -10,8 +10,7 @@
     @media (min-width: $min) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
@@ -28,8 +27,7 @@
     @media (max-width: $max) {
       @content;
     }
-  }
-  @else {
+  } @else {
     @content;
   }
 }
@@ -95,8 +93,7 @@
   @include media-containers-max-width();
   @if $with-gutters {
     @include media-container-gutters();
-  }
-  @else {
+  } @else {
     @include media-container-gutters(());
   }
 }

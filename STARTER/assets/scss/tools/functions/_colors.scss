@@ -5,8 +5,7 @@
 @function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
   @if $color == null {
     @return null;
-  }
-  @else {
+  } @else {
     $yiq: (red($color) * 299 + green($color) * 587 + blue($color) * 114) / 1000;
     @return if($yiq >= 128, $dark, $light);
   }
@@ -24,7 +23,7 @@
 // ====================================
 @function color-level($color-name: 'primary', $level: 0) {
   $color: color($color-name);
-  $color-base: if($level > 0, #000, #fff);
+  $color-base: if($level > 0, #000000, #ffffff);
   $level: abs($level);
   @return mix($color-base, $color, $level * $theme-color-interval);
 }
@@ -41,7 +40,7 @@
 // ====================================
 @function theme-color-level($color-name: 'primary', $level: 0) {
   $color: theme-color($color-name);
-  $color-base: if($level > 0, #000, #fff);
+  $color-base: if($level > 0, #000000, #ffffff);
   $level: abs($level);
   @return mix($color-base, $color, $level * $theme-color-interval);
 }

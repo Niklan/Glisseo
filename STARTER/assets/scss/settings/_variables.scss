@@ -3,22 +3,22 @@
 // =============================================================================
 
 // Base colors.
-$white:    #fff !default;
-$gray-50:  #FAFAFA !default;
-$gray-100: #F5F5F5 !default;
-$gray-200: #EEEEEE !default;
-$gray-300: #E0E0E0 !default;
-$gray-400: #BDBDBD !default;
-$gray-500: #9E9E9E !default;
+$white: #ffffff !default;
+$gray-50: #fafafa !default;
+$gray-100: #f5f5f5 !default;
+$gray-200: #eeeeee !default;
+$gray-300: #e0e0e0 !default;
+$gray-400: #bdbdbd !default;
+$gray-500: #9e9e9e !default;
 $gray-600: #757575 !default;
 $gray-700: #616161 !default;
 $gray-800: #424242 !default;
 $gray-900: #212121 !default;
-$black:    #000 !default;
+$black: #000000 !default;
 
 $grays: () !default;
 $grays: map-merge((
-  '50':  $gray-50,
+  '50': $gray-50,
   '100': $gray-100,
   '200': $gray-200,
   '300': $gray-300,
@@ -30,32 +30,32 @@ $grays: map-merge((
   '900': $gray-900
 ), $grays);
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
 
 $colors: () !default;
 $colors: map-merge((
-  'blue':       $blue,
-  'indigo':     $indigo,
-  'purple':     $purple,
-  'pink':       $pink,
-  'red':        $red,
-  'orange':     $orange,
-  'yellow':     $yellow,
-  'green':      $green,
-  'teal':       $teal,
-  'cyan':       $cyan,
-  'white':      $white,
-  'gray':       $gray-600,
-  'gray-dark':  $gray-800
+  blue: $blue,
+  indigo: $indigo,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal: $teal,
+  cyan: $cyan,
+  white: $white,
+  gray: $gray-600,
+  gray-dark: $gray-800
 ), $colors);
 
 // Colors used in theme. Such as text colors, buttons, links and so on.
@@ -63,12 +63,12 @@ $colors: map-merge((
 // special usage, use $colors instead.
 $theme-colors: () !default;
 $theme-colors: map-merge((
-  'primary':   $blue,
-  'secondary': $gray-600,
-  'success':   #4CAF50,
-  'info':      #29B6F6,
-  'warning':   #FF9800,
-  'error':     #F44336,
+  primary: $blue,
+  secondary: $gray-600,
+  success: #4caf50,
+  info: #29b6f6,
+  warning: #ff9800,
+  error: #f44336,
 ), $theme-colors);
 
 $theme-color-interval: 8% !default;
@@ -80,82 +80,81 @@ $yiq-text-light: $white !default;
 $gap-size: 8px;
 
 // Font
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family:            $font-family-sans-serif !default;
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
+$font-family: $font-family-sans-serif !default;
 
 // Text
-$text-color:           #333  !default;
-$text-color-subtle:    gray('500') !default;
+$text-color: #333333 !default;
+$text-color-subtle: gray('500') !default;
 $text-color-highlight: gray('600') !default;
-$text-color-info:      theme-color('info') !default;
-$text-color-success:   theme-color('success') !default;
-$text-color-warning:   theme-color('warning') !default;
-$text-color-error:     theme-color('error') !default;
+$text-color-info: theme-color('info') !default;
+$text-color-success: theme-color('success') !default;
+$text-color-warning: theme-color('warning') !default;
+$text-color-error: theme-color('error') !default;
 
 // Border radius.
 $border-radius-small: 3px !default;
-$border-radius-base:  4px !default;
+$border-radius-base: 4px !default;
 $border-radius-large: 6px !default;
 
 // Typography
 // Font sizes.
-$font-size-base:  16px !default;
+$font-size-base: 16px !default;
 $font-size-large: 125% !default;
 $font-size-small: 80% !default;
-$font-size-h1:    floor($font-size-base * 2) !default;
-$font-size-h2:    floor($font-size-base * 1.75) !default;
-$font-size-h3:    ceil($font-size-base * 1.5) !default;
-$font-size-h4:    ceil($font-size-base * 1.25) !default;
-$font-size-h5:    $font-size-base !default;
-$font-size-h6:    ceil($font-size-base * 0.85) !default;
+$font-size-h1: floor($font-size-base * 2) !default;
+$font-size-h2: floor($font-size-base * 1.75) !default;
+$font-size-h3: ceil($font-size-base * 1.5) !default;
+$font-size-h4: ceil($font-size-base * 1.25) !default;
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil($font-size-base * 0.85) !default;
 
 // Line height.
 // Unit-less cuz used in buttons, inputs, etc.
-$line-height-base:     1.5 !default;
+$line-height-base: 1.5 !default;
 $line-height-computed: floor($line-height-base * $font-size-base) !default;
 
 $paragraph-margins: 0 0 gap(2) !default;
 
 // Headings default settings.
-$headings-font-family:    inherit !default;
-$headings-font-weight:    500 !default;
-$headings-line-height:    1.1 !default;
-$headings-color:          inherit !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
 
-$headings-primary-margin-top:      gap(4) !default;
-$headings-primary-margin-bottom:   gap(2) !default;
-$headings-secondary-margin-top:    gap(3) !default;
+$headings-primary-margin-top: gap(4) !default;
+$headings-primary-margin-bottom: gap(2) !default;
+$headings-secondary-margin-top: gap(3) !default;
 $headings-secondary-margin-bottom: gap(2) !default;
 
 // Links
-// @todo
-$link-color:            red !default;
-$link-decoration:       none !default;
-$link-hover-color:      theme-color-level('primary', 4) !default;
+$link-color: map-get($theme-colors, primary) !default;
+$link-decoration: none !default;
+$link-hover-color: theme-color-level('primary', 4) !default;
 $link-hover-decoration: none !default;
 
 // <mark> tag.
-$mark-bg:      #FFF9C4 !default;
+$mark-bg: #fff9c4 !default;
 $mark-padding: .2em !default;
-$mark-color:   inherit !default;
+$mark-color: inherit !default;
 
 // Blockqoutes.
-$blockquote-font-size:    110% !default;
-$blockquote-border-size:  4px !default;
+$blockquote-font-size: 110% !default;
+$blockquote-border-size: 4px !default;
 $blockquote-border-color: gray('400') !default;
-$blockquote-paddings:     gap() gap(2) !default;
-$blockquote-margins:      0 0 gap(2) !default;
-$blockquote-bg:           transparent !default;
+$blockquote-paddings: gap() gap(2) !default;
+$blockquote-margins: 0 0 gap(2) !default;
+$blockquote-bg: transparent !default;
 
 // <hr> tag.
-$hr-border-color:  gray('500') !default;
-$hr-margin-top:    gap(2) !default;
+$hr-border-color: gray('500') !default;
+$hr-margin-top: gap(2) !default;
 $hr-margin-bottom: gap(2) !default;
 
 // <ol> <ul> tags.
-$list-margins:  gap() 0 gap() gap(2) !default;
+$list-margins: gap() 0 gap() gap(2) !default;
 $list-paddings: 0 !default;
 
 // =====================================
@@ -165,7 +164,7 @@ $list-paddings: 0 !default;
 // Minimum width for breakpoints.
 $media-breakpoints: (
   xs: 0,
-  sm: 576px,
+  sm: 468px,
   md: 768px,
   lg: 992px,
   xl: 1200px
@@ -183,7 +182,7 @@ $media-gutter-width: (
 // Maximum width for container.
 // @see mixin media-containers-max-width()
 $container-max-widths: (
-  sm: 540px,
+  sm: 420px,
   md: 720px,
   lg: 960px,
   xl: 1140px

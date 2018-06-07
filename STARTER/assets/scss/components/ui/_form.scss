@@ -1,7 +1,11 @@
+// =============================================================================
+// Drupal Form API elements.
+// =============================================================================
+
 $label-required-enabled: true !default;
 $label-required-content: '*' !default;
-$label-required-color:   theme-color('error') !default;
-$label-required-margin:  0 0 0 4px !default;
+$label-required-color: theme-color('error') !default;
+$label-required-margin: 0 0 0 4px !default;
 
 .form-item {
   margin: 0 0 gap(2);

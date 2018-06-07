@@ -1,24 +1,28 @@
-$message-padding-y:     1rem !default;
-$message-padding-x:     1rem !default;
-$message-border-width:  1px !default;
+// =============================================================================
+// Drupal messenger messages.
+// =============================================================================
+
+$message-padding-y: 1rem !default;
+$message-padding-x: 1rem !default;
+$message-border-width: 1px !default;
 $message-border-radius: $border-radius-small !default;
-$message-margin:        0 0 1rem !default;
+$message-margin: 0 0 1rem !default;
 
-$message-default-bg:  #FAFAFA !default;
-$message-default-border: #EEEEEE !default;
-$message-default-color: #5D5D5D !default;
+$message-default-bg: #fafafa !default;
+$message-default-border: #eeeeee !default;
+$message-default-color: #5d5d5d !default;
 
-$message-error-bg:     #FFF6F6 !default;
-$message-error-border: #E0B4B4 !default;
-$message-error-color:  #9F3A38 !default;
+$message-error-bg: #fff6f6 !default;
+$message-error-border: #e0b4b4 !default;
+$message-error-color: #9f3a38 !default;
 
-$message-status-bg:     #FCFFF5 !default;
-$message-status-border: #A3C293 !default;
-$message-status-color:  #2C662D !default;
+$message-status-bg: #fcfff5 !default;
+$message-status-border: #a3c293 !default;
+$message-status-color: #2c662d !default;
 
-$message-warning-bg:     #FFFAF3 !default;
-$message-warning-border: #C9BA9B !default;
-$message-warning-color:  #573A08 !default;
+$message-warning-bg: #fffaf3 !default;
+$message-warning-border: #c9ba9b !default;
+$message-warning-color: #573a08 !default;
 
 @mixin message-variant($background, $border, $color) {
   color: $color;
