@@ -16,5 +16,12 @@ style.component:
 
 style.utilities:
   css:
-    component:
+    state:
       assets/css/utilities.css: {}
+#  dependencies:
+#    - STARTER/google.fonts
+
+#google.fonts:
+#  css:
+#    theme:
+#      //fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic: { type: external, minified: true }
