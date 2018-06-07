@@ -1,5 +1,5 @@
 // =============================================================================
-// Variables.
+// Global variables.
 // =============================================================================
 
 // Base colors.
@@ -130,7 +130,8 @@ $headings-secondary-margin-top:    gap(3) !default;
 $headings-secondary-margin-bottom: gap(2) !default;
 
 // Links
-$link-color:            theme-color('primary') !default;
+// @todo
+$link-color:            red !default;
 $link-decoration:       none !default;
 $link-hover-color:      theme-color-level('primary', 4) !default;
 $link-hover-decoration: none !default;
@@ -157,13 +158,14 @@ $hr-margin-bottom: gap(2) !default;
 $list-margins:  gap() 0 gap() gap(2) !default;
 $list-paddings: 0 !default;
 
-/**
- * Media breakpoints.
- */
+// =====================================
+// Media breakpoints.
+// =====================================
+
 // Minimum width for breakpoints.
 $media-breakpoints: (
   xs: 0,
-  sm: 468px,
+  sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px
@@ -181,7 +183,7 @@ $media-gutter-width: (
 // Maximum width for container.
 // @see mixin media-containers-max-width()
 $container-max-widths: (
-  sm: 420px,
+  sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1140px

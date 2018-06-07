@@ -1,6 +1,6 @@
-/**
- * Remove units and return plain number.
- */
+// =====================================
+// Remove units and return plain number.
+// =====================================
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
@@ -9,33 +9,31 @@
   @return $number;
 }
 
-/**
- * Calculating rem size.
- * @param
- *   $size - size need to be converted to rem.
- */
+// =====================================
+// Calculating rem size.
+// @param
+//   $size - size need to be converted to rem.
+// =====================================
 @function rem($size) {
   $remSize: strip-unit($size) / 16;
   @return #{$remSize}rem;
 }
 
-/**
- * Calculating em size.
- * @param
- *   $size - size need to be converted to em.
- */
+// =====================================
+// Calculating em size.
+// @param
+//   $size - size need to be converted to em.
+// =====================================
 @function em($size) {
   $remSize: strip-unit($size) / 16;
   @return #{$remSize}rem;
 }
 
-
-/**
- * Return gap size.
- *
- * This functions is used in default styles as "rule of 8px".
- * @see https://medium.com/wayfair-design/more-padding-please-b95e19422acc
- */
+// =====================================
+// Return gap size.
+// This functions is used in default styles as "rule of 8px".
+// @see https://medium.com/wayfair-design/more-padding-please-b95e19422acc
+// =====================================
 @function gap($size: 1) {
   @return $gap-size * $size;
 }

@@ -9,7 +9,13 @@ const postcss = require('gulp-postcss');
 const lost = require('lost');
 
 gulp.task('sass', function() {
-  return gulp.src('assets/scss/styles.scss')
+  return gulp.src([
+    'assets/scss/generic/generic.scss',
+    'assets/scss/elements/elements.scss',
+    'assets/scss/objects/objects.scss',
+    'assets/scss/components/components.scss',
+    'assets/scss/utilities/utilities.scss',
+  ])
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))

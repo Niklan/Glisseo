@@ -8,7 +8,10 @@ package: Glisseo
 core: 8.x
 hidden: true # REMOVE IT
 libraries:
-  - STARTER/global_assets
+  - STARTER/style.base
+  - STARTER/style.layout
+  - STARTER/style.component
+  - STARTER/style.utilities
 regions:
   header: Header
   navigation: Navigation

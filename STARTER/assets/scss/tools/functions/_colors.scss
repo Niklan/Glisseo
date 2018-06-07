@@ -1,7 +1,7 @@
-/**
- * Compares contrast of a given color to the light/dark arguments and returns
- * whichever is most "contrasty".
- */
+// =====================================
+// Compares contrast of a given color to the light/dark arguments and returns
+// whichever is most "contrasty".
+// ====================================
 @function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
   @if $color == null {
     @return null;
@@ -12,16 +12,16 @@
   }
 }
 
-/**
- * Return color by his key.
- */
+// =====================================
+// Return color by his key.
+// ====================================
 @function color($key: 'blue') {
   @return map-get($colors, $key);
 }
 
-/**
- * Return mixed color by his key.
- */
+// =====================================
+// Return mixed color by his key.
+// ====================================
 @function color-level($color-name: 'primary', $level: 0) {
   $color: color($color-name);
   $color-base: if($level > 0, #000, #fff);
@@ -29,16 +29,16 @@
   @return mix($color-base, $color, $level * $theme-color-interval);
 }
 
-/**
- * Return color by his key.
- */
+// =====================================
+// Return color by his key.
+// ====================================
 @function theme-color($key: 'primary') {
   @return map-get($theme-colors, $key);
 }
 
-/**
- * Return mixed color by his key.
- */
+// =====================================
+// Return mixed color by his key.
+// ====================================
 @function theme-color-level($color-name: 'primary', $level: 0) {
   $color: theme-color($color-name);
   $color-base: if($level > 0, #000, #fff);
@@ -46,9 +46,9 @@
   @return mix($color-base, $color, $level * $theme-color-interval);
 }
 
-/**
- * Return grey color by his key.
- */
+// =====================================
+// Return grey color by his key.
+// ====================================
 @function gray($key: '100') {
   @return map-get($grays, $key);
 }

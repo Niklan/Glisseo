@@ -1,5 +1,20 @@
-global_assets:
-  version: 1.x
+style.base:
   css:
-    theme:
-      assets/css/styles.css: {}
+    base:
+      assets/css/generic.css: {}
+
+style.layout:
+  css:
+    layout:
+      assets/css/elements.css: {}
+      assets/css/objects.css: {}
+
+style.component:
+  css:
+    component:
+      assets/css/components.css: {}
+
+style.utilities:
+  css:
+    component:
+      assets/css/utilities.css: {}

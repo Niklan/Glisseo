@@ -2,12 +2,19 @@
 
 ## Master (changes made since last release)
 
+This release is all about SCSS and styles quality and management. Most significant change is [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for SCSS folder.
+
 ### Base theme
 
 ### Starter theme
 
-- `global-assets` is renamed to `global_assets` to be in same style as theme and module names called `theme_name/global_assets`.
 - Added [stylelint](https://stylelint.io/) configuration.
+- Refactored SCSS folder to ITCSS structure.
+- Refactored all SCSS style comments to be excluded from compilation.
+- Improved total styles size, from ~7k lines on clean starter theme and ~150kb size, to ~1k lines and ~20kb size.
+- Improved performance of compilation due to more smart imports. ~600ms -> ~120ms on empty starter.
+- Imports are back and sass-glob is not used anymore. This is cost of ITCSS architecture which is awesome!
+- Single styles.css is now split to 5 separated files according to ITCSS weight. Also there is now 4 libraries for styles which included in their own groups.
 
 ## 1.0-alpha5
 
