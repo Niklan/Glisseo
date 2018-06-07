@@ -19,14 +19,13 @@
   },
   "homepage": "https://github.com/Niklan/Glisseo#readme",
   "dependencies": {
+    "@mdi/font": "^2.4.85",
     "autoprefixer": "^8.2.0",
     "gulp": "^3.9.1",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^2.3.2",
-    "gulp-sass-glob": "^1.0.8",
     "gulp-sourcemaps": "^2.6.4",
     "lost": "^8.2.1",
-    "mdi": "^2.1.19",
     "normalize.css": "^8.0.0"
   },
   "scripts": {

@@ -16,20 +16,20 @@ $mdi-font-path: "../../node_modules/mdi/fonts";
 // below to copy-paste example.
 //
 // If you uncomment this line, remove all imports below.
-// @import "../../../../node_modules/mdi/scss/materialdesignicons";
+// @import "../../../../node_modules/@mdi/font/scss/materialdesignicons";
 
 // Import only necessary stuff.
-@import "../../../../node_modules/mdi/scss/variables";
-@import "../../../../node_modules/mdi/scss/functions";
-@import "../../../../node_modules/mdi/scss/path";
+@import "../../../../node_modules/@mdi/font/scss/variables";
+@import "../../../../node_modules/@mdi/font/scss/functions";
+@import "../../../../node_modules/@mdi/font/scss/path";
 // Adds support for base css class .mdi.
-// @import "../../../../node_modules/mdi/scss/core";
+// @import "../../../../node_modules/@mdi/font/scss/core";
 // Adds icon classes support: .mdi-name.
-// @import "../../../../node_modules/mdi/scss/icons";
+// @import "../../../../node_modules/@mdi/font/scss/icons";
 // Adds icon sizes, dark-light modifiers and flip classes.
-// @import "../../../../node_modules/mdi/scss/extras";
+// @import "../../../../node_modules/@mdi/font/scss/extras";
 // Adds animations for icons.
-// @import "../../../../node_modules/mdi/scss/animated";
+// @import "../../../../node_modules/@mdi/font/scss/animated";
 
 @mixin mdi-icon($name, $position: before, $margin-size: 0.4em) {
   &:#{$position} {

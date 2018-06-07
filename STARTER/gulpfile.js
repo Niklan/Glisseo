@@ -4,7 +4,6 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
-const sassGlob = require('gulp-sass-glob');
 const postcss = require('gulp-postcss');
 const lost = require('lost');
 
@@ -17,7 +16,6 @@ gulp.task('sass', function() {
     'assets/scss/utilities/utilities.scss',
   ])
     .pipe(sourcemaps.init())
-    .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
       lost(),
