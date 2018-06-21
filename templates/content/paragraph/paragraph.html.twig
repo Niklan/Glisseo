@@ -1,23 +1,16 @@
-{#
-  /**
-   * @file
-   * Theme override to paragraph.
-   *
-   * @see template_preprocess_paragraph()
-   */
-#}
+{%
+  set bem_block = bem_block ?: ('paragraph-' ~ paragraph.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class
+%}
 {%
   set classes = [
-    'paragraph',
-    'paragraph--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'view-mode--' ~ view_mode|clean_class,
+    bem_block,
   ]
 %}
 {% block paragraph %}
-  {% set attributes = attributes.setAttribute('id', ('paragraph-' ~ paragraph.id())|clean_id) %}
-  <div{{ attributes.addClass(classes).addClass(additional_classes) }}>
+  {% set attributes = attributes.setAttribute('id', ('paragraph-' ~ paragraph.id)|clean_id) %}
+  <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      <div class="paragraph__content">{{ content }}</div>
+      <div class="{{ bem_block }}__content">{{ content }}</div>
     {% endblock %}
   </div>
 {% endblock paragraph %}

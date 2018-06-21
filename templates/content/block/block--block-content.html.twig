@@ -1,0 +1,8 @@
+{% extends "block.html.twig" %}
+
+{% block content %}
+  {% set sub_bem_block = block_content_bundle ~ '-' ~ configuration.view_mode|clean_class %}
+  <div class="{{ bem_block }}__content {{ sub_bem_block }}">
+    {{ content }}
+  </div>
+{% endblock %}

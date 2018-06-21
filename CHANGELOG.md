@@ -2,9 +2,14 @@
 
 ## Master (changes made since last release)
 
+**This release incompatible with previous versions.**
+
 This release is all about SCSS and styles quality and management. Most significant change is [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for SCSS folder.
 
 ### Base theme
+
+- Base theme is has hidden to true now.
+- All regions were removed from base theme. They are not needed here.
 
 ### Starter theme
 

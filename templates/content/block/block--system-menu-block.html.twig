@@ -1,0 +1,26 @@
+{% set bem_block = 'block-' ~ block_id|split('__', 2)|first|clean_class %}
+{% set bem_modifiers = block_id|split('__')|slice(1) %}
+{%
+  set classes = [
+    bem_block,
+  ]
+%}
+{% for modifier in block_id|split('__')|slice(1) %}
+  {% set classes = classes|merge([bem_block ~ '--' ~ modifier|clean_class]) %}
+{% endfor %}
+{% set heading_id = attributes.id ~ '-title'|clean_id %}
+<nav aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
+  {# Label. If not displayed, we still provide it for screen readers. #}
+  {% if not configuration.label_display %}
+    {% set title_attributes = title_attributes.setAttribute('id', heading_id).addClass('visually-hidden') %}
+  {% endif %}
+  {{ title_prefix }}
+  <h2{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ configuration.label }}</h2>
+  {{ title_suffix }}
+
+  {# Menu. #}
+  {% block content %}
+    {% do content_attributes.setAttribute('bem_base', bem_block ~ '__') %}
+    {{ content }}
+  {% endblock %}
+</nav>

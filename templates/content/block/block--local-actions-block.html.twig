@@ -1,12 +1,7 @@
 {% extends "block.html.twig" %}
-{#
-/**
- * @file
- * Theme override for local actions (primary admin actions.)
- */
-#}
+
 {% block content %}
   {% if content %}
-    <nav class="local-actions">{{ content }}</nav>
+    <nav class="{{ bem_block }}__local-actions">{{ content }}</nav>
   {% endif %}
 {% endblock %}

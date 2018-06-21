@@ -6,20 +6,24 @@
  * @see template_preprocess_block()
  */
 #}
+{% set bem_block = 'block-' ~ block_id|split('__', 2)|first|clean_class %}
 {%
   set classes = [
-    'block',
-    'block--' ~ plugin_id|clean_class,
+    bem_block,
   ]
 %}
+{% set bem_modifiers = block_id|split('__')|slice(1) %}
+{% for modifier in bem_modifiers %}
+  {% set classes = classes|merge([bem_block ~ '--' ~ modifier|clean_class]) %}
+{% endfor %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <div{{ title_attributes.addClass('block__title') }}>{{ label }}</div>
+    <div{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ label }}</div>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
-    <div{{ content_attributes.addClass('block__content') }}>
+    <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
       {{ content }}
     </div>
   {% endblock %}
