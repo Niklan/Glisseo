@@ -1,25 +1,16 @@
-{#
-/**
- * @file
- * Theme override for a details element.
- *
- * Available variables
- * - attributes: A list of HTML attributes for the details element.
- * - errors: (optional) Any errors for this details element, may not be set.
- * - title: (optional) The title of the element, may not be set.
- * - description: (optional) The description of the element, may not be set.
- * - children: (optional) The children of the element, may not be set.
- * - value: (optional) The value of the element, may not be set.
- *
- * @see template_preprocess_details()
- */
-#}
-<details{{ attributes.addClass('form-item') }}>
+{% set bem_block = form_id ? 'form-' ~ form_id|clean_class ~ '__' ~ name|clean_class : 'details' %}
+{%
+  set classes = [
+    bem_block,
+  ]
+%}
+<details{{ attributes.addClass(classes) }}>
+  {% set bem_element_summary = bem_block ~ '-summary' %}
   {%
     set summary_classes = [
+      bem_element_summary,
       required ? 'js-form-required',
-      required ? 'form-required',
-      'form-wrapper__summary',
+      required ? bem_element_summary ~ '--required',
     ]
   %}
   {%- if title -%}
@@ -27,12 +18,12 @@
   {%- endif -%}
 
   {% if errors %}
-    <div class="form-wrapper__errors">
+    <div class="{{ bem_block }}-errors">
       {{ errors }}
     </div>
   {% endif %}
 
-  <div class="form-wrapper__content">
+  <div class="{{ bem_block }}-content">
     {{ description }}
     {{ children }}
     {{ value }}
