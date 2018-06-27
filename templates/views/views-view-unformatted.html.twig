@@ -1,24 +1,21 @@
-{#
-/**
- * @file
- * Default theme implementation to display a view of unformatted rows.
- *
- * @see template_preprocess_views_view_unformatted()
- */
-#}
+{% set bem_block = bem_block ?: ('view-' ~ view.storage.id() ~ '-' ~ view.current_display)|clean_class %}
+{% set bem_element = bem_block ~ '__row' %}
 {% if title %}
-  <h3>{{ title }}</h3>
+  <div class="{{ bem_block }}__rows">
+    <h3 class="{{ bem_block }}__rows-title">{{ title }}</h3>
 {% endif %}
-{% for row in rows %}
-  {% if default_row_class %}
-    {% set default_class = row.attributes.addClass('view__item') %}
-  {% endif %}
-
-  {% if row.attributes.class is not empty %}
-    <div{{ row.attributes }}>
-  {% endif %}
-    {{ row.content }}
-  {% if row.attributes.class is not empty %}
+{% block content %}
+  {% for row in rows %}
+    {%
+      set row_classes = [
+        default_row_class ? bem_element,
+      ]
+    %}
+    <div{{ row.attributes.addClass(row_classes) }}>
+      {{ row.content }}
     </div>
-  {% endif %}
-{% endfor %}
+  {% endfor %}
+{% endblock %}
+{% if title %}
+  </div>
+{% endif %}

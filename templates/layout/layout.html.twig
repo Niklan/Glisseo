@@ -1,20 +1,22 @@
-{#
-/**
- * @file
- * Template for a generic layout.
- */
-#}
+{% set bem_block = 'layout-' ~ layout.id|clean_class %}
 {%
   set classes = [
     'layout',
-    'layout--' ~ layout.id|clean_class,
+    bem_block,
   ]
 %}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
     {% for region in layout.getRegionNames %}
       {% if content[region] %}
-        <div {{ region_attributes[region].addClass('region', 'region--' ~ region|clean_class) }}>
+        {%
+          set region_classes = [
+            'region',
+            'region--' ~ region|clean_class,
+            bem_block ~ '__' ~ region|clean_class,
+          ]
+        %}
+        <div {{ region_attributes[region].addClass(region_classes) }}>
           {{ content[region] }}
         </div>
       {% endif %}

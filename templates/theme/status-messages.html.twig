@@ -35,7 +35,7 @@
           <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
         {% endif %}
         {% if messages|length > 1 %}
-          <ul class="messages__items">
+          <ul class="messages__list">
             {% for message in messages %}
               <li class="messages__item">{{ message }}</li>
             {% endfor %}

@@ -1,48 +1,63 @@
-{#
-/**
- * @file
- * Theme override for main view template.
- *
- * @see template_preprocess_views_view()
- */
-#}
+{%
+  set bem_block = 'view-' ~ id|clean_class ~ '-' ~ display_id|clean_class
+%}
 {%
   set classes = [
-    'view',
-    'view--' ~ id|clean_class,
-    'display-id--' ~ display_id|clean_class,
+    bem_block,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {{ title }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
   {{ title_suffix }}
-
   {% if header %}
-    <header class="view__header">
+    <div class="{{ bem_block }}__header">
       {{ header }}
-    </header>
+    </div>
+  {% endif %}
+  {% if exposed %}
+    <div class="{{ bem_block }}__filters">
+      {{ exposed }}
+    </div>
+  {% endif %}
+  {% if attachment_before %}
+    <div class="{{ bem_block }}__attachment {{ bem_block }}__attachment--before">
+      {{ attachment_before }}
+    </div>
   {% endif %}
 
-  {{ exposed }}
-  {{ attachment_before }}
+  {% if rows %}
+    <div class="{{ bem_block }}__content">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="{{ bem_block }}__content {{ bem_block }}__content--empty">
+      {{ empty }}
+    </div>
+  {% endif %}
 
-  <div class="view__content">
-    {{ rows }}
-    {{ empty }}
-  </div>
-
-  {{ pager }}
-  {{ attachment_after }}
-  {{ more }}
-
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+  {% if attachment_after %}
+    <div class="{{ bem_block }}__attachment {{ bem_block }}__attachment--after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
   {% if footer %}
-    <footer class="view__footer">
+    <div class="{{ bem_block }}__footer">
       {{ footer }}
-    </footer>
+    </div>
   {% endif %}
-
-  {{ feed_icons }}
+  {% if feed_icons %}
+    <div class="{{ bem_block }}__feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
 </div>

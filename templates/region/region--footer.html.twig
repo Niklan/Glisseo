@@ -1,18 +1,17 @@
-{#
-/**
- * @file
- * Theme override to display a region.
- *
- * @see template_preprocess_region()
- */
-#}
-{% set attributes = attributes.setAttribute('id', 'footer') %}
-{% set attributes = attributes.addClass('region') %}
-{% set attributes = attributes.addClass('region--footer') %}
+{%
+  set bem_block = 'region-' ~ region|clean_class
+%}
+{%
+  set classes = [
+    bem_block,
+  ]
+%}
 {% if content %}
-  <footer {{ attributes }}>
-    <div class="region__container">
-      {{ content }}
-    </div>
+  <footer{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="{{ bem_block }}__container">
+        {{ content }}
+      </div>
+    {% endblock %}
   </footer>
 {% endif %}

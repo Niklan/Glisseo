@@ -1,0 +1,12 @@
+{%
+  set bem_block = 'view-' ~ view.storage.id()|clean_class ~ '-' ~ view.current_display|clean_class
+%}
+{%
+  set bem_element = bem_block ~ '__grouping'
+%}
+<div class="{{ bem_element }}">
+  {% block content %}
+    {{ title }}
+    {{ content }}
+  {% endblock %}
+</div>
