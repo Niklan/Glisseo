@@ -10,6 +10,8 @@ This release is all about SCSS and styles quality and management. Most significa
 
 - Base theme is has hidden to true now.
 - All regions were removed from base theme. They are not needed here.
+- **Experimental**. Reworked all templates to BEM class naming.
+- page.html.twig moved to STARTER templates.
 
 ### Starter theme
 

@@ -1,0 +1,12 @@
+{% set bem_block = 'app' %}
+<div class="{{ bem_block }}">
+  {{ page.header }}
+  {{ page.navigation }}
+
+  <main class="{{ bem_block }}__content">
+    {{ page.sidebar_first }}
+    {{ page.content }}
+  </main>
+
+  {{ page.footer }}
+</div>
