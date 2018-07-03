@@ -1,0 +1,16 @@
+{%
+  set bem_block = bem_block ?: ('user-' ~ user.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class
+%}
+{%
+  set classes = [
+    bem_block,
+    user.isBlocked() ? bem_block ~ '--blocked',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {% block content %}
+    {% if content %}
+      {{- content -}}
+    {% endif %}
+  {% endblock %}
+</article>
