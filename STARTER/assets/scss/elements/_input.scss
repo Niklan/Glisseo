@@ -43,6 +43,7 @@ select {
   max-width: 100%;
   width: 100%;
   padding: $input-padding-y $input-padding-x;
+  font: inherit;
   line-height: $input-line-height;
   background-color: $input-bg;
   border-width: 1px;
@@ -51,7 +52,6 @@ select {
   border-radius: $input-border-radius;
   box-sizing: border-box;
   transition: all .15s ease-in-out;
-  font: inherit;
 
   @if ($input-enable-shadows) {
     box-shadow: $input-box-shadow;
