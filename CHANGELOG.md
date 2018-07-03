@@ -12,6 +12,7 @@ This release is all about SCSS and styles quality and management. Most significa
 - All regions were removed from base theme. They are not needed here.
 - **Experimental**. Reworked all templates to BEM class naming.
 - page.html.twig moved to STARTER templates.
+- Added user entity theme suggestions user--{VIEW_MODE}.html.twig.
 
 ### Starter theme
 

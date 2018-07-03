@@ -60,10 +60,24 @@ function glisseo_theme_suggestions_block_alter(&$suggestions, $variables, $hook)
  * Add new theme hook suggestion to comment type.
  *  - comment--{BUNDLE}--{VIEW_MODE}.html.twig
  */
-function glisseo_theme_theme_suggestions_comment_alter(array &$suggestions, array $variables) {
+function glisseo_theme_suggestions_comment_alter(array &$suggestions, array $variables) {
   $elements = $variables['elements'];
   $comment = $elements['#comment'];
   $view_mode = $elements['#view_mode'];
   $bundle = $comment->bundle();
   $suggestions[] = 'comment__' . $bundle . '__' . $view_mode;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Adds new theme hook suggestion to user entity.
+ *  - user--{VIEW_MODE}.html.twig.
+ */
+function glisseo_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  $suggestion = [
+    'user',
+    $variables['elements']['#view_mode'],
+  ];
+  $suggestions[] = implode('__', $suggestion);
 }
