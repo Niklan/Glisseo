@@ -21,3 +21,31 @@ function glisseo_preprocess_field(&$variables) {
     $variables['view_mode'] = 'full';
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Adds new theme suggestions for fields.
+ *  - field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{ENTITY_ID}.html.twig
+ *  - field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{VIEW_MODE}.html.twig
+ */
+function bfh_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  $entity = $variables['element']['#object'];
+  $suggestion_name = [
+    'field',
+    $variables['element']['#entity_type'],
+    $variables['element']['#bundle'],
+    $variables['element']['#field_name'],
+    $variables['element']['#view_mode'],
+  ];
+  $suggestions[] = implode('__', $suggestion_name);
+
+  $suggestion_name = [
+    'field',
+    $variables['element']['#entity_type'],
+    $variables['element']['#bundle'],
+    $variables['element']['#field_name'],
+    $entity->id(),
+  ];
+  $suggestions[] = implode('__', $suggestion_name);
+}

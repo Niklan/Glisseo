@@ -13,6 +13,10 @@ This release is all about SCSS and styles quality and management. Most significa
 - **Experimental**. Reworked all templates to BEM class naming.
 - page.html.twig moved to STARTER templates.
 - Added user entity theme suggestions user--{VIEW_MODE}.html.twig.
+- Added user.html.twig.
+- Added block--system-branding-block.html.twig.
+- Added other templates which was missing and loaded from stable base theme.
+- Added new field theme suggestions. field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{ENTITY_ID}.html.twig, field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{VIEW_MODE}.html.twig.
 
 ### Starter theme
 
