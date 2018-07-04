@@ -12,7 +12,18 @@ use Drupal\Core\Template\Attribute;
  */
 function glisseo_preprocess_block(&$variables) {
   $elements = $variables['elements'];
-  $variables['block_id'] = $elements['#id'];
+  $variables['block_id'] = isset($elements['#id']) ? $elements['#id'] : $elements['#plugin_id'];
+  if (!empty($elements['#id'])) {
+    $variables['block_id'] = $elements['#id'];
+  }
+  elseif (!empty($elements['#derivative_plugin_id'])) {
+    // Some block can be called programmatically and they are not have id.
+    $variables['block_id'] = $elements['#derivative_plugin_id'];
+  }
+  else {
+    // Even if derivative plugin id is not fount. Use plugin id.
+    $variables['block_id'] = $elements['#base_plugin_id'];
+  }
 
   if ($variables['base_plugin_id'] == 'block_content') {
     /** @var \Drupal\block_content\Entity\BlockContent $block_content */

@@ -7,7 +7,7 @@
   ]
 %}
 {% block paragraph %}
-  {% set attributes = attributes.setAttribute('id', ('paragraph-' ~ paragraph.id)|clean_id) %}
+  {% do attributes.setAttribute('id', ('paragraph-' ~ paragraph.id())|clean_id) %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="{{ bem_block }}__content">{{ content }}</div>

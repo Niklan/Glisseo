@@ -2,6 +2,26 @@
 
 ## Master (changes made since last release)
 
+### Base theme
+### Starter theme
+
+## 1.0-alpha7
+
+Hotfix version. Fix and improvements for alpha6 that can leads to problems.
+
+### Base theme
+
+- **Fix** bug in paragraph.html.twig.
+- **Improved** block_id generation. Much more reliable in cases when block rendered programmatically.
+- **Improved** block--system-branding-block.
+
+### Starter theme
+
+- **Fix** path to MDI icons font.
+- Removed qutoes for keys of gray colors.
+
+## 1.0-alpha6
+
 **This release incompatible with previous versions.**
 
 This release is all about SCSS and styles quality and management. Most significant change is [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for SCSS folder.
