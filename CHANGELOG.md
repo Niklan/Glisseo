@@ -3,6 +3,9 @@
 ## Master (changes made since last release)
 
 ### Base theme
+
+- Updated README.md.
+
 ### Starter theme
 
 ## 1.0-alpha7

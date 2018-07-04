@@ -15,25 +15,22 @@
 
 ## What's this
 
-*  SCSS preprocessor for better CSS experience.
-*  Configured [stylelint](https://stylelint.io/) for control coding standards across the project.
-*  [Lost Grid](http://lostgrid.org) for creating website much faster with flexible grids.
-*  [Material Design Icons](https://materialdesignicons.com/) for using SVG icons.
-*  Breakpoint for making your site responsive.
-*  [SMACSS alike architecture, improved to Drupal experience.](docs/scss-architecture.md)
-*  Good structure.
-*  Clear Views templates with more semantic code (footer, section, header).
-*  Lots of other mixins and functions that will make your theming easier and enjoyable.
-*  and much more..
+*  [SCSS](https://sass-lang.com/) and (optional) [PostCSS](https://postcss.org/)
+*  (optional) Configured [stylelint](https://stylelint.io/) for control coding standards across the project.
+*  (optional) [Lost Grid](http://lostgrid.org) for creating website much faster with flexible grids.
+*  (optional) [Material Design Icons](https://materialdesignicons.com/).
+* [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for styles.
+* [BEM methodology](https://bem.info/) for template class naming.
+
+\* _(optional)_ features enabled by default, but can be removed from project without any consequences.
 
 Due of the theme structure, where all parts are separated of each other, you can disable most of them without any pain and consequences, just remove import line and delete files. Theme is highly customazible and you can easily replace any part of it by your needs.
-
 
 ## Documentation
 
 *  [Getting started](docs/getting-started.md)
-*  [SCSS architecture](docs/scss-architecture.md)
-*  [Responsive guide](docs/responsive-guide.md)
+*  (outdated) [SCSS architecture](docs/scss-architecture.md)
+*  (outdated) [Responsive guide](docs/responsive-guide.md)
 *  [BrowserSync and LiveReload integration](docs/live-reload.md)
-*  [Tips, tricks and snippets](docs/tips-tricks-snippets.md)
+*  (outdated) [Tips, tricks and snippets](docs/tips-tricks-snippets.md)
 *  [FontAwesome icon integration](docs/font-awesome.md)
