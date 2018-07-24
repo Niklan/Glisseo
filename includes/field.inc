@@ -20,6 +20,12 @@ function glisseo_preprocess_field(&$variables) {
   if ($variables['entity_type'] == 'block_content' && $variables['view_mode'] == 'default') {
     $variables['view_mode'] = 'full';
   }
+
+  // Sometimes view_mode can be missed and we set it to default.
+  // e.g. paragraphs_library_item entity.
+  if (strlen($variables['view_mode']) == 0) {
+    $variables['view_mode'] = 'default';
+  }
 }
 
 /**
