@@ -8,11 +8,15 @@
 %}
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
   {{ title_prefix }}
-  {% if not page %}
-    <h2 class="{{ bem_block }}__title"><a href="{{ url }}">{{ name }}</a></h2>
-  {% endif %}
+  {% block title %}
+    {% if not page %}
+      <h2 class="{{ bem_block }}__title"><a href="{{ url }}">{{ name }}</a></h2>
+    {% endif %}
+  {% endblock %}
   {{ title_suffix }}
   <div class="{{ bem_block }}__content">
-    {{ content }}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
   </div>
 </div>
