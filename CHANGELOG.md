@@ -11,6 +11,8 @@
 
 ### Starter theme
 
+- Import for math.scss in variables.scss to support `gap()` function.
+
 ## 1.0-alpha7
 
 Hotfix version. Fix and improvements for alpha6 that can leads to problems.
