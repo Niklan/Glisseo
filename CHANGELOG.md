@@ -13,6 +13,7 @@
 ### Starter theme
 
 - Import for math.scss in variables.scss to support `gap()` function.
+- Improved stylelintrc.
 
 ## 1.0-alpha7
 
