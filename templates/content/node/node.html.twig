@@ -10,14 +10,15 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
   {% block content %}
-    {{ title_prefix }}
     {% if not page %}
       <h2{{ title_attributes.addClass(bem_block ~ '__title') }}>
         <a class="{{ bem_block }}__title-link" href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     {% endif %}
-    {{ title_suffix }}
 
     {% if display_submitted %}
       <header class="{{ bem_block }}__meta">

@@ -15,16 +15,21 @@
   #}
   <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
-  <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
-    {% if title %}
-      {{ title_prefix }}
-      <h3{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ title }}</h3>
-      {{ title_suffix }}
-    {% endif %}
-    {{ content }}
-  </div>
+  {% block content %}
+    <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
+      {% block title %}
+        {% if title %}
+          {{ title_prefix }}
+          <h3{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ title }}</h3>
+          {{ title_suffix }}
+        {% endif %}
+      {% endblock %}
 
+      {{ content }}
+    </div>
+  {% endblock %}
 
+  {% block footer %}
   <footer class="{{ bem_block }}__footer">
     {{ user_picture }}
     <p>{{ submitted }}</p>
@@ -40,4 +45,5 @@
 
     {{ permalink }}
   </footer>
+  {% endblock %}
 </article>

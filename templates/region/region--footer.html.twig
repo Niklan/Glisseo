@@ -1,17 +1,9 @@
-{%
-  set bem_block = 'region-' ~ region|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% if content %}
+{% extends 'region.html.twig' %}
+
+{% block region %}
   <footer{{ attributes.addClass(classes) }}>
-    {% block content %}
-      <div class="{{ bem_block }}__container">
-        {{ content }}
-      </div>
-    {% endblock %}
+    <div class="{{ bem_block }}__container">
+      {{ block('content') }}
+    </div>
   </footer>
-{% endif %}
+{% endblock %}

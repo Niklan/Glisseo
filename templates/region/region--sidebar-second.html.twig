@@ -1,15 +1,7 @@
-{%
-  set bem_block = 'region-' ~ region|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% if content %}
+{% extends 'region.html.twig' %}
+
+{% block region %}
   <aside{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+    {{ block('content') }}
   </aside>
-{% endif %}
+{% endblock %}

@@ -10,6 +10,7 @@
 - Added blocks content and title for **taxonomy-term.html.twig**.
 - Removed id's for taxonomy term and paragraphs.
 - Added **media.html.twig** template.
+- Added some blocks for templates for easier extending.
 
 ### Starter theme
 

@@ -7,5 +7,7 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  {{- product|without('variation_attributes') -}}
+  {% block content %}
+    {{- product|without('variation_attributes') -}}
+  {% endblock %}
 </article>
