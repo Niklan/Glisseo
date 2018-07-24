@@ -9,6 +9,7 @@
 - Added `{% spaceless %}` wrapper for breadcrumbs.
 - Added blocks content and title for **taxonomy-term.html.twig**.
 - Removed id's for taxonomy term and paragraphs.
+- Added **media.html.twig** template.
 
 ### Starter theme
 
