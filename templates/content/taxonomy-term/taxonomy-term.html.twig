@@ -6,7 +6,7 @@
     bem_block,
   ]
 %}
-<div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
+<div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% block title %}
     {% if not page %}

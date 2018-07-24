@@ -8,6 +8,7 @@
 - Added workaround for field view mode if it missing.
 - Added `{% spaceless %}` wrapper for breadcrumbs.
 - Added blocks content and title for **taxonomy-term.html.twig**.
+- Removed id's for taxonomy term and paragraphs.
 
 ### Starter theme
 
