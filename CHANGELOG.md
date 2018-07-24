@@ -17,6 +17,7 @@
 - Import for math.scss in variables.scss to support `gap()` function.
 - Improved stylelintrc.
 - Improved styles for breadcrumbs.scss.
+- Improved tabs flexbox.
 
 ## 1.0-alpha7
 

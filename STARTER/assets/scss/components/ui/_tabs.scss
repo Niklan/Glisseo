@@ -33,6 +33,7 @@ $secondary-tabs-item-active-border-color: $link-color !default;
   padding: 0;
   list-style: none;
   display: flex;
+  flex-flow: wrap;
 
   &--primary {
     margin: $primary-tabs-margin;
