@@ -5,6 +5,8 @@
 ### Base theme
 
 - Updated README.md.
+- Added workaround for field view mode if it missing.
+- Added `{% spaceless %}` wrapper for breadcrumbs.
 
 ### Starter theme
 

@@ -1,26 +1,28 @@
 {% if breadcrumb %}
   <nav class="breadcrumbs" aria-labelledby="system-breadcrumb">
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
-    {% if breadcrumb|length > 1 %}
-      <div class="breadcrumbs__path">
-        {% for item in breadcrumb %}
-          {% if not loop.last %}
-            {% if item.url %}
-              <a href="{{ item.url }}" class="breadcrumbs__item-link">{{ item.text }}</a>
-            {% else %}
-              <span class="breadcrumbs__item-link breadcrumbs__item-link--text">{{ item.text }}</span>
+    {% spaceless %}
+      {% if breadcrumb|length > 1 %}
+        <div class="breadcrumbs__path">
+          {% for item in breadcrumb %}
+            {% if not loop.last %}
+              {% if item.url %}
+                <a href="{{ item.url }}" class="breadcrumbs__item-link">{{ item.text }}</a>
+              {% else %}
+                <span class="breadcrumbs__item-link breadcrumbs__item-link--text">{{ item.text }}</span>
+              {% endif %}
             {% endif %}
-          {% endif %}
-        {% endfor %}
-      </div>
-    {% endif %}
-    <div class="breadcrumbs__current">
-      {% set last = breadcrumb|last %}
-      {% if last.url %}
-        <a href="{{ last.url }}" class="breadcrumbs__item-link is-current">{{ last.text }}</a>
-      {% else %}
-        <span class="breadcrumbs__item-link breadcrumbs__item-link--text is-current">{{ last.text }}</span>
+          {% endfor %}
+        </div>
       {% endif %}
-    </div>
+      <div class="breadcrumbs__current">
+        {% set last = breadcrumb|last %}
+        {% if last.url %}
+          <a href="{{ last.url }}" class="breadcrumbs__item-link is-current">{{ last.text }}</a>
+        {% else %}
+          <span class="breadcrumbs__item-link breadcrumbs__item-link--text is-current">{{ last.text }}</span>
+        {% endif %}
+      </div>
+    {% endspaceless %}
   </nav>
 {% endif %}
