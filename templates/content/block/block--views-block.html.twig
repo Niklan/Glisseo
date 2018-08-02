@@ -1,21 +1,6 @@
-{% set bem_block = 'block-' ~ block_id|split('__', 2)|first|clean_class %}
-{% set bem_modifiers = block_id|split('__')|slice(1) %}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% for modifier in block_id|split('__')|slice(1) %}
-  {% set classes = classes|merge([bem_block ~ '--' ~ modifier|clean_class]) %}
-{% endfor %}
-{% set content %}{% spaceless %}{{ content }}{% endspaceless %}{% endset %}
-{% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    {{ title_prefix }}
-    {% if label %}
-      <h2{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ label }}</h2>
-    {% endif %}
-    {{ title_suffix }}
-    {{ content }}
-  </div>
-{% endif %}
+{% extends 'block.html.twig' %}
+
+{# Override default bem_block declaration. #}
+{% set bem_block = (base_plugin_id ~ '-' ~ derivative_plugin_id)|clean_class %}
+{# Disable bem_modifiers by setting it to true.#}
+{% set bem_modifiers = true %}

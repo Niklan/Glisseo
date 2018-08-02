@@ -11,6 +11,7 @@
 - Removed id's for taxonomy term and paragraphs.
 - Added **media.html.twig** template.
 - Added some blocks for templates for easier extending.
+- Refactor block templates to use Twig `extends`.
 
 ### Starter theme
 

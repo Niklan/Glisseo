@@ -6,27 +6,34 @@
  * @see template_preprocess_block()
  */
 #}
-{% set bem_block = 'block-' ~ block_id|split('__', 2)|first|clean_class %}
+{% do attributes.removeAttribute('id') %}
+{% set bem_block = bem_block ?: 'block-' ~ block_id|split('__', 2)|first|clean_class %}
 {%
   set classes = [
     bem_block,
   ]
 %}
-{% set bem_modifiers = block_id|split('__')|slice(1) %}
+{% set bem_modifiers = bem_modifiers ?: block_id|split('__')|slice(1) %}
 {% for modifier in bem_modifiers %}
   {% set classes = classes|merge([bem_block ~ '--' ~ modifier|clean_class]) %}
 {% endfor %}
+
 <div{{ attributes.addClass(classes) }}>
+
   {{ title_prefix }}
-  {% block title %}
-    {% if label %}
-      <div{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ label }}</div>
-    {% endif %}
-  {% endblock %}
-  {{ title_suffix }}
-  {% block content %}
-    <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
-      {{ content }}
+  {% if label %}
+    <div{{ title_attributes.addClass(bem_block ~ '__title') }}>
+      {% block title %}
+        {{ label }}
+      {% endblock title %}
     </div>
-  {% endblock %}
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
+    {% block content %}
+      {{ content }}
+    {% endblock content %}
+  </div>
+
 </div>
