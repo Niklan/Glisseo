@@ -18,14 +18,12 @@
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass([bem_base ? bem_base ~ 'menu']) }}>
         {% for item in items %}
-          {%
-            set classes = [
-              bem_base ~ 'menu-item',
-              item.is_expanded ? bem_base ~ 'menu-item--expanded',
-              item.is_collapsed ? bem_base ~ 'menu-item--collapsed',
-              item.in_active_trail ? bem_base ~ 'menu-item--active-trail',
-            ]
-          %}
+          {% set classes = [
+            bem_base ~ 'menu-item',
+            item.is_expanded ? bem_base ~ 'menu-item--expanded',
+            item.is_collapsed ? bem_base ~ 'menu-item--collapsed',
+            item.in_active_trail ? bem_base ~ 'menu-item--active-trail',
+          ] %}
           <li{{ item.attributes.addClass(classes) }}>
             {{ link(item.title, item.url, { 'class': [bem_base ? bem_base ~ 'menu-item-link'] }) }}
             {% if item.below %}
@@ -37,14 +35,12 @@
     {% else %}
       <ul class="{% if bem_base %}{{ bem_base }}submenu{% endif %}">
         {% for item in items %}
-          {%
-            set classes = [
-              bem_base ~ 'submenu-item',
-              item.is_expanded ? bem_base ~ 'submenu-item--expanded',
-              item.is_collapsed ? bem_base ~ 'submenu-item--collapsed',
-              item.in_active_trail ? bem_base ~ 'submenu-item--active-trail',
-            ]
-          %}
+          {% set classes = [
+            bem_base ~ 'submenu-item',
+            item.is_expanded ? bem_base ~ 'submenu-item--expanded',
+            item.is_collapsed ? bem_base ~ 'submenu-item--collapsed',
+            item.in_active_trail ? bem_base ~ 'submenu-item--active-trail',
+          ] %}
           <li{{ item.attributes.addClass(classes) }}>
             {{ link(item.title, item.url, { 'class': [bem_base ? bem_base ~ 'submenu-item-link'] }) }}
             {% if item.below %}

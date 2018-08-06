@@ -1,10 +1,8 @@
-{%
-  set title_classes = [
-    'form-item__label',
-    required ? 'js-form-required',
-    required ? 'form-required',
-  ]
-%}
+{% set title_classes = [
+  'form-item__label',
+  required ? 'js-form-required',
+  required ? 'form-required',
+] %}
 {% if title %}
   <label{{ title_attributes.addClass(title_classes) }}>{{ title }}</label>
 {% endif %}

@@ -1,11 +1,7 @@
-{%
-  set bem_block = 'region-' ~ region|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
+{% set bem_block = 'region-' ~ region|clean_class %}
+{% set classes = [
+  bem_block,
+] %}
 {% if content %}
   {% block region %}
     <div{{ attributes.addClass(classes) }}>

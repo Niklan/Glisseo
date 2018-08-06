@@ -1,12 +1,8 @@
-{%
-  set bem_block = bem_block ?: ('comment-' ~ comment.bundle ~ (elements['#view_mode'] != 'default' ? '-' ~ elements['#view_mode']))|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-    bem_block ~ '--' ~ status,
-  ]
-%}
+{% set bem_block = bem_block ?: ('comment-' ~ comment.bundle ~ (elements['#view_mode'] != 'default' ? '-' ~ elements['#view_mode']))|clean_class %}
+{% set classes = [
+  bem_block,
+  bem_block ~ '--' ~ status,
+] %}
 <article{{ attributes.addClass('js-comment', classes) }}>
   {#
     Hide the "new" indicator by default, let a piece of JavaScript ask the
@@ -15,35 +11,37 @@
   #}
   <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
-  {% block content %}
-    <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
-      {% block title %}
-        {% if title %}
-          {{ title_prefix }}
-          <h3{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ title }}</h3>
-          {{ title_suffix }}
-        {% endif %}
-      {% endblock %}
+  <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
+    {% block content %}
+      {% if title %}
+        {{ title_prefix }}
+        <h3{{ title_attributes.addClass(bem_block ~ '__title') }}>
+          {% block title %}
+            {{ title }}
+          {% endblock %}
+        </h3>
+        {{ title_suffix }}
+      {% endif %}
 
       {{ content }}
-    </div>
-  {% endblock %}
+    {% endblock %}
+  </div>
 
-  {% block footer %}
   <footer class="{{ bem_block }}__footer">
-    {{ user_picture }}
-    <p>{{ submitted }}</p>
+    {% block footer %}
+      {{ user_picture }}
+      <p>{{ submitted }}</p>
 
-    {#
-      Indicate the semantic relationship between parent and child comments for
-      accessibility. The list is difficult to navigate in a screen reader
-      without this information.
-    #}
-    {% if parent %}
-      <p class="visually-hidden">{{ parent }}</p>
-    {% endif %}
+      {#
+        Indicate the semantic relationship between parent and child comments for
+        accessibility. The list is difficult to navigate in a screen reader
+        without this information.
+      #}
+      {% if parent %}
+        <p class="visually-hidden">{{ parent }}</p>
+      {% endif %}
 
-    {{ permalink }}
+      {{ permalink }}
+    {% endblock %}
   </footer>
-  {% endblock %}
 </article>

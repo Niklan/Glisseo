@@ -1,22 +1,23 @@
-{%
-  set bem_block = bem_block ?: ('taxonomy-term-' ~ term.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
+{% set bem_block = bem_block ?: ('taxonomy-term-' ~ term.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class %}
+{% set classes = [
+  bem_block,
+] %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {% block title %}
-    {% if not page %}
-      <h2 class="{{ bem_block }}__title"><a href="{{ url }}">{{ name }}</a></h2>
-    {% endif %}
-  {% endblock %}
+
+  {% if not page %}
+    <h2 class="{{ bem_block }}__title">
+      {% block title %}
+        <a href="{{ url }}">{{ name }}</a>
+      {% endblock %}
+    </h2>
+  {% endif %}
+
   {{ title_suffix }}
-  {% block content %}
-    <div class="{{ bem_block }}__content">
+
+  <div class="{{ bem_block }}__content">
+    {% block content %}
       {{ content }}
-    </div>
-  {% endblock %}
+    {% endblock %}
+  </div>
 </div>

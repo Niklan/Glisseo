@@ -1,15 +1,15 @@
-{%
-  set bem_block = bem_block ?: ('paragraph-' ~ paragraph.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      <div class="{{ bem_block }}__content">{{ content }}</div>
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+{% set bem_block = bem_block ?: ('paragraph-' ~ paragraph.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class %}
+{% set classes = [
+  bem_block,
+] %}
+<div{{ attributes.addClass(classes) }}>
+  {% block paragraph %}
+
+    <div class="{{ bem_block }}__content">
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+
+  {% endblock paragraph %}
+</div>

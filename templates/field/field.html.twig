@@ -1,46 +1,49 @@
 {# ENTITY_TYPE-ENTITY_BUNDLE-VIEW_MODE-FIELD_NAME #}
 {% set bem_block = (entity_type ~ '-' ~ bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class ~ '__' ~ field_name|replace({(bundle ~ '__'): ''})|clean_class %}
 {% set bem_element_prefix = bem_element_prefix ?: bem_block ~ '-' %}
-{%
-  set classes = classes ?: [
-    bem_block,
-  ]
-%}
-{%
-  set title_classes = [
-    bem_element_prefix ~ 'label',
-    label_hidden ? 'visually-hidden',
-  ]
-%}
-{% block field %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {% block label %}
-        {% if not label_hidden %}
-          <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-        {% endif %}
-      {% endblock %}
-      {% block items %}
-        {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
-        {% if (multiple and not label_hidden) or content_attributes_not_empty %}
-          <div{{ content_attributes.addClass(bem_element_prefix ~ 'items') }}>
-        {% endif %}
-        {% for item in items %}
-          {% block item %}
-            {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
-            {% if multiple or item_attributes_not_empty %}
-              <div{{ item.attributes.addClass(bem_element_prefix ~ 'item') }}>
-            {% endif -%}
-            {{- item.content -}}
-            {% if multiple or item_attributes_not_empty %}
-              </div>
-            {% endif -%}
-          {% endblock %}
-        {% endfor %}
-        {% if (multiple and not label_hidden) or content_attributes_not_empty %}
+{% set classes = classes ?: [
+  bem_block,
+] %}
+{% set title_classes = [
+  bem_element_prefix ~ 'label',
+  label_hidden ? 'visually-hidden',
+] %}
+<div{{ attributes.addClass(classes) }}>
+  {% block content %}
+
+    {% if not label_hidden %}
+      <div{{ title_attributes.addClass(title_classes) }}>
+        {% block label %}
+          {{ label }}
+        {% endblock %}
+      </div>
+    {% endif %}
+
+    {% block items %}
+      {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
+      {% if (multiple and not label_hidden) or content_attributes_not_empty %}
+        <div{{ content_attributes.addClass(bem_element_prefix ~ 'items') }}>
+      {% endif %}
+
+      {% for item in items %}
+        {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
+        {% if multiple or item_attributes_not_empty %}
+          <div{{ item.attributes.addClass(bem_element_prefix ~ 'item') }}>
+        {% endif -%}
+
+        {% block item %}
+          {{- item.content -}}
+        {% endblock %}
+
+        {% if multiple or item_attributes_not_empty %}
           </div>
-        {% endif %}
-      {% endblock %}
+        {% endif -%}
+      {% endfor %}
+
+      {% if (multiple and not label_hidden) or content_attributes_not_empty %}
+        </div>
+      {% endif %}
     {% endblock %}
-  </div>
-{% endblock %}
+
+  {% endblock %}
+</div>

@@ -1,17 +1,13 @@
-{%
-  set bem_block = bem_block ?: ('media-' ~ media.bundle() ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-    not media.isPublished() ? bem_block ~ '--unpublished',
-  ]
-%}
+{% set bem_block = bem_block ?: ('media-' ~ media.bundle() ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class %}
+{% set classes = [
+  bem_block,
+  not media.isPublished() ? bem_block ~ '--unpublished',
+] %}
 <article{{ attributes.addClass(classes) }}>
   {{ title_suffix.contextual_links }}
-  {% block content %}
-    {% if content %}
+  {% if content %}
+    {% block content %}
       {{ content }}
-    {% endif %}
-  {% endblock %}
+    {% endblock %}
+  {% endif %}
 </article>

@@ -1,63 +1,90 @@
-{%
-  set bem_block = 'view-' ~ id|clean_class ~ '-' ~ display_id|clean_class
-%}
-{%
-  set classes = [
-    bem_block,
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-  ]
-%}
+{% set bem_block = 'view-' ~ id|clean_class ~ '-' ~ display_id|clean_class %}
+{% set classes = [
+  bem_block,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+] %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
+
   {% if title %}
-    {{ title }}
+    {% block title %}
+      {{ title }}
+    {% endblock %}
   {% endif %}
+
   {{ title_suffix }}
+
   {% if header %}
     <div class="{{ bem_block }}__header">
-      {{ header }}
+      {% block header %}
+        {{ header }}
+      {% endblock %}
     </div>
   {% endif %}
+
   {% if exposed %}
     <div class="{{ bem_block }}__filters">
-      {{ exposed }}
+      {% block filters %}
+        {{ exposed }}
+      {% endblock %}
     </div>
   {% endif %}
+
   {% if attachment_before %}
     <div class="{{ bem_block }}__attachment {{ bem_block }}__attachment--before">
-      {{ attachment_before }}
+      {% block attachment_before %}
+        {{ attachment_before }}
+      {% endblock attachment_before %}
     </div>
   {% endif %}
 
   {% if rows %}
     <div class="{{ bem_block }}__content">
-      {{ rows }}
+      {% block content %}
+        {{ rows }}
+      {% endblock %}
     </div>
   {% elseif empty %}
     <div class="{{ bem_block }}__content {{ bem_block }}__content--empty">
-      {{ empty }}
+      {% block content_empty %}
+        {{ empty }}
+      {% endblock %}
     </div>
   {% endif %}
 
   {% if pager %}
-    {{ pager }}
+    {% block pager %}
+      {{ pager }}
+    {% endblock %}
   {% endif %}
+
   {% if attachment_after %}
     <div class="{{ bem_block }}__attachment {{ bem_block }}__attachment--after">
-      {{ attachment_after }}
+      {% block attachment_after %}
+        {{ attachment_after }}
+      {% endblock %}
     </div>
   {% endif %}
+
   {% if more %}
-    {{ more }}
+    {% block more %}
+      {{ more }}
+    {% endblock %}
   {% endif %}
+
   {% if footer %}
     <div class="{{ bem_block }}__footer">
-      {{ footer }}
+      {% block footer %}
+        {{ footer }}
+      {% endblock %}
     </div>
   {% endif %}
+
   {% if feed_icons %}
     <div class="{{ bem_block }}__feed-icons">
-      {{ feed_icons }}
+      {% block feed %}
+        {{ feed_icons }}
+      {% endblock %}
     </div>
   {% endif %}
 </div>

@@ -2,7 +2,8 @@
 {% set bem_element = bem_block ~ '__summary' %}
 <ul class="{{ bem_element }}">
   {% for row in rows %}
-    <li class="{{ bem_element }}-item"><a href="{{ row.url }}"{{ row.attributes.addClass(bem_element ~ '-item-link', row.active ? 'is-active')|without('href') }}>{{ row.link }}</a>
+    <li class="{{ bem_element }}-item">
+      <a href="{{ row.url }}"{{ row.attributes.addClass(bem_element ~ '-item-link', row.active ? 'is-active')|without('href') }}>{{ row.link }}</a>
       {% if options.count %}
         <span class="{{ bem_element }}-item-count">({{ row.count }})</span>
       {% endif %}

@@ -1,21 +1,30 @@
 {% set bem_block = bem_block ?: ('view-' ~ view.storage.id() ~ '-' ~ view.current_display)|clean_class %}
 {% set bem_element = bem_block ~ '__row' %}
 {% if title %}
-  <div class="{{ bem_block }}__rows">
-    <h3 class="{{ bem_block }}__rows-title">{{ title }}</h3>
-{% endif %}
-{% block content %}
-  {% for row in rows %}
-    {%
-      set row_classes = [
-        default_row_class ? bem_element,
-      ]
-    %}
-    <div{{ row.attributes.addClass(row_classes) }}>
-      {{ row.content }}
-    </div>
-  {% endfor %}
-{% endblock %}
-{% if title %}
-  </div>
+<div class="{{ bem_block }}__rows">
+  <h3 class="{{ bem_block }}__rows-title">
+    {% block title %}
+      {{ title }}
+    {% endblock %}
+  </h3>
+  {% endif %}
+
+  {% block rows %}
+    {% for row in rows %}
+      {% block row %}
+        {% set row_classes = [
+          default_row_class ? bem_element,
+        ] %}
+        
+        <div{{ row.attributes.addClass(row_classes) }}>
+          {% block content %}
+            {{ row.content }}
+          {% endblock %}
+        </div>
+      {% endblock %}
+    {% endfor %}
+  {% endblock %}
+
+  {% if title %}
+</div>
 {% endif %}
