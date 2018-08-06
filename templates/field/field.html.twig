@@ -3,6 +3,7 @@
 {% set bem_element_prefix = bem_element_prefix ?: bem_block ~ '-' %}
 {% set classes = classes ?: [
   bem_block,
+  label_display == 'inline' ? bem_block ~ '--label-inline',
 ] %}
 {% set title_classes = [
   bem_element_prefix ~ 'label',

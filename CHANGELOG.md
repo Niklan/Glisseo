@@ -20,6 +20,7 @@
 - Improved styles for breadcrumbs.scss.
 - Improved tabs flexbox.
 - Added mixin `button-size()`;
+- Added `[bem_block]--label-inline` class for field.
 
 ## 1.0-alpha7
 
