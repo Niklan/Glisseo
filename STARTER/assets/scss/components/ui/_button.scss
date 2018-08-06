@@ -174,16 +174,14 @@ $btn-info-border: darken($btn-info-bg, 5%) !default;
 // =====================================
 // Warning and preview buttons style.
 // =====================================
-.button--warning,
-#edit-preview {
+.button--warning {
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
 }
 
 // =====================================
 // Danger and delete button style.
 // =====================================
-.button-danger,
-#edit-delete {
+.button-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 

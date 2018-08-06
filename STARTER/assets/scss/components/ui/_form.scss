@@ -57,10 +57,10 @@ $label-required-margin: 0 0 0 4px !default;
 }
 
 .form-wrapper {
-  border: 1px solid gray('300');
+  border: 1px solid gray(300);
 
   &__summary {
-    background: gray('100');
+    background: gray(100);
     padding: gap();
     cursor: pointer;
   }

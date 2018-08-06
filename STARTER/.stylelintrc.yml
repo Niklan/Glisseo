@@ -77,7 +77,7 @@ rules:
   keyframe-declaration-no-important: true
   length-zero-no-unit: true
   max-empty-lines: 1
-  max-line-length: [80, { ignorePattern: ["/^@mixin\\s+/"] }]
+  max-line-length: [80, { ignorePattern: "/^@mixin\s+|^@include\s+|^@import\s+/" }]
   max-nesting-depth: null
   media-feature-colon-space-after: always
   media-feature-colon-space-before: never
@@ -109,7 +109,7 @@ rules:
   property-no-unknown: null
   property-no-vendor-prefix: true
   property-whitelist: null
-  rule-empty-line-before: [always, { except: inside-block-and-after-rule }]
+  rule-empty-line-before: [always, { except: [first-nested, after-single-line-comment] }]
   selector-attribute-brackets-space-inside: never
   selector-attribute-operator-blacklist: null
   selector-attribute-operator-space-after: never
