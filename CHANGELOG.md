@@ -19,6 +19,7 @@
 - Improved stylelintrc.
 - Improved styles for breadcrumbs.scss.
 - Improved tabs flexbox.
+- Added mixin `button-size()`;
 
 ## 1.0-alpha7
 

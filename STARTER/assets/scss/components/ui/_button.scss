@@ -126,20 +126,33 @@ $btn-info-border: darken($btn-info-bg, 5%) !default;
 }
 
 // =====================================
+// Button size.
+// =====================================
+@mixin button-size(
+  $padding-y: $input-btn-padding-y,
+  $padding-x: $input-btn-padding-x,
+  $font-size: $font-size-base,
+  $line-height: $input-btn-line-height,
+  $border-radius: $btn-border-radius
+) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+// =====================================
 // Generates button base styles.
 // =====================================
 %button {
+  @include button-size();
   display: inline-block;
   font-weight: $btn-font-weight;
-  line-height: $input-btn-line-height;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: $input-btn-border-width solid transparent;
-  padding: $input-btn-padding-y $input-btn-padding-x;
-  font-size: $font-size-base;
-  border-radius: $btn-border-radius;
 }
 
 // =====================================
