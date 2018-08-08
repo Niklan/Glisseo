@@ -4,6 +4,8 @@
 
 ### Base theme
 
+- Issue [#3](https://github.com/Niklan/Glisseo/issues/3) "Unknown "dd" function"
+
 ### Starter theme
 
 ## 1.0-alpha8
