@@ -165,26 +165,26 @@ $list-paddings: 0 !default;
 // Minimum width for breakpoints.
 $media-breakpoints: (
   xs: 0,
-  sm: 468px,
-  md: 768px,
+  sm: 464px,
+  md: 770px,
   lg: 992px,
-  xl: 1200px
+  xl: 1202px
 ) !default;
 
 // Gutters for container.
 $media-gutter-width: (
-  xs: 30px,
-  sm: 30px,
-  md: 30px,
-  lg: 30px,
-  xl: 30px,
+  xs: 32px,
+  sm: 32px,
+  md: 32px,
+  lg: 32px,
+  xl: 32px,
 ) !default;
 
 // Maximum width for container.
 // @see mixin media-containers-max-width()
 $container-max-widths: (
-  sm: 420px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+  sm: 464px,
+  md: 770px,
+  lg: 992px,
+  xl: 1202px
 ) !default;
