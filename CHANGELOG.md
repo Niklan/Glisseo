@@ -9,6 +9,7 @@
 ### Starter theme
 
 - Lost Grid default gutter is now multiple by 8px as `gap()`. A bit changed breakpoints ad their gutter to be multiple by 8px.
+- Fixed active tab underline.
 
 ## 1.0-alpha8
 

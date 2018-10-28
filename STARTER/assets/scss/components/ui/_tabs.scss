@@ -54,6 +54,7 @@ $secondary-tabs-item-active-border-color: $link-color !default;
       &.is-active {
         color: $primary-tabs-item-active-link-color;
         font-weight: bold;
+        position: relative;
 
         &::before {
           content: '';
