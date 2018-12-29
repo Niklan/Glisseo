@@ -4,6 +4,12 @@
 
 ### Base theme
 
+### Starter theme
+
+## 1.0-alpha9
+
+### Base theme
+
 - Issue [#3](https://github.com/Niklan/Glisseo/issues/3) "Unknown "dd" function"
 - Removed outdated documentation.
 - Added new variable `main_layout_attributes` contains empty object `Attribute()` for main layout modifiers on demand.
