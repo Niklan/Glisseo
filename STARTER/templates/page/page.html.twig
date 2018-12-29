@@ -3,9 +3,10 @@
   {{ page.header }}
   {{ page.navigation }}
 
-  <main class="{{ bem_block }}__content">
+  <main{{ main_layout_attributes.addClass(bem_block ~ '__content') }}>
     {{ page.sidebar_first }}
     {{ page.content }}
+    {{ page.sidebar_second }}
   </main>
 
   {{ page.footer }}

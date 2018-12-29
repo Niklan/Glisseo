@@ -1,13 +1,11 @@
-# SCSS architecture
+# Structure of SCSS
 
-In this theme is used custom SCSS architecture, but it is very [SMACSS](https://smacss.com/) alike.
+This theme is uses [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss).
 
-It was evolution of this architecture inside Drupal theming experience. It also has some things inspired from other tools, frameworks and even languages.
+**It's highly recommended to watch [this video from it's creator with explanation](https://youtu.be/1OKZOV-iLj4?t=524)**.
 
-The structure by default contains base, compontent, layout, module and utilities folders. Every of it is used for special cases.
+![ITCSS](https://i.imgur.com/mropqbH.png)
 
-* **Base**. The base folder is used only for basic styling of elements. This means, styles for clean html elements, without any class or even id selectors. Some of them uses pseudo-selectors such as `<p>`, but not more. It contains base rules for html elements under normalize.css reset.
-* **Layout**. This folder contains style for parts of the page, especially for creating grids and layout.
-* **Component.** Components are elements, which can be used on their own, f.e. buttons, table, pager, tabs, forms. This folder contain styles for them with all needed information. They are created in that way, so you can copy entire component folder and move it to another project, and it just works. Most of them by default is style Drupal specific elements. It's something familiar to JS frontend UI frameworks components like in Vue.JS and React. Each component do something and can be reused.
-* **Module.** Module is very similar to component folder. The main difference that this folder contains styles for elements for current project that can't be just copy-pasted to another and work without other things. You can find default folders here for blocks, nodes, taxonomy-term, theme (hook_theme) and views. As you can see, this folder is separated to logic parts by Drupal entity type (at most, but this is not rule as theme folder). Here is main styles for entire site. F.e. in node folder, I creates file for each node type: `_news.scss`, `_article.scss`, `_page.scss` — which is node type bundle type names. Inside of them I write the styles for each view mode of this entity type bundle. At first it can looks to annoying, but in fact, when you back to projects in such structure or when project is grows bigger, control things is much-much easier. And just think about it, if you jump in such project from the side. You don't need much time to dive in to such project, because **it's intuitive**. Also I create new folders for other entity types, f.e. paragraphs and so on if project is used them.
-* **Utilities.** This folder contains all utility things, global variables, functions, mixins, import of other things and so on.
+Each level of triangle is much narrow and used for specific usecase.
+
+At the best, utilities is never used, because they meant to have styles with `!important` key. Use it in the cases where you can't do it without it.

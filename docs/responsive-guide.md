@@ -1,6 +1,6 @@
 # Responsive guide
 
-To make your site responsive there is several tools, or simply mixins. By default theme uses [SUSY](http://susy.oddbird.net/) for grid system and several mixins to creates media-breakpoints. Together, this two tools is very powerful.
+To make your site responsive there is several tools and mixins. By default theme ships with [Lost Grid](http://lostgrid.org/) integration.
 
 ## Breakpoints
 
@@ -8,7 +8,7 @@ For creating your own breakpoints there is some variables and Bootstrap-alike mi
 
 ### Media breakpoint variables
 
-You can modify every media variables in `THEMENAME/scss/utilities/variables/_media.scss`
+You can modify every media variables in `THEMENAME/scss/settings/_variables.scss`
 
 There is several variables which defines media breakpoints, gutters and width for container. Default breakpoints is:
 
@@ -24,23 +24,34 @@ $media-breakpoints: (
 
 ### Media breakpoints mixins
 
-You can find every breakpoint mixin in `THEMENAME/scss/utilities/mixins/_media-breakpoint.scss`. Here will be covered most used of them.
+You can find every breakpoint mixin in `THEMENAME/scss/tools/mixins/_media-breakpoint.scss`. Here will be covered most used of them.
 
-#### media-container()
+#### make-container()
 
-**Use**: `@include media-container;`
+**Use**: `@include make-container;`
 
-This mixin adds gutter to container, set max-width for each breakpoint and center element on the page. 
+This mixin adds gutter to container and centering the container (by default with 100% it will fill all available space).
 
 ##### Example
 
-This will be center `#app` element inside `#app-wrapper` and sets breakpoints for each media query, which autmatically will adjust width for element based on screen size.
+```scss
+.main-layout {
+  @include make-container;
+}
+```
+
+#### make-container-max-widths()
+
+**Use**: `@include make-container-max-widths;`
+
+This mixin adds max width for container according to media breakpoints settings.
+
+##### Example
 
 ```scss
-#app-wrapper {
-    #app {
-        @include media-container;
-    }
+.main-layout {
+  @include make-container;
+  @include make-container-max-widths;
 }
 ```
 
@@ -111,59 +122,3 @@ body {
 ## Lost
 
 [Official site and documentation](http://lostgrid.org)
-
-@TODO
-
-
-## Combine media breakpoints and Lost
-
-@TODO
-
-Together, this couple of mixins can help you do whatever you wants.
-
-```html
-<div class="news">
-  <div class="left">
-    Some left content
-  </div>
-  
-  <div class="right">
-    Some right content.
-  </div>
-</div>
-```
-
-```scss
-.news {
-  display: flex;
-  
-  .left {
-    margin-right: gutter();
-    
-    @include media-breakpoint-between(md, lg) {
-      flex: 0 1 span(6);
-    }
-    
-    @include media-breakpoint-up(xl) {
-      flex: 0 1 span(4);
-    }
-  }
-  
-  .left {
-    @include media-breakpoint-between(md, lg) {
-      flex: 0 1 span(6);
-    }
-    
-    @include media-breakpoint-up(xl) {
-      flex: 0 1 span(8);
-    }
-  }
-}
-```
-
-* **0 - 767px** - left and right elements will fill full width.
-* **768px - 1199px** - left and right will split width by 50 / 50 each.
-* **1200px+** - left will get 4 columns of 12, and right 8.
-
-For more information about SUSY, better [read documentation](http://susydocs.oddbird.net/en/latest/) or some [awesome guides](https://css-tricks.com/build-web-layouts-easily-susy/).
-* 

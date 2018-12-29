@@ -4,7 +4,7 @@
 
 1. Copy and paste **STARTER** folder to `/theme` or `/theme/custom directory`, which you prefer more.
 2. Rename **STARTER** folder to name of your theme. The name must be unique. F.e. my_theme
-3. In the root of your new theme, also rename each file that contains **STARTER** by replacing it's on you theme name. The replace must be the same as theme folder named.
+3. In the root of your new theme, also rename each file that contains **STARTER** by replacing it's on you theme name. The replace must be the same as theme folder named. Don't forget to rename or remove hook in **includes/structure.inc**.
 4. Remove `hidden: true` from THEMENAME.info.yml file.
 5. In THEMENAME.info.yml also don't forget to replace **STARTER** by your theme name. Otherwise styles will not be included on the pages.
 

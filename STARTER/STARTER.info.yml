@@ -17,4 +17,5 @@ regions:
   navigation: Navigation
   content: Content
   sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
   footer: Footer

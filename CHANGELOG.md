@@ -5,6 +5,8 @@
 ### Base theme
 
 - Issue [#3](https://github.com/Niklan/Glisseo/issues/3) "Unknown "dd" function"
+- Removed outdated documentation.
+- Added new variable `main_layout_attributes` contains empty object `Attribute()` for main layout modifiers on demand.
 
 ### Starter theme
 
@@ -20,6 +22,7 @@
 - Improved styles and template for breadcrumbs.
 - Mixins `media-container()`, `make-container-max-widths()` refactored to Bootstrap-like behavior and naming: `make-container()`, `make-container-max-widths()` accordingly.
 - Mixin `media-container-gutters()` was removed, because it's not needed anymore.
+- Added example preprocess page in includes/structure.inc for main layout modifiers.
 - Squashed some bugs and improved overall quality.
 
 ## 1.0-alpha8
