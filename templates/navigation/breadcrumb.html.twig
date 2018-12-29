@@ -1,3 +1,11 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * @see template_preprocess_breadcrumb().
+ */
+#}
 {% if breadcrumb %}
   <nav class="breadcrumbs" aria-labelledby="system-breadcrumb">
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
@@ -8,6 +16,7 @@
             {% if not loop.last %}
               {% if item.url %}
                 <a href="{{ item.url }}" class="breadcrumbs__item-link">{{ item.text }}</a>
+                <span class="breadcrumbs__delimiter"></span>
               {% else %}
                 <span class="breadcrumbs__item-link breadcrumbs__item-link--text">{{ item.text }}</span>
               {% endif %}
@@ -18,9 +27,9 @@
       <div class="breadcrumbs__current">
         {% set last = breadcrumb|last %}
         {% if last.url %}
-          <a href="{{ last.url }}" class="breadcrumbs__item-link is-current">{{ last.text }}</a>
+          <a href="{{ last.url }}" class="breadcrumbs__item-link breadcrumbs__item-link--current">{{ last.text }}</a>
         {% else %}
-          <span class="breadcrumbs__item-link breadcrumbs__item-link--text is-current">{{ last.text }}</span>
+          <span class="breadcrumbs__item-link breadcrumbs__item-link--text breadcrumbs__item-link--current">{{ last.text }}</span>
         {% endif %}
       </div>
     {% endspaceless %}

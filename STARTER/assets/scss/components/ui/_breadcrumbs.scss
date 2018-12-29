@@ -7,7 +7,7 @@ $breadcrumb-padding-horizontal: 0 !default;
 $breadcrumb-margin-bottom: 0 !default;
 $breadcrumb-bg: transparent !default;
 $breadcrumb-delimiter-content: '/' !default;
-$breadcrumb-delimiter-color: gray('500') !default;
+$breadcrumb-delimiter-color: gray(500) !default;
 $breadcrumb-link-color: $link-color !default;
 $breadcrumb-font-size: $font-size-base !default;
 
@@ -25,21 +25,17 @@ $breadcrumb-font-size: $font-size-base !default;
 
   &__item-link {
     color: $breadcrumb-link-color;
+  }
 
+  &__item-link--text {
+    color: $text-color;
+  }
+
+  &__delimiter {
     &::after {
       margin: 0 4px;
       content: $breadcrumb-delimiter-content;
       color: $breadcrumb-delimiter-color;
-    }
-
-    &.is-current {
-      &::after {
-        display: none;
-      }
-    }
-
-    &--text {
-      color: $text-color;
     }
   }
 
@@ -57,19 +53,17 @@ $breadcrumb-font-size: $font-size-base !default;
       flex-shrink: 1;
     }
 
-    &__item-link {
-      &.is-current {
-        &::before {
-          margin: 0 4px;
-          content: $breadcrumb-delimiter-content;
-          color: $breadcrumb-delimiter-color;
-        }
-      }
-
+    &__delimiter {
       &:last-child {
-        &::after {
-          display: none;
-        }
+        display: none;
+      }
+    }
+
+    &__item-link--current {
+      &::before {
+        margin: 0 4px;
+        content: $breadcrumb-delimiter-content;
+        color: $breadcrumb-delimiter-color;
       }
     }
 

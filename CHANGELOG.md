@@ -17,6 +17,7 @@
 - Added layout folder into components.
 - Adjusted default media sizes.
 - **links.html.twig** is now has BEM class naming.
+- Improved styles and template for breadcrumbs.
 - Squashed some bugs and improved overall quality.
 
 ## 1.0-alpha8
