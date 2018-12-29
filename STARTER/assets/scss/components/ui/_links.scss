@@ -1,0 +1,10 @@
+.links {
+  &--inline {
+    @include list-unstyled;
+    display: flex;
+
+    .links__item:not(:last-child) {
+      margin-right: gap();
+    }
+  }
+}

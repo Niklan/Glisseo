@@ -27,23 +27,23 @@ $btn-default-bg: #ffffff !default;
 $btn-default-border: #cccccc !default;
 
 $btn-primary-color: white !default;
-$btn-primary-bg: theme-color('primary') !default;
+$btn-primary-bg: theme-color(primary) !default;
 $btn-primary-border: transparent !default;
 
 $btn-success-color: white !default;
-$btn-success-bg: theme-color('success') !default;
+$btn-success-bg: theme-color(success) !default;
 $btn-success-border: darken($btn-success-bg, 5%) !default;
 
 $btn-warning-color: white !default;
-$btn-warning-bg: theme-color('warning') !default;
+$btn-warning-bg: theme-color(warning) !default;
 $btn-warning-border: darken($btn-warning-bg, 5%) !default;
 
 $btn-danger-color: white !default;
-$btn-danger-bg: theme-color('error') !default;
+$btn-danger-bg: theme-color(error) !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
 $btn-info-color: white !default;
-$btn-info-bg: theme-color('info') !default;
+$btn-info-bg: theme-color(info) !default;
 $btn-info-border: darken($btn-info-bg, 5%) !default;
 
 // =====================================
@@ -165,7 +165,6 @@ $btn-info-border: darken($btn-info-bg, 5%) !default;
 // =====================================
 // Submit and primary button style.
 // =====================================
-.form-submit,
 .button--primary,
 .button--action {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);

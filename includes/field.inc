@@ -35,7 +35,7 @@ function glisseo_preprocess_field(&$variables) {
  *  - field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{ENTITY_ID}.html.twig
  *  - field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{VIEW_MODE}.html.twig
  */
-function bfh_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+function glisseo_theme_suggestions_field_alter(array &$suggestions, array $variables) {
   $entity = $variables['element']['#object'];
   $suggestion_name = [
     'field',

@@ -1,10 +1,24 @@
 // =============================================================================
-// Drupal Form API elements.
+// Form and Drupal Form API elements.
 // =============================================================================
+$input-padding-y: gap() !default;
+$input-padding-x: gap(2) !default;
+$input-line-height: 1.25 !default;
+$input-border-width: 1px !default;
+$input-bg: #ffffff !default;
+$input-border: rgba(34, 36, 38, 0.15) !default;
+$input-border-focus: theme-color(primary);
+$input-enable-shadows: false !default;
+$input-box-shadow: 0 0 0 0 transparent !default;
+$input-focus-box-shadow: 0 0 0 3px rgba(theme-color(primary), 0.5) !default;
+$input-border-radius: $border-radius-small !default;
+$input-color: $text-color !default;
+$input-bg-disabled: rgb(250, 250, 250) !default;
+$input-color-disabled: rgba(163, 163, 163, 1) !default;
 
 $label-required-enabled: true !default;
 $label-required-content: '*' !default;
-$label-required-color: theme-color('error') !default;
+$label-required-color: theme-color(error) !default;
 $label-required-margin: 0 0 0 4px !default;
 
 .form-item {
@@ -19,9 +33,13 @@ $label-required-margin: 0 0 0 4px !default;
   }
 
   &__label {
+    &.option {
+      margin-bottom: 0;
+    }
+
     @if ($label-required-enabled) {
-      &.is-required {
-        &:after {
+      &--required {
+        &::after {
           content: $label-required-content;
           display: inline-block;
           color: $label-required-color;
@@ -30,11 +48,16 @@ $label-required-margin: 0 0 0 4px !default;
       }
     }
   }
+
+  &--radio {
+    margin-bottom: 0;
+  }
 }
 
 .form-actions {
   input {
     margin: 0 gap() 0 0;
+    width: auto;
 
     &:last-child {
       margin: 0;
@@ -46,19 +69,7 @@ $label-required-margin: 0 0 0 4px !default;
   margin-top: gap(-2);
 }
 
-.form-item__label {
-  &.option {
-    margin-bottom: 0;
-  }
-}
-
-.form-item--radio {
-  margin-bottom: 0;
-}
-
 .form-wrapper {
-  border: 1px solid gray(300);
-
   &__summary {
     background: gray(100);
     padding: gap();
@@ -67,5 +78,45 @@ $label-required-margin: 0 0 0 4px !default;
 
   &__content {
     padding: gap();
+  }
+}
+
+.form-control {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  padding: $input-padding-y $input-padding-x;
+  font: inherit;
+  background-color: $input-bg;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $input-border;
+  border-radius: $input-border-radius;
+  box-sizing: border-box;
+  transition: all .15s ease-in-out;
+
+  @if ($input-enable-shadows) {
+    box-shadow: $input-box-shadow;
+  }
+
+  &.error {
+    border-color: theme-color(error);
+  }
+
+  &:focus {
+    outline: medium none;
+    border-color: $input-border-focus;
+
+    @if ($input-enable-shadows) {
+      box-shadow: $input-focus-box-shadow;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: $input-bg-disabled;
+    font-size: 100%;
+    color: $input-color-disabled;
+    text-shadow: none;
   }
 }

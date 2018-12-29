@@ -24,7 +24,7 @@ $secondary-tabs-margin: 0 0 gap(3) !default;
 $secondary-tabs-item-link-padding: 0 10px 10px 10px !default;
 $secondary-tabs-item-link-color: $text-color !default;
 $secondary-tabs-item-link-hover-color: $text-color-subtle !default;
-$secondary-tabs-item-link-border-color: gray('300') !default;
+$secondary-tabs-item-link-border-color: gray(300) !default;
 $secondary-tabs-item-active-link-color: $link-color !default;
 $secondary-tabs-item-active-link-hover-color: $link-hover-color !default;
 $secondary-tabs-item-active-border-color: $link-color !default;
@@ -46,6 +46,7 @@ $secondary-tabs-item-active-border-color: $link-color !default;
       display: block;
       padding: $primary-tabs-item-link-padding;
       color: $primary-tabs-item-link-color;
+      position: relative;
 
       &:hover {
         color: $primary-tabs-item-link-hover-color;

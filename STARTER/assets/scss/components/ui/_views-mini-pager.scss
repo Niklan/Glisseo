@@ -11,11 +11,9 @@
     justify-content: center;
   }
 
-  &__item {
-    &--label {
-      padding: gap();
-      color: gray('600');
-    }
+  &__item--label {
+    padding: gap();
+    color: gray(600);
   }
 
   &__item-link {

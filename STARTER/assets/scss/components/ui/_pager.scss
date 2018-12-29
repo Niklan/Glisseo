@@ -17,14 +17,17 @@ $pager-item-link-font-weight: 600 !default;
 $pager-item-link-color: $link-color !default;
 $pager-item-link-active-color: darken($link-color, 20%) !default;
 
-.pager__items {
+.pager {
   margin: $pager-list-margin;
   padding: $pager-list-padding;
-  list-style: none outside none;
-  display: table;
-  overflow: hidden;
 
-  .pager__item {
+  &__items {
+    @include list-unstyled;
+    list-style: none outside none;
+    display: table;
+  }
+
+  &__item {
     display: inline-block;
     color: $pager-item-color;
     margin: $pager-item-margin;

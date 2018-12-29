@@ -23,9 +23,9 @@ function glisseo_theme_suggestions_input_alter(array &$suggestions, array $varia
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_HOOK() for details.html.twig.
  */
-function glisseo_preprocess_details(&$variables) {
+function glisseo_preprocess_details(array &$variables) {
   $element = &$variables['element'];
 
   $variables['form_id'] = isset($element['#bem_form_id']) ? $element['#bem_form_id'] : '';
@@ -36,9 +36,9 @@ function glisseo_preprocess_details(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_HOOK() for form-element.html.twig.
  */
-function glisseo_preprocess_form_element(&$variables) {
+function glisseo_preprocess_form_element(array &$variables) {
   $element = &$variables['element'];
 
   $variables['form_id'] = isset($element['#bem_form_id']) ? $element['#bem_form_id'] : '';
@@ -66,7 +66,7 @@ function glisseo_element_info_alter(array &$types) {
 /**
  * Additional processing for specific form elements.
  */
-function _glisseo_process_form_element(&$element, FormStateInterface $form_state, &$complete_form) {
+function _glisseo_process_form_element(array &$element, FormStateInterface $form_state, &$complete_form) {
   if (!empty($complete_form['#form_id'])) {
     // Add additional variable to element to determine parent form id.
     $element['#bem_form_id'] = $complete_form['#form_id'];
@@ -75,9 +75,36 @@ function _glisseo_process_form_element(&$element, FormStateInterface $form_state
 }
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_HOOK() for form.html.twig.
  */
-function glisseo_preprocess_form(&$variables) {
+function glisseo_preprocess_form(array &$variables) {
   $element = &$variables['element'];
   $variables['form_id'] = $element['#form_id'];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for input.html.twig.
+ */
+function glisseo_preprocess_input(array &$variables) {
+  $element = $variables['element'];
+  // Elements which doesn't need class ".form-control.".
+  $blacklist = ['checkbox', 'radio', 'submit'];
+
+  if (!in_array($element['#type'], $blacklist)) {
+    $variables['attributes']['class'][] = 'form-control';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for textarea.html.twig.
+ */
+function glisseo_preprocess_textarea(array &$variables) {
+  $variables['attributes']['class'][] = 'form-control';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for select.html.twig.
+ */
+function glisseo_preprocess_select(array &$variables) {
+  $variables['attributes']['class'][] = 'form-control';
 }

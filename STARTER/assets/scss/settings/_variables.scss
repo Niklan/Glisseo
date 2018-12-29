@@ -88,12 +88,12 @@ $font-family: $font-family-sans-serif !default;
 
 // Text
 $text-color: #333333 !default;
-$text-color-subtle: gray('500') !default;
-$text-color-highlight: gray('600') !default;
-$text-color-info: theme-color('info') !default;
-$text-color-success: theme-color('success') !default;
-$text-color-warning: theme-color('warning') !default;
-$text-color-error: theme-color('error') !default;
+$text-color-subtle: gray(500) !default;
+$text-color-highlight: gray(600) !default;
+$text-color-info: theme-color(info) !default;
+$text-color-success: theme-color(success) !default;
+$text-color-warning: theme-color(warning) !default;
+$text-color-error: theme-color(error) !default;
 
 // Border radius.
 $border-radius-small: 3px !default;
@@ -144,13 +144,13 @@ $mark-color: inherit !default;
 // Blockqoutes.
 $blockquote-font-size: 110% !default;
 $blockquote-border-size: 4px !default;
-$blockquote-border-color: gray('400') !default;
+$blockquote-border-color: gray(400) !default;
 $blockquote-paddings: gap() gap(2) !default;
 $blockquote-margins: 0 0 gap(2) !default;
 $blockquote-bg: transparent !default;
 
 // <hr> tag.
-$hr-border-color: gray('500') !default;
+$hr-border-color: gray(500) !default;
 $hr-margin-top: gap(2) !default;
 $hr-margin-bottom: gap(2) !default;
 
@@ -165,26 +165,22 @@ $list-paddings: 0 !default;
 // Minimum width for breakpoints.
 $media-breakpoints: (
   xs: 0,
-  sm: 464px,
-  md: 770px,
+  sm: 576px,
+  md: 768px,
   lg: 992px,
-  xl: 1202px
-) !default;
-
-// Gutters for container.
-$media-gutter-width: (
-  xs: 32px,
-  sm: 32px,
-  md: 32px,
-  lg: 32px,
-  xl: 32px,
+  xl: 1200px
 ) !default;
 
 // Maximum width for container.
 // @see mixin media-containers-max-width()
 $container-max-widths: (
-  sm: 464px,
-  md: 770px,
-  lg: 992px,
-  xl: 1202px
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 ) !default;
+
+// Gutters for container.
+$grid-gutter-width: 32px !default;
+
+

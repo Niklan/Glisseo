@@ -18,6 +18,8 @@
 - Adjusted default media sizes.
 - **links.html.twig** is now has BEM class naming.
 - Improved styles and template for breadcrumbs.
+- Mixins `media-container()`, `make-container-max-widths()` refactored to Bootstrap-like behavior and naming: `make-container()`, `make-container-max-widths()` accordingly.
+- Mixin `media-container-gutters()` was removed, because it's not needed anymore.
 - Squashed some bugs and improved overall quality.
 
 ## 1.0-alpha8

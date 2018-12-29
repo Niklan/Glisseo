@@ -8,9 +8,9 @@
 use Drupal\Core\Template\Attribute;
 
 /**
- * Implements hook_preprocess_HOOK().
+ * Implements hook_preprocess_HOOK() for block.html.twig.
  */
-function glisseo_preprocess_block(&$variables) {
+function glisseo_preprocess_block(array &$variables) {
   $elements = $variables['elements'];
   $variables['block_id'] = isset($elements['#id']) ? $elements['#id'] : $elements['#plugin_id'];
   if (!empty($elements['#id'])) {
