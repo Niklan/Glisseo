@@ -12,6 +12,7 @@
 - Fixed active tab underline.
 - Bumped up all npm dependencies. MDI Font to 3.x, Gulp to 4.x.
 - Updated gulpfile.js to work with 4.x version.
+- Added **_variables.override.scss** for overriding and custom variables.
 
 ## 1.0-alpha8
 
