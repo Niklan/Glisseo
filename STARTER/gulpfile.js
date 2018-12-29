@@ -1,11 +1,9 @@
-'use strict';
-
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('autoprefixer');
-const postcss = require('gulp-postcss');
-const lost = require('lost');
+let gulp = require('gulp');
+let sass = require('gulp-sass');
+let sourcemaps = require('gulp-sourcemaps');
+let autoprefixer = require('autoprefixer');
+let postcss = require('gulp-postcss');
+let lost = require('lost');
 
 gulp.task('sass', function() {
   return gulp.src([
@@ -25,8 +23,8 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('./assets/css/'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch('assets/scss/**', ['sass']);
+gulp.task('sass:watch', function() {
+  gulp.watch('assets/scss/**', gulp.parallel('sass'));
 });
 
-gulp.task('default', ['watch', 'sass']);
+gulp.task('default', gulp.series('sass', 'sass:watch'));

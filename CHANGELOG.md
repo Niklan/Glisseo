@@ -10,6 +10,8 @@
 
 - Lost Grid default gutter is now multiple by 8px as `gap()`. A bit changed breakpoints ad their gutter to be multiple by 8px.
 - Fixed active tab underline.
+- Bumped up all npm dependencies. MDI Font to 3.x, Gulp to 4.x.
+- Updated gulpfile.js to work with 4.x version.
 
 ## 1.0-alpha8
 
