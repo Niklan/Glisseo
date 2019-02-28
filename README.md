@@ -12,6 +12,7 @@
 2. Copy STARTER theme and place it in /themes as well.
 3. Rename STARTER folder to your future theme name, f.e. 'mytheme'.
 4. Replace every uppercase filenames in the root of your theme with it's name. Also, don't forget to replace it inside yaml files when it needed.
+5. Rename STARTER.**starter**.yml to STARTER.**info**.yml.
 
 ## What's this
 

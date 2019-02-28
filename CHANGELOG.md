@@ -10,6 +10,9 @@
 
 - Issue [#7](https://github.com/Niklan/Glisseo/issues/7). Title for **block--system-menu-block.html.twig** is no more rendering if it's empty.
 - Issue [#6](https://github.com/Niklan/Glisseo/issues/6). Changed tag in package.json from susy to Lost Grid.
+- Improved **package.json** by moving all development packages to devDependencies. For production now better us `npm install --production`, this will be much faster.
+- BEM block for commerce_product changed from `product` to `commerce-product`.
+- Rename STARTER.info.yml to STARTER.starter.info, because drupal.org detect it and adds metadata which not needed.
 - Other fixes and minor improvements.
 
 ## 1.0-alpha9

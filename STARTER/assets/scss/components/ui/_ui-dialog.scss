@@ -31,6 +31,10 @@ $dialog-buttonpane-border: none !default;
 $dialog-buttonpane-padding: 0 gap(2) gap(2) !default;
 $dialog-buttonpane-buttons-align-right: true !default;
 
+.ui-widget {
+  font-family: $font-family;
+}
+
 .ui-widget-overlay {
   background: $dialog-overlay-background;
   opacity: $dialog-overlay-opacity;

@@ -1,4 +1,4 @@
-{% set bem_block = bem_block ?: ('product-' ~ product_entity.bundle ~ (elements['#view_mode'] != 'default' ? '-' ~ elements['#view_mode']))|clean_class %}
+{% set bem_block = bem_block ?: ('commerce-product-' ~ product_entity.bundle ~ (elements['#view_mode'] != 'default' ? '-' ~ elements['#view_mode']))|clean_class %}
 {% set classes = [
   bem_block,
 ] %}
