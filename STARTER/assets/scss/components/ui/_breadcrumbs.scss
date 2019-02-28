@@ -9,7 +9,7 @@ $breadcrumb-bg: transparent !default;
 $breadcrumb-delimiter-content: '/' !default;
 $breadcrumb-delimiter-color: gray(500) !default;
 $breadcrumb-link-color: $link-color !default;
-$breadcrumb-font-size: $font-size-base !default;
+$breadcrumb-font-size: $global-font-size !default;
 
 .breadcrumbs {
   background: $breadcrumb-bg;

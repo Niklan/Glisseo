@@ -21,7 +21,7 @@ $dialog-header-border: none !default;
 
 $dialog-title-color: #333333 !default;
 $dialog-title-weight: bold !default;
-$dialog-title-size: $font-size-base !default;
+$dialog-title-size: $global-font-size !default;
 
 $dialog-content-padding: 0 gap(2) !default;
 
@@ -54,7 +54,7 @@ $dialog-buttonpane-buttons-align-right: true !default;
   border-radius: $dialog-border-radius;
   border: $dialog-border !important;
   max-width: 100%;
-  font-size: $font-size-base;
+  font-size: $global-font-size;
   @if ($dialog-enable-shadows) {
     box-shadow: $dialog-box-shadow;
   }
@@ -102,7 +102,7 @@ $dialog-buttonpane-buttons-align-right: true !default;
       .ui-button-text {
         padding: 0;
         font-size: $font-family;
-        line-height: $line-height-base;
+        line-height: $global-line-height;
       }
     }
   }

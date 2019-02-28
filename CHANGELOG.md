@@ -5,14 +5,15 @@
 ### Base theme
 
 - Removed package.json from base theme folder. Because idk why it's here, simply usless file.
+- **Breaking change**. BEM block for commerce_product changed from `product` to `commerce-product`.
 
 ### Starter theme
 
 - Issue [#7](https://github.com/Niklan/Glisseo/issues/7). Title for **block--system-menu-block.html.twig** is no more rendering if it's empty.
 - Issue [#6](https://github.com/Niklan/Glisseo/issues/6). Changed tag in package.json from susy to Lost Grid.
 - Improved **package.json** by moving all development packages to devDependencies. For production now better us `npm install --production`, this will be much faster.
-- BEM block for commerce_product changed from `product` to `commerce-product`.
 - Rename STARTER.info.yml to STARTER.starter.info, because drupal.org detect it and adds metadata which not needed.
+- Inspired by INUITCSS added `$baseline` and other variables to make sizes more consistent. This improves grid and spacings for "[Rule of 8px](https://medium.com/wayfair-design/more-padding-please-b95e19422acc)".
 - Other fixes and minor improvements.
 
 ## 1.0-alpha9

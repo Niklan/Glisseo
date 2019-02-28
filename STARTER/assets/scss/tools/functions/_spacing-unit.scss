@@ -1,0 +1,6 @@
+/**
+ * Returns spacing unit value.
+ */
+@function spacing-unit($key: normal) {
+  @return map-get($spacing-units, $key);
+}

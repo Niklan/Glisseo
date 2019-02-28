@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  font-size: $font-size-base;
-  line-height: $line-height-base;
+  font-size: $global-font-size;
+  line-height: $global-line-height;
   font-family: $font-family;
   color: $text-color;
 }
@@ -16,6 +16,7 @@ body {
 a {
   color: $link-color;
   text-decoration: $link-decoration;
+
   &:hover {
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
@@ -29,72 +30,19 @@ ol, ul {
 
 p {
   margin: $paragraph-margins;
+
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
-}
-
-h1,
-h2,
-h3 {
-  margin-top: $headings-primary-margin-top;
-  margin-bottom: $headings-primary-margin-bottom;
-}
-
-h4,
-h5,
-h6 {
-  margin-top: $headings-secondary-margin-top;
-  margin-bottom: $headings-secondary-margin-bottom;
-}
-
-h1 {
-  font-size: $font-size-h1;
-}
-
-h2 {
-  font-size: $font-size-h2;
-}
-
-h3 {
-  font-size: $font-size-h3;
-}
-
-h4 {
-  font-size: $font-size-h4;
-}
-
-h5 {
-  font-size: $font-size-h5;
-}
-
-h6 {
-  font-size: $font-size-h6;
-}
-
 small {
-  font-size: $font-size-small;
+  @include font-size($global-font-size * 0.80);
   font-weight: normal;
 }
 
 big {
-  font-size: $font-size-large;
+  @include font-size($global-font-size * 1.20);
   font-weight: normal;
 }
 
@@ -112,7 +60,7 @@ mark {
 }
 
 code {
-  font-size: $font-size-base;
+  font-size: $global-font-size;
   font-family: $font-family-monospace;
 }
 

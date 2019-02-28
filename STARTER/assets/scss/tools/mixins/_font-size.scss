@@ -1,0 +1,39 @@
+// =====================================
+// Font size with line-height.
+// =====================================
+
+/**
+ * Generates rem font-size.
+ *
+ * Allow to handle line-height and important state for font size. It's generated
+ * in rem, but has px fallback.
+ *
+ * @param string|int $font-size
+ *   The font size in px or integer.
+ * @param string|int $line-height
+ *   The line height for font size.
+ * @param bool $important
+ *   The important indicator.
+ */
+@mixin font-size($font-size, $line-height: auto, $important: false) {
+  // Handle important mark.
+  @if ($important == true) {
+    $important: !important;
+  } @else {
+    $important: null;
+  }
+
+  // Uncomment for font size with px fallback.
+  //font-size: $font-size $important;
+  font-size: ($font-size / $global-font-size) * 1rem $important;
+
+  @if ($line-height == 'auto') {
+    // Calculate line-height.
+    $lines: ceil($font-size / $global-baseline) + 1;
+    $line-height: $lines * $global-baseline;
+
+    line-height: ($line-height / $font-size) $important;
+  } @else if (type-of($line-height) == number or $line-height == 'inherit' or $line-height == 'normal') {
+    line-height: $line-height $important;
+  }
+}

@@ -131,7 +131,7 @@ $btn-info-border: darken($btn-info-bg, 5%) !default;
 @mixin button-size(
   $padding-y: $input-btn-padding-y,
   $padding-x: $input-btn-padding-x,
-  $font-size: $font-size-base,
+  $font-size: $global-font-size,
   $line-height: $input-btn-line-height,
   $border-radius: $btn-border-radius
 ) {

@@ -2,6 +2,37 @@
 // Global variables.
 // =============================================================================
 @import "../tools/functions/math";
+@import "../tools/functions/unit-factor";
+@import "../tools/functions/spacing-unit";
+
+// The main multiplier for all sizes.
+// @see https://medium.com/wayfair-design/more-padding-please-b95e19422acc
+$global-baseline: 8px !default;
+
+// Baseline factors.
+$unit-factors: () !default;
+$unit-factors: map-merge((
+  tiny: 1,
+  small: 2,
+  normal: 4,
+  large: 8,
+  huge: 16,
+), $unit-factors);
+
+// Spacing sizes based on baseline and unit factor.
+$spacing-units: () !default;
+$spacing-units: map-merge((
+  tiny: $global-baseline * unit-factor(tiny),
+  small: $global-baseline * unit-factor(small),
+  normal: $global-baseline * unit-factor(),
+  large: $global-baseline * unit-factor(large),
+  huge: $global-baseline * unit-factor(huge),
+), $spacing-units);
+
+// Typography
+// Font sizes.
+$global-font-size: 16px !default;
+$global-line-height: spacing-unit() !default;
 
 // Base colors.
 $white: #ffffff !default;
@@ -100,23 +131,6 @@ $border-radius-small: 3px !default;
 $border-radius-base: 4px !default;
 $border-radius-large: 6px !default;
 
-// Typography
-// Font sizes.
-$font-size-base: 16px !default;
-$font-size-large: 125% !default;
-$font-size-small: 80% !default;
-$font-size-h1: floor($font-size-base * 2) !default;
-$font-size-h2: floor($font-size-base * 1.75) !default;
-$font-size-h3: ceil($font-size-base * 1.5) !default;
-$font-size-h4: ceil($font-size-base * 1.25) !default;
-$font-size-h5: $font-size-base !default;
-$font-size-h6: ceil($font-size-base * 0.85) !default;
-
-// Line height.
-// Unit-less cuz used in buttons, inputs, etc.
-$line-height-base: 1.5 !default;
-$line-height-computed: floor($line-height-base * $font-size-base) !default;
-
 $paragraph-margins: 0 0 gap(2) !default;
 
 // Headings default settings.
@@ -124,11 +138,6 @@ $headings-font-family: inherit !default;
 $headings-font-weight: 500 !default;
 $headings-line-height: 1.1 !default;
 $headings-color: inherit !default;
-
-$headings-primary-margin-top: gap(4) !default;
-$headings-primary-margin-bottom: gap(2) !default;
-$headings-secondary-margin-top: gap(3) !default;
-$headings-secondary-margin-bottom: gap(2) !default;
 
 // Links
 $link-color: map-get($theme-colors, primary) !default;

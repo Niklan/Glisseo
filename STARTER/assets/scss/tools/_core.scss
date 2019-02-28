@@ -6,6 +6,8 @@
 @import "../settings/core";
 
 // Functions.
+@import "functions/spacing-unit";
+@import "functions/unit-factor";
 @import "functions/colors";
 @import "functions/math";
 @import "functions/media";
@@ -14,4 +16,4 @@
 @import "mixins/helpers";
 @import "mixins/gradient";
 @import "mixins/media-breakpoint";
-@import "mixins/typography";
+@import "mixins/font-size";

@@ -44,7 +44,7 @@ th {
       > th,
       > td {
         padding: $table-cell-padding;
-        line-height: $line-height-base;
+        line-height: $global-line-height;
         vertical-align: top;
         border-top: 1px solid $table-border-color;
       }
@@ -95,7 +95,7 @@ th {
 
   @include media-breakpoint-only(xs) {
     width: 100%;
-    margin-bottom: ($line-height-computed * 0.75);
+    margin-bottom: ($global-line-height * 0.75);
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid $table-border-color;
