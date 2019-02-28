@@ -4,10 +4,13 @@
 
 ### Base theme
 
-- Issue [#7](https://github.com/Niklan/Glisseo/issues/7). Title for **block--system-menu-block.html.twig** is no more rendering if it's empty.
-- Issue [#6](https://github.com/Niklan/Glisseo/issues/6). Changed tag in package.json from susy to Lost Grid.
+- Removed package.json from base theme folder. Because idk why it's here, simply usless file.
 
 ### Starter theme
+
+- Issue [#7](https://github.com/Niklan/Glisseo/issues/7). Title for **block--system-menu-block.html.twig** is no more rendering if it's empty.
+- Issue [#6](https://github.com/Niklan/Glisseo/issues/6). Changed tag in package.json from susy to Lost Grid.
+- Other fixes and minor improvements.
 
 ## 1.0-alpha9
 
