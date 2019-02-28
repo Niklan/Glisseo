@@ -4,6 +4,8 @@
 
 ### Base theme
 
+- Title for **block--system-menu-block.html.twig** is no more rendering if it's empty.
+
 ### Starter theme
 
 ## 1.0-alpha9
