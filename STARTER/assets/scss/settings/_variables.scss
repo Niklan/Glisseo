@@ -6,6 +6,7 @@
 @import "../tools/functions/spacing-unit";
 
 // The main multiplier for all sizes.
+// Your "Rule of X". The common values: 4px (Google), 6px, 8px.
 // @see https://medium.com/wayfair-design/more-padding-please-b95e19422acc
 $global-baseline: 8px !default;
 
@@ -29,10 +30,12 @@ $spacing-units: map-merge((
   huge: $global-baseline * unit-factor(huge),
 ), $spacing-units);
 
-// Typography
 // Font sizes.
 $global-font-size: 16px !default;
 $global-line-height: spacing-unit() !default;
+
+// @see gap() function for more information.
+$gap-size: spacing-unit(tiny);
 
 // Base colors.
 $white: #ffffff !default;
@@ -108,9 +111,6 @@ $theme-color-interval: 8% !default;
 $yiq-text-dark: $gray-900 !default;
 $yiq-text-light: $white !default;
 
-// @see gap() function for more information.
-$gap-size: 8px;
-
 // Font
 $font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
@@ -130,42 +130,6 @@ $text-color-error: theme-color(error) !default;
 $border-radius-small: 3px !default;
 $border-radius-base: 4px !default;
 $border-radius-large: 6px !default;
-
-$paragraph-margins: 0 0 gap(2) !default;
-
-// Headings default settings.
-$headings-font-family: inherit !default;
-$headings-font-weight: 500 !default;
-$headings-line-height: 1.1 !default;
-$headings-color: inherit !default;
-
-// Links
-$link-color: map-get($theme-colors, primary) !default;
-$link-decoration: none !default;
-$link-hover-color: theme-color-level('primary', 4) !default;
-$link-hover-decoration: none !default;
-
-// <mark> tag.
-$mark-bg: #fff9c4 !default;
-$mark-padding: .2em !default;
-$mark-color: inherit !default;
-
-// Blockqoutes.
-$blockquote-font-size: 110% !default;
-$blockquote-border-size: 4px !default;
-$blockquote-border-color: gray(400) !default;
-$blockquote-paddings: gap() gap(2) !default;
-$blockquote-margins: 0 0 gap(2) !default;
-$blockquote-bg: transparent !default;
-
-// <hr> tag.
-$hr-border-color: gray(500) !default;
-$hr-margin-top: gap(2) !default;
-$hr-margin-bottom: gap(2) !default;
-
-// <ol> <ul> tags.
-$list-margins: gap() 0 gap() gap(2) !default;
-$list-paddings: 0 !default;
 
 // =====================================
 // Media breakpoints.

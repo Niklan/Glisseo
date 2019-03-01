@@ -1,0 +1,18 @@
+// =============================================================================
+// Links.
+// =============================================================================
+
+$link-color: map-get($theme-colors, primary) !default;
+$link-decoration: none !default;
+$link-hover-color: theme-color-level(primary, 4) !default;
+$link-hover-decoration: none !default;
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}

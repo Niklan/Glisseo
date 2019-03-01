@@ -1,6 +1,11 @@
 // =============================================================================
-// Returns unit factor value.
+// Lists.
 // =============================================================================
-@function unit-factor($key: normal) {
-  @return map-get($unit-factors, $key);
+
+$list-margins: gap() 0 gap() gap(2) !default;
+$list-paddings: 0 !default;
+
+ol, ul {
+  margin: $list-margins;
+  padding: $list-paddings;
 }

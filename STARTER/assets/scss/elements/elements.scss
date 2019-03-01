@@ -9,7 +9,14 @@
 @import "../tools/core";
 
 // Elements.
-@import "reset";
+@import "globals";
+@import "focus";
+@import "selection";
+@import "page";
 @import "typography";
 @import "headings";
-@import "form";
+@import "links";
+@import "lists";
+@import "images";
+@import "blockquotes";
+@import "horizontal-rules";

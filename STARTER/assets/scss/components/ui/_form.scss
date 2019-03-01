@@ -3,7 +3,6 @@
 // =============================================================================
 $input-padding-y: gap() !default;
 $input-padding-x: gap(2) !default;
-$input-line-height: 1.5 !default;
 $input-border-width: 1px !default;
 $input-bg: #ffffff !default;
 $input-border: rgba(34, 36, 38, 0.15) !default;
@@ -15,6 +14,7 @@ $input-border-radius: $border-radius-small !default;
 $input-color: $text-color !default;
 $input-bg-disabled: rgb(250, 250, 250) !default;
 $input-color-disabled: rgba(163, 163, 163, 1) !default;
+$input-line-height: auto !default;
 
 $label-required-enabled: true !default;
 $label-required-content: '*' !default;
@@ -82,11 +82,11 @@ $label-required-margin: 0 0 0 4px !default;
 }
 
 .form-control {
+  @include font-size($global-font-size, $input-line-height);
   display: block;
   max-width: 100%;
   width: 100%;
   padding: $input-padding-y $input-padding-x;
-  font: inherit;
   background-color: $input-bg;
   border-width: 1px;
   border-style: solid;
@@ -94,7 +94,6 @@ $label-required-margin: 0 0 0 4px !default;
   border-radius: $input-border-radius;
   box-sizing: border-box;
   transition: all .15s ease-in-out;
-  line-height: $input-line-height;
 
   @if ($input-enable-shadows) {
     box-shadow: $input-box-shadow;

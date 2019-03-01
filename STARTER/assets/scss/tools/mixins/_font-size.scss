@@ -2,19 +2,19 @@
 // Font size with line-height.
 // =====================================
 
-/**
- * Generates rem font-size.
- *
- * Allow to handle line-height and important state for font size. It's generated
- * in rem, but has px fallback.
- *
- * @param string|int $font-size
- *   The font size in px or integer.
- * @param string|int $line-height
- *   The line height for font size.
- * @param bool $important
- *   The important indicator.
- */
+// =============================================================================
+// Generates rem font-size.
+//
+// Allow to handle line-height and important state for font size. It's generated
+// in rem, but has px fallback.
+//
+// @param string|int $font-size
+//   The font size in px or integer.
+// @param string|int $line-height
+//   The line height for font size.
+// @param bool $important
+//   The important indicator.
+// =============================================================================
 @mixin font-size($font-size, $line-height: auto, $important: false) {
   // Handle important mark.
   @if ($important == true) {

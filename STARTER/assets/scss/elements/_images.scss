@@ -1,6 +1,11 @@
 // =============================================================================
-// Returns unit factor value.
+// Images.
 // =============================================================================
-@function unit-factor($key: normal) {
-  @return map-get($unit-factors, $key);
+
+img {
+  max-width: 100%;
+  // For ALT attribute.
+  font-style: italic;
+  // Fixes whitespace under images.
+  vertical-align: middle;
 }

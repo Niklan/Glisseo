@@ -1,0 +1,11 @@
+// =============================================================================
+// Selection.
+// =============================================================================
+
+$selection-bg:    theme-color(primary) !default;
+$selection-color: color-yiq($selection-bg) !default;
+
+::selection {
+  background: $selection-bg;
+  color: $selection-color;
+}

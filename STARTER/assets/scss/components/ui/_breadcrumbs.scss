@@ -2,6 +2,9 @@
 // Drupal breadcrumbs.
 // =============================================================================
 
+// Uses link variables.
+@import "../../elements/links";
+
 $breadcrumb-padding-vertical: 0 !default;
 $breadcrumb-padding-horizontal: 0 !default;
 $breadcrumb-margin-bottom: 0 !default;

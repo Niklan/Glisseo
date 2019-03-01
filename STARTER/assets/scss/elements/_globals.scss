@@ -1,6 +1,9 @@
 // =============================================================================
-// Returns unit factor value.
+// Globals.
 // =============================================================================
-@function unit-factor($key: normal) {
-  @return map-get($unit-factors, $key);
+
+* {
+  box-sizing: border-box;
+  // Workaround for flexboxes.
+  min-width: 0;
 }
