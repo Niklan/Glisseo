@@ -1,5 +1,6 @@
 // =============================================================================
-// Normalize.css
+// Grid variables.
 // =============================================================================
 
-@import "../../../node_modules/normalize.css/normalize";
+// Gutters for container.
+$grid-gutter-width: spacing-unit() !default;

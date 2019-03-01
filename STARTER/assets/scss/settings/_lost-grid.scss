@@ -3,7 +3,7 @@
 // @see http://lostgrid.org/docs.html
 // =============================================================================
 
-@lost gutter 24px;
+@lost gutter $grid-gutter-width;
 @lost flexbox flex;
 @lost cycle auto;
 @lost clearing left;

@@ -1,0 +1,56 @@
+// =============================================================================
+// Global variables.
+// =============================================================================
+
+// The main multiplier for all sizes.
+// Your "Rule of X". The common values: 4px (Google), 6px (inuitcss), 8px.
+// @see https://medium.com/wayfair-design/more-padding-please-b95e19422acc
+$global-baseline: 8px !default;
+
+// Baseline factors.
+$unit-factors: () !default;
+$unit-factors: map-merge((
+  tiny: 1,
+  small: 2,
+  normal: 4,
+  large: 8,
+  huge: 16,
+), $unit-factors);
+
+// Spacing sizes based on baseline and unit factor.
+$spacing-units: () !default;
+$spacing-units: map-merge((
+  tiny: $global-baseline * unit-factor(tiny),
+  small: $global-baseline * unit-factor(small),
+  normal: $global-baseline * unit-factor(),
+  large: $global-baseline * unit-factor(large),
+  huge: $global-baseline * unit-factor(huge),
+), $spacing-units);
+
+// Font sizes.
+$global-font-size: 16px !default;
+$global-line-height: spacing-unit() !default;
+
+// @see gap() function for more information.
+$gap-size: spacing-unit(tiny);
+
+// Font
+$font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family-serif: Georgia, 'Times New Roman', Times, serif !default;
+$font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace !default;
+$font-family: $font-family-sans-serif !default;
+
+// Text
+$text-color: #333333 !default;
+// @todo move or remove.
+$text-color-subtle: gray(500) !default;
+$text-color-highlight: gray(600) !default;
+$text-color-info: theme-color(info) !default;
+$text-color-success: theme-color(success) !default;
+$text-color-warning: theme-color(warning) !default;
+$text-color-error: theme-color(error) !default;
+
+// Border radius.
+$border-radius-small: 3px !default;
+$border-radius-base: 4px !default;
+$border-radius-large: 6px !default;

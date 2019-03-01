@@ -1,6 +1,6 @@
-// =====================================
+// =============================================================================
 // Font size with line-height.
-// =====================================
+// =============================================================================
 
 // =============================================================================
 // Generates rem font-size.
@@ -8,14 +8,31 @@
 // Allow to handle line-height and important state for font size. It's generated
 // in rem, but has px fallback.
 //
+// Simple usage:
+// @code
+// @include font-size(16px);
+// @endcode
+//
+// Force line-height to be specific size:
+// @code
+// @include font-size(16px, 1.5);
+// @endcode
+//
+// Adds 2 lines to font-size line-height.
+// @code
+// @include font-size(16px, $modifier: +2);
+// @endcode
+//
 // @param string|int $font-size
 //   The font size in px or integer.
 // @param string|int $line-height
 //   The line height for font size.
+// @param int $modifier
+//   The lines modifier.
 // @param bool $important
 //   The important indicator.
 // =============================================================================
-@mixin font-size($font-size, $line-height: auto, $important: false) {
+@mixin font-size($font-size, $line-height: auto, $modifier: 0, $important: false) {
   // Handle important mark.
   @if ($important == true) {
     $important: !important;
@@ -29,7 +46,7 @@
 
   @if ($line-height == 'auto') {
     // Calculate line-height.
-    $lines: ceil($font-size / $global-baseline) + 1;
+    $lines: ceil($font-size / $global-baseline) + $modifier + 1;
     $line-height: $lines * $global-baseline;
 
     line-height: ($line-height / $font-size) $important;

@@ -92,8 +92,6 @@ $label-required-margin: 0 0 0 4px !default;
   border-style: solid;
   border-color: $input-border;
   border-radius: $input-border-radius;
-  box-sizing: border-box;
-  transition: all .15s ease-in-out;
 
   @if ($input-enable-shadows) {
     box-shadow: $input-box-shadow;
