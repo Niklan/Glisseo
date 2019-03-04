@@ -15,5 +15,5 @@
 // @see https://medium.com/wayfair-design/more-padding-please-b95e19422acc
 // =====================================
 @function gap($size: 1) {
-  @return $gap-size * $size;
+  @return (($gap-size * $size) / $global-font-size) * 1rem;
 }

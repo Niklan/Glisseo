@@ -9,16 +9,16 @@ $input-btn-border-width: 1px !default;
 $btn-line-height: auto !default;
 $btn-font-weight: normal !default;
 $btn-enable-shadows: true !default;
-$btn-box-shadow: 0 1px 1px rgba(black, .125) !default;
+$btn-box-shadow: none !default;
 $btn-border-radius: $border-radius-small !default;
 
-$btn-default-color: #333333 !default;
+$btn-default-color: #606266 !default;
 $btn-default-bg: #ffffff !default;
-$btn-default-border: #cccccc !default;
+$btn-default-border: #dcdfe6 !default;
 
 $btn-primary-color: white !default;
 $btn-primary-bg: theme-color(primary) !default;
-$btn-primary-border: transparent !default;
+$btn-primary-border: theme-color(primary) !default;
 
 $btn-success-color: white !default;
 $btn-success-bg: theme-color(success) !default;
