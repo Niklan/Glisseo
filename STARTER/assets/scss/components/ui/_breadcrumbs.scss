@@ -15,11 +15,11 @@ $breadcrumb-link-color: $link-color !default;
 $breadcrumb-font-size: $global-font-size !default;
 
 .breadcrumbs {
+  @include font-size($breadcrumb-font-size);
   background: $breadcrumb-bg;
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
   margin-bottom: $breadcrumb-margin-bottom;
   border-radius: $border-radius-base;
-  font-size: $breadcrumb-font-size;
   display: flex;
 
   &__path {
