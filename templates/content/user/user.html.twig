@@ -4,9 +4,11 @@
   user.isBlocked() ? bem_block ~ '--blocked',
 ] %}
 <article{{ attributes.addClass(classes) }}>
-  {% if content %}
-    {% block content %}
-      {{- content -}}
-    {% endblock %}
-  {% endif %}
+  {% block user %}
+    {% if content %}
+      {% block content %}
+        {{- content -}}
+      {% endblock %}
+    {% endif %}
+  {% endblock user %}
 </article>

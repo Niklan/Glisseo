@@ -4,6 +4,8 @@
 
 img {
   max-width: 100%;
+  // Fixes aspect ratio.
+  height: auto;
   // For ALT attribute.
   font-style: italic;
   // Fixes whitespace under images.

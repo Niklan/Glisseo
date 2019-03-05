@@ -4,44 +4,46 @@
   bem_block ~ '--' ~ status,
 ] %}
 <article{{ attributes.addClass('js-comment', classes) }}>
-  {#
-    Hide the "new" indicator by default, let a piece of JavaScript ask the
-    server which comments are new for the user. Rendering the final "new"
-    indicator here would break the render cache.
-  #}
-  <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
+  {% block comment %}
+    {#
+      Hide the "new" indicator by default, let a piece of JavaScript ask the
+      server which comments are new for the user. Rendering the final "new"
+      indicator here would break the render cache.
+    #}
+    <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
-  <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
-    {% block content %}
-      {% if title %}
-        {{ title_prefix }}
-        <h3{{ title_attributes.addClass(bem_block ~ '__title') }}>
-          {% block title %}
-            {{ title }}
-          {% endblock %}
-        </h3>
-        {{ title_suffix }}
-      {% endif %}
+    <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
+      {% block content %}
+        {% if title %}
+          {{ title_prefix }}
+          <h3{{ title_attributes.addClass(bem_block ~ '__title') }}>
+            {% block title %}
+              {{ title }}
+            {% endblock %}
+          </h3>
+          {{ title_suffix }}
+        {% endif %}
 
-      {{ content }}
-    {% endblock %}
-  </div>
+        {{ content }}
+      {% endblock %}
+    </div>
 
-  <footer class="{{ bem_block }}__footer">
-    {% block footer %}
-      {{ user_picture }}
-      <p>{{ submitted }}</p>
+    <footer class="{{ bem_block }}__footer">
+      {% block footer %}
+        {{ user_picture }}
+        <p>{{ submitted }}</p>
 
-      {#
-        Indicate the semantic relationship between parent and child comments for
-        accessibility. The list is difficult to navigate in a screen reader
-        without this information.
-      #}
-      {% if parent %}
-        <p class="visually-hidden">{{ parent }}</p>
-      {% endif %}
+        {#
+          Indicate the semantic relationship between parent and child comments for
+          accessibility. The list is difficult to navigate in a screen reader
+          without this information.
+        #}
+        {% if parent %}
+          <p class="visually-hidden">{{ parent }}</p>
+        {% endif %}
 
-      {{ permalink }}
-    {% endblock %}
-  </footer>
+        {{ permalink }}
+      {% endblock %}
+    </footer>
+  {% endblock comment %}
 </article>

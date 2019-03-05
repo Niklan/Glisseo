@@ -4,10 +4,12 @@
   not media.isPublished() ? bem_block ~ '--unpublished',
 ] %}
 <article{{ attributes.addClass(classes) }}>
-  {{ title_suffix.contextual_links }}
-  {% if content %}
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  {% endif %}
+  {% block media %}
+    {{ title_suffix.contextual_links }}
+    {% if content %}
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    {% endif %}
+  {% endblock media %}
 </article>

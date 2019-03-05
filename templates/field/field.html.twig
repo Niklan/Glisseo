@@ -10,7 +10,7 @@
   label_hidden ? 'visually-hidden',
 ] %}
 <div{{ attributes.addClass(classes) }}>
-  {% block content %}
+  {% block field %}
 
     {% if not label_hidden %}
       <div{{ title_attributes.addClass(title_classes) }}>

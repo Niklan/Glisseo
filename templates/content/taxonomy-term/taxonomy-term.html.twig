@@ -4,20 +4,22 @@
 ] %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-
-  {% if not page %}
-    <h2 class="{{ bem_block }}__title">
-      {% block title %}
-        <a href="{{ url }}">{{ name }}</a>
-      {% endblock %}
-    </h2>
-  {% endif %}
-
   {{ title_suffix }}
 
-  <div class="{{ bem_block }}__content">
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </div>
+  {% block taxonomy_term %}
+    {% if not page %}
+      <h2 class="{{ bem_block }}__title">
+        {% block title %}
+          <a href="{{ url }}">{{ name }}</a>
+        {% endblock %}
+      </h2>
+    {% endif %}
+
+
+    <div class="{{ bem_block }}__content">
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </div>
+  {% endblock taxonomy_term %}
 </div>

@@ -6,6 +6,7 @@
 
 - Removed package.json from base theme folder. Because idk why it's here, simply usless file.
 - **Breaking change**. BEM block for commerce_product changed from `product` to `commerce-product`.
+- **Breaking change**. All Twig blocks ar now have block inside wrapper named as entity or template. Some of them, which already have it, was renamed if it's not fit.
 
 ### Starter theme
 
