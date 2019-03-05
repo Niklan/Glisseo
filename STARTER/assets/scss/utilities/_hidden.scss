@@ -1,0 +1,7 @@
+// =====================================
+// This class provided by Drupal core, but we disable this library, to remove
+// alot of unused styles, and restore this one.
+// =====================================
+.visually-hidden {
+  @include visually-hidden;
+}

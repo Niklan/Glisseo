@@ -18,3 +18,7 @@ regions:
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   footer: Footer
+
+# Disable system libraries.
+libraries-override:
+  system/base: false
