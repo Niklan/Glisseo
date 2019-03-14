@@ -1,6 +1,6 @@
 # Changelog
 
-## Master (changes made since last release)
+## [Unreleased](unreleased)
 
 ### Base theme
 
@@ -17,7 +17,7 @@
 - Inspired by INUITCSS added `$baseline` and other variables to make sizes more consistent. This improves grid and spacings for "[Rule of 8px](https://medium.com/wayfair-design/more-padding-please-b95e19422acc)".
 - Other fixes and minor improvements.
 
-## 1.0-alpha9
+## [1.0-alpha9]
 
 ### Base theme
 
@@ -42,7 +42,7 @@
 - Added example preprocess page in includes/structure.inc for main layout modifiers.
 - Squashed some bugs and improved overall quality.
 
-## 1.0-alpha8
+## [1.0-alpha8]
 
 ### Base theme
 
@@ -64,7 +64,7 @@
 - Added mixin `button-size()`;
 - Added `[bem_block]--label-inline` class for field.
 
-## 1.0-alpha7
+## [1.0-alpha7]
 
 Hotfix version. Fix and improvements for alpha6 that can lead to problems.
 
@@ -79,7 +79,7 @@ Hotfix version. Fix and improvements for alpha6 that can lead to problems.
 - **Fix** path to MDI icons font.
 - Removed quotes for keys of gray colors.
 
-## 1.0-alpha6
+## [1.0-alpha6]
 
 **This release incompatible with previous versions.**
 
@@ -109,7 +109,7 @@ This release is all about SCSS and styles quality and management. Most significa
 - Material Design Icons package changed from mdi to @mdi/font to support new packages and icons.
 - Added commented example in STARTER libraries how to import Google Fonts correctly.
 
-## 1.0-alpha5
+## [1.0-alpha5]
 
 ### Base theme
 
@@ -130,7 +130,7 @@ This release is all about SCSS and styles quality and management. Most significa
 - Added `color: $input-color;` for `textarea` element.
 - Removed `$susy` variable. Which was forgotten.
 
-## 1.0-alpha4
+## [1.0-alpha4]
 
 ### Base theme
 
@@ -162,7 +162,7 @@ This release is all about SCSS and styles quality and management. Most significa
 - Many of elements reworked and restyled.
 - Added SCSS function `color-level()` with same functionality as `theme-color-level()`.
 
-## 1.0-alpha3
+## [1.0-alpha3]
 
 ### Base theme
 
@@ -182,7 +182,7 @@ No changes have been made.
 - All dependency libraries were updated.
 - Added font-family parameter on all `input` element form the default variable. This will override the normalize font reset.
 
-## 1.0-alpha2
+## [1.0-alpha2]
 
 ### Base theme
 
@@ -212,7 +212,7 @@ No changes have been made.
 - Cleaned utility directory.
 - Variables are now had several files. By default `_global.scss` to all global default variables and `_custom.scss` with your overridden variables and new ones. You still can edit variables directly, because it's all in your custom theme and can't break anything else. All depends on your preferences.
 
-## 1.0-alpha1
+## [1.0-alpha1]
 
 First initial release with version. For now, I am satisfied by theme at most. Some things can change, but from now on, I'll be track them in that file. I still no recommend to use it without understand the consequences. 
 
@@ -220,3 +220,13 @@ Since release of first alpha, now we can use composer to lock theme version, and
 
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
+
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha9...HEAD
+[1.0-alpha9]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha8...8.x-1.0-alpha9
+[1.0-alpha8]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha7...8.x-1.0-alpha8
+[1.0-alpha7]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha6...8.x-1.0-alpha7
+[1.0-alpha6]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha5...8.x-1.0-alpha6
+[1.0-alpha5]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha4...8.x-1.0-alpha5
+[1.0-alpha4]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha3...8.x-1.0-alpha4
+[1.0-alpha3]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha1...8.x-1.0-alpha3
+[1.0-alpha2]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha1...8.x-1.0-alpha2
