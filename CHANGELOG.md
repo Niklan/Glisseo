@@ -4,13 +4,13 @@
 
 ### Base theme
 
-- Removed package.json from base theme folder. Because idk why it's here, simply usless file.
+- Removed package.json from base theme folder. Because I don't know why it's here, simply useless file.
 - **Breaking change**. BEM block for commerce_product changed from `product` to `commerce-product`.
-- **Breaking change**. All Twig blocks ar now have block inside wrapper named as entity or template. Some of them, which already have it, was renamed if it's not fit.
+- **Breaking change**. All Twig blocks now have a block inside wrapper named as entity or template. Some of them, which already have it, was renamed if it's not fit.
 
 ### Starter theme
 
-- Issue [#7](https://github.com/Niklan/Glisseo/issues/7). Title for **block--system-menu-block.html.twig** is no more rendering if it's empty.
+- Issue [#7](https://github.com/Niklan/Glisseo/issues/7). The title for **block--system-menu-block.html.twig** is no more rendering if it's empty.
 - Issue [#6](https://github.com/Niklan/Glisseo/issues/6). Changed tag in package.json from susy to Lost Grid.
 - Improved **package.json** by moving all development packages to devDependencies. For production now better us `npm install --production`, this will be much faster.
 - Rename STARTER.info.yml to STARTER.starter.info, because drupal.org detect it and adds metadata which not needed.
@@ -27,10 +27,10 @@
 
 ### Starter theme
 
-- Lost Grid default gutter is now multiple by 8px as `gap()`. A bit changed breakpoints ad their gutter to be multiple by 8px.
+- Lost Grid default gutter is now multiple by 8px as `gap()`. A bit changed breakpoints and their gutter to be multiple by 8px.
 - Fixed active tab underline.
 - Bumped up all npm dependencies. MDI Font to 3.x, Gulp to 4.x.
-- Updated gulpfile.js to work with 4.x version.
+- Updated gulpfile.js to work with the 4.x version.
 - Added **_variables.override.scss** for overriding and custom variables.
 - Improved recommended order for components.
 - Added layout folder into components.
@@ -66,7 +66,7 @@
 
 ## 1.0-alpha7
 
-Hotfix version. Fix and improvements for alpha6 that can leads to problems.
+Hotfix version. Fix and improvements for alpha6 that can lead to problems.
 
 ### Base theme
 
@@ -77,7 +77,7 @@ Hotfix version. Fix and improvements for alpha6 that can leads to problems.
 ### Starter theme
 
 - **Fix** path to MDI icons font.
-- Removed qutoes for keys of gray colors.
+- Removed quotes for keys of gray colors.
 
 ## 1.0-alpha6
 
@@ -88,13 +88,13 @@ This release is all about SCSS and styles quality and management. Most significa
 ### Base theme
 
 - Base theme is has hidden to true now.
-- All regions were removed from base theme. They are not needed here.
+- All regions were removed from the base theme. They are not needed here.
 - **Experimental**. Reworked all templates to BEM class naming.
 - page.html.twig moved to STARTER templates.
 - Added user entity theme suggestions user--{VIEW_MODE}.html.twig.
 - Added user.html.twig.
 - Added block--system-branding-block.html.twig.
-- Added other templates which was missing and loaded from stable base theme.
+- Added other templates which were missing and loaded from stable base theme.
 - Added new field theme suggestions. field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{ENTITY_ID}.html.twig, field--{ENTITY}--{BUNDLE}--{FIELD_NAME}--{VIEW_MODE}.html.twig.
 
 ### Starter theme
@@ -102,10 +102,10 @@ This release is all about SCSS and styles quality and management. Most significa
 - Added [stylelint](https://stylelint.io/) configuration.
 - Refactored SCSS folder to ITCSS structure.
 - Refactored all SCSS style comments to be excluded from compilation.
-- Improved total styles size, from ~7k lines on clean starter theme and ~150kb size, to ~1k lines and ~20kb size.
+- Improved total styles size, from ~7k lines on clean starter theme and ~150kb size to ~1k lines and ~20kb size.
 - Improved performance of compilation due to more smart imports. ~600ms -> ~120ms on empty starter.
-- Imports are back and sass-glob is not used anymore. This is cost of ITCSS architecture which is awesome!
-- Single styles.css is now split to 5 separated files according to ITCSS weight. Also there is now 4 libraries for styles which included in their own groups.
+- Imports are back and sass-glob is not used anymore. This is the cost of ITCSS architecture which is awesome!
+- Single styles.css is now split to 5 separated files according to ITCSS weight. Also, there is now 4 libraries for styles which included in their own groups.
 - Material Design Icons package changed from mdi to @mdi/font to support new packages and icons.
 - Added commented example in STARTER libraries how to import Google Fonts correctly.
 
@@ -142,8 +142,8 @@ This release is all about SCSS and styles quality and management. Most significa
   - paragraph--{ID}.html.twig
 - Added suggestion to block content type:
   - block--{BLOCK_TYPE}.html.twig
-- Slightly updated logo colors. For base theme and starter the svg logo is now contains objects, not the text because of font face that can be missed on systems.
-- Added new templates from stable theme.
+- Slightly updated logo colors. For base theme and starter, the SVG logo is now contained objects, not the text because of font face that can be missed on systems.
+- Added new templates from the stable theme.
 - **Possible incompatible change.** Added default **commerce-product.html.twig** template.
 - Added `data-hook-suggestion` for input fields support.
 
@@ -151,10 +151,10 @@ This release is all about SCSS and styles quality and management. Most significa
 
 - Added new variable `$input-color` and added to inputs.
 - Class naming according to OOCSS.
-- All base styles was reworked to respect refactoring to OOCSS.
+- All base styles were reworked to respect refactoring to OOCSS.
 - Installed `gulp-sass-glob` and updated gulpfile to use it.
 - SCSS folder is restructured for `gulp-sass-glob`. Now we have only one import file `styles.scss`, there are no more `_all.scss` inside any folder! You can now just create new `_file.scss` and it will be compiled! The splitting for components and base style to `_styles.scss`, `_variables.scss` and `_mixins.scss` is now removed and they are in a single file. This is done because gulp-sass-glob can't respect order and it will crash. The auto-include is much preferable than this splitting.
-- Breadcrumbs is now responsive by default.
+- Breadcrumbs are now responsive by default.
 - Added PostCSS.
 - `gulp-autoprefixier` replaced by `autoprefixier` from PostCSS.
 - SUSY is removed, to replace it added [Lost Grid](http://lostgrid.org) for PostCSS.
@@ -166,7 +166,7 @@ This release is all about SCSS and styles quality and management. Most significa
 
 ### Base theme
 
-No changes has been made.
+No changes have been made.
 
 ### Starter theme
 
@@ -176,47 +176,47 @@ No changes has been made.
 - Removed default README.md files from scss folders.
 - `/assets/scss/base/typography` was improved and reworked. Added new variables, edited old, some styles were removed to follow rules of base folder.
 - Added new variable `$gray-50` and color for it.
-- All gray colors was replaced with material design gray palette.
-- Improve `media-container()` mixin. Now it supports argument `$with-gutters: true` which allows to disable gutters and include only width of container.
-- Material Design Icons is now default icon font in theme. FontAwesome dependency were removed and added documentation how to take them back.
-- All dependency libraries was updated.
-- Added font-family parameter on all `input` element form default variable. This will override normalize font reset.
+- All gray colors were replaced with material design gray palette.
+- Improve `media-container()` mixin. Now it supports argument `$with-gutters: true` which allows disabling gutters and include the only width of the container.
+- Material Design Icons is now default icon font in theme. FontAwesome dependency was removed and added documentation on how to take them back.
+- All dependency libraries were updated.
+- Added font-family parameter on all `input` element form the default variable. This will override the normalize font reset.
 
 ## 1.0-alpha2
 
 ### Base theme
 
-No changes has been made.
+No changes have been made.
 
 ### Starter theme
 
-- Button component base style moved from `.button` class to placeholder `%button`. This is more flexible solution because of `@extend .class` can broke in some behaviors with ordering.
-- In `/assets/utilities/_all.scss` function and variables is swapped. Function is now has higher priority. It's allow to use functions inside variables.
-- Colors like `$ui-site-color-1` and so forth is replaced by single variable -colors which is array.
-- Added new function `theme-color()`. This functions return color by his key from -colors array. Bootstrap alike.
-- Added new function `theme-color-level()`. This function returns color mixing by his key and level. 0 - is the same color, negative values will desature color, positive is opposite. Bootstrap alike.
-- All base colors variables was replaced by functions.
+- Button component base style moved from `.button` class to placeholder `%button`. This is a more flexible solution because of `@extend .class` can break in some behaviors with ordering.
+- In `/assets/utilities/_all.scss` function and variables are swapped. The function now has higher priority. It allows using functions inside variables.
+- Colors like `$ui-site-color-1` and so forth are replaced by single variable -colors which are an array.
+- Added new function `theme-color()`. These functions return color by his key from -colors array. Bootstrap alike.
+- Added new function `theme-color-level()`. This function returns color mixing by his key and level. 0 - is the same color, negative values will desaturate color, positive is the opposite. Bootstrap alike.
+- All base colors variables were replaced by functions.
 - Added new color map `$grays` with gray colors. Bootstrap alike.
 - Added new function `gray()`. Returns gray color by his key. Bootstrap alike.
 - All old `$gray-*` variables were replaced by `gray()` function.
-- Added `$colors` variable for all others colors. Bootstrap alike.
+- Added `$colors` variable for all other colors. Bootstrap alike.
 - Added new function `color()`. Returns color by his key. Bootstrap alike.
-- Some default colors were replaced by new `color()` function.
+- Some default colors were replaced by a new `color()` function.
 - `color-contrast()` function is renamed to `color-yiq()`.
 - Added two new variables `$yiq-text-dark` and `$yiq-text-light`. They used in `color-yiq()` function as default values.
 - Pointless readme files in assets folder, which created for keep folders in repo were removed and replaced by hidden files `.gitkeep`.
 - `base/_base.scss` is moved to personal folder `base/global`.
-- Added variables to control focus outline and set default value. It's [bad practice](http://www.outlinenone.com) to ignore them, so they are back now!
+- Added variables to control the focus outline and set a default value. It's [bad practice](http://www.outlinenone.com) to ignore them, so they are back now!
 - `base/_typography.scss` is moved to personal folder `base/typography`.
-- Added !default to all variables. They now overridable in external files.
-- Cleaned utilities directory.
-- Variables is now has several files. By default `_global.scss` to all global default variables and `_custom.scss` with your overridden variables and new ones. You still can edit variables directly, because it's all in your custom theme and can't brake anything else. All depends on your preferences.
+- Added !default to all variables. They are now overridable in external files.
+- Cleaned utility directory.
+- Variables are now had several files. By default `_global.scss` to all global default variables and `_custom.scss` with your overridden variables and new ones. You still can edit variables directly, because it's all in your custom theme and can't break anything else. All depends on your preferences.
 
 ## 1.0-alpha1
 
 First initial release with version. For now, I am satisfied by theme at most. Some things can change, but from now on, I'll be track them in that file. I still no recommend to use it without understand the consequences. 
 
-Since release of first alpha, now we can use composer to lock theme version, and I recommend to do that. Because theme is a little bit tricky to maintain. Just single changed class in base theme can create a lot of pain after update. So be careful.
+Since release of first alpha, now we can use composer to lock theme version, and I recommend to do that. Because the theme is a little bit tricky to maintain. Just a single changed class in the base theme can create a lot of pain after the update. So be careful.
 
 - Added CHANGELOG.md to track all changes.
-- Changed composer.json for theme to be `drupal-theme` instead of being `drupal-custom-theme`.
+- Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
