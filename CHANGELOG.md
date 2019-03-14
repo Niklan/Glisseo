@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased](unreleased)
+## [Unreleased][unreleased]
 
 ### Base theme
 
