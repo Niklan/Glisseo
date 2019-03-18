@@ -1,4 +1,63 @@
 // =====================================
+// Return mixed color by his key and variant name.
+// @see https://material.io/design/color/the-color-system.html#color-usage-palettes
+// ====================================
+@function color-palette($color, $variant: 500) {
+  $light: #FFFFFF;
+  $dark: rgb(
+      red($color) * red($color) / 255,
+      green($color) * green($color) / 255,
+      blue($color) * blue($color) / 255
+  );
+
+  @if ($variant == 50) {
+    @return lighten(mix($light, $color, 22%), 37%);
+  }
+  @else if ($variant == 100) {
+    @return lighten(mix($light, $color, 47%), 16%);
+  }
+  @else if ($variant == 200) {
+    @return lighten(mix($light, $color, 45%), 4%);
+  }
+  @else if ($variant == 300) {
+    @return lighten(mix($light, $color, 11%), 12.9%);
+  }
+  @else if ($variant == 400) {
+    @return lighten(mix($light, $color, 16%), 1.4%);
+  }
+  @else if ($variant == 500) {
+    @return $color;
+  }
+  @else if ($variant == 600) {
+    @return darken(mix($dark, $color, 10%), 2%);
+  }
+  @else if ($variant == 700) {
+    @return darken(mix($dark, $color, 30%), 14.4%);
+  }
+  @else if ($variant == 800) {
+    @return darken(mix($dark, $color, 69%), 20%);
+  }
+  @else if ($variant == 900) {
+    @return darken(mix($dark, $color, 81%), 30%);
+  }
+  @else if ($variant == A100) {
+    @return lighten(saturate(mix($dark, $color, 15%), 80%), 45.6%);
+  }
+  @else if ($variant == A200) {
+    @return lighten(saturate(mix($dark, $color, 15%), 80%), 35.6%);
+  }
+  @else if ($variant == A400) {
+    @return lighten(saturate(mix($dark, $color, 15%), 100%), 25.6%);
+  }
+  @else if ($variant == A700) {
+    @return lighten(saturate(mix($dark, $color, 15%), 100%), 20.5%);
+  }
+  @else {
+    @error "Sorry, but "#{$variant}" is not a valid value for $variant. Available values: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700."
+  }
+}
+
+// =====================================
 // Compares contrast of a given color to the light/dark arguments and returns
 // whichever is most "contrasty".
 // ====================================
@@ -23,7 +82,7 @@
 // ====================================
 @function color-level($color-name: primary, $level: 0) {
   $color: color($color-name);
-  $color-base: if($level > 0, #000000, #ffffff);
+  $color-base: if($level > 0, #000000, #FFFFFF);
   $level: abs($level);
   @return mix($color-base, $color, $level * $theme-color-interval);
 }
@@ -40,7 +99,7 @@
 // ====================================
 @function theme-color-level($color-name: primary, $level: 0) {
   $color: theme-color($color-name);
-  $color-base: if($level > 0, #000000, #ffffff);
+  $color-base: if($level > 0, #000000, #FFFFFF);
   $level: abs($level);
   @return mix($color-base, $color, $level * $theme-color-interval);
 }

@@ -30,7 +30,7 @@ $grays: map-merge((
   900: $gray-900
 ), $grays);
 
-$blue: #409eff !default;
+$blue: #1976d2 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
@@ -59,16 +59,22 @@ $colors: map-merge((
 ), $colors);
 
 // Colors used in theme. Such as text colors, buttons, links and so on.
-// Here is main colors of the theme. If you want to add custom color just for
-// special usage, use $colors instead.
+// Here is main colors of the theme.
+// @see https://material.io/tools/color/ - can help you to chose correct colors.
+// @see https://material.io/design/color/the-color-system.html#color-usage-palettes
+// very good description, what is all about.
 $theme-colors: () !default;
 $theme-colors: map-merge((
   primary: $blue,
-  secondary: $gray-600,
+  primary-variant: $blue,
+  secondary: $indigo,
+  secondary-variant: $indigo,
+  background: $white,
+  surface: $white,
   success: $green,
   info: $gray-500,
-  warning: #e6a23c,
-  error: #f56c6c,
+  warning: $yellow,
+  error: $red,
 ), $theme-colors);
 
 $theme-color-interval: 8% !default;

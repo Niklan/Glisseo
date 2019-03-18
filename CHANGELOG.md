@@ -15,6 +15,9 @@
 - Improved **package.json** by moving all development packages to devDependencies. For production now better us `npm install --production`, this will be much faster.
 - Rename STARTER.info.yml to STARTER.starter.info, because drupal.org detect it and adds metadata which not needed.
 - Inspired by INUITCSS added `$baseline` and other variables to make sizes more consistent. This improves grid and spacings for "[Rule of 8px](https://medium.com/wayfair-design/more-padding-please-b95e19422acc)".
+- Added new SCSS function `color-palette()`. This function can create [material-like](https://material.io/design/color/the-color-system.html#color-usage-palettes) palette colors. E.g. `color-palette(theme-color(), 900);`
+- Body bg color moved to `$theme-colors` variable.
+- Added new values provided by default for `$theme-colors`: `primary-variant`, `secondary-variant`, `background`, `surface`. Also inspired by [material guidelines](https://material.io/design/color/the-color-system.html#color-theme-creation).
 - Other fixes and minor improvements.
 
 ## [1.0-alpha9]
