@@ -4,6 +4,8 @@
 
 ### Base theme
 
+- Fixed user view mode detection.
+
 ### Starter theme
 
 ## [1.0-alpha10]
