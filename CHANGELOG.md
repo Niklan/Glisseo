@@ -4,9 +4,16 @@
 
 ### Base theme
 
+### Starter theme
+
+## [1.0-alpha10]
+
+### Base theme
+
 - Removed package.json from base theme folder. Because I don't know why it's here, simply useless file.
 - **Breaking change**. BEM block for commerce_product changed from `product` to `commerce-product`.
 - **Breaking change**. All Twig blocks now have a block inside wrapper named as entity or template. Some of them, which already have it, was renamed if it's not fit.
+- If view mode for user template is missing, we set "default" as the default value.
 
 ### Starter theme
 
@@ -225,6 +232,7 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
 [unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha9...HEAD
+[1.0-alpha10]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha9...8.x-1.0-alpha10
 [1.0-alpha9]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha8...8.x-1.0-alpha9
 [1.0-alpha8]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha7...8.x-1.0-alpha8
 [1.0-alpha7]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha6...8.x-1.0-alpha7
