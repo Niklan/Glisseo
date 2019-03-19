@@ -67,8 +67,10 @@ $theme-colors: () !default;
 $theme-colors: map-merge((
   primary: $blue,
   primary-variant: $blue,
+  on-primary: $white,
   secondary: $indigo,
   secondary-variant: $indigo,
+  on-secondary: $black,
   background: $white,
   surface: $white,
   success: $green,
