@@ -4,12 +4,12 @@
 
 // Vertical tabs.
 $vertical-tabs-bg: white !default;
-$vertical-tabs-list-bg: #fbfaf8 !default;
+$vertical-tabs-list-bg: #FBFAF8 !default;
 $vertical-tabs-button-color: #555459 !default;
 $vertical-tabs-button-color-selected: white !default;
-$vertical-tabs-button-bg-selected: #439fe0 !default;
+$vertical-tabs-button-bg-selected: #439FE0 !default;
 $vertical-tabs-button-text-shadow: 0 1px 0 rgba(0, 0, 0, .1) !default;
-$vertical-tabs-list-border: 1px solid #dddddd !default;
+$vertical-tabs-list-border: 1px solid #DDDDDD !default;
 
 // Primary tabs.
 $primary-tabs-margin: 0 0 gap(3) !default;
@@ -23,17 +23,17 @@ $primary-tabs-item-active-link-hover-color: $link-hover-color !default;
 $secondary-tabs-margin: 0 0 gap(3) !default;
 $secondary-tabs-item-link-padding: 0 10px 10px 10px !default;
 $secondary-tabs-item-link-color: $text-color !default;
-$secondary-tabs-item-link-hover-color: $text-color-subtle !default;
+$secondary-tabs-item-link-hover-color: gray(600) !default;
 $secondary-tabs-item-link-border-color: gray(300) !default;
 $secondary-tabs-item-active-link-color: $link-color !default;
 $secondary-tabs-item-active-link-hover-color: $link-hover-color !default;
 $secondary-tabs-item-active-border-color: $link-color !default;
 
 .tabs {
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-flow: wrap;
+  padding: 0;
+  list-style: none;
 
   &--primary {
     margin: $primary-tabs-margin;
@@ -44,28 +44,28 @@ $secondary-tabs-item-active-border-color: $link-color !default;
     }
 
     .tabs__menu-item-link {
+      position: relative;
       display: block;
       padding: $primary-tabs-item-link-padding;
       color: $primary-tabs-item-link-color;
-      position: relative;
 
       &:hover {
         color: $primary-tabs-item-link-hover-color;
       }
 
       &.is-active {
-        color: $primary-tabs-item-active-link-color;
         font-weight: bold;
         position: relative;
+        color: $primary-tabs-item-active-link-color;
 
         &::before {
-          content: '';
-          width: 70%;
-          height: 2px;
-          background: $primary-tabs-item-active-link-color;
           position: absolute;
           bottom: -2px;
-          left: 15%;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          content: '';
+          background: $primary-tabs-item-active-link-color;
         }
 
         &:hover {
@@ -85,8 +85,8 @@ $secondary-tabs-item-active-border-color: $link-color !default;
     .tabs__menu-item-link {
       display: block;
       padding: $secondary-tabs-item-link-padding;
-      border-bottom: 1px solid $secondary-tabs-item-link-border-color;
       color: $secondary-tabs-item-link-color;
+      border-bottom: 1px solid $secondary-tabs-item-link-border-color;
 
       &:hover {
         color: $secondary-tabs-item-link-hover-color;
@@ -94,10 +94,10 @@ $secondary-tabs-item-active-border-color: $link-color !default;
       }
 
       &.is-active {
+        font-weight: bold;
+        color: $secondary-tabs-item-active-link-color;
         border-bottom-width: 2px;
         border-bottom-color: $secondary-tabs-item-active-border-color;
-        color: $secondary-tabs-item-active-link-color;
-        font-weight: bold;
 
         &:hover {
           color: $secondary-tabs-item-active-link-hover-color;
@@ -112,8 +112,8 @@ $secondary-tabs-item-active-border-color: $link-color !default;
   background: $vertical-tabs-bg;
 
   .vertical-tabs__menu {
-    background: $vertical-tabs-list-bg;
     border: $vertical-tabs-list-border;
+    background: $vertical-tabs-list-bg;
 
     .vertical-tabs__menu-item {
       border: none;

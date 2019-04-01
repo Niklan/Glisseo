@@ -42,13 +42,6 @@ $font-family: $font-family-sans-serif !default;
 
 // Text
 $text-color: #202124 !default;
-// @todo move or remove.
-$text-color-subtle: gray(500) !default;
-$text-color-highlight: gray(600) !default;
-$text-color-info: theme-color(info) !default;
-$text-color-success: theme-color(success) !default;
-$text-color-warning: theme-color(warning) !default;
-$text-color-error: theme-color(error) !default;
 
 // Border radius.
 $border-radius-small: 3px !default;

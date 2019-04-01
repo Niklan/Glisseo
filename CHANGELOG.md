@@ -8,6 +8,9 @@
 
 ### Starter theme
 
+- Removed variables and classes for `.highlight-*` and `.text-*`. Looks like they are redundant. Not used in Drupal core markup and not used in Base theme markup.
+- Active tab effect is not 100% width.
+
 ## [1.0-alpha10]
 
 ### Base theme
