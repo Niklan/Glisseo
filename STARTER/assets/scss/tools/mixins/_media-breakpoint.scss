@@ -7,8 +7,8 @@
 @mixin media-breakpoint-up($name, $breakpoints: $media-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
   @if $min {
-    $em: ($min / $global-font-size) * 1em;
-    @media (min-width: $em) {
+    $rem: ($min / $global-font-size) * 1rem;
+    @media (min-width: $rem) {
       @content;
     }
   } @else {
@@ -75,7 +75,7 @@
 // =====================================
 // Container max width with centering and gutters.
 // =====================================
-@mixin make-container($gutter: $grid-gutter-width) {
+@mixin make-container($gutter: spacing-unit(container-gutter)) {
   width: 100%;
   padding-right: $gutter / 2;
   padding-left: $gutter / 2;

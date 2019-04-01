@@ -13,6 +13,7 @@ $unit-factors: map-merge((
   base: 1,
   line-height: 4,
   grid-gap: 4,
+  container-gutter: 4,
 ), $unit-factors);
 
 // Spacing sizes based on baseline and unit factor.
@@ -21,6 +22,7 @@ $spacing-units: map-merge((
   base: $global-baseline * unit-factor(base),
   line-height: $global-baseline * unit-factor(line-height),
   grid-gap: $global-baseline * unit-factor(grid-gap),
+  container-gutter: $global-baseline * unit-factor(container-gutter),
 ), $spacing-units);
 
 // Font sizes.
