@@ -1,6 +1,11 @@
 // =============================================================================
 // Returns spacing unit value.
 // =============================================================================
-@function spacing-unit($key: normal) {
-  @return map-get($spacing-units, $key);
+@function spacing-unit($unit-factor: base) {
+  @if type-of($unit-factor) == 'number' and unitless($unit-factor) {
+    @return $global-baseline * $unit-factor;
+  }
+  @else {
+    @return map-get($spacing-units, $unit-factor);
+  }
 }

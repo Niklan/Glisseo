@@ -15,7 +15,7 @@ $dialog-background: white !default;
 
 $dialog-header-background: transparent !default;
 $dialog-header-color: $text-color !default;
-$dialog-header-padding: gap(2) gap(2) gap() !default;
+$dialog-header-padding: spacing-unit(2) spacing-unit(2) spacing-unit() !default;
 $dialog-header-border-only-bottom: true !default;
 $dialog-header-border: none !default;
 
@@ -23,12 +23,12 @@ $dialog-title-color: #333333 !default;
 $dialog-title-weight: bold !default;
 $dialog-title-size: $global-font-size !default;
 
-$dialog-content-padding: 0 gap(2) !default;
+$dialog-content-padding: 0 spacing-unit(2) !default;
 
 $dialog-buttonpane-background: transparent !default;
 $dialog-buttonpane-border-only-top: true !default;
 $dialog-buttonpane-border: none !default;
-$dialog-buttonpane-padding: 0 gap(2) gap(2) !default;
+$dialog-buttonpane-padding: 0 spacing-unit(2) spacing-unit(2) !default;
 $dialog-buttonpane-buttons-align-right: true !default;
 
 .ui-widget {

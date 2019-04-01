@@ -2,8 +2,8 @@
 // Button mixins and styles. Including Drupal buttons.
 // =============================================================================
 
-$input-btn-padding-y: gap() !default;
-$input-btn-padding-x: gap(2) !default;
+$input-btn-padding-y: spacing-unit() !default;
+$input-btn-padding-x: spacing-unit(2) !default;
 $input-btn-border-width: 1px !default;
 
 $btn-line-height: auto !default;

@@ -12,12 +12,12 @@
   }
 
   &__item--label {
-    padding: gap();
+    padding: spacing-unit();
     color: gray(600);
   }
 
   &__item-link {
-    padding: gap();
+    padding: spacing-unit();
     display: block;
   }
 }

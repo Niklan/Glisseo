@@ -1,8 +1,8 @@
 // =============================================================================
 // Form and Drupal Form API elements.
 // =============================================================================
-$input-padding-y: gap() !default;
-$input-padding-x: gap(2) !default;
+$input-padding-y: spacing-unit() !default;
+$input-padding-x: spacing-unit(2) !default;
 $input-border-width: 1px !default;
 $input-bg: #ffffff !default;
 $input-border: rgba(34, 36, 38, 0.15) !default;
@@ -22,12 +22,12 @@ $label-required-color: theme-color(error) !default;
 $label-required-margin: 0 0 0 4px !default;
 
 .form-item {
-  margin: 0 0 gap(2);
+  margin: 0 0 spacing-unit(2);
 
   &__description {
     display: block;
-    margin-top: gap();
-    margin-bottom: gap();
+    margin-top: spacing-unit();
+    margin-bottom: spacing-unit();
     color: gray(600);
     font-size: 85%;
   }
@@ -56,7 +56,7 @@ $label-required-margin: 0 0 0 4px !default;
 
 .form-actions {
   input {
-    margin: 0 gap() 0 0;
+    margin: 0 spacing-unit() 0 0;
     width: auto;
 
     &:last-child {
@@ -66,18 +66,18 @@ $label-required-margin: 0 0 0 4px !default;
 }
 
 .filter-wrapper {
-  margin-top: gap(-2);
+  margin-top: spacing-unit(-2);
 }
 
 .form-wrapper {
   &__summary {
     background: gray(100);
-    padding: gap();
+    padding: spacing-unit();
     cursor: pointer;
   }
 
   &__content {
-    padding: gap();
+    padding: spacing-unit();
   }
 }
 

@@ -10,29 +10,22 @@ $global-baseline: 8px !default;
 // Baseline factors.
 $unit-factors: () !default;
 $unit-factors: map-merge((
-  tiny: 1,
-  small: 2,
-  normal: 4,
-  large: 8,
-  huge: 16,
+  base: 1,
+  line-height: 4,
+  grid-gap: 4,
 ), $unit-factors);
 
 // Spacing sizes based on baseline and unit factor.
 $spacing-units: () !default;
 $spacing-units: map-merge((
-  tiny: $global-baseline * unit-factor(tiny),
-  small: $global-baseline * unit-factor(small),
-  normal: $global-baseline * unit-factor(),
-  large: $global-baseline * unit-factor(large),
-  huge: $global-baseline * unit-factor(huge),
+  base: $global-baseline * unit-factor(base),
+  line-height: $global-baseline * unit-factor(line-height),
+  grid-gap: $global-baseline * unit-factor(grid-gap),
 ), $spacing-units);
 
 // Font sizes.
 $global-font-size: 16px !default;
-$global-line-height: spacing-unit() !default;
-
-// @see gap() function for more information.
-$gap-size: spacing-unit(tiny);
+$global-line-height: spacing-unit(line-height) !default;
 
 // Font
 $font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;

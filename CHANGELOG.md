@@ -13,6 +13,7 @@
 - Active tab effect is not 100% width.
 - Improved `@mdi-icon` function. The icon will no more have height more than text.
 - Media breakpoint mixins are now using rem's instead of em's, because of consistency.
+- Removed `gap()` function in flavor of `spacing-unit()` function.
 
 ## [1.0-alpha10]
 
