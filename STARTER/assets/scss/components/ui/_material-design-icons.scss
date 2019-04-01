@@ -34,15 +34,16 @@ $mdi-font-path: "../../node_modules/@mdi/font/fonts";
 @mixin mdi-icon($name, $position: before, $margin-size: 0.4em) {
   &:#{$position} {
     content: mdi($name);
-    font-family: $mdi-font-name;
-    font-weight: normal;
     font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: $mdi-font-name;
     display: inline-block;
     text-decoration: inherit;
     @if $position == before {
       margin-right: $margin-size;
-    }
-    @else {
+    } @else {
       margin-left: $margin-size;
     }
   }

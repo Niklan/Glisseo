@@ -10,6 +10,7 @@
 
 - Removed variables and classes for `.highlight-*` and `.text-*`. Looks like they are redundant. Not used in Drupal core markup and not used in Base theme markup.
 - Active tab effect is not 100% width.
+- Improved `@mdi-icon` function. The icon will no more have height more than text.
 
 ## [1.0-alpha10]
 
