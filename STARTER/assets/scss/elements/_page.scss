@@ -13,5 +13,5 @@ body {
   @include font-size($global-font-size);
   background: theme-color(background);
   font-family: $font-family;
-  color: $text-color;
+  color: $global-text-color;
 }

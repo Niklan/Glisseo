@@ -14,6 +14,7 @@
 - Improved `@mdi-icon` function. The icon will no more have height more than text.
 - Media breakpoint mixins are now using rem's instead of em's, because of consistency.
 - Removed `gap()` function in flavor of `spacing-unit()` function.
+- `$text-color` is now `$global-text-color`, and color changed from `#333333` to `#222330`.
 
 ## [1.0-alpha10]
 

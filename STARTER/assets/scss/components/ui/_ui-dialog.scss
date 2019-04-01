@@ -10,11 +10,11 @@ $dialog-box-shadow: 0 4px 8px 2px rgba(black, .3) !default;
 $dialog-border-radius: 4px !default;
 $dialog-padding: 0 !default;
 $dialog-border: transparent !default;
-$dialog-color: $text-color !default;
+$dialog-color: $global-text-color !default;
 $dialog-background: white !default;
 
 $dialog-header-background: transparent !default;
-$dialog-header-color: $text-color !default;
+$dialog-header-color: $global-text-color !default;
 $dialog-header-padding: spacing-unit(2) spacing-unit(2) spacing-unit() !default;
 $dialog-header-border-only-bottom: true !default;
 $dialog-header-border: none !default;

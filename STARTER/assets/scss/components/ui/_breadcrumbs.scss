@@ -31,7 +31,7 @@ $breadcrumb-font-size: $global-font-size !default;
   }
 
   &__item-link--text {
-    color: $text-color;
+    color: $global-text-color;
   }
 
   &__delimiter {
