@@ -15,6 +15,9 @@
 - Media breakpoint mixins are now using rem's instead of em's, because of consistency.
 - Removed `gap()` function in flavor of `spacing-unit()` function.
 - `$text-color` is now `$global-text-color`, and color changed from `#333333` to `#222330`.
+- Changed theme-colors, removed button--info variant.
+- Changed focus style and added to theme color.
+- Focus for link is the same as hover. Outline removed.
 
 ## [1.0-alpha10]
 

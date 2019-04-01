@@ -32,10 +32,6 @@ $btn-danger-color: white !default;
 $btn-danger-bg: theme-color(error) !default;
 $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 
-$btn-info-color: white !default;
-$btn-info-bg: theme-color(info) !default;
-$btn-info-border: darken($btn-info-bg, 5%) !default;
-
 // =====================================
 // Button style generator.
 // =====================================
@@ -179,11 +175,4 @@ $btn-info-border: darken($btn-info-bg, 5%) !default;
 // =====================================
 .button--success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-}
-
-// =====================================
-// Info button style.
-// =====================================
-.button--info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }

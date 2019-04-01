@@ -65,18 +65,20 @@ $colors: map-merge((
 // very good description, what is all about.
 $theme-colors: () !default;
 $theme-colors: map-merge((
-  primary: $blue,
-  primary-variant: $blue,
+  primary: #0048DC,
+  primary-variant: #0048DC,
   on-primary: $white,
-  secondary: $indigo,
-  secondary-variant: $indigo,
-  on-secondary: $black,
+  secondary: #8C929C,
+  secondary-variant: #8C929C,
+  on-secondary: $white,
+
   background: $white,
   surface: $white,
-  success: $green,
-  info: $gray-500,
-  warning: $yellow,
-  error: $red,
+
+  focus: #A9CAF7,
+  success: #008972,
+  warning: #FFD029,
+  error: #FC0014,
 ), $theme-colors);
 
 $theme-color-interval: 8% !default;
