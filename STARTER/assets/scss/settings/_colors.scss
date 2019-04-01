@@ -79,6 +79,8 @@ $theme-colors: map-merge((
   success: #008972,
   warning: #FFD029,
   error: #FC0014,
+
+  text-light: #545560,
 ), $theme-colors);
 
 $theme-color-interval: 8% !default;

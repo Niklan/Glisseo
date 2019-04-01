@@ -5,8 +5,8 @@
 $blockquote-font-size: $global-font-size !default;
 $blockquote-border-size: 4px !default;
 $blockquote-border-color: gray(400) !default;
-$blockquote-paddings: gap() gap(2) !default;
-$blockquote-margins: 0 0 gap(2) !default;
+$blockquote-paddings: spacing-unit() spacing-unit(2) !default;
+$blockquote-margins: 0 0 spacing-unit(2) !default;
 $blockquote-bg: transparent !default;
 
 blockquote {

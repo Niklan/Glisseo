@@ -10,19 +10,25 @@ $global-baseline: 8px !default;
 // Baseline factors.
 $unit-factors: () !default;
 $unit-factors: map-merge((
-  base: 1,
-  line-height: 4,
-  grid-gap: 4,
-  container-gutter: 4,
+  xs: 1,
+  sm: 2,
+  md: 3,
+  lg: 4,
+  xl: 5,
 ), $unit-factors);
 
 // Spacing sizes based on baseline and unit factor.
 $spacing-units: () !default;
 $spacing-units: map-merge((
-  base: $global-baseline * unit-factor(base),
-  line-height: $global-baseline * unit-factor(line-height),
-  grid-gap: $global-baseline * unit-factor(grid-gap),
-  container-gutter: $global-baseline * unit-factor(container-gutter),
+  xs: $global-baseline * unit-factor(xs),
+  sm: $global-baseline * unit-factor(sm),
+  md: $global-baseline * unit-factor(md),
+  lg: $global-baseline * unit-factor(lg),
+  xl: $global-baseline * unit-factor(xl),
+
+  line-height: $global-baseline * 4,
+  grid-gap: $global-baseline * 4,
+  container-gutter: $global-baseline * 4,
 ), $spacing-units);
 
 // Font sizes.

@@ -1,7 +1,7 @@
 // =============================================================================
 // Returns spacing unit value.
 // =============================================================================
-@function spacing-unit($unit-factor: base) {
+@function spacing-unit($unit-factor: xs) {
   @if type-of($unit-factor) == 'number' and unitless($unit-factor) {
     @return $global-baseline * $unit-factor;
   }

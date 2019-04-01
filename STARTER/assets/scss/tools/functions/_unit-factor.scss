@@ -1,6 +1,6 @@
 // =============================================================================
 // Returns unit factor value.
 // =============================================================================
-@function unit-factor($key: normal) {
+@function unit-factor($key: xs) {
   @return map-get($unit-factors, $key);
 }
