@@ -18,6 +18,7 @@
 - Changed theme-colors, removed button--info variant.
 - Changed focus style and added to theme color.
 - Focus for link is the same as hover. Outline removed.
+- Improved button generation.
 
 ## [1.0-alpha10]
 

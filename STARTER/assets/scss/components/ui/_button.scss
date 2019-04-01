@@ -12,8 +12,8 @@ $btn-enable-shadows: true !default;
 $btn-box-shadow: none !default;
 $btn-border-radius: $border-radius-small !default;
 
-$btn-default-color: #606266 !default;
-$btn-default-bg: #ffffff !default;
+$btn-default-color: #222330 !default;
+$btn-default-bg: #D8D9E0 !default;
 $btn-default-border: #dcdfe6 !default;
 
 $btn-primary-color: white !default;
@@ -37,26 +37,45 @@ $btn-danger-border: darken($btn-danger-bg, 5%) !default;
 // =====================================
 @mixin button-variant($color, $background, $border: transparent) {
   @extend %button;
-  $active-background: darken($background, 10%);
+  $hover-background: darken($background, 6%);
+  $hover-border: darken($border, 6%);
+  $active-background: darken($background, 12%);
   $active-border: darken($border, 12%);
+  $focus-background: lighten($background, 3%);
+  $focus-border: lighten($background, 3%);
+
   color: $color;
   background-color: $background;
   background-image: none;
   border-color: $border;
   transition: all .15s ease-in-out;
+
   @if ($btn-enable-shadows) {
     box-shadow: $btn-box-shadow;
   }
 
-  &:focus,
   &:hover {
     color: $color;
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+
+  &:active {
+    color: $color;
     background-color: $active-background;
+    background-image: none;
     border-color: $active-border;
+
+    @if ($btn-enable-shadows) {
+      box-shadow: 0 0 0 3px rgba($background, .5);
+    }
   }
 
   &:focus {
     outline: none;
+    background: $focus-background;
+    border-color: $focus-border;
+
     @if ($btn-enable-shadows) {
       box-shadow: 0 0 0 3px rgba($background, .5);
     }
@@ -66,16 +85,6 @@ $btn-danger-border: darken($btn-danger-bg, 5%) !default;
     background-color: $background;
     border-color: $border;
     opacity: .65;
-  }
-
-  &:active {
-    color: $color;
-    background-color: $active-background;
-    background-image: none;
-    border-color: $active-border;
-    @if ($btn-enable-shadows) {
-      box-shadow: 0 0 0 3px rgba($background, .5);
-    }
   }
 }
 
