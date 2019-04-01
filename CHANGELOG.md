@@ -5,6 +5,7 @@
 ### Base theme
 
 - Fixed user view mode detection.
+- Removed "aria-labelledby" for breadcrumbs since it wrong. Aria attributes is not a priority now.
 
 ### Starter theme
 
