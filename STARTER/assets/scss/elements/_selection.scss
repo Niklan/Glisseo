@@ -2,10 +2,12 @@
 // Selection.
 // =============================================================================
 
-$selection-bg:    theme-color(primary) !default;
-$selection-color: color-yiq($selection-bg) !default;
+:root {
+  --selection-background: var(--color-primary);
+  --selection-color: var(--text-color);
+}
 
 ::selection {
-  background: $selection-bg;
-  color: $selection-color;
+  background: var(--selection-background);
+  color: var(--selection-color);
 }

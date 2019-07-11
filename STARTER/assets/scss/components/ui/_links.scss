@@ -4,7 +4,7 @@
     display: flex;
 
     .links__item:not(:last-child) {
-      margin-right: spacing-unit();
+      margin-right: var(--spacing-unit);
     }
   }
 }

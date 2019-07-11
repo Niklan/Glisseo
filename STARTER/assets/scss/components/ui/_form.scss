@@ -1,51 +1,42 @@
 // =============================================================================
 // Form and Drupal Form API elements.
 // =============================================================================
-$input-padding-y: spacing-unit() !default;
-$input-padding-x: spacing-unit(2) !default;
-$input-border-width: 1px !default;
-$input-bg: #ffffff !default;
-$input-border: rgba(34, 36, 38, 0.15) !default;
-$input-border-focus: theme-color(primary);
-$input-enable-shadows: false !default;
-$input-box-shadow: 0 0 0 0 transparent !default;
-$input-focus-box-shadow: 0 0 0 3px rgba(theme-color(primary), 0.5) !default;
-$input-border-radius: $border-radius-small !default;
-$input-color: $global-text-color !default;
-$input-bg-disabled: rgb(250, 250, 250) !default;
-$input-color-disabled: rgba(163, 163, 163, 1) !default;
-$input-line-height: auto !default;
 
-$label-required-enabled: true !default;
-$label-required-content: '*' !default;
-$label-required-color: theme-color(error) !default;
-$label-required-margin: 0 0 0 4px !default;
+:root {
+  --form-control-font-size: 1em;
+  --form-control-padding-y: 0.5em;
+  --form-control-padding-x: 0.75em;
+  --form-control-border-radius: var(--radius);
+  --form-control-radius: var(--radius);
+}
 
 .form-item {
-  margin: 0 0 spacing-unit(2);
+  margin: 0 0 var(--spacing-sm);
 
   &__description {
     display: block;
-    margin-top: spacing-unit();
-    margin-bottom: spacing-unit();
-    color: gray(600);
-    font-size: 85%;
+    margin-top: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit);
+    color: var(--color-contrast-medium);
+    font-size: var(--text-sm);
   }
 
   &__label {
+    display: inline-block;
+    margin-bottom: var(--spacing-unit);
+    font-size: var(--text-sm);
+
     &.option {
       margin-bottom: 0;
     }
+  }
 
-    @if ($label-required-enabled) {
-      &--required {
-        &::after {
-          content: $label-required-content;
-          display: inline-block;
-          color: $label-required-color;
-          margin: $label-required-margin;
-        }
-      }
+  &__label--required {
+    &::after {
+      content: '*';
+      display: inline-block;
+      color: var(--color-error);
+      margin: 0 0 0 0.25em;
     }
   }
 
@@ -54,67 +45,50 @@ $label-required-margin: 0 0 0 4px !default;
   }
 }
 
-.form-actions {
-  input {
-    margin: 0 spacing-unit() 0 0;
-    width: auto;
-
-    &:last-child {
-      margin: 0;
-    }
-  }
-}
-
 .filter-wrapper {
-  margin-top: spacing-unit(-2);
+  margin-top: calc(var(--spacing-sm) * -1);
 }
 
 .form-wrapper {
   &__summary {
     background: gray(100);
-    padding: spacing-unit();
+    padding: var(--spacing-unit);
     cursor: pointer;
   }
 
   &__content {
-    padding: spacing-unit();
+    padding: var(--spacing-unit);
   }
 }
 
 .form-control {
-  @include font-size($global-font-size, $input-line-height);
+  font-size: var(--form-control-font-size);
+  line-height: inherit;
   display: block;
   max-width: 100%;
   width: 100%;
-  padding: $input-padding-y $input-padding-x;
-  background-color: $input-bg;
-  border-width: 1px;
-  border-style: solid;
-  border-color: $input-border;
-  border-radius: $input-border-radius;
-
-  @if ($input-enable-shadows) {
-    box-shadow: $input-box-shadow;
-  }
+  padding-top: var(--form-control-padding-y);
+  padding-right: var(--form-control-padding-x);
+  padding-bottom: var(--form-control-padding-y);
+  padding-left: var(--form-control-padding-x);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-contrast-low);
+  border-radius: var(--form-control-border-radius);
 
   &.error {
-    border-color: theme-color(error);
+    border-color: var(--color-error);
+
+    &:focus {
+      border-color: var(--color-error);
+    }
   }
 
   &:focus {
-    outline: medium none;
-    border-color: $input-border-focus;
-
-    @if ($input-enable-shadows) {
-      box-shadow: $input-focus-box-shadow;
-    }
+    outline: none;
+    border-color: var(--color-primary);
   }
 
   &:disabled {
     cursor: not-allowed;
-    background: $input-bg-disabled;
-    font-size: 100%;
-    color: $input-color-disabled;
-    text-shadow: none;
   }
 }

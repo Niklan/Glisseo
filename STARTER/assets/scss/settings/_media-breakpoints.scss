@@ -2,20 +2,9 @@
 // Media breakpoints.
 // =============================================================================
 
-// Minimum width for breakpoints.
-$media-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
-
-// Maximum width for container.
-// @see mixin media-containers-max-width()
-$container-max-widths: (
+$breakpoints: (
   sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1140px
-) !default;
+);

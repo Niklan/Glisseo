@@ -2,17 +2,19 @@
 // Blockquotes.
 // =============================================================================
 
-$blockquote-font-size: $global-font-size !default;
-$blockquote-border-size: 4px !default;
-$blockquote-border-color: gray(400) !default;
-$blockquote-paddings: spacing-unit() spacing-unit(2) !default;
-$blockquote-margins: 0 0 spacing-unit(2) !default;
-$blockquote-bg: transparent !default;
+:root {
+  --blockquote-font-size: var(--text-lg);
+  --blockquote-border-size: 4px;
+  --blockquote-paddings: var(--global-baseline);
+  --blockquote-margins: calc(var(--global-baseline) * 2) 0;
+  --blockquote-background: transparent;
+  --blockquote-border-color: #{gray(400)};
+}
 
 blockquote {
-  @include font-size($blockquote-font-size);
-  padding: $blockquote-paddings;
-  margin: $blockquote-margins;
-  border-left: $blockquote-border-size solid $blockquote-border-color;
-  background: $blockquote-bg;
+  font-size: var(--blockquote-font-size);
+  padding: var(--blockquote-paddings);
+  margin: var(--blockquote-margins);
+  border-left: var(--blockquote-border-size) solid var(--blockquote-border-color);
+  background: var(--blockquote-background);
 }

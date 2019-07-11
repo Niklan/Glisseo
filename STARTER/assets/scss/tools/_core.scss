@@ -5,16 +5,8 @@
 // Settings.
 @import "../settings/core";
 
-// Functions.
-@import "functions/spacing-unit";
-@import "functions/unit-factor";
-@import "functions/colors";
-@import "functions/math";
-@import "functions/media";
-
 // Mixins.
 @import "mixins/helpers";
 @import "mixins/gradient";
 @import "mixins/media-breakpoint";
-@import "mixins/font-size";
 @import "mixins/hidden";

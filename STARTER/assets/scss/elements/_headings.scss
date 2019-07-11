@@ -2,37 +2,32 @@
 // Headings.
 // =============================================================================
 
-$font-size-h1: 36px !default;
-$font-size-h2: 28px !default;
-$font-size-h3: 24px !default;
-$font-size-h4: 20px !default;
-$font-size-h5: 18px !default;
-$font-size-h6: 16px !default;
-
-$headings-margin-bottom: 0.5rem !default;
+:root {
+  --heading-line-height: 1.2;
+}
 
 h1 {
-  @include font-size($font-size-h1);
+  font-size: var(--text-xxl);
 }
 
 h2 {
-  @include font-size($font-size-h2);
+  font-size: var(--text-xl);
 }
 
 h3 {
-  @include font-size($font-size-h3);
+  font-size: var(--text-lg);
 }
 
 h4 {
-  @include font-size($font-size-h4);
+  font-size: var(--text-md);
 }
 
 h5 {
-  @include font-size($font-size-h5);
+  font-size: var(--text-sm);
 }
 
 h6 {
-  @include font-size($font-size-h6);
+  font-size: var(--text-xs);
 }
 
 h1,
@@ -41,6 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: unset;
-  margin-bottom: $headings-margin-bottom;
+  line-height: var(--heading-line-height);
+  margin: unset;
+  margin-bottom: var(--spacing-sm);
 }

@@ -2,6 +2,10 @@
 
 ## [Unreleased][unreleased]
 
+This release is targeting for simplify things.
+
+Instead of providing tools that may or may not be useful, they are no longer available at all. You decide for yourself what you need and evolve the theme for your needs.
+
 ### Base theme
 
 - Fixed user view mode detection.
@@ -9,16 +13,10 @@
 
 ### Starter theme
 
-- Removed variables and classes for `.highlight-*` and `.text-*`. Looks like they are redundant. Not used in Drupal core markup and not used in Base theme markup.
-- Active tab effect is not 100% width.
-- Improved `@mdi-icon` function. The icon will no more have height more than text.
-- Media breakpoint mixins are now using rem's instead of em's, because of consistency.
-- Removed `gap()` function in flavor of `spacing-unit()` function.
-- `$text-color` is now `$global-text-color`, and color changed from `#333333` to `#222330`.
-- Changed theme-colors, removed button--info variant.
-- Changed focus style and added to theme color.
-- Focus for link is the same as hover. Outline removed.
-- Improved button generation.
+- Overhaul of styles.
+- **CSS variables** instead SCSS variables (everywhere it's possible). Which opens new possibilities.
+- Almost every SCSS mixin and function were removed.
+- **Mobile first!** This means, breakpoints are changed. They are is now simple is it can be. Think less, write less, do the same!
 
 ## [1.0-alpha10]
 

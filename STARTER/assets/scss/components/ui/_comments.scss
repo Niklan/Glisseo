@@ -5,7 +5,7 @@
 .comments {
   &__content {
     .indented {
-      padding-left: spacing-unit(4);
+      padding-left: var(--spacing-md);
     }
   }
 }

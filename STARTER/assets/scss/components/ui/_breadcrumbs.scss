@@ -2,78 +2,61 @@
 // Drupal breadcrumbs.
 // =============================================================================
 
-// Uses link variables.
-@import "../../elements/links";
-
-$breadcrumb-padding-vertical: 0 !default;
-$breadcrumb-padding-horizontal: 0 !default;
-$breadcrumb-margin-bottom: 0 !default;
-$breadcrumb-bg: transparent !default;
-$breadcrumb-delimiter-content: '/' !default;
-$breadcrumb-delimiter-color: gray(500) !default;
-$breadcrumb-link-color: $link-color !default;
-$breadcrumb-font-size: $global-font-size !default;
-
 .breadcrumbs {
-  @include font-size($breadcrumb-font-size);
-  background: $breadcrumb-bg;
-  padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
-  margin-bottom: $breadcrumb-margin-bottom;
-  border-radius: $border-radius-base;
+  font-size: var(--text-sm);
   display: flex;
+  margin-bottom: var(--spacing-sm);
 
   &__path {
-    display: inline;
+    display: block;
+    overflow: hidden;
+    flex-grow: 0;
+    flex-shrink: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__item-link {
-    color: $breadcrumb-link-color;
+    color: var(--link-color);
   }
 
   &__item-link--text {
-    color: $global-text-color;
+    color: var(--text-color);
   }
 
-  &__delimiter {
-    &::after {
+  &__item-link--current {
+    &::before {
       margin: 0 4px;
-      content: $breadcrumb-delimiter-content;
-      color: $breadcrumb-delimiter-color;
+      content: '/';
+      color: var(--color-contrast-medium);
     }
   }
 
   &__current {
-    display: inline;
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
 
-  @include media-breakpoint-down(sm) {
+  &__delimiter {
+    &::after {
+      margin: 0 var(--spacing-unit);
+      content: '/';
+      color: var(--color-contrast-medium);
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  @include breakpoint(sm) {
     &__path {
-      display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      flex-grow: 0;
-      flex-shrink: 1;
-    }
-
-    &__delimiter {
-      &:last-child {
-        display: none;
-      }
-    }
-
-    &__item-link--current {
-      &::before {
-        margin: 0 4px;
-        content: $breadcrumb-delimiter-content;
-        color: $breadcrumb-delimiter-color;
-      }
+      display: inline;
     }
 
     &__current {
-      display: block;
-      flex-grow: 1;
-      flex-shrink: 0;
+      display: inline;
     }
   }
 }

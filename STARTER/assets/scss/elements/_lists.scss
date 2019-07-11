@@ -2,10 +2,13 @@
 // Lists.
 // =============================================================================
 
-$list-margins: 1rem 0 1rem 2rem !default;
-$list-paddings: 0 !default;
+:root {
+  --list-margin: 0 0 1rem 0;
+  --list-padding: 0 0 0 2rem;
+}
 
-ol, ul {
-  margin: $list-margins;
-  padding: $list-paddings;
+ol,
+ul {
+  margin: var(--list-margin);
+  padding: var(--list-padding);
 }

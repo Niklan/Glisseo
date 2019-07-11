@@ -2,19 +2,17 @@
 // Links.
 // =============================================================================
 
-$link-color: map-get($theme-colors, primary) !default;
-$link-decoration: none !default;
-$link-hover-color: theme-color-level(primary, 4) !default;
-$link-hover-decoration: none !default;
+:root {
+  --link-color: var(--color-primary);
+  --link-color-hover: var(--color-primary);
+}
 
 a {
-  color: $link-color;
-  text-decoration: $link-decoration;
+  color: var(--link-color);
+  text-decoration: none;
 
-  &:hover,
-  &:focus {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
-    outline: none;
+  &:hover {
+    color: var(--link-color-hover);
+    text-decoration: none;
   }
 }

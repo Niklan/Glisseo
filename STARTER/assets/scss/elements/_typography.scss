@@ -2,37 +2,65 @@
 // Typography.
 // =============================================================================
 
-$paragraph-margins: 0 0 1rem !default;
+:root {
+  // Text sizes.
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+  --text-xs: calc((var(--text-base-size) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
 
-$mark-bg: #fff9c4 !default;
-$mark-padding: .2em !default;
-$mark-color: inherit !default;
+  --text-color: hsl(0, 0%, 7%);
+
+  --font-primary: sans-serif;
+  --font-secondary: serif;
+  --font-monospace: monospace;
+  --font-family: var(--font-primary);
+  --body-line-height: 1.4;
+
+  --mark-background: hsl(60, 100%, 50%);
+  --code-background: var(--body-background);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--text-base-size);
+  line-height: var(--body-line-height);
+  color: var(--text-color);
+}
 
 p {
-  margin: $paragraph-margins;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  margin-bottom: var(--spacing-sm);
 }
 
 small {
-  @include font-size($global-font-size * 0.80);
+  font-size: 80%;
   font-weight: normal;
 }
 
 big {
-  @include font-size($global-font-size * 1.20);
+  font-size: 120%;
   font-weight: normal;
 }
 
 mark {
-  padding: $mark-padding;
-  background-color: $mark-bg;
-  color: $mark-color;
+  padding: var(--spacing-xs);
+  background-color: var(--mark-background);
 }
 
 code {
-  font-size: $global-font-size;
-  font-family: $font-family-monospace;
+  font-family: var(--font-monospace);
+  font-size: 90%;
+  padding: 4px 6px;
+  word-break: break-all;
+  border-radius: 4px;
+  background-color: var(--code-background);
+}
+
+pre code {
+  // Fixes unwanted padding for first and last line of code.
+  padding: unset;
 }
