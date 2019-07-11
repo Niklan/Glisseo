@@ -1,10 +1,10 @@
-.links {
-  &--inline {
-    @include list-unstyled;
-    display: flex;
+.links {}
 
-    .links__item:not(:last-child) {
-      margin-right: var(--spacing-unit);
-    }
-  }
+.links--inline {
+  @include list-unstyled;
+  display: flex;
+}
+
+.links--inline .links__item:not(:last-child) {
+  margin-right: var(--spacing-unit);
 }

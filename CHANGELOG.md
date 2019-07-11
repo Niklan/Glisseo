@@ -17,6 +17,7 @@ Instead of providing tools that may or may not be useful, they are no longer ava
 - **CSS variables** instead SCSS variables (everywhere it's possible). Which opens new possibilities.
 - Almost every SCSS mixin and function were removed.
 - **Mobile first!** This means, breakpoints are changed. They are is now simple is it can be. Think less, write less, do the same!
+- Nested SCSS is UNnested. "Just because you can nest, doesn't mean you always should." - @mdo.
 
 ## [1.0-alpha10]
 

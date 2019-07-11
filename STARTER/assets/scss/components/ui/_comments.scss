@@ -2,10 +2,8 @@
 // Drupal comments.
 // =============================================================================
 
-.comments {
-  &__content {
-    .indented {
-      padding-left: var(--spacing-md);
-    }
-  }
+.comments { }
+
+.comments__content .indented {
+  padding-left: var(--spacing-md);
 }

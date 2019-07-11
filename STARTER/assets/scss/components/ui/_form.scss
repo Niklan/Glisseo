@@ -10,85 +10,97 @@
   --form-control-radius: var(--radius);
 }
 
+// =============================================================================
+// The .form-item styles.
+// =============================================================================
 .form-item {
   margin: 0 0 var(--spacing-sm);
+}
 
-  &__description {
-    display: block;
-    margin-top: var(--spacing-unit);
-    margin-bottom: var(--spacing-unit);
-    color: var(--color-contrast-medium);
-    font-size: var(--text-sm);
-  }
+.form-item__description {
+  font-size: var(--text-sm);
+  display: block;
+  margin-top: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+  color: var(--color-contrast-medium);
+}
 
-  &__label {
+.form-item__label {
+  font-size: var(--text-sm);
+  display: inline-block;
+  margin-bottom: var(--spacing-unit);
+}
+
+.form-item__label--required {
+  &::after {
     display: inline-block;
-    margin-bottom: var(--spacing-unit);
-    font-size: var(--text-sm);
-
-    &.option {
-      margin-bottom: 0;
-    }
-  }
-
-  &__label--required {
-    &::after {
-      content: '*';
-      display: inline-block;
-      color: var(--color-error);
-      margin: 0 0 0 0.25em;
-    }
-  }
-
-  &--radio {
-    margin-bottom: 0;
+    margin: 0 0 0 0.25em;
+    content: '*';
+    color: var(--color-error);
   }
 }
 
+.form-item__label.option {
+  margin-bottom: 0;
+}
+
+.form-item--radio {
+  margin-bottom: 0;
+}
+
+// =============================================================================
+// The .filter-wrapper styles.
+// =============================================================================
 .filter-wrapper {
   margin-top: calc(var(--spacing-sm) * -1);
 }
 
-.form-wrapper {
-  &__summary {
-    background: gray(100);
-    padding: var(--spacing-unit);
-    cursor: pointer;
-  }
+// =============================================================================
+// The .form-wrapper styles.
+// =============================================================================
+.form-wrapper { }
 
-  &__content {
-    padding: var(--spacing-unit);
-  }
+.form-wrapper__summary {
+  padding: var(--spacing-unit);
+  cursor: pointer;
+  background: gray(100);
 }
 
+.form-wrapper__content {
+  padding: var(--spacing-unit);
+}
+
+// =============================================================================
+// The .form-control styles.
+// =============================================================================
 .form-control {
   font-size: var(--form-control-font-size);
   line-height: inherit;
   display: block;
-  max-width: 100%;
   width: 100%;
+  max-width: 100%;
   padding-top: var(--form-control-padding-y);
   padding-right: var(--form-control-padding-x);
   padding-bottom: var(--form-control-padding-y);
   padding-left: var(--form-control-padding-x);
-  background-color: var(--color-white);
   border: 2px solid var(--color-contrast-low);
   border-radius: var(--form-control-border-radius);
-
-  &.error {
-    border-color: var(--color-error);
-
-    &:focus {
-      border-color: var(--color-error);
-    }
-  }
+  background-color: var(--color-white);
 
   &:focus {
-    outline: none;
     border-color: var(--color-primary);
+    outline: none;
   }
 
   &:disabled {
     cursor: not-allowed;
+  }
+}
+
+.form-control.error {
+  border-color: var(--color-error);
+
+  &:focus {
+    border-color: var(--color-error);
   }
 }
