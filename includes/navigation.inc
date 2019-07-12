@@ -30,7 +30,6 @@ function glisseo_preprocess_menu_local_task(array &$variables) {
  * Implements hook_preprocess_HOOK() links.html.twig.
  */
 function glisseo_preprocess_links(array &$variables) {
-  //dump($variables);
   $attributes = &$variables['attributes'];
 
   // Improve BEM block classes.

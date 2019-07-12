@@ -1,14 +1,13 @@
 :root {
-  --color-primary: hsl(208, 100%, 43%);
-  --color-secondary: hsl(210, 100%, 12%);
+  @include hsl-color-variable(color-primary, 208, 100%, 43%);
+  @include hsl-color-variable(color-secondary, 210, 100%, 12%);
 
   --color-black: hsl(240, 7%, 12%);
   --color-white: hsl(0, 0%, 100%);
 
-  --color-info: hsl(197, 100%, 75%);
-  --color-success: hsl(146, 100%, 50%);
-  --color-warning: hsl(28, 100%, 55%);
-  --color-error: hsl(3, 100%, 61%);
+  @include hsl-color-variable(color-success, 100, 100%, 50%);
+  @include hsl-color-variable(color-warning, 28, 100%, 55%);
+  @include hsl-color-variable(color-error, 3, 100%, 61%);
 
   --color-contrast-lower: hsl(0, 0%, 95%);
   --color-contrast-low: hsl(240, 1%, 83%);

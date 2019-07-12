@@ -8,6 +8,7 @@
   --form-control-padding-x: 0.75em;
   --form-control-border-radius: var(--radius);
   --form-control-radius: var(--radius);
+  --form-control-focus-shadow-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2);
 }
 
 // =============================================================================
@@ -89,6 +90,7 @@
 
   &:focus {
     border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--form-control-focus-shadow-color);
     outline: none;
   }
 
@@ -98,6 +100,7 @@
 }
 
 .form-control.error {
+  --form-control-focus-shadow-color: hsla(var(--color-error-h), var(--color-error-s), var(--color-error-l), 0.2);
   border-color: var(--color-error);
 
   &:focus {

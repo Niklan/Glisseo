@@ -2,59 +2,33 @@
 // Drupal messenger messages.
 // =============================================================================
 
-$message-padding-y: 1rem !default;
-$message-padding-x: 1rem !default;
-$message-border-width: 1px !default;
-$message-border-radius: $border-radius-small !default;
-$message-margin: 0 0 1rem !default;
-
-$message-default-bg: #fafafa !default;
-$message-default-border: #eeeeee !default;
-$message-default-color: #5d5d5d !default;
-
-$message-error-bg: #fff6f6 !default;
-$message-error-border: #e0b4b4 !default;
-$message-error-color: #9f3a38 !default;
-
-$message-status-bg: #fcfff5 !default;
-$message-status-border: #a3c293 !default;
-$message-status-color: #2c662d !default;
-
-$message-warning-bg: #fffaf3 !default;
-$message-warning-border: #c9ba9b !default;
-$message-warning-color: #573a08 !default;
-
-@mixin message-variant($background, $border, $color) {
-  color: $color;
-  background-color: $background;
-  border-color: $border;
-
-  hr {
-    border-top-color: darken($border, 5%);
-  }
-
-  a {
-    color: darken($color, 10%);
-  }
+:root {
+  --message-background: transparent;
+  --message-border-color: var(--color-contrast-medium);
+  --message-color: var(--text-color);
 }
 
 .messages {
   position: relative;
-  margin: $message-margin;
-  padding: $message-padding-y $message-padding-x;
-  border-radius: $message-border-radius;
-  border: $message-border-width solid transparent;
-  @include message-variant($message-default-bg, $message-default-border, $message-default-color);
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius);
+  border: 2px solid var(--message-border-color);
+  background: var(--message-background);
+  color: var(--message-color);
+}
 
-  &--error {
-    @include message-variant($message-error-bg, $message-error-border, $message-error-color);
-  }
+.messages--error {
+  --message-background: hsl(var(--color-error-h), var(--color-error-s), 77%);
+  --message-border-color: var(--color-error);
+}
 
-  &--status {
-    @include message-variant($message-status-bg, $message-status-border, $message-status-color);
-  }
+.messages--status {
+  --message-background: hsl(var(--color-success-h), var(--color-success-s), 77%);
+  --message-border-color: var(--color-success);
+}
 
-  &--warning {
-    @include message-variant($message-warning-bg, $message-warning-border, $message-warning-color);
-  }
+.messages--warning {
+  --message-background: hsl(var(--color-warning-h), var(--color-warning-s), 77%);
+  --message-border-color: var(--color-warning);
 }

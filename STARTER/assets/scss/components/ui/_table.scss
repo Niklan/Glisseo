@@ -1,173 +1,27 @@
 // =============================================================================
 // Tables.
-// @todo move generic styles to elements folder.
 // =============================================================================
 
-$table-cell-padding: .75rem !default;
-$table-condensed-cell-padding: 5px !default;
-$table-bg: transparent !default;
-$table-bg-accent: #f9f9f9 !default;
-$table-bg-hover: #f5f5f5 !default;
-$table-bg-active: $table-bg-hover !default;
-$table-border-color: #e9ecef !default;
-
-table {
-  background: $table-bg;
-  @extend %table;
-  @extend %table-striped;
-  @extend %table-condensed;
-  @extend %table-hover;
-}
-
-caption {
-  padding-top: $table-cell-padding;
-  padding-bottom: $table-cell-padding;
-  color: gray(600);
-  text-align: left;
-}
-
-th {
-  text-align: left;
-}
-
-%table {
+.table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 1rem;
-  border-spacing: 0;
+  margin-bottom: var(--spacing-sm);
   border-collapse: collapse;
-
-  > thead,
-  > tbody,
-  > tfoot {
-    > tr {
-      > th,
-      > td {
-        padding: $table-cell-padding;
-        line-height: $global-line-height;
-        vertical-align: top;
-        border-top: 1px solid $table-border-color;
-      }
-    }
-  }
-
-  > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid $table-border-color;
-  }
-
-  > tbody + tbody {
-    border-top: 2px solid $table-border-color;
-  }
 }
 
-// Table with lower padding size.
-%table-condensed {
-  > thead,
-  > tbody,
-  > tfoot {
-    > tr {
-      > th,
-      > td {
-        padding: $table-condensed-cell-padding;
-      }
-    }
-  }
+.table th,
+.table td {
+  padding: var(--spacing-unit);
+  text-align: inherit;
+  border-top: 1px solid var(--color-contrast-lower);
 }
 
-// Zebra.
-%table-striped {
-  > tbody > tr:nth-of-type(odd) {
-    background-color: $table-bg-accent;
-  }
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid var(--color-contrast-low);
 }
 
-// Hover effect.
-%table-hover {
-  > tbody > tr:hover {
-    background-color: $table-bg-hover;
-  }
-}
-
-.table-responsive-container {
+.table-responsive {
+  width: 100%;
   overflow-x: auto;
-  min-height: 0.01%; // Workaround for IE9 bug
-
-  @include media-breakpoint-only(xs) {
-    width: 100%;
-    margin-bottom: ($global-line-height * 0.75);
-    overflow-y: hidden;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid $table-border-color;
-
-    > .table {
-      margin-bottom: 0;
-
-      > thead,
-      > tbody,
-      > tfoot {
-        > tr {
-          > th,
-          > td {
-            white-space: nowrap;
-          }
-        }
-      }
-    }
-
-    > .table-bordered {
-      border: 0;
-
-      > thead,
-      > tbody,
-      > tfoot {
-        > tr {
-          > th:first-child,
-          > td:first-child {
-            border-left: 0;
-          }
-          > th:last-child,
-          > td:last-child {
-            border-right: 0;
-          }
-        }
-      }
-
-      > tbody,
-      > tfoot {
-        > tr:last-child {
-          > th,
-          > td {
-            border-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-}
-
-// Fix tabledrag handle.
-a.tabledrag-handle .handle {
-  height: rem(24);
-  width: rem(20);
-}
-
-.table {
-  @extend %table;
-}
-
-.table--condensed {
-  @extend %table-condensed;
-}
-
-.table--srippted {
-  @extend %table-striped;
-}
-
-.table--stripped {
-  @extend %table-striped;
-}
-
-.table--hover {
-  @extend %table-hover;
 }

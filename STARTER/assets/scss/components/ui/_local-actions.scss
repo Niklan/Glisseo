@@ -2,16 +2,15 @@
 // Drupal local actions.
 // =============================================================================
 
-// @todo
 .local-actions {
   padding: 0;
-  margin: 0 0 spacing-unit(3);
+  margin: 0 0 var(--spacing-sm);
   list-style: none;
   display: flex;
+}
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: spacing-unit();
-    }
+.local-actions__item {
+  &:not(:last-child) {
+    margin-right: var(--spacing-unit);
   }
 }
