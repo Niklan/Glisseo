@@ -20,18 +20,19 @@
 @import "ui/message";
 @import "ui/pager";
 @import "ui/table";
-//@import "ui/tabs";
+@import "ui/tabs";
+@import "ui/vertical-tabs";
 //@import "ui/ui-dialog";
 //@import "ui/views-mini-pager";
 
 // Form.
 
 // Layout.
-//@import "layout/app";
-//@import "layout/main-layout";
-//@import "layout/region-header";
-//@import "layout/region-content";
-//@import "layout/region-footer";
+@import "layout/app";
+@import "layout/main-layout";
+@import "layout/region-header";
+@import "layout/region-content";
+@import "layout/region-footer";
 
 // Theme (hook_theme).
 

@@ -1,3 +1,7 @@
-.region-header {
+.region-header { }
 
+.region-header__container {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
 }

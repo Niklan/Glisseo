@@ -2,139 +2,92 @@
 // Drupal tabs.
 // =============================================================================
 
-// Vertical tabs.
-$vertical-tabs-bg: white !default;
-$vertical-tabs-list-bg: #FBFAF8 !default;
-$vertical-tabs-button-color: #555459 !default;
-$vertical-tabs-button-color-selected: white !default;
-$vertical-tabs-button-bg-selected: #439FE0 !default;
-$vertical-tabs-button-text-shadow: 0 1px 0 rgba(0, 0, 0, .1) !default;
-$vertical-tabs-list-border: 1px solid #DDDDDD !default;
-
-// Primary tabs.
-$primary-tabs-margin: 0 0 spacing-unit(3) !default;
-$primary-tabs-item-link-padding: 10px !default;
-$primary-tabs-item-link-color: $global-text-color !default;
-$primary-tabs-item-link-hover-color: $link-color !default;
-$primary-tabs-item-active-link-color: $link-color !default;
-$primary-tabs-item-active-link-hover-color: $link-hover-color !default;
-
-// Secondary tabs.
-$secondary-tabs-margin: 0 0 spacing-unit(3) !default;
-$secondary-tabs-item-link-padding: 0 10px 10px 10px !default;
-$secondary-tabs-item-link-color: $global-text-color !default;
-$secondary-tabs-item-link-hover-color: gray(600) !default;
-$secondary-tabs-item-link-border-color: gray(300) !default;
-$secondary-tabs-item-active-link-color: $link-color !default;
-$secondary-tabs-item-active-link-hover-color: $link-hover-color !default;
-$secondary-tabs-item-active-border-color: $link-color !default;
-
 .tabs {
   display: flex;
+  align-items: center;
   flex-flow: wrap;
-  padding: 0;
+  margin: unset;
+  padding: unset;
   list-style: none;
+}
 
-  &--primary {
-    margin: $primary-tabs-margin;
-    border-bottom: 2px solid gray(200);
+// Primary tabs.
+.tabs--primary {
+  margin-bottom: var(--spacing-sm);
+  padding: 0 var(--spacing-md);
+  border-bottom: 2px solid var(--color-contrast-low);
+}
 
-    .tabs__menu-item {
-      position: relative;
-    }
+.tabs--primary .tabs__link {
+  position: relative;
+  display: block;
+  padding: var(--spacing-unit) var(--spacing-sm);
+  color: var(--color-primary);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
 
-    .tabs__menu-item-link {
-      position: relative;
-      display: block;
-      padding: $primary-tabs-item-link-padding;
-      color: $primary-tabs-item-link-color;
+  &:hover {
+    background-color: var(--color-contrast-lower);
+  }
+}
 
-      &:hover {
-        color: $primary-tabs-item-link-hover-color;
-      }
+.tabs--primary .tabs__link--active {
+  position: relative;
+  border: 2px solid var(--color-contrast-low);
+  border-bottom-width: 0;
 
-      &.is-active {
-        font-weight: bold;
-        position: relative;
-        color: $primary-tabs-item-active-link-color;
-
-        &::before {
-          position: absolute;
-          bottom: -2px;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          content: '';
-          background: $primary-tabs-item-active-link-color;
-        }
-
-        &:hover {
-          color: $primary-tabs-item-active-link-hover-color;
-        }
-      }
-    }
+  &::before {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: white;
   }
 
-  &--secondary {
-    margin: $secondary-tabs-margin;
+  &:hover {
+    background-color: unset;
+  }
+}
 
-    .tabs__menu-item {
-      position: relative;
-    }
+// Secondary tabs.
+.tabs--secondary {
+  margin-bottom: var(--spacing-sm);
+  padding: 0 var(--spacing-md);
+  border-bottom: 1px solid var(--color-contrast-low);
+}
 
-    .tabs__menu-item-link {
+.tabs--secondary .tabs__link {
+  display: block;
+  padding: var(--spacing-unit) var(--spacing-sm);
+  position: relative;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: var(--color-primary);
+    border-top-left-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+  }
+
+  &:hover {
+    &::before {
       display: block;
-      padding: $secondary-tabs-item-link-padding;
-      color: $secondary-tabs-item-link-color;
-      border-bottom: 1px solid $secondary-tabs-item-link-border-color;
-
-      &:hover {
-        color: $secondary-tabs-item-link-hover-color;
-        border-bottom-color: $link-color;
-      }
-
-      &.is-active {
-        font-weight: bold;
-        color: $secondary-tabs-item-active-link-color;
-        border-bottom-width: 2px;
-        border-bottom-color: $secondary-tabs-item-active-border-color;
-
-        &:hover {
-          color: $secondary-tabs-item-active-link-hover-color;
-        }
-      }
     }
   }
 }
 
-// Vertical tabs.
-.vertical-tabs {
-  background: $vertical-tabs-bg;
+.tabs--secondary .tabs__link--active {
+  position: relative;
 
-  .vertical-tabs__menu {
-    border: $vertical-tabs-list-border;
-    background: $vertical-tabs-list-bg;
-
-    .vertical-tabs__menu-item {
-      border: none;
-
-      a {
-        color: $vertical-tabs-button-color;
-        border: none;
-      }
-
-      &.selected {
-        background: $vertical-tabs-button-bg-selected;
-
-        strong, .summary {
-          color: $vertical-tabs-button-color-selected;
-          text-shadow: $vertical-tabs-button-text-shadow;
-        }
-      }
-    }
-  }
-
-  .vertical-tabs__panes {
-    padding: 1rem;
+  &::before {
+    display: block;
   }
 }

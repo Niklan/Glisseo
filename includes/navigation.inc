@@ -23,7 +23,11 @@ function glisseo_preprocess_menu_local_action(array &$variables) {
  */
 function glisseo_preprocess_menu_local_task(array &$variables) {
   $classes = &$variables['link']['#options']['attributes']['class'];
-  $classes[] = 'tabs__menu-item-link';
+  $classes[] = 'tabs__link';
+
+  if (!empty($variables['element']['#active'])) {
+    $classes[] = 'tabs__link--active';
+  }
 }
 
 /**

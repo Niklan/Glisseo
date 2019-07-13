@@ -11,6 +11,8 @@ Instead of providing tools that may or may not be useful, they are no longer ava
 - Fixed user view mode detection.
 - Removed "aria-labelledby" for breadcrumbs since it wrong. Aria attributes is not a priority now.
 - Class for pager active element is not BEM modifier `pager_item--active` instead of additional class `is-active`.
+- Change class `.tabs__item--is-active` to `.tabs__item--active`.
+- Change class `.tabs__menu-item-link` to `.tabs__link`.
 
 ### Starter theme
 
