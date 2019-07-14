@@ -5,7 +5,7 @@
   --color-black: hsl(240, 7%, 12%);
   --color-white: hsl(0, 0%, 100%);
 
-  @include hsl-color-variable(color-success, 100, 100%, 50%);
+  @include hsl-color-variable(color-success, 120, 100%, 50%);
   @include hsl-color-variable(color-warning, 28, 100%, 55%);
   @include hsl-color-variable(color-error, 3, 100%, 61%);
 

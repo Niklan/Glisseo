@@ -56,3 +56,11 @@
   padding: var(--spacing-unit) var(--spacing-sm);
   border-radius: var(--radius);
 }
+
+// views-mini-pager.html.twig
+.pager--mini .pager__item--active {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-unit) var(--spacing-sm);
+  border-radius: var(--radius);
+}
