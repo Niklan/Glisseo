@@ -8,30 +8,17 @@
 
 ## Quick start
 
-1. Download and place the glisseo folder to /themes
-2. Copy STARTER theme and place it in /themes as well.
-3. Rename STARTER folder to your future theme name, f.e. 'mytheme'.
-4. Replace every uppercase filenames in the root of your theme with its name. Also, don't forget to replace it inside YAML files when it needed.
-5. Rename STARTER.**starter**.yml to STARTER.**info**.yml.
+Read ["Getting started"](docs/getting-started.md) doc.
 
-## What's this
+## Features
 
-*  [SCSS](https://sass-lang.com/) and (optional) [PostCSS](https://postcss.org/)
-*  (optional) Configured [stylelint](https://stylelint.io/) for control coding standards across the project.
-*  (optional) [Lost Grid](http://lostgrid.org) for creating website much faster with flexible grids.
-*  (optional) [Material Design Icons](https://materialdesignicons.com/).
-* [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for styles.
-* [BEM methodology](https://bem.info/) for template class naming.
+* **Modern CSS**, which includes **CSS variables** for styling and **CSS grids** for layouts!
+* [SCSS](https://sass-lang.com/) for some improvements to CSS. The theme does not abuse SCSS, on the contrary, uses only a small part of its capabilities. This makes styles clean, easy to read, maintain and understand. Even nesting is used only for such selectors as `:focus`, `:hover`, `::before`, `::after`.
+* (optional) [PostCSS](https://postcss.org/) for some additional improvements and processing that allows getting rid of most of the mixins of SCSS and focus on native CSS.
+* (optional) [Stylelint](https://stylelint.io/) if you prefer to apply some standards to your theme.
+* [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for style structure. If you're not familiar with ITCSS, it's recommended to watch [this presentation](https://www.youtube.com/watch?v=1OKZOV-iLj4&feature=youtu.be&t=524) by Harry Roberts (@csswizardry) to get inspired.
+* [BEM methodology](https://bem.info/) for template class naming. In [variation](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) of Harry Roberts (@csswizardry) as well.
 
-\* _(optional)_ features enabled by default but can be removed from the project without any consequences.
+The theme provides only a basic design for HTML elements, a small set of tools and a pre-organized structure. This means that you need to design the site and connect all the necessary libraries and extensions by yourself. It's a price for the flexibility and freedom that a theme gives you. It's a canvas with some important brushes.
 
-Due to the theme structure, where all parts are separated from each other, you can disable most of them without any pain and consequences, just remove the import line and delete files. The theme is highly customizable and you can easily replace any part of it by your needs.
-
-## Documentation
-
-*  [Getting started](docs/getting-started.md)
-*  (outdated) [SCSS architecture](docs/scss-architecture.md)
-*  (outdated) [Responsive guide](docs/responsive-guide.md)
-*  [BrowserSync and LiveReload integration](docs/live-reload.md)
-*  (outdated) [Tips, tricks and snippets](docs/tips-tricks-snippets.md)
-*  [FontAwesome icon integration](docs/font-awesome.md)
+Thanks to the fact that everything is separated by components and purpose, you can transfer the results from one project to another simply by copying the necessary style files and connecting them.
