@@ -32,8 +32,8 @@ function MYMODULE_form_commerce_order_item_add_to_cart_form_alter(&$form, \Drupa
 **Result**
 
 ```html
-<button data-hook-suggestion="add-to-cart-button" data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" name="op" value="Add to cart" class="button button--primary js-form-submit form-submit">
-  <span class="icon"></span>
+<button data-hook-suggestion="add-to-cart-button" data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" name="op" value="Add to cart" class="button button--primary js-form-submit form-submit add-to-cart-button">
+  <span class="add-to-cart-button__icon"></span>
   Add to cart
 </button>
 ```

@@ -6,10 +6,6 @@
  </p>
 </p>
 
-## Quick start
-
-Read ["Getting started"](docs/getting-started.md) doc.
-
 ## Features
 
 * **Modern CSS**, which includes **CSS variables** for styling and **CSS grids** for layouts!
@@ -22,3 +18,7 @@ Read ["Getting started"](docs/getting-started.md) doc.
 The theme provides only a basic design for HTML elements, a small set of tools and a pre-organized structure. This means that you need to design the site and connect all the necessary libraries and extensions by yourself. It's a price for the flexibility and freedom that a theme gives you. It's a canvas with some important brushes.
 
 Thanks to the fact that everything is separated by components and purpose, you can transfer the results from one project to another simply by copying the necessary style files and connecting them.
+
+## Documentation
+
+Read [documentation](docs/docs.md) for more info.

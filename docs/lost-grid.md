@@ -57,3 +57,7 @@ Then, don't forget to include this file in `assets/scss/settings/_core.scss`:
 ```scss
 @import "lost-grid";
 ```
+
+## Link
+
+- [Lost Grid](http://lostgrid.org/). Official website.
