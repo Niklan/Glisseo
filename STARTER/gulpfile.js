@@ -3,7 +3,6 @@ let sass = require('gulp-sass');
 let sourcemaps = require('gulp-sourcemaps');
 let autoprefixer = require('autoprefixer');
 let postcss = require('gulp-postcss');
-let lost = require('lost');
 
 gulp.task('sass', function() {
   return gulp.src([
@@ -16,7 +15,6 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
-      lost(),
       autoprefixer()
     ]))
     .pipe(sourcemaps.write('./maps'))
