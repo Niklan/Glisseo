@@ -8,36 +8,5 @@
 // Tools.
 @import "../tools/core";
 
-// UI elements.
-@import "ui/material-design-icons";
-@import "ui/breadcrumbs";
-@import "ui/button";
-@import "ui/comments";
-@import "ui/form";
-@import "ui/links";
-@import "ui/local-actions";
-@import "ui/menu";
-@import "ui/message";
-@import "ui/pager";
-@import "ui/table";
-@import "ui/tabs";
-@import "ui/vertical-tabs";
-
-// Form.
-
-// Layout.
-@import "layout/app";
-@import "layout/main-layout";
-@import "layout/region-header";
-@import "layout/region-content";
-@import "layout/region-footer";
-
-// Theme (hook_theme).
-
-// Block.
-
-// Views.
-
-// Node.
-
-// Taxonomy term.
+// Components.
+@import "**/*.scss";

@@ -8,4 +8,5 @@
 // Tools.
 @import "../tools/core";
 
-@import "hidden";
+// Utilities.
+@import "**/*.scss";

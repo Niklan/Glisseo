@@ -24,4 +24,4 @@ style.utilities:
 #google.fonts:
 #  css:
 #    theme:
-#      //fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic: { type: external, minified: true }
+#      //fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic&display=swap: { type: external, minified: true }

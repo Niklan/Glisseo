@@ -29,18 +29,16 @@
   color: var(--text-color);
 }
 
-.breadcrumbs__item-link--current {
+.breadcrumbs__current {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 0;
+
   &::before {
     margin: 0 4px;
     content: '/';
     color: var(--color-contrast-medium);
   }
-}
-
-.breadcrumbs__current {
-  display: block;
-  flex-grow: 1;
-  flex-shrink: 0;
 
   @include breakpoint(sm) {
     display: inline;

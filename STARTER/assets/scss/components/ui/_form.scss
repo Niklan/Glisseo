@@ -3,6 +3,8 @@
 // =============================================================================
 
 :root {
+  --form-control-background: var(--color-white);
+  --form-control-color: var(--text-color);
   --form-control-font-size: 1em;
   --form-control-padding-y: 0.5em;
   --form-control-padding-x: 0.75em;
@@ -86,7 +88,8 @@
   padding-left: var(--form-control-padding-x);
   border: 2px solid var(--color-contrast-low);
   border-radius: var(--form-control-border-radius);
-  background-color: var(--color-white);
+  background-color: var(--form-control-background);
+  color: var(--form-control-color);
 
   &:focus {
     border-color: var(--color-primary);
