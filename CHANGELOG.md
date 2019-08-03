@@ -255,7 +255,7 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
 [unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha11...HEAD
-[1.0-alpha10]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha10...8.x-1.0-alpha111
+[1.0-alpha10]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha10...8.x-1.0-alpha11
 [1.0-alpha10]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha9...8.x-1.0-alpha10
 [1.0-alpha9]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha8...8.x-1.0-alpha9
 [1.0-alpha8]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha7...8.x-1.0-alpha8
