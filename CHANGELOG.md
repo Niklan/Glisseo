@@ -2,6 +2,12 @@
 
 ## [Unreleased][unreleased]
 
+### Base theme
+
+### Starter theme
+
+## [1.0-alpha11]
+
 This release is targeting for simplify things.
 
 Instead of providing tools that may or may not be useful, they are no longer available at all. You decide for yourself what you need and evolve the theme for your needs.
