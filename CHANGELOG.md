@@ -6,9 +6,11 @@
 
 ### Starter theme
 
-- Improved heading weights.
-- Removed `breakpoint()` mixin, `$breakpoints` SASS variables. Added `postcss-custom-media` and definitions for it. This is polyfill for CSS 5 custom media variables.
-- Removed `hsl-color-variable()` mixin presented in alpha11. It's not so helpful.
+- Improve heading weights.
+- Remove `breakpoint()` mixin, `$breakpoints` SASS variables. Added `postcss-custom-media` and definitions for it. This is polyfill for CSS 5 custom media variables.
+- Remove `hsl-color-variable()` mixin presented in alpha11. It's not so helpful.
+- Remove CSS gradient mixins. Previously they're used for browser prefixes, but not this is done by PostCSS.
+- Remove helper mixins. The'are not helping anymore.
 
 ## [1.0-alpha11]
 

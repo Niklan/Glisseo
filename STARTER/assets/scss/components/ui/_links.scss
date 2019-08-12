@@ -1,8 +1,10 @@
 .links {}
 
 .links--inline {
-  @include list-unstyled;
   display: flex;
+  margin: unset;
+  padding: unset;
+  list-style: none;
 }
 
 .links--inline .links__item:not(:last-child) {

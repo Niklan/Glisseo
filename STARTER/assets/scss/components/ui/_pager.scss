@@ -5,13 +5,13 @@
 // https://www.drupal.org/project/drupal/issues/3067584
 // =============================================================================
 
-.pager {
-}
+.pager {}
 
 .pager__items {
-  @include list-unstyled;
   display: flex;
   justify-content: center;
+  margin: unset;
+  padding: unset;
   list-style: none outside none;
 }
 
@@ -20,7 +20,7 @@
 }
 
 // Show only next and prev for low-res displays.
-.pager__item:not(.pager__item--previous):not(.pager__item--next){
+.pager__item:not(.pager__item--previous):not(.pager__item--next) {
   display: none;
 
   @media (--md) {
@@ -40,13 +40,13 @@
 }
 
 .pager__item--active a {
-  background-color: var(--color-primary);
   color: var(--color-white);
+  background-color: var(--color-primary);
 
   // @todo improve it somehow.
   &:hover {
-    background-color: var(--color-primary);
     color: var(--color-white);
+    background-color: var(--color-primary);
   }
 }
 
