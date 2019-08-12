@@ -1,9 +1,10 @@
-let gulp = require('gulp');
-let sass = require('gulp-sass');
-let sassGlob = require('gulp-sass-glob');
-let sourcemaps = require('gulp-sourcemaps');
-let autoprefixer = require('autoprefixer');
-let postcss = require('gulp-postcss');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss');
+const postcssCustomMedia = require('postcss-custom-media');
 
 gulp.task('sass', function() {
   return gulp.src([
@@ -17,7 +18,8 @@ gulp.task('sass', function() {
     .pipe(sassGlob())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
-      autoprefixer()
+      postcssCustomMedia(),
+      autoprefixer(),
     ]))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('./assets/css/'));
