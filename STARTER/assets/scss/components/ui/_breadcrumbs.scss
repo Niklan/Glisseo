@@ -16,7 +16,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  @include breakpoint(sm) {
+  @media (--sm) {
     display: inline;
   }
 }
@@ -40,7 +40,7 @@
     color: var(--color-contrast-medium);
   }
 
-  @include breakpoint(sm) {
+  @media (--sm) {
     display: inline;
   }
 }

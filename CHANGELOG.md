@@ -7,7 +7,7 @@
 ### Starter theme
 
 - Improved heading weights.
-
+- Removed `breakpoint()` mixin, `$breakpoints` SASS variables. Added `postcss-custom-media` and definitions for it. This is polyfill for CSS 5 custom media variables.
 
 ## [1.0-alpha11]
 

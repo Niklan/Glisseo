@@ -23,7 +23,7 @@
 .pager__item:not(.pager__item--previous):not(.pager__item--next){
   display: none;
 
-  @include breakpoint(md) {
+  @media (--md) {
     display: block;
   }
 }
