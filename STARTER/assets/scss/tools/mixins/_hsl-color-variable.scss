@@ -1,7 +1,0 @@
-// @todo add comment if it helps.
-@mixin hsl-color-variable($variable-name, $hue, $saturation, $lightness) {
-  #{$variable-name}-h: #{$hue};
-  #{$variable-name}-s: #{$saturation};
-  #{$variable-name}-l: #{$lightness};
-  #{$variable-name}: hsl(var(#{$variable-name}-h), var(#{$variable-name}-s), var(#{$variable-name}-l));
-}

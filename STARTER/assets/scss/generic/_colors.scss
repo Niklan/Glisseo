@@ -1,13 +1,33 @@
 :root {
-  @include hsl-color-variable(--color-primary, 208, 100%, 43%);
-  @include hsl-color-variable(--color-secondary, 210, 100%, 12%);
+  // Primary color.
+  --color-primary-h: 208;
+  --color-primary-s: 100%;
+  --color-primary-l: 43%;
+  --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  // Secondary color.
+  --color-secondary-h: 210;
+  --color-secondary-s: 100%;
+  --color-secondary-l: 12%;
+  --color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
 
   --color-black: hsl(240, 7%, 12%);
   --color-white: hsl(0, 0%, 100%);
 
-  @include hsl-color-variable(--color-success, 120, 100%, 50%);
-  @include hsl-color-variable(--color-warning, 28, 100%, 55%);
-  @include hsl-color-variable(--color-error, 3, 100%, 61%);
+  // Success color.
+  --color-success-h: 120;
+  --color-success-s: 100%;
+  --color-success-l: 50%;
+  --color-success: hsl(var(--color-success-h), var(--color-success-s), var(--color-success-l));
+  // Warning color.
+  --color-warning-h: 28;
+  --color-warning-s: 100%;
+  --color-warning-l: 55%;
+  --color-warning: hsl(var(--color-warning-h), var(--color-warning-s), var(--color-warning-l));
+  // Error color.
+  --color-error-h: 3;
+  --color-error-s: 100%;
+  --color-error-l: 61%;
+  --color-error: hsl(var(--color-error-h), var(--color-error-s), var(--color-error-l));
 
   --color-contrast-lower: hsl(0, 0%, 95%);
   --color-contrast-low: hsl(240, 1%, 83%);
