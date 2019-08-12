@@ -6,6 +6,9 @@
 
 ### Starter theme
 
+- Improved heading weights.
+
+
 ## [1.0-alpha11]
 
 This release is targeting for simplify things.
