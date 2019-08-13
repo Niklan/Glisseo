@@ -1,3 +1,23 @@
+// =============================================================================
+// CSS media query breakpoints.
+//
+// Those breakpoints has syntax from CSS Media Query Level 5.
+// @see https://drafts.csswg.org/mediaqueries-5/#custom-mq
+//
+// They can be official way to set custom media breakpoints in CSS future. But
+// before, theme is use "postcss-custom-media" plugin, which is polyfill it to
+// current browsers.
+//
+// @code
+// .selector {
+//   color: red;
+//
+//   @media (--md) {
+//     color: blue;
+//   }
+// }
+// @endcode
+// =============================================================================
 @custom-media --sm (min-width: 540px);
 @custom-media --md (min-width: 720px);
 @custom-media --lg (min-width: 960px);

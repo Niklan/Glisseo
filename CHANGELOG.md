@@ -6,6 +6,12 @@
 
 ### Starter theme
 
+## [1.0-alpha12]
+
+### Base theme
+
+### Starter theme
+
 - Improve heading weights.
 - Remove `breakpoint()` mixin, `$breakpoints` SASS variables. Added `postcss-custom-media` and definitions for it. This is polyfill for CSS 5 custom media variables.
 - Remove `hsl-color-variable()` mixin presented in alpha11. It's not so helpful.
@@ -260,8 +266,9 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha11...HEAD
-[1.0-alpha10]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha10...8.x-1.0-alpha11
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha12...HEAD
+[1.0-alpha12]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha11...8.x-1.0-alpha12
+[1.0-alpha11]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha10...8.x-1.0-alpha11
 [1.0-alpha10]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha9...8.x-1.0-alpha10
 [1.0-alpha9]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha8...8.x-1.0-alpha9
 [1.0-alpha8]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha7...8.x-1.0-alpha8
