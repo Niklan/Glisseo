@@ -10,6 +10,8 @@
 
 ### Base theme
 
+No changes.
+
 ### Starter theme
 
 - Improve heading weights.
