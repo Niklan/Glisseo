@@ -6,6 +6,9 @@
 
 ### Starter theme
 
+- Remove `visually-hidden()` mixin.
+- Remove all recursive include for `.inc` files, because they can affect performance.
+
 ## [1.0-alpha12]
 
 ### Base theme
