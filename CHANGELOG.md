@@ -4,6 +4,8 @@
 
 ### Base theme
 
+- Fixed menu BEM base class pass for menu block.
+
 ### Starter theme
 
 ## [1.0-alpha13]

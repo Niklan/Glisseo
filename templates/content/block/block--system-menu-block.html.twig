@@ -19,6 +19,8 @@
 {% endif %}
 {% do title_attributes.setAttribute('id', heading_id) %}
 {% do content_attributes.setAttribute('bem_base', bem_block ~ '__') %}
+{# Pass attributes for menu. This is needed to correct generation class names. #}
+{% set content = content|merge({'#attributes': content_attributes}) %}
 
 <nav{{ attributes.addClass(classes) }}>
 
