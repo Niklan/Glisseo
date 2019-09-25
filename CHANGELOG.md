@@ -5,6 +5,7 @@
 ### Base theme
 
 - Fixed menu BEM base class pass for menu block.
+- Fields for entities now is BEM blocks, not elements. This provides a better flexibility and control over markup.
 
 ### Starter theme
 

@@ -5,6 +5,7 @@
  * Custom hooks and functions special for theme.
  */
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
 
@@ -125,6 +126,7 @@ function glisseo_theme_suggestions_user_alter(array &$suggestions, array $variab
 function glisseo_preprocess_field(&$variables) {
   $element = $variables['element'];
 
+  $variables['entity_type'] = $element['#entity_type'];
   $variables['bundle'] = $element['#bundle'];
   $variables['view_mode'] = $element['#view_mode'];
 
@@ -140,6 +142,8 @@ function glisseo_preprocess_field(&$variables) {
   if (strlen($variables['view_mode']) == 0) {
     $variables['view_mode'] = 'default';
   }
+
+  $variables['bem_block'] = Html::getClass($variables['field_name']);
 }
 
 /**

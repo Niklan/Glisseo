@@ -1,14 +1,30 @@
-{# ENTITY_TYPE-ENTITY_BUNDLE-VIEW_MODE-FIELD_NAME #}
-{% set bem_block = (entity_type ~ '-' ~ bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class ~ '__' ~ field_name|replace({(bundle ~ '__'): ''})|clean_class %}
-{% set bem_element_prefix = bem_element_prefix ?: bem_block ~ '-' %}
+{#
+/**
+ * @file
+ * Default theme implementation to present field.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for containing element.
+ * - classes: An array of classes for main wrapper.
+ * - bem_block: The BEM block class.
+ * - entity_type: The name of entity type, which field belongs to.
+ * - bundle: The entity bundle name for the field.
+ * - view_mode: The view mode used to render field.
+ *
+ * @see glisseo_preprocess_field()
+ */
+#}
 {% set classes = classes ?: [
   bem_block,
+  bem_block ~ '--' ~ ([entity_type, bundle, view_mode])|join('-')|clean_class|replace({'--': '-'}),
   label_display == 'inline' ? bem_block ~ '--label-inline',
-] %}
+]
+%}
 {% set title_classes = [
-  bem_element_prefix ~ 'label',
+  bem_block ~ '__label',
   label_hidden ? 'visually-hidden',
-] %}
+]
+%}
 <div{{ attributes.addClass(classes) }}>
   {% block field %}
 
@@ -23,13 +39,13 @@
     {% block items %}
       {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
       {% if (multiple and not label_hidden) or content_attributes_not_empty %}
-        <div{{ content_attributes.addClass(bem_element_prefix ~ 'items') }}>
+        <div{{ content_attributes.addClass(bem_block ~ '__items') }}>
       {% endif %}
 
       {% for item in items %}
         {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
         {% if multiple or item_attributes_not_empty %}
-          <div{{ item.attributes.addClass(bem_element_prefix ~ 'item') }}>
+          <div{{ item.attributes.addClass(bem_block ~ '__item') }}>
         {% endif -%}
 
         {% block item %}
