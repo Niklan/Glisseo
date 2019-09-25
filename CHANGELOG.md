@@ -6,8 +6,13 @@
 
 - Fixed menu BEM base class pass for menu block.
 - Fields for entities now is BEM blocks, not elements. This provides a better flexibility and control over markup.
+- Improved BEM block class naming for blocks using layout builder.
+- Improved layout onecol naming.
 
 ### Starter theme
+
+- Secondary color renamed to accent.
+- Added _grid.scss for grid variables and reworked example for `.main-layout`.
 
 ## [1.0-alpha13]
 

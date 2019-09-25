@@ -7,8 +7,7 @@
   <div{{ attributes.addClass(classes) }}>
     {% set region_classes = [
       'region',
-      'region--' ~ region|clean_class,
-      bem_block ~ '__' ~ region|clean_class,
+      bem_block ~ '__content'|clean_class,
     ] %}
     <div {{ region_attributes.content.addClass(region_classes) }}>
       {{ content.content }}

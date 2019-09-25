@@ -4,11 +4,15 @@
   --color-primary-s: 100%;
   --color-primary-l: 43%;
   --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
-  // Secondary color.
-  --color-secondary-h: 210;
-  --color-secondary-s: 100%;
-  --color-secondary-l: 12%;
-  --color-secondary: hsl(var(--color-secondary-h), var(--color-secondary-s), var(--color-secondary-l));
+  // You can mix new colors, e.g.:
+  // --color-primary-dark: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) - 10%));
+  // --color-primary-darken: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) - 20%));
+
+  // Accent color.
+  --color-accent-h: 210;
+  --color-accent-s: 100%;
+  --color-accent-l: 12%;
+  --color-accent: hsl(var(--color-accent-h), var(--color-accent-s), var(--color-accent-l));
 
   --color-black: hsl(240, 7%, 12%);
   --color-white: hsl(0, 0%, 100%);

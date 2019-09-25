@@ -1,7 +1,7 @@
-// This class added by includes/structure.inc preprocess page hook. Don't forget
-// to rename STARTER to your theme name to make it works. Or just remove.
 .main-layout {
   display: grid;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: var(--grid-container-max-width);
+  margin: var(--spacing-md) auto;
+  grid-gap: var(--grid-gap);
 }

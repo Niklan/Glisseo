@@ -23,16 +23,21 @@ function glisseo_preprocess_page(array &$variables) {
  */
 function glisseo_preprocess_block(array &$variables) {
   $elements = $variables['elements'];
-  $variables['block_id'] = isset($elements['#id']) ? $elements['#id'] : $elements['#plugin_id'];
-  if (!empty($elements['#id'])) {
+
+  // Block ID used for generate BEM class "block--[block_id]".
+  // If this block used in layout, we handle it a bit different for more
+  // clean classes.
+  if (in_array($elements['#base_plugin_id'], ['extra_field_block', 'field_block'])) {
+    $variables['block_id'] = str_replace(':', '-', $elements['#derivative_plugin_id']);
+  }
+  elseif (!empty($elements['#id'])) {
     $variables['block_id'] = $elements['#id'];
   }
   elseif (!empty($elements['#derivative_plugin_id'])) {
-    // Some block can be called programmatically and they are not have id.
+    // Programatically called plugins will not have id.
     $variables['block_id'] = $elements['#derivative_plugin_id'];
   }
   else {
-    // Even if derivative plugin id is not fount. Use plugin id.
     $variables['block_id'] = $elements['#base_plugin_id'];
   }
 
