@@ -1,6 +1,7 @@
-{% set bem_block = 'region-' ~ region|clean_class %}
+{% set bem_block = 'region'|clean_class %}
 {% set classes = [
   bem_block,
+  bem_block ~ '--' ~ region|clean_class
 ] %}
 {% if content %}
   {% block region %}

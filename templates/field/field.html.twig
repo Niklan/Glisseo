@@ -14,8 +14,10 @@
  * @see glisseo_preprocess_field()
  */
 #}
+{% set bem_block = 'field' %}
 {% set classes = classes ?: [
   bem_block,
+  bem_block ~ '--' ~ field_name|clean_class,
   bem_block ~ '--' ~ ([entity_type, bundle, view_mode])|join('-')|clean_class|replace({'--': '-'}),
   label_display == 'inline' ? bem_block ~ '--label-inline',
 ]

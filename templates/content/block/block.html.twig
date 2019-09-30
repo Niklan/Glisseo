@@ -7,10 +7,12 @@
  */
 #}
 {% do attributes.removeAttribute('id') %}
-{% set bem_block = bem_block ?: 'block-' ~ block_id|split('__', 2)|first|clean_class %}
+{% set bem_block = 'block' %}
 {% set classes = [
   bem_block,
+  plugin_id ? bem_block ~ '--' ~ plugin_id|replace({':': '-'})|clean_class,
 ] %}
+{# @todo find out if it neede when bem namin will changed to  more common. #}
 {% set bem_modifiers = bem_modifiers ?: block_id|split('__')|slice(1) %}
 {% for modifier in bem_modifiers %}
   {% set classes = classes|merge([bem_block ~ '--' ~ modifier|clean_class]) %}

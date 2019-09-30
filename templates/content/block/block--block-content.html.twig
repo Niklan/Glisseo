@@ -1,5 +1,0 @@
-{% extends "block.html.twig" %}
-
-{# Set correct sub_bem_block. #}
-{% set sub_bem_block = elements['#base_plugin_id']|clean_class ~ '-' ~ block_content_bundle ~ '-' ~ configuration.view_mode|clean_class %}
-{% do content_attributes.addClass(sub_bem_block) %}

@@ -1,6 +1,0 @@
-{% extends 'block.html.twig' %}
-
-{# Override default bem_block declaration. #}
-{% set bem_block = (base_plugin_id ~ '-' ~ derivative_plugin_id)|clean_class %}
-{# Disable bem_modifiers by setting it to true.#}
-{% set bem_modifiers = true %}

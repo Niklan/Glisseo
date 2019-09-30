@@ -1,6 +1,7 @@
-{% set bem_block = bem_block ?: ('node-' ~ node.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class %}
+{% set bem_block = 'node' %}
 {% set classes = [
   bem_block,
+  bem_block ~ '--' ~ (node.bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class,
   node.isPromoted() ? bem_block ~ '--promoted',
   node.isSticky() ? bem_block ~ '--sticky',
   not node.isPublished() ? bem_block ~ '--unpublished',
@@ -12,13 +13,13 @@
   {% block node %}
 
     {% if display_submitted %}
-      <header class="{{ bem_block }}__head">
+      <header class="{{ bem_block }}__header">
         {% block header %}
 
           {% if not page %}
             <h2{{ title_attributes.addClass(bem_block ~ '__title') }}>
               {% block title %}
-                <a class="{{ bem_block }}__title-link" href="{{ url }}" rel="bookmark">{{ label }}</a>
+                <a class="{{ bem_block }}__link" href="{{ url }}" rel="bookmark">{{ label }}</a>
               {% endblock %}
             </h2>
           {% endif %}

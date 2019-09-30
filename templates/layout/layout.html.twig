@@ -1,18 +1,17 @@
-{% set bem_block = 'layout-' ~ layout.id|clean_class %}
+{% set bem_block = 'layout' %}
 {% set classes = [
-  'layout',
   bem_block,
+  bem_block ~ '--' ~ layout.id|clean_class,
 ] %}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
     {% for region in layout.getRegionNames %}
       {% if content[region] %}
         {% set region_classes = [
-          'region',
-          'region--' ~ region|clean_class,
-          bem_block ~ '__' ~ region|clean_class,
+          bem_block ~ '__region',
+          bem_block ~ '__region--' ~ region|clean_class,
         ] %}
-        
+
         <div {{ region_attributes[region].addClass(region_classes) }}>
           {{ content[region] }}
         </div>
