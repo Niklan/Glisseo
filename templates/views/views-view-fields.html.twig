@@ -1,4 +1,4 @@
-{% set bem_block = 'view-' ~ view.storage.id()|clean_class ~ '-' ~ view.current_display|clean_class %}
+{% set bem_block = ('view-' ~ view.storage.id()|clean_class ~ '-' ~ view.current_display)|clean_class %}
 {% set bem_element = bem_block ~ '__item' %}
 {% for field in fields -%}
   {{ field.separator }}

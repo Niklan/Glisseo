@@ -1,4 +1,4 @@
-{% set bem_block = 'paragraph-' ~ paragraph.bundle ~ '-' ~ view_mode|clean_class|replace({'--': '-'}) %}
+{% set bem_block = ('paragraph-' ~ paragraph.bundle() ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class|replace({'--': '-'}) %}
 {%
   set classes = [
     bem_block,

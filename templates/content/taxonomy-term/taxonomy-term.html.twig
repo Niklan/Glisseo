@@ -1,4 +1,4 @@
-{% set bem_block = 'taxonomy-term-' ~ term.bundle ~ '-' ~ view_mode|clean_class|replace({'--': '-'}) %}
+{% set bem_block = ('taxonomy-term-' ~ term.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
 {%
   set classes = [
     bem_block,

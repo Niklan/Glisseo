@@ -1,4 +1,4 @@
-{% set bem_block = entity_type ~ '-' ~ field_name|clean_class %}
+{% set bem_block = (entity_type ~ '-' ~ field_name)|clean_class %}
 {%
   set classes = classes ?: [
     bem_block,

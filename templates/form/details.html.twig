@@ -1,4 +1,4 @@
-{% set bem_block = form_id ? 'form-' ~ form_id|clean_class ~ '__' ~ name|clean_class : 'details' %}
+{% set bem_block = form_id ? ('form-' ~ form_id|clean_class ~ '__' ~ name)|clean_class : 'details' %}
 {% set classes = [
   bem_block,
 ] %}

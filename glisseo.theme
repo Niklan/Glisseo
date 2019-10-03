@@ -5,9 +5,33 @@
  * Custom hooks and functions special for theme.
  */
 
-use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\FieldableEntityInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess().
+ */
+function glisseo_preprocess(&$variables, $hook) {
+  // BEM Block is set in templates, but their logic will respect this value if
+  // it set. This means, if you want to change BEM Block of template, you don't
+  // need to create tample, just preprocess it and set the value in this
+  // variable.
+  $variables['bem_block'] = NULL;
+  // Values from this array will be set as BEM Modifiers to bem_block:
+  // [bem_block]--[bem_modifier_item]. By default, values from this variable
+  // will be merged with modifiers from template.
+  $variables['bem_modifiers'] = [];
+  // We also allows to pass modifiers with render array itself where it's
+  // possible.
+  foreach (['element', 'elements', 'form'] as $render_element_key) {
+    if (isset($variables[$render_element_key]) && isset($variables[$render_element_key]['#bem_modifiers']) && !empty($variables[$render_element_key]['#bem_modifiers'])) {
+      $variables['bem_modifiers'] = $variables[$render_element_key]['#bem_modifiers'];
+      unset($variables[$render_element_key]['#bem_modifiers']);
+    }
+  }
+}
 
 /**
  * Implements hook_preprocess_HOOK() for page.html.twig.
@@ -130,6 +154,9 @@ function glisseo_theme_suggestions_user_alter(array &$suggestions, array $variab
  */
 function glisseo_preprocess_field(&$variables) {
   $element = $variables['element'];
+  /** @var \Drupal\Core\Entity\EntityInterface $entity */
+  $entity = $element['#object'];
+  $field_name = $element['#field_name'];
 
   $variables['entity_type'] = $element['#entity_type'];
   $variables['bundle'] = $element['#bundle'];
@@ -148,7 +175,14 @@ function glisseo_preprocess_field(&$variables) {
     $variables['view_mode'] = 'default';
   }
 
-  $variables['bem_block'] = Html::getClass($variables['field_name']);
+  $variables['is_base_field'] = FALSE;
+  // @todo Maybe this is not needed. If entity is not fieldable there is no
+  // way to be use this theme hook? But can handle some edge cases.
+  if ($entity instanceof FieldableEntityInterface) {
+    if ($entity->getFieldDefinition($field_name) instanceof BaseFieldDefinition) {
+      $variables['is_base_field'] = TRUE;
+    }
+  }
 }
 
 /**

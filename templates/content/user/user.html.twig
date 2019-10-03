@@ -1,4 +1,4 @@
-{% set bem_block = 'user-' ~ view_mode|clean_class|replace({'--': '-'}) %}
+{% set bem_block = ('user-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
 {%
   set bem_modifiers = bem_modifiers|merge([
     user.isBlocked() ? 'blocked',

@@ -14,7 +14,7 @@
  * @see glisseo_preprocess_field()
  */
 #}
-{% set bem_block = bem_block ?: entity_type ~ '-' ~ bundle ~ '-' ~ (is_base_field ? '-base-') ~ field_name|clean_class %}
+{% set bem_block = (bem_block ?: entity_type ~ '-' ~ bundle ~ '-' ~ (is_base_field ? '-base-') ~ field_name)|clean_class %}
 {%
   set bem_modifiers = bem_modifiers|merge([
     view_mode != 'default' ? view_mode|clean_class|replace({'--': ''}),

@@ -1,4 +1,4 @@
-{% set bem_block = 'comment-' ~ comment.bundle ~ '-' ~ view_mode|clean_class|replace({'--': '-'}) %}
+{% set bem_block = ('comment-' ~ comment.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
 {%
   set bem_modifiers = bem_modifiers|merge([
     view_mode != 'default' ? 'vm-' ~ view_mode|clean_class|replace({'--': '-'}),

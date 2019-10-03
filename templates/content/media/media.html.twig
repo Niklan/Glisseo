@@ -1,8 +1,8 @@
-{% set bem_block = 'media-' ~ media.bundle ~ '-' ~ view_mode|clean_class|replace({'--': '-'}) %}
+{% set bem_block = ('media-' ~ media.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
 {%
   set classes = [
-    bem_block,
-  ]
+  bem_block,
+]
 %}
 {% for bem_modifier in bem_modifiers %}
   {% if bem_modifier|length %}
