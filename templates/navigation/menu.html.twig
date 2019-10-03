@@ -5,18 +5,13 @@
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
 
-{% set modifiers = [] %}
+{%
+  set bem_modifiers = bem_modifiers|merge([
+    menu_name,
+  ])
+%}
 
-{% if menu_name %}
-  {% set modifiers = modifiers|merge([menu_name]) %}
-{% endif %}
-
-{% if attributes.bem_modifier %}
-  {% set modifiers = modifiers|merge([attributes.bem_modifier]) %}
-  {% do attributes.removeAttribute('bem_modifier') %}
-{% endif %}
-
-{{ menus.menu_links(items, attributes, 0, modifiers) }}
+{{ menus.menu_links(items, attributes, 0, bem_modifiers) }}
 
 {% macro menu_links(items, attributes, menu_level, bem_modifiers) %}
   {% import _self as menus %}
@@ -26,8 +21,10 @@
       {% set classes = [
         bem_block,
       ] %}
-      {% for modifier in bem_modifiers %}
-        {% set classes = classes|merge([bem_block ~ '--' ~ modifier]) %}
+      {% for bem_modifier in bem_modifiers %}
+        {% if bem_modifier|length %}
+          {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
+        {% endif %}
       {% endfor %}
       <ul{{ attributes.addClass(classes) }}>
         {% for item in items %}

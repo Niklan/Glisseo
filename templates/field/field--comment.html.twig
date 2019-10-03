@@ -1,9 +1,12 @@
-{# ENTITY_TYPE-ENTITY_BUNDLE-VIEW_MODE-FIELD_NAME #}
-{% set bem_block = (entity_type ~ '-' ~ bundle ~ (view_mode != 'default' ? '-' ~ view_mode))|clean_class ~ '__' ~ field_name|replace({(bundle ~ '__'): ''})|clean_class %}
-{% set bem_element_prefix = bem_element_prefix ?: bem_block ~ '-' %}
-{% set classes = classes ?: [
-  bem_block,
-] %}
+{% set bem_block = entity_type ~ '-' ~ field_name|clean_class %}
+{%
+  set classes = classes ?: [
+    bem_block,
+    bem_block ~ '--b-' ~ bundle|clean_class,
+    view_mode != 'default' ? bem_block ~ '--vm-' ~ view_mode|clean_class|replace({'--': '-'}),
+    label_display == 'inline' ? bem_block ~ '--label-inline',
+  ]
+%}
 <a id="comments"></a>
 <section{{ attributes.addClass(classes) }}>
   {% if comments and not label_hidden %}

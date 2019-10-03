@@ -1,3 +1,8 @@
-<form{{ attributes.addClass('form-' ~ form_id|clean_class) }}>
+{% set bem_block = 'form' %}
+{% set classes = [
+  bem_block,
+  bem_block ~ '--' ~ form_id|clean_class,
+] %}
+<form{{ attributes.addClass(classes) }}>
   {{ children }}
 </form>

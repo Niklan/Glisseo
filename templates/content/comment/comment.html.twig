@@ -1,8 +1,19 @@
-{% set bem_block = bem_block ?: ('comment-' ~ comment.bundle ~ (elements['#view_mode'] != 'default' ? '-' ~ elements['#view_mode']))|clean_class %}
-{% set classes = [
-  bem_block,
-  bem_block ~ '--' ~ status,
-] %}
+{% set bem_block = 'comment-' ~ comment.bundle ~ '-' ~ view_mode|clean_class|replace({'--': '-'}) %}
+{%
+  set bem_modifiers = bem_modifiers|merge([
+    view_mode != 'default' ? 'vm-' ~ view_mode|clean_class|replace({'--': '-'}),
+  ])
+%}
+{%
+  set classes = [
+    bem_block,
+  ]
+%}
+{% for bem_modifier in bem_modifiers %}
+  {% if bem_modifier|length %}
+    {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
+  {% endif %}
+{% endfor %}
 <article{{ attributes.addClass('js-comment', classes) }}>
   {% block comment %}
     {#

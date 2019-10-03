@@ -37,9 +37,6 @@
   bem_block,
   plugin_id ? bem_block ~ '--' ~ plugin_id|replace({':': '-'})|clean_class,
 ] %}
-{% do content_attributes.setAttribute('bem_modifier', 'block-' ~ plugin_id|replace({':': '-'})|clean_class) %}
-{# Pass attributes for menu. This is needed to correct generation class names. #}
-{% set content = content|merge({'#attributes': content_attributes}) %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% set title_attributes = title_attributes.addClass(bem_block ~ '__title') %}

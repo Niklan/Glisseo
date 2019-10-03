@@ -7,15 +7,21 @@
  */
 #}
 {% do attributes.removeAttribute('id') %}
-{% set bem_block = 'block' %}
-{% set classes = [
-  bem_block,
-  plugin_id ? bem_block ~ '--' ~ plugin_id|replace({':': '-'})|clean_class,
-] %}
-{# @todo find out if it neede when bem namin will changed to  more common. #}
-{% set bem_modifiers = bem_modifiers ?: block_id|split('__')|slice(1) %}
-{% for modifier in bem_modifiers %}
-  {% set classes = classes|merge([bem_block ~ '--' ~ modifier|clean_class]) %}
+{% set bem_block = 'block'|clean_class %}
+{%
+  set bem_modifiers = bem_modifiers|merge([
+    plugin_id ? plugin_id|replace({':': '-'})|clean_class,
+  ])
+%}
+{%
+  set classes = [
+    bem_block,
+  ]
+%}
+{% for bem_modifier in bem_modifiers %}
+  {% if bem_modifier|length %}
+    {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
+  {% endif %}
 {% endfor %}
 
 <div{{ attributes.addClass(classes) }}>
