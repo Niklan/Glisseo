@@ -1,9 +1,4 @@
-{% set bem_block = ('commerce-product-' ~ commerce_product.bundle())|clean_class %}
-{%
-  set bem_modifiers = bem_modifiers|merge([
-    view_mode != 'default' ? 'vm-' ~ view_mode|clean_class|replace({'--': '-'}),
-  ])
-%}
+{% set bem_block = ('commerce-product-' ~ product_entity.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
 {%
   set classes = [
     bem_block,

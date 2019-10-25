@@ -18,11 +18,11 @@ function glisseo_preprocess(&$variables, $hook) {
   // it set. This means, if you want to change BEM Block of template, you don't
   // need to create tample, just preprocess it and set the value in this
   // variable.
-  $variables['bem_block'] = NULL;
+  $variables['bem_block'] = isset($variables['bem_block']) ? $variables['bem_block'] : NULL;
   // Values from this array will be set as BEM Modifiers to bem_block:
   // [bem_block]--[bem_modifier_item]. By default, values from this variable
   // will be merged with modifiers from template.
-  $variables['bem_modifiers'] = [];
+  $variables['bem_modifiers'] = isset($variables['bem_modifiers']) ? $variables['bem_modifiers'] : [];
   // We also allows to pass modifiers with render array itself where it's
   // possible.
   foreach (['element', 'elements', 'form'] as $render_element_key) {
@@ -285,7 +285,8 @@ function _glisseo_process_form_element(array &$element, FormStateInterface $form
  */
 function glisseo_preprocess_form(array &$variables) {
   $element = &$variables['element'];
-  $variables['form_id'] = $element['#form_id'];
+  // This element contains form_id and base_form_id.
+  $variables['bem_modifiers'] = $element['#theme'];
 }
 
 /**
@@ -378,6 +379,18 @@ function glisseo_preprocess_links(array &$variables) {
  * Implements hook_preprocess_HOOK() for user.html.twig.
  */
 function glisseo_preprocess_user(array &$variables) {
+  if (isset($variables['elements']['#view_mode'])) {
+    $variables['view_mode'] = $variables['elements']['#view_mode'];
+  }
+  else {
+    $variables['view_mode'] = 'default';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'commerce-product.html.twig'.
+ */
+function glisseo_preprocess_commerce_product(array &$variables) {
   if (isset($variables['elements']['#view_mode'])) {
     $variables['view_mode'] = $variables['elements']['#view_mode'];
   }

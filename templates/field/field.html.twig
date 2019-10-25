@@ -14,7 +14,7 @@
  * @see glisseo_preprocess_field()
  */
 #}
-{% set bem_block = (bem_block ?: entity_type ~ '-' ~ bundle ~ '-' ~ (is_base_field ? '-base-') ~ field_name)|clean_class %}
+{% set bem_block = (bem_block ?: entity_type ~ '-' ~ bundle ~ '-' ~ (is_base_field ? 'base-') ~ field_name)|clean_class %}
 {%
   set bem_modifiers = bem_modifiers|merge([
     view_mode != 'default' ? view_mode|clean_class|replace({'--': ''}),
@@ -50,8 +50,10 @@
 
     {% block items %}
       {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
-      {% if (multiple and not label_hidden) or content_attributes_not_empty %}
+      {% if (multiple) %}
         <div{{ content_attributes.addClass(bem_block ~ '__items') }}>
+      {% else %}
+        <div{{ content_attributes.addClass(bem_block ~ '__value') }}>
       {% endif %}
 
       {% for item in items %}
@@ -69,9 +71,8 @@
         {% endif -%}
       {% endfor %}
 
-      {% if (multiple and not label_hidden) or content_attributes_not_empty %}
+      {# for __items and __value #}
         </div>
-      {% endif %}
     {% endblock %}
 
   {% endblock %}

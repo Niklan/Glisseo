@@ -1,7 +1,7 @@
 {% set bem_block = 'region'|clean_class %}
 {%
   set bem_modifiers = bem_modifiers|merge([
-    region,
+    region|clean_class,
   ])
 %}
 {%
