@@ -27,10 +27,16 @@
   color: var(--color-contrast-medium);
 }
 
+.form-item__input {
+  vertical-align: middle;
+}
+
 .form-item__label {
   font-size: var(--text-sm);
   display: inline-block;
   margin-bottom: var(--spacing-unit);
+  cursor: pointer;
+  vertical-align: middle;
 }
 
 .form-item__label--required {
@@ -44,9 +50,11 @@
 
 .form-item__label.option {
   margin-bottom: 0;
+  margin-left: var(--spacing-xs);
 }
 
-.form-item--radio {
+.form-type-checkbox,
+.form-type-radio {
   margin-bottom: 0;
 }
 
@@ -60,7 +68,8 @@
 // =============================================================================
 // The .form-wrapper styles.
 // =============================================================================
-.form-wrapper { }
+.form-wrapper {
+}
 
 .form-wrapper__summary {
   padding: var(--spacing-unit);
@@ -82,15 +91,15 @@
   width: 100%;
   max-width: 100%;
   padding: var(--form-control-padding-y) var(--form-control-padding-x);
+  color: var(--form-control-color);
   border: 2px solid var(--color-contrast-low);
   border-radius: var(--form-control-border-radius);
   background-color: var(--form-control-background);
-  color: var(--form-control-color);
 
   &:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px var(--form-control-focus-shadow-color);
     outline: none;
+    box-shadow: 0 0 0 3px var(--form-control-focus-shadow-color);
   }
 
   &:disabled {
@@ -99,8 +108,8 @@
 }
 
 .form-control.error {
-  --form-control-focus-shadow-color: hsla(var(--color-error-h), var(--color-error-s), var(--color-error-l), 0.2);
   border-color: var(--color-error);
+  --form-control-focus-shadow-color: hsla(var(--color-error-h), var(--color-error-s), var(--color-error-l), 0.2);
 
   &:focus {
     border-color: var(--color-error);
