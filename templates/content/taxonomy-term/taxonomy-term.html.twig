@@ -1,15 +1,4 @@
-{% set bem_block = ('taxonomy-term-' ~ term.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% for bem_modifier in bem_modifiers %}
-  {% if bem_modifier|length %}
-    {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
-  {% endif %}
-{% endfor %}
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(bem_classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 

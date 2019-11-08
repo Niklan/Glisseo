@@ -1,20 +1,9 @@
-{% set bem_block = ('user-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
 {%
-  set bem_modifiers = bem_modifiers|merge([
-    user.isBlocked() ? 'blocked',
+  set bem_classes = bem_classes|merge([
+    user.isBlocked() ? bem_block ~ '--blocked',
   ])
 %}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% for bem_modifier in bem_modifiers %}
-  {% if bem_modifier|length %}
-    {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
-  {% endif %}
-{% endfor %}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(bem_classes) }}>
   {% block user %}
     {% if content %}
       {% block content %}

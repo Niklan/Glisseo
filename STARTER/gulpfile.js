@@ -16,13 +16,13 @@ gulp.task('sass', function() {
   ])
     .pipe(sourcemaps.init())
     .pipe(sassGlob())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({includePaths: ['node_modules']}).on('error', sass.logError))
     .pipe(postcss([
       postcssCustomMedia(),
       autoprefixer(),
     ]))
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./assets/css/'));
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest('assets/css/'));
 });
 
 gulp.task('sass:watch', function() {

@@ -1,6 +1,6 @@
 STARTER.xs:
   label: XS
-  mediaQuery: ''
+  mediaQuery: '(min-width: 0px)'
   weight: 0
   multipliers:
   - 1x
@@ -24,7 +24,7 @@ STARTER.lg:
   - 1x
 STARTER.xl:
   label: XL
-  mediaQuery: '(min-width: 1200px)'
+  mediaQuery: '(min-width: 1140px)'
   weight: 0
   multipliers:
   - 1x

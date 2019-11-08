@@ -1,7 +1,9 @@
 {% set bem_block = 'app' %}
 <div class="{{ bem_block }}">
-  {{ page.header }}
-  {{ page.navigation }}
+  <div class="{{ bem_block }}__header">
+    {{ page.header }}
+    {{ page.navigation }}
+  </div>
 
   <main{{ main_layout_attributes.addClass(bem_block ~ '__content') }}>
     {{ page.sidebar_first }}
@@ -9,5 +11,7 @@
     {{ page.sidebar_second }}
   </main>
 
-  {{ page.footer }}
+  <div class="{{ bem_block }}__footer">
+    {{ page.footer }}
+  </div>
 </div>

@@ -5,6 +5,8 @@
  * Custom hooks and functions special for theme.
  */
 
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
@@ -14,15 +16,15 @@ use Drupal\Core\Template\Attribute;
  * Implements hook_preprocess().
  */
 function glisseo_preprocess(&$variables, $hook) {
-  // BEM Block is set in templates, but their logic will respect this value if
-  // it set. This means, if you want to change BEM Block of template, you don't
-  // need to create tample, just preprocess it and set the value in this
-  // variable.
-  $variables['bem_block'] = isset($variables['bem_block']) ? $variables['bem_block'] : NULL;
+  // If BEM block is not set, try to generate default. For more information
+  // @see _glisseo_get_bem_block_default().
+  $variables['bem_block'] = isset($variables['bem_block']) ? $variables['bem_block'] : _glisseo_get_bem_block_default($variables);
   // Values from this array will be set as BEM Modifiers to bem_block:
   // [bem_block]--[bem_modifier_item]. By default, values from this variable
   // will be merged with modifiers from template.
   $variables['bem_modifiers'] = isset($variables['bem_modifiers']) ? $variables['bem_modifiers'] : [];
+  // Create variable for storing processed classes.
+  $variables['bem_classes'] = isset($variables['bem_classes']) ? $variables['bem_classes'] : [];
   // We also allows to pass modifiers with render array itself where it's
   // possible.
   foreach (['element', 'elements', 'form'] as $render_element_key) {
@@ -47,6 +49,7 @@ function glisseo_preprocess_page(array &$variables) {
  */
 function glisseo_preprocess_block(array &$variables) {
   $elements = $variables['elements'];
+  $variables['bem_block'] = 'block';
 
   // Block ID used for generate BEM class "block--[block_id]".
   // If this block used in layout, we handle it a bit different for more
@@ -64,6 +67,7 @@ function glisseo_preprocess_block(array &$variables) {
   else {
     $variables['block_id'] = $elements['#base_plugin_id'];
   }
+  $variables['bem_modifiers'][] = Html::getClass($variables['block_id']);
 
   if ($variables['base_plugin_id'] == 'block_content') {
     /** @var \Drupal\block_content\Entity\BlockContent $block_content */
@@ -175,13 +179,15 @@ function glisseo_preprocess_field(&$variables) {
     $variables['view_mode'] = 'default';
   }
 
-  $variables['is_base_field'] = FALSE;
-  // @todo Maybe this is not needed. If entity is not fieldable there is no
-  // way to be use this theme hook? But can handle some edge cases.
-  if ($entity instanceof FieldableEntityInterface) {
-    if ($entity->getFieldDefinition($field_name) instanceof BaseFieldDefinition) {
-      $variables['is_base_field'] = TRUE;
-    }
+  $bem_block_pieces = [
+    // Without view mode. We add it as modifier to let field has same styles
+    // across view modes.
+    _glisseo_get_bem_block_for_entity($entity),
+    $field_name,
+  ];
+  $variables['bem_block'] = Html::getClass(implode('-', $bem_block_pieces));
+  if ($variables['view_mode'] != 'default') {
+    $variables['bem_modifiers'][] = $variables['view_mode'];
   }
 }
 
@@ -388,13 +394,109 @@ function glisseo_preprocess_user(array &$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for 'commerce-product.html.twig'.
+ * Implements hook_theme_registry_alter().
  */
-function glisseo_preprocess_commerce_product(array &$variables) {
-  if (isset($variables['elements']['#view_mode'])) {
-    $variables['view_mode'] = $variables['elements']['#view_mode'];
+function glisseo_theme_registry_alter(array &$theme_registry){
+  // Add additional final preprocess callback which will do some stuff for BEM.
+  foreach ($theme_registry as &$hook) {
+    $hook['preprocess functions'][] = '_glisseo_bem_preprocess';
   }
-  else {
-    $variables['view_mode'] = 'default';
+}
+
+/**
+ * The final preprocess for all theme hooks.
+ *
+ * This function is actually implementation of hook_preprocess_HOOK(), but
+ * added manually as the last preprocessor.
+ */
+function _glisseo_bem_preprocess(array &$variables) {
+  // Skip if our variables is not presented.
+  if (!isset($variables['bem_block']) || !isset($variables['bem_modifiers'])) {
+    return;
   }
+
+  $bem_block = $variables['bem_block'];
+  $bem_modifiers = $variables['bem_modifiers'];
+  $bem_classes = &$variables['bem_classes'];
+  // Add block class.
+  if (!in_array($bem_block, $bem_classes)) {
+    $bem_classes[] = $bem_block;
+  }
+  foreach ($bem_modifiers as $bem_modifier) {
+    $bem_class = "{$bem_block}--{$bem_modifier}";
+    // If it set before, we don't need to duplicate it.
+    if (!in_array($bem_class, $bem_classes)) {
+      $bem_classes[] = $bem_class;
+    }
+  }
+}
+
+/**
+ * Gets BEM Block for provided antity and view mode.
+ *
+ * The Block name will be:
+ * <bem-block> ::= <entity-type-id>
+ *               | <entity-type-id> "-" <entity-bundle>
+ *               | <entity-type-id> "-" <view-mode>
+ *               | <entity-type-id> "-" <entity-bundle> "-" <view-mode>
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   The entity.
+ * @param string|NULL $view_mode
+ *   The view mode, is it must be included in Block name.
+ *
+ * @return string
+ *   The ready to use bem block class name.
+ */
+function _glisseo_get_bem_block_for_entity(EntityInterface $entity, string $view_mode = NULL) {
+  $block_pieces = [
+    $entity->getEntityTypeId(),
+  ];
+
+  // If entity is not support types, such as 'user' entity, we don't need to
+  // include 'bundle' into block name, it will be the same as entity name and
+  // just duplicate it.
+  if ($entity->getEntityType()->getBundleEntityType()) {
+    $block_pieces[] = $entity->bundle();
+  }
+
+  // If view mode is 'default', we don't add it to BEM Block.
+  if ($view_mode && $view_mode != 'default') {
+    // Additionally process view mode name and remove leading underscore from
+    // it, because it may presents from modules such as Layout Builder
+    // (_custom).
+    $block_pieces[] = ltrim($view_mode, '_');
+  }
+
+  return Html::getClass(implode('-', $block_pieces));
+}
+
+/**
+ * Generates default BEM Block for all theme hooks.
+ *
+ * @param array $variables
+ *   The variables.
+ *
+ * @return string
+ *   The generated block.
+ */
+function _glisseo_get_bem_block_default(array $variables) {
+  $original_hook = $variables['theme_hook_original'];
+  $block_pieces = [];
+
+  if (isset($variables['elements'])) {
+    $elements = $variables['elements'];
+
+    // If set view_mode, this is probably an entity.
+    if (isset($elements['#view_mode'])) {
+      if (isset($elements["#{$original_hook}"]) && $elements["#{$original_hook}"] instanceof EntityInterface) {
+        /** @var \Drupal\Core\Entity\EntityInterface $entity */
+        $entity = $elements["#{$original_hook}"];
+        // If this is an entity, we return result.
+        return _glisseo_get_bem_block_for_entity($entity, $elements['#view_mode']);
+      }
+    }
+  }
+
+  return Html::getClass(implode('-', $block_pieces));
 }

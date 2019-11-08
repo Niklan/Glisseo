@@ -1,28 +1,17 @@
-{% set bem_block = ('node-' ~ node.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
 {%
-  set bem_modifiers = bem_modifiers|merge([
-    node.isPromoted() ? 'promoted',
-    node.isSticky() ? 'sticky',
-    not node.isPublished() ? 'unpublished',
+  set bem_classes = bem_classes|merge([
+    node.isPromoted() ? bem_block ~ '--promoted',
+    node.isSticky() ? bem_block ~ '--sticky',
+    not node.isPublished() ? bem_block ~ '--unpublished',
   ])
 %}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% for bem_modifier in bem_modifiers %}
-  {% if bem_modifier|length %}
-    {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
-  {% endif %}
-{% endfor %}
 {%
   set title_classes = [
     bem_block ~ '__label',
     label_hidden ? 'visually-hidden',
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(bem_classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 

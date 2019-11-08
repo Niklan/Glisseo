@@ -1,11 +1,13 @@
-{% set bem_block = (entity_type ~ '-' ~ field_name)|clean_class %}
 {%
-  set classes = classes ?: [
-    bem_block,
-    bem_block ~ '--b-' ~ bundle|clean_class,
-    view_mode != 'default' ? bem_block ~ '--vm-' ~ view_mode|clean_class|replace({'--': '-'}),
+  set bem_classes = bem_classes|merge([
     label_display == 'inline' ? bem_block ~ '--label-inline',
-  ]
+  ])
+%}
+{%
+  set title_classes = [
+  bem_block ~ '__label',
+  label_hidden ? 'visually-hidden',
+]
 %}
 <a id="comments"></a>
 <section{{ attributes.addClass(classes) }}>

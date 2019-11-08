@@ -1,20 +1,4 @@
-{% set bem_block = ('comment-' ~ comment.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
-{%
-  set bem_modifiers = bem_modifiers|merge([
-    view_mode != 'default' ? 'vm-' ~ view_mode|clean_class|replace({'--': '-'}),
-  ])
-%}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% for bem_modifier in bem_modifiers %}
-  {% if bem_modifier|length %}
-    {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
-  {% endif %}
-{% endfor %}
-<article{{ attributes.addClass('js-comment', classes) }}>
+<article{{ attributes.addClass('js-comment', bem_classes) }}>
   {% block comment %}
     {#
       Hide the "new" indicator by default, let a piece of JavaScript ask the

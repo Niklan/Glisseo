@@ -1,15 +1,4 @@
-{% set bem_block = ('commerce-product-' ~ product_entity.bundle() ~ '-' ~ view_mode)|clean_class|replace({'--': '-'}) %}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
-{% for bem_modifier in bem_modifiers %}
-  {% if bem_modifier|length %}
-    {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
-  {% endif %}
-{% endfor %}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(bem_classes) }}>
   {% block commerce_product %}
     {{ title_prefix }}
     {{ title_suffix }}

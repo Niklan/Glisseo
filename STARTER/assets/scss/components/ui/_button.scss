@@ -7,6 +7,9 @@
   --button-padding-y: 0.5em;
   --button-padding-x: 0.75em;
   --button-border-radius: var(--radius);
+  --button-border: unset;
+  --button-background-color: var(--color-contrast-lower);
+  --button-color: inhirit;
 }
 
 .button {
@@ -22,21 +25,23 @@
   padding-left: var(--button-padding-x);
   white-space: nowrap;
   text-decoration: none;
+  color: var(--button-color);
+  border: var(--button-border);
   border-radius: var(--button-border-radius);
-  border: unset;
+  background-color: var(--button-background-color);
 }
 
 .button--primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  --button-background-color: var(--color-primary);
+  --button-color: var(--color-white);
 }
 
 .button--accent {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  --button-background-color: var(--color-accent);
+  --button-color: var(--color-white);
 }
 
 .button--danger {
-  background-color: var(--color-error);
-  color: var(--color-white);
+  --button-background-color: var(--color-accent);
+  --button-color: var(--color-white);
 }
