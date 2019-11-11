@@ -7,10 +7,31 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\FieldableEntityInterface;
-use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function glisseo_theme_registry_alter(array &$theme_registry) {
+  // Those variables will be added to all templates so you can use them outside
+  // theme as well. E.g. in custom module hook_theme() without need to declare
+  // them in hook.
+  $extra_variables = [
+    'bem_block' => NULL,
+    'bem_modifiers' => [],
+    'bem_classes' => NULL,
+  ];
+  foreach ($theme_registry as $hook_name => &$hook) {
+    // Added to every hook custom preprocess function which will be called the
+    // latest. It processing three variables above before it send to template.
+    $hook['preprocess functions'][] = '_glisseo_bem_preprocess';
+
+    if (isset($theme_registry[$hook_name]['variables'])) {
+      $hook['variables'] += $extra_variables;
+    }
+  }
+}
 
 /**
  * Implements hook_preprocess().
@@ -54,7 +75,10 @@ function glisseo_preprocess_block(array &$variables) {
   // Block ID used for generate BEM class "block--[block_id]".
   // If this block used in layout, we handle it a bit different for more
   // clean classes.
-  if (in_array($elements['#base_plugin_id'], ['extra_field_block', 'field_block'])) {
+  if (in_array($elements['#base_plugin_id'], [
+    'extra_field_block',
+    'field_block',
+  ])) {
     $variables['block_id'] = str_replace(':', '-', $elements['#derivative_plugin_id']);
   }
   elseif (!empty($elements['#id'])) {
@@ -283,6 +307,7 @@ function _glisseo_process_form_element(array &$element, FormStateInterface $form
     // Add additional variable to element to determine parent form id.
     $element['#bem_form_id'] = $complete_form['#form_id'];
   }
+
   return $element;
 }
 
@@ -394,16 +419,6 @@ function glisseo_preprocess_user(array &$variables) {
 }
 
 /**
- * Implements hook_theme_registry_alter().
- */
-function glisseo_theme_registry_alter(array &$theme_registry){
-  // Add additional final preprocess callback which will do some stuff for BEM.
-  foreach ($theme_registry as &$hook) {
-    $hook['preprocess functions'][] = '_glisseo_bem_preprocess';
-  }
-}
-
-/**
  * The final preprocess for all theme hooks.
  *
  * This function is actually implementation of hook_preprocess_HOOK(), but
@@ -492,6 +507,7 @@ function _glisseo_get_bem_block_default(array $variables) {
       if (isset($elements["#{$original_hook}"]) && $elements["#{$original_hook}"] instanceof EntityInterface) {
         /** @var \Drupal\Core\Entity\EntityInterface $entity */
         $entity = $elements["#{$original_hook}"];
+
         // If this is an entity, we return result.
         return _glisseo_get_bem_block_for_entity($entity, $elements['#view_mode']);
       }
