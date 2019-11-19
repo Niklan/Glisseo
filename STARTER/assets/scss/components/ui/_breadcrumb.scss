@@ -1,14 +1,13 @@
 // =============================================================================
-// Drupal breadcrumbs.
+// Drupal breadcrumb.
 // =============================================================================
 
-.breadcrumbs {
+.breadcrumb {
   font-size: var(--text-sm);
   display: flex;
-  margin-bottom: var(--spacing-sm);
 }
 
-.breadcrumbs__path {
+.breadcrumb__path {
   display: block;
   overflow: hidden;
   flex-grow: 0;
@@ -21,15 +20,19 @@
   }
 }
 
-.breadcrumbs__item-link {
-  color: var(--link-color);
+.breadcrumb__item-link {
+  --link-color: var(--color-gray-70);
 }
 
-.breadcrumbs__item-link--text {
+.breadcrumb__item-link--current {
+  --link-color: var(--color-primary);
+}
+
+.breadcrumb__item-link--text {
   color: var(--text-color);
 }
 
-.breadcrumbs__current {
+.breadcrumb__current {
   display: block;
   flex-grow: 1;
   flex-shrink: 0;
@@ -37,7 +40,7 @@
   &::before {
     margin: 0 var(--spacing-unit);
     content: '/';
-    color: var(--color-contrast-medium);
+    color: var(--color-gray-70);
   }
 
   @media (--sm) {
@@ -45,11 +48,15 @@
   }
 }
 
-.breadcrumbs__delimiter {
+.breadcrumb--single-item .breadcrumb__current::before {
+  display: none;
+}
+
+.breadcrumb__delimiter {
   &::after {
     margin: 0 var(--spacing-unit);
     content: '/';
-    color: var(--color-contrast-medium);
+    color: var(--color-gray-70);
   }
 
   &:last-child {

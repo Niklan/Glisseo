@@ -7,29 +7,29 @@
  */
 #}
 {% if breadcrumb %}
-  <nav class="breadcrumbs" aria-labelledby="system-breadcrumb">
+  <nav{{ attributes.addClass(bem_classes) }} aria-labelledby="system-breadcrumb">
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
     {% spaceless %}
       {% if breadcrumb|length > 1 %}
-        <div class="breadcrumbs__path">
+        <div class="{{ bem_block }}__path">
           {% for item in breadcrumb %}
             {% if not loop.last %}
               {% if item.url %}
-                <a href="{{ item.url }}" class="breadcrumbs__item-link">{{ item.text }}</a>
-                <span class="breadcrumbs__delimiter"></span>
+                <a href="{{ item.url }}" class="{{ bem_block }}__item-link">{{ item.text }}</a>
+                <span class="{{ bem_block }}__delimiter"></span>
               {% else %}
-                <span class="breadcrumbs__item-link breadcrumbs__item-link--text">{{ item.text }}</span>
+                <span class="{{ bem_block }}__item-link {{ bem_block }}__item-link--text">{{ item.text }}</span>
               {% endif %}
             {% endif %}
           {% endfor %}
         </div>
       {% endif %}
-      <div class="breadcrumbs__current">
+      <div class="{{ bem_block }}__current">
         {% set last = breadcrumb|last %}
         {% if last.url %}
-          <a href="{{ last.url }}" class="breadcrumbs__item-link breadcrumbs__item-link--current">{{ last.text }}</a>
+          <a href="{{ last.url }}" class="{{ bem_block }}__item-link {{ bem_block }}__item-link--current">{{ last.text }}</a>
         {% else %}
-          <span class="breadcrumbs__item-link breadcrumbs__item-link--text breadcrumbs__item-link--current">{{ last.text }}</span>
+          <span class="{{ bem_block }}__item-link {{ bem_block }}__item-link--text {{ bem_block }}__item-link--current">{{ last.text }}</span>
         {% endif %}
       </div>
     {% endspaceless %}

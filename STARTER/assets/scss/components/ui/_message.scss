@@ -4,7 +4,6 @@
 
 :root {
   --message-background: transparent;
-  --message-border-color: var(--color-contrast-medium);
   --message-color: var(--text-color);
 }
 
@@ -13,22 +12,18 @@
   margin-bottom: var(--spacing-sm);
   padding: var(--spacing-sm);
   border-radius: var(--radius);
-  border: 2px solid var(--message-border-color);
   background: var(--message-background);
   color: var(--message-color);
 }
 
 .messages--error {
-  --message-background: hsl(var(--color-error-h), var(--color-error-s), 77%);
-  --message-border-color: var(--color-error);
+  --message-background: #ff9e80;
 }
 
 .messages--status {
-  --message-background: hsl(var(--color-success-h), var(--color-success-s), 77%);
-  --message-border-color: var(--color-success);
+  --message-background: #ccff90;
 }
 
 .messages--warning {
-  --message-background: hsl(var(--color-warning-h), var(--color-warning-s), 77%);
-  --message-border-color: var(--color-warning);
+  --message-background: #ffe57f;
 }

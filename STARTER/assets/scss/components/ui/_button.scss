@@ -8,7 +8,7 @@
   --button-padding-x: 0.75em;
   --button-border-radius: var(--radius);
   --button-border: unset;
-  --button-background-color: var(--color-contrast-lower);
+  --button-background-color: var(--color-gray-10);
   --button-color: inhirit;
 }
 
@@ -31,6 +31,11 @@
   background-color: var(--button-background-color);
 }
 
+.button:hover {
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+}
+
 .button--primary {
   --button-background-color: var(--color-primary);
   --button-color: var(--color-white);
@@ -38,7 +43,7 @@
 
 .button--accent {
   --button-background-color: var(--color-accent);
-  --button-color: var(--color-white);
+  --button-color: var(--text-color);
 }
 
 .button--danger {

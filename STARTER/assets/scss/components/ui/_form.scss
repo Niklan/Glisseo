@@ -2,16 +2,6 @@
 // Form and Drupal Form API elements.
 // =============================================================================
 
-:root {
-  --form-control-background: var(--color-white);
-  --form-control-color: var(--text-color);
-  --form-control-font-size: 1em;
-  --form-control-padding-y: 0.5em;
-  --form-control-padding-x: 0.75em;
-  --form-control-border-radius: var(--radius);
-  --form-control-focus-shadow-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 0.2);
-}
-
 // =============================================================================
 // The .form-item styles.
 // =============================================================================
@@ -24,7 +14,7 @@
   display: block;
   margin-top: var(--spacing-unit);
   margin-bottom: var(--spacing-unit);
-  color: var(--color-contrast-medium);
+  color: var(--color-gray-70);
 }
 
 .form-item__input {
@@ -84,6 +74,16 @@
 // =============================================================================
 // The .form-control styles.
 // =============================================================================
+:root {
+  --form-control-background: var(--color-white);
+  --form-control-color: var(--text-color);
+  --form-control-font-size: 1em;
+  --form-control-padding-y: 0.5em;
+  --form-control-padding-x: 0.75em;
+  --form-control-border-radius: var(--radius);
+  --form-control-focus-shadow-color: var(--color-blue-30);
+}
+
 .form-control {
   font-size: var(--form-control-font-size);
   line-height: inherit;
@@ -92,7 +92,7 @@
   max-width: 100%;
   padding: var(--form-control-padding-y) var(--form-control-padding-x);
   color: var(--form-control-color);
-  border: 2px solid var(--color-contrast-low);
+  border: 1px solid var(--color-gray-20);
   border-radius: var(--form-control-border-radius);
   background-color: var(--form-control-background);
 
@@ -109,7 +109,7 @@
 
 .form-control.error {
   border-color: var(--color-error);
-  --form-control-focus-shadow-color: hsla(var(--color-error-h), var(--color-error-s), var(--color-error-l), 0.2);
+  --form-control-focus-shadow-color: var(--color-error);
 
   &:focus {
     border-color: var(--color-error);

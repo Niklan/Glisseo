@@ -13,12 +13,12 @@
 .table td {
   padding: var(--spacing-unit);
   text-align: inherit;
-  border-top: 1px solid var(--color-contrast-lower);
+  border-top: 1px solid var(--color-gray-10);
 }
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid var(--color-contrast-low);
+  border-bottom: 2px solid var(--color-gray-20);
 }
 
 .table-responsive {

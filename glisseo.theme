@@ -419,6 +419,15 @@ function glisseo_preprocess_user(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for 'breadcrumb.html.twig'.
+ */
+function glisseo_preprocess_breadcrumb(array &$variables) {
+  if (count($variables['links']) == 1) {
+    $variables['bem_modifiers'][] = 'single-item';
+  }
+}
+
+/**
  * The final preprocess for all theme hooks.
  *
  * This function is actually implementation of hook_preprocess_HOOK(), but
@@ -497,7 +506,9 @@ function _glisseo_get_bem_block_for_entity(EntityInterface $entity, string $view
  */
 function _glisseo_get_bem_block_default(array $variables) {
   $original_hook = $variables['theme_hook_original'];
-  $block_pieces = [];
+  $block_pieces = [
+    $original_hook,
+  ];
 
   if (isset($variables['elements'])) {
     $elements = $variables['elements'];
