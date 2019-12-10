@@ -4,10 +4,19 @@
 
 ### Base theme
 
+No changes.
+
+### Starter theme
+
+## [1.0-alpha14]
+
+### Base theme
+
 - Fixed menu BEM base class pass for menu block.
 - Fields for entities now is BEM blocks, not elements. This provides a better flexibility and control over markup.
 - Improved BEM block class naming for blocks using layout builder.
 - Improved layout onecol naming.
+- Base theme now adds `bem_block`, `bem_classes`, `bem_modifiers` to all theme hooks.
 
 ### Starter theme
 
@@ -278,14 +287,15 @@ No changes have been made.
 
 ## [1.0-alpha1]
 
-First initial release with version. For now, I am satisfied by theme at most. Some things can change, but from now on, I'll be track them in that file. I still no recommend to use it without understand the consequences. 
+First initial release with version. For now, I am satisfied by theme at most. Some things can change, but from now on, I'll be track them in that file. I still no recommend to use it without understand the consequences.
 
 Since release of first alpha, now we can use composer to lock theme version, and I recommend to do that. Because the theme is a little bit tricky to maintain. Just a single changed class in the base theme can create a lot of pain after the update. So be careful.
 
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha13...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha14...HEAD
+[1.0-alpha14]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha13...8.x-1.0-alpha14
 [1.0-alpha13]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha12...8.x-1.0-alpha13
 [1.0-alpha12]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha11...8.x-1.0-alpha12
 [1.0-alpha11]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha10...8.x-1.0-alpha11
