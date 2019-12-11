@@ -373,6 +373,17 @@ function glisseo_preprocess_menu_local_task(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for 'menu.html.twig'.
+ */
+function glisseo_preprocess_menu(array &$variables) {
+  $variables['bem_block'] = 'menu';
+
+  if (isset($variables['menu_name'])) {
+    $variables['bem_modifiers'][] = $variables['menu_name'];
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() links.html.twig.
  */
 function glisseo_preprocess_links(array &$variables) {

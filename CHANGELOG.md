@@ -4,9 +4,11 @@
 
 ### Base theme
 
-No changes.
+- Improve menu BEM block and modifiers genration.
 
 ### Starter theme
+
+No changes.
 
 ## [1.0-alpha14]
 
