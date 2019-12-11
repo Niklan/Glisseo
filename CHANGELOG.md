@@ -4,7 +4,8 @@
 
 ### Base theme
 
-- Improve menu BEM block and modifiers genration.
+- Improved menu BEM generation and markup.
+- Improved region BEM generation and markup.
 
 ### Starter theme
 

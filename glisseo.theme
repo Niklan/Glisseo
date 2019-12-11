@@ -439,6 +439,15 @@ function glisseo_preprocess_breadcrumb(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for 'region.html.twig'.
+ */
+function glisseo_preprocess_region(array &$variables) {
+  if (isset($variables['region'])) {
+    $variables['bem_modifiers'][] = Html::getClass($variables['region']);
+  }
+}
+
+/**
  * The final preprocess for all theme hooks.
  *
  * This function is actually implementation of hook_preprocess_HOOK(), but
