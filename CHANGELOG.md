@@ -6,6 +6,7 @@
 
 - Improved menu BEM generation and markup.
 - Improved region BEM generation and markup.
+- Removed `area-labeledby` for breadcrumbs. Because it incorrect. WCAG is not priority now.
 
 ### Starter theme
 

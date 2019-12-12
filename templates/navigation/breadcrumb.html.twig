@@ -7,7 +7,7 @@
  */
 #}
 {% if breadcrumb %}
-  <nav{{ attributes.addClass(bem_classes) }} aria-labelledby="system-breadcrumb">
+  <nav{{ attributes.addClass(bem_classes) }}>
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
     {% spaceless %}
       {% if breadcrumb|length > 1 %}
