@@ -155,7 +155,7 @@ function glisseo_theme_suggestions_block_alter(array &$suggestions, $variables, 
 function glisseo_preprocess_comment(array &$variables) {
   /** @var \Drupal\comment\CommentInterface $comment */
   $comment = $variables['elements']['#comment'];
-  $variables['bem_block'] = 'comment-' . Html::getClass($comment->bundle());
+  $variables['bem_block'] = _glisseo_get_bem_block_for_entity($comment, $variables['elements']['#view_mode']);
 }
 
 /**
