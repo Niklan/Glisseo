@@ -4,14 +4,14 @@
 
 :root {
   // Text sizes.
-  --text-base-size: 1em;
-  --text-scale-ratio: 1.2;
-  --text-xs: calc((var(--text-base-size) / var(--text-scale-ratio)) / var(--text-scale-ratio));
-  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
-  --text-md: calc(var(--text-sm) * var(--text-scale-ratio));
-  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
-  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
-  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-base-size: 16px;
+  --text-xxs: 13px;
+  --text-xs: 14px;
+  --text-sm: 15px;
+  --text-md: 18px;
+  --text-lg: 24px;
+  --text-xl: 28px;
+  --text-xxl: 32px;
 
   --text-color: hsl(0, 0%, 7%);
 
@@ -23,6 +23,8 @@
 
   --mark-background: hsl(60, 100%, 50%);
   --code-background: var(--page-background);
+
+  --p-margin-bottom: var(--spacing-sm);
 }
 
 body {
@@ -34,7 +36,7 @@ body {
 
 p {
   margin-top: unset;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--p-margin-bottom);
 }
 
 small {

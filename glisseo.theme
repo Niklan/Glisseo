@@ -150,6 +150,15 @@ function glisseo_theme_suggestions_block_alter(array &$suggestions, $variables, 
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for 'comment.html.twig'.
+ */
+function glisseo_preprocess_comment(array &$variables) {
+  /** @var \Drupal\comment\CommentInterface $comment */
+  $comment = $variables['elements']['#comment'];
+  $variables['bem_block'] = 'comment-' . Html::getClass($comment->bundle());
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  *
  * Add new theme hook suggestion to comment type.
