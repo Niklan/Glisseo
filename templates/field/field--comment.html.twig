@@ -1,7 +1,7 @@
 {%
   set bem_classes = bem_classes|merge([
-    label_display == 'inline' ? bem_block ~ '--label-inline',
-  ])
+  label_display == 'inline' ? bem_block ~ '--label-inline',
+])
 %}
 {%
   set title_classes = [
@@ -10,20 +10,20 @@
 ]
 %}
 <a id="comments"></a>
-<section{{ attributes.addClass(classes) }}>
+<section{{ attributes.addClass(bem_classes) }}>
   {% if comments and not label_hidden %}
     {{ title_prefix }}
-    <h2{{ title_attributes.addClass(bem_element_prefix ~ 'title') }}>{{ label|t }}</h2>
+    <h2{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ label|t }}</h2>
     {{ title_suffix }}
   {% endif %}
 
-  <div class="{{ bem_element_prefix }}content">
+  <div class="{{ bem_block }}__content">
     {{ comments }}
   </div>
 
   {% if comment_form %}
-    <div class="{{ bem_element_prefix }}form-container">
-      <h2{{ content_attributes.addClass(bem_element_prefix ~ 'form-title') }}>{{ 'Add new comment'|t }}</h2>
+    <div class="{{ bem_block }}__form-container">
+      <h2{{ content_attributes.addClass(bem_block ~ '__form-title') }}>{{ 'Add new comment'|t }}</h2>
       {{ comment_form }}
     </div>
   {% endif %}
