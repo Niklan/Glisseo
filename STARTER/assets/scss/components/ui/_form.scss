@@ -78,6 +78,7 @@
   --form-control-background: var(--color-white);
   --form-control-color: var(--text-color);
   --form-control-font-size: 1em;
+  --form-control-line-height: 1.5;
   --form-control-padding-y: 0.5em;
   --form-control-padding-x: 0.75em;
   --form-control-border-radius: var(--radius);
@@ -86,7 +87,7 @@
 
 .form-control {
   font-size: var(--form-control-font-size);
-  line-height: inherit;
+  line-height: var(--form-control-line-height);
   display: block;
   width: 100%;
   max-width: 100%;

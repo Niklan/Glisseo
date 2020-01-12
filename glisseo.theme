@@ -220,7 +220,7 @@ function glisseo_preprocess_field(&$variables) {
   ];
   $variables['bem_block'] = Html::getClass(implode('-', $bem_block_pieces));
   if ($variables['view_mode'] != 'default') {
-    $variables['bem_modifiers'][] = $variables['view_mode'];
+    $variables['bem_modifiers'][] = Html::getClass($variables['view_mode']);
   }
 }
 

@@ -4,6 +4,7 @@
 
 :root {
   --button-font-size: 1em;
+  --button-line-height: var(--form-control-line-height, 1.5);
   --button-padding-y: 0.5em;
   --button-padding-x: 0.75em;
   --button-border-radius: var(--radius);
@@ -14,7 +15,7 @@
 
 .button {
   font-size: var(--button-font-size);
-  line-height: 1;
+  line-height: var(--button-line-height);
   position: relative;
   display: inline-flex;
   align-items: center;

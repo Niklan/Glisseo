@@ -8,7 +8,7 @@
   --blockquote-paddings: var(--spacing-unit);
   --blockquote-margins: var(--spacing-sm) 0;
   --blockquote-background: transparent;
-  --blockquote-border-color: #{gray(400)};
+  --blockquote-border-color: var(--color-gray-40);
 }
 
 blockquote {
