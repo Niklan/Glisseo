@@ -4,13 +4,21 @@
 
 ### Base theme
 
+### Starter theme
+
+## [1.0-alpha15]
+
+### Base theme
+
 - Improved menu BEM generation and markup.
 - Improved region BEM generation and markup.
 - Removed `area-labeledby` for breadcrumbs. Because it incorrect. WCAG is not priority now.
+- **Breaking.** They were created for the previous BEM naming. It showed that the forms do not adapt well to this, because they are assembled from many smaller Blocks. For now, the best solution is to use default templates.
 
 ### Starter theme
 
-No changes.
+- Improved line-height for button and form-control.
+- Improved bem modifier generation for view modes in fields.
 
 ## [1.0-alpha14]
 
@@ -298,7 +306,8 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha14...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha15...HEAD
+[1.0-alpha15]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha14...8.x-1.0-alpha15
 [1.0-alpha14]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha13...8.x-1.0-alpha14
 [1.0-alpha13]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha12...8.x-1.0-alpha13
 [1.0-alpha12]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha11...8.x-1.0-alpha12
