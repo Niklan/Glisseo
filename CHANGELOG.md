@@ -4,6 +4,8 @@
 
 ### Base theme
 
+- **Backwards Compatibility break.** Most of views template was deleted. The base one was updated to support new bem naming system.
+
 ### Starter theme
 
 ## [1.0-alpha15]

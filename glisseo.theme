@@ -457,6 +457,17 @@ function glisseo_preprocess_region(array &$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for 'views-view.html.twig'.
+ */
+function glisseo_preprocess_views_view(array &$variables) {
+  /** @var \Drupal\views\ViewExecutable $view */
+  $view = $variables['view'];
+
+  $variables['bem_modifiers'][] = Html::getClass('id-' . $view->id());
+  $variables['bem_modifiers'][] = Html::getClass('display-' . $view->current_display);
+}
+
+/**
  * The final preprocess for all theme hooks.
  *
  * This function is actually implementation of hook_preprocess_HOOK(), but

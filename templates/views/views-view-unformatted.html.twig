@@ -1,30 +1,30 @@
-{% set bem_block = bem_block ?: ('view-' ~ view.storage.id() ~ '-' ~ view.current_display)|clean_class %}
-{% set bem_element = bem_block ~ '__row' %}
 {% if title %}
-<div class="{{ bem_block }}__rows">
-  <h3 class="{{ bem_block }}__rows-title">
+<div class="{{ bem_block }}-group">
+  <h3 class="{{ bem_block }}-group__title">
     {% block title %}
       {{ title }}
     {% endblock %}
   </h3>
-  {% endif %}
+  <div class="{{ bem_block }}-group__content">
+    {% endif %}
 
-  {% block rows %}
-    {% for row in rows %}
-      {% block row %}
-        {% set row_classes = [
-          default_row_class ? bem_element,
-        ] %}
-        
-        <div{{ row.attributes.addClass(row_classes) }}>
-          {% block content %}
-            {{ row.content }}
-          {% endblock %}
-        </div>
-      {% endblock %}
-    {% endfor %}
-  {% endblock %}
+    {% block rows %}
+      {% for row in rows %}
+        {% block row %}
+          {% set row_classes = [
+            default_row_class ? bem_block,
+          ] %}
 
-  {% if title %}
+          <div{{ row.attributes.addClass(row_classes) }}>
+            {% block content %}
+              {{ row.content }}
+            {% endblock %}
+          </div>
+        {% endblock %}
+      {% endfor %}
+    {% endblock %}
+
+    {% if title %}
+  </div>
 </div>
 {% endif %}

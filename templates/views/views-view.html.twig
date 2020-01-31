@@ -1,9 +1,7 @@
-{% set bem_block = ('view-' ~ id|clean_class ~ '-' ~ display_id)|clean_class %}
 {% set classes = [
-  bem_block,
   dom_id ? 'js-view-dom-id-' ~ dom_id,
 ] %}
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(bem_classes, classes) }}>
   {{ title_prefix }}
 
   {% if title %}
@@ -53,9 +51,11 @@
   {% endif %}
 
   {% if pager %}
-    {% block pager %}
-      {{ pager }}
-    {% endblock %}
+    <div class="{{ bem_block }}__pager">
+      {% block pager %}
+        {{ pager }}
+      {% endblock %}
+    </div>
   {% endif %}
 
   {% if attachment_after %}
