@@ -9,6 +9,8 @@
 
 ### Starter theme
 
+- Issue #3110722 by hstrindb: Typo inhirit in # components.css
+
 ## [1.0-alpha15]
 
 ### Base theme
