@@ -5,6 +5,7 @@
 ### Base theme
 
 - **Backwards Compatibility break.** Most of views template was deleted. The base one was updated to support new bem naming system.
+- Issue #3110786 by hstrindb: navigation region missing from page.html.twig
 
 ### Starter theme
 
