@@ -5,11 +5,14 @@
 ### Base theme
 
 - **Backwards Compatibility break.** Most of views template was deleted. The base one was updated to support new bem naming system.
-- Issue #3110786 by hstrindb: navigation region missing from page.html.twig
+- [#3110786](https://www.drupal.org/project/glisseo/issues/3132338) Navigation region missing from page.html.twig
+- [#3132338](https://www.drupal.org/project/glisseo/issues/3132338) Base theme is no more hidden.
+- [#3137340](https://www.drupal.org/project/glisseo/issues/3137340) Drupal 9 compatibility.
+- 
 
 ### Starter theme
 
-- Issue #3110722 by hstrindb: Typo inhirit in # components.css
+- [#3110722](https://www.drupal.org/project/glisseo/issues/3137340) Typo inhirit in # components.css
 
 ## [1.0-alpha15]
 
