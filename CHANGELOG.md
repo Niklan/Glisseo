@@ -14,6 +14,7 @@
 - Changed favicon.
 - `base theme` set to `stable`.
 - Fixed hierarchy menu generation.
+- Added templates for forms from Claro (they use BEM naming) as starting point.
 
 ### Starter theme
 
