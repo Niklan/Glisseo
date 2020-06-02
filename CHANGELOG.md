@@ -8,13 +8,13 @@
 - [#3110786](https://www.drupal.org/project/glisseo/issues/3132338) Navigation region missing from page.html.twig
 - [#3132338](https://www.drupal.org/project/glisseo/issues/3132338) Base theme is no more hidden.
 - [#3137340](https://www.drupal.org/project/glisseo/issues/3137340) Drupal 9 compatibility.
-- 
 
 ### Starter theme
 
 - [#3110722](https://www.drupal.org/project/glisseo/issues/3137340) Typo inhirit in # components.css
 - [#3127441](https://www.drupal.org/project/glisseo/issues/3127441) `--selection-background` is now `var(--color-silver)`.
 - [#3127434](https://www.drupal.org/project/glisseo/issues/3127434) `--color-silver` now `#c0c0c0` instead of `#aaaaaa`.
+- STARTER theme `core` parameter replaced by `core_version_requirement`.
 
 ## [1.0-alpha15]
 

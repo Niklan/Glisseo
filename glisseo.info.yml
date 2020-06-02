@@ -4,5 +4,4 @@ name: Glisseo (base theme)
 type: theme
 description: 'Glisseo is a base theme for fast and easy start to theme your project.'
 package: Glisseo
-core: 8.x
 core_version_requirement: ^8 || ^9
