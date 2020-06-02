@@ -28,6 +28,7 @@
 - Removed normalize.css. Added [Modern CSS reset](https://github.com/hankchizljaw/modern-css-reset) which do the same with less styles.
 - ITCSS folder was prefixed with their order number to make it clear, what their importance. Also fix some bugs with `ui` folder which contains button and other element styling, but since alphabetically `U` is at the very end, it's impossible to override styles.
 - Button border set to 1px transparent line to match input height.
+- Fix `<hr>` styles.
 
 ## [1.0-alpha15]
 
