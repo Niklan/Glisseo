@@ -8,6 +8,7 @@
 - [#3110786](https://www.drupal.org/project/glisseo/issues/3132338) Navigation region missing from page.html.twig
 - [#3132338](https://www.drupal.org/project/glisseo/issues/3132338) Base theme is no more hidden.
 - [#3137340](https://www.drupal.org/project/glisseo/issues/3137340) Drupal 9 compatibility.
+- Removed ds-layout.svg, since theme not provide any DS layout anymore.
 
 ### Starter theme
 
