@@ -8,11 +8,11 @@ const postcssCustomMedia = require('postcss-custom-media');
 
 gulp.task('sass', function() {
   return gulp.src([
-    'assets/scss/generic/generic.scss',
-    'assets/scss/elements/elements.scss',
-    'assets/scss/objects/objects.scss',
-    'assets/scss/components/components.scss',
-    'assets/scss/utilities/utilities.scss',
+    'assets/scss/03-generic/generic.scss',
+    'assets/scss/04-elements/elements.scss',
+    'assets/scss/05-objects/objects.scss',
+    'assets/scss/06-components/components.scss',
+    'assets/scss/07-utilities/utilities.scss',
   ])
     .pipe(sourcemaps.init())
     .pipe(sassGlob())

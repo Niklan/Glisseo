@@ -1,12 +1,12 @@
 // =============================================================================
-// High-level styles such as resets and normalize.css.
+// Mixins and functions.
 // =============================================================================
 
 // Settings.
-@import "../settings/core";
+@import "../01-settings/core";
 
-// Tools.
-@import "../tools/core";
+// Mixins.
+//@import "mixins/some-mixin";
 
-// Generic.
-@import "**/*.scss";
+// Functions.
+//@import "functions/some-function";

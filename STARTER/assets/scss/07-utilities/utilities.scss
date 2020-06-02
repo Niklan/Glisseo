@@ -1,12 +1,12 @@
 // =============================================================================
-// Base HTML styling.
+// Helpers and overrides.
 // =============================================================================
 
 // Settings.
-@import "../settings/core";
+@import "../01-settings/core";
 
 // Tools.
-@import "../tools/core";
+@import "../02-tools/core";
 
-// Elements.
+// Utilities.
 @import "**/*.scss";

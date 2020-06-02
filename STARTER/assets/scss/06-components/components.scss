@@ -1,12 +1,13 @@
 // =============================================================================
-// Helpers and overrides.
+// Specific cosmetic elements of UI.
 // =============================================================================
 
 // Settings.
-@import "../settings/core";
+@import "../01-settings/core";
 
 // Tools.
-@import "../tools/core";
+@import "../02-tools/core";
 
-// Utilities.
+// Components.
 @import "**/*.scss";
+

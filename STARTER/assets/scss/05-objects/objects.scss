@@ -1,13 +1,12 @@
 // =============================================================================
-// Specific cosmetic elements of UI.
+// Common non-cosmetic structural design patterns.
 // =============================================================================
 
 // Settings.
-@import "../settings/core";
+@import "../01-settings/core";
 
 // Tools.
-@import "../tools/core";
+@import "../02-tools/core";
 
-// Components.
+// Objects.
 @import "**/*.scss";
-

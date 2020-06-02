@@ -1,12 +1,12 @@
 // =============================================================================
-// Common non-cosmetic structural design patterns.
+// Base HTML styling.
 // =============================================================================
 
 // Settings.
-@import "../settings/core";
+@import "../01-settings/core";
 
 // Tools.
-@import "../tools/core";
+@import "../02-tools/core";
 
-// Objects.
+// Elements.
 @import "**/*.scss";
