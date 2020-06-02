@@ -19,6 +19,7 @@
 - [#3127441](https://www.drupal.org/project/glisseo/issues/3127441) `--selection-background` is now `var(--color-silver)`.
 - [#3127434](https://www.drupal.org/project/glisseo/issues/3127434) `--color-silver` now `#c0c0c0` instead of `#aaaaaa`.
 - STARTER theme `core` parameter replaced by `core_version_requirement`.
+- Updated scripts to `build:theme` (single time compile SCSS) and `watch:theme` (watch for file changes and compile them).
 
 ## [1.0-alpha15]
 

@@ -22,7 +22,8 @@
 
   },
   "scripts": {
-    "build theme": "gulp default"
+    "build:theme": "gulp sass",
+    "watch:theme": "gulp default"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.3",
