@@ -9,6 +9,9 @@
 - [#3132338](https://www.drupal.org/project/glisseo/issues/3132338) Base theme is no more hidden.
 - [#3137340](https://www.drupal.org/project/glisseo/issues/3137340) Drupal 9 compatibility.
 - Removed ds-layout.svg, since theme not provide any DS layout anymore.
+- The images were replaced by the new one which is bigger for the Claro theme. The source images was remove and moved to Figma (https://www.figma.com/file/EaQ02txC7UeV7BfavDblXPJc/Glisseo).
+- Changed themes logo.
+- Changed favicon.
 
 ### Starter theme
 
