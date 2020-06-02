@@ -96,16 +96,17 @@
   border: 1px solid var(--color-gray-20);
   border-radius: var(--form-control-border-radius);
   background-color: var(--form-control-background);
+}
 
-  &:focus {
-    border-color: var(--color-primary);
-    outline: none;
-    box-shadow: 0 0 0 3px var(--form-control-focus-shadow-color);
-  }
+.form-control:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--form-control-focus-shadow-color);
+}
 
-  &:disabled {
-    cursor: not-allowed;
-  }
+.form-control:disabled {
+  cursor: not-allowed;
+  --form-control-background: var(--color-black-03);
 }
 
 .form-control.error {
@@ -116,3 +117,5 @@
     border-color: var(--color-error);
   }
 }
+
+
