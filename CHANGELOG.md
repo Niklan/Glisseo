@@ -12,6 +12,7 @@
 - The images were replaced by the new one which is bigger for the Claro theme. The source images was remove and moved to Figma (https://www.figma.com/file/EaQ02txC7UeV7BfavDblXPJc/Glisseo).
 - Changed themes logo.
 - Changed favicon.
+- `base theme` set to `stable`.
 
 ### Starter theme
 
