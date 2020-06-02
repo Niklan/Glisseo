@@ -24,31 +24,31 @@
   color: var(--color-primary);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
+}
 
-  &:hover {
-    background-color: var(--color-gray-10);
-  }
+.tabs--primary .tabs__link:hover {
+  background-color: var(--color-gray-10);
 }
 
 .tabs--primary .tabs__link--active {
   position: relative;
   border: 2px solid var(--color-gray-10);
   border-bottom-width: 0;
+}
 
-  &::before {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 2px;
-    content: '';
-    background-color: white;
-  }
+.tabs--primary .tabs__link--active::before {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: white;
+}
 
-  &:hover {
-    background-color: unset;
-  }
+.tabs--primary .tabs__link--active:hover {
+  background-color: unset;
 }
 
 // Secondary tabs.
@@ -61,31 +61,29 @@
   display: block;
   padding: var(--spacing-unit) var(--spacing-sm);
   position: relative;
+}
 
-  &::before {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: none;
-    width: 100%;
-    height: 2px;
-    content: '';
-    background-color: var(--color-primary);
-    border-top-left-radius: var(--radius-sm);
-    border-top-right-radius: var(--radius-sm);
-  }
+.tabs--secondary::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: var(--color-primary);
+  border-top-left-radius: var(--radius-sm);
+  border-top-right-radius: var(--radius-sm);
+}
 
-  &:hover {
-    &::before {
-      display: block;
-    }
-  }
+.tabs--secondary:hover::before {
+  display: block;
 }
 
 .tabs--secondary .tabs__link--active {
   position: relative;
+}
 
-  &::before {
-    display: block;
-  }
+.tabs--secondary .tabs__link--active::before {
+  display: block;
 }

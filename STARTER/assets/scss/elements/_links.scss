@@ -10,9 +10,9 @@
 a {
   color: var(--link-color);
   text-decoration: none;
+}
 
-  &:hover {
-    color: var(--link-color-hover);
-    text-decoration: none;
-  }
+a:hover {
+  color: var(--link-color-hover);
+  text-decoration: none;
 }

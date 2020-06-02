@@ -29,13 +29,11 @@
   vertical-align: middle;
 }
 
-.form-item__label--required {
-  &::after {
-    display: inline-block;
-    margin: 0 0 0 0.25em;
-    content: '*';
-    color: var(--color-error);
-  }
+.form-item__label--required::after {
+  display: inline-block;
+  margin: 0 0 0 0.25em;
+  content: '*';
+  color: var(--color-error);
 }
 
 .form-item__label.option {
@@ -112,10 +110,8 @@
 .form-control.error {
   border-color: var(--color-error);
   --form-control-focus-shadow-color: var(--color-error);
-
-  &:focus {
-    border-color: var(--color-error);
-  }
 }
 
-
+.form-control.error:focus {
+  border-color: var(--color-error);
+}

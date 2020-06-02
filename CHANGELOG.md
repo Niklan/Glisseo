@@ -22,6 +22,7 @@
 - STARTER theme `core` parameter replaced by `core_version_requirement`.
 - Updated scripts to `build:theme` (single time compile SCSS) and `watch:theme` (watch for file changes and compile them).
 - Added `:disabled` style for `.form-control`.
+- Removed all SCSS inheritance.
 
 ## [1.0-alpha15]
 

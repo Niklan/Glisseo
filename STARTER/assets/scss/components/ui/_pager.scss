@@ -33,21 +33,20 @@
   align-items: center;
   padding: var(--spacing-unit) var(--spacing-sm);
   border-radius: var(--radius);
+}
 
-  &:hover {
-    background-color: var(--color-gray-10);
-  }
+.pager__item a:hover {
+  background-color: var(--color-gray-10);
 }
 
 .pager__item--active a {
   color: var(--color-white);
   background-color: var(--color-primary);
+}
 
-  // @todo improve it somehow.
-  &:hover {
-    color: var(--color-white);
-    background-color: var(--color-primary);
-  }
+.pager__item--active a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
 
 .pager__item--ellipsis {
