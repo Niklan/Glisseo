@@ -31,7 +31,7 @@
 .pager__item a {
   display: inline-flex;
   align-items: center;
-  padding: var(--spacing-unit) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius);
 }
 
@@ -52,7 +52,7 @@
 .pager__item--ellipsis {
   display: inline-flex;
   align-items: center;
-  padding: var(--spacing-unit) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius);
 }
 
@@ -60,6 +60,6 @@
 .pager--mini .pager__item--active {
   display: inline-flex;
   align-items: center;
-  padding: var(--spacing-unit) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius);
 }

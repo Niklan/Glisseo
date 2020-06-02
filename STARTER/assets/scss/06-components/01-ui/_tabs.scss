@@ -20,7 +20,7 @@
 .tabs--primary .tabs__link {
   position: relative;
   display: block;
-  padding: var(--spacing-unit) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
   color: var(--color-primary);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
@@ -59,7 +59,7 @@
 
 .tabs--secondary .tabs__link {
   display: block;
-  padding: var(--spacing-unit) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
   position: relative;
 }
 

@@ -43,7 +43,7 @@
 }
 
 .breadcrumb__current::before {
-  margin: 0 var(--spacing-unit);
+  margin: 0 var(--spacing-xs);
   content: '/';
   color: var(--color-gray-70);
 }
@@ -53,7 +53,7 @@
 }
 
 .breadcrumb__delimiter::after {
-  margin: 0 var(--spacing-unit);
+  margin: 0 var(--spacing-xs);
   content: '/';
   color: var(--color-gray-70);
 }

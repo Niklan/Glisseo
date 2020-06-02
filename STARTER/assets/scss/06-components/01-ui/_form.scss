@@ -6,14 +6,14 @@
 // The .form-item styles.
 // =============================================================================
 .form-item {
-  margin: 0 0 var(--spacing-unit);
+  margin: 0 0 var(--spacing-xs);
 }
 
 .form-item__description {
   font-size: var(--text-sm);
   display: block;
-  margin-top: var(--spacing-unit);
-  margin-bottom: var(--spacing-unit);
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
   color: var(--color-gray-70);
 }
 
@@ -24,7 +24,7 @@
 .form-item__label {
   font-size: var(--text-sm);
   display: inline-block;
-  margin-bottom: var(--spacing-unit);
+  margin-bottom: var(--spacing-xs);
   cursor: pointer;
   vertical-align: middle;
 }
@@ -60,13 +60,13 @@
 }
 
 .form-wrapper__summary {
-  padding: var(--spacing-unit);
+  padding: var(--spacing-xs);
   cursor: pointer;
   background: gray(100);
 }
 
 .form-wrapper__content {
-  padding: var(--spacing-unit);
+  padding: var(--spacing-xs);
 }
 
 // =============================================================================
