@@ -13,6 +13,7 @@
 - Changed themes logo.
 - Changed favicon.
 - `base theme` set to `stable`.
+- Fixed hierarchy menu generation.
 
 ### Starter theme
 

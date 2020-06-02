@@ -30,7 +30,7 @@
           <li{{ item.attributes.addClass(classes) }}>
             {{ link(item.title, item.url, { 'class': [bem_block ~ '__link'] }) }}
             {% if item.below %}
-              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1, bem_block) }}
             {% endif %}
           </li>
         {% endfor %}
