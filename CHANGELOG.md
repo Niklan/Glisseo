@@ -23,6 +23,7 @@
 - Updated scripts to `build:theme` (single time compile SCSS) and `watch:theme` (watch for file changes and compile them).
 - Added `:disabled` style for `.form-control`.
 - Removed all SCSS inheritance.
+- Removed normalize.css. Added [Modern CSS reset](https://github.com/hankchizljaw/modern-css-reset) which do the same with less styles.
 
 ## [1.0-alpha15]
 
