@@ -34,6 +34,7 @@
 - Changed button styles and variations to match Drupal Design System.
 - Default font-family is now use system fonts.
 - All unused CSS variables were removed.
+- Component layout folder got weight 2. This is folder for common layout styles, all others must have ability to override it.
 
 ## [1.0-alpha15]
 
