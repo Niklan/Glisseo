@@ -30,6 +30,10 @@
 - Button border set to 1px transparent line to match input height.
 - Fix `<hr>` styles.
 - Changed spacing sizes to match Drupal Design System.
+- Changed font-size and text variables.
+- Changed button styles and variations to match Drupal Design System.
+- Default font-family is now use system fonts.
+- All unused CSS variables were removed.
 
 ## [1.0-alpha15]
 
@@ -54,9 +58,6 @@
 - Improved BEM block class naming for blocks using layout builder.
 - Improved layout onecol naming.
 - Base theme now adds `bem_block`, `bem_classes`, `bem_modifiers` to all theme hooks.
-- Changed font-size and text variables.
-- Changed button styles and variations to match Drupal Design System.
-- Default font-family is now use system fonts.
 
 ### Starter theme
 

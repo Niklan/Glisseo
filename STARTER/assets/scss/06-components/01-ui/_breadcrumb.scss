@@ -21,7 +21,7 @@
 }
 
 .breadcrumb__item-link {
-  --link-color: var(--color-gray-70);
+  --link-color: var(--color-border);
 }
 
 .breadcrumb__item-link--current {
@@ -45,7 +45,7 @@
 .breadcrumb__current::before {
   margin: 0 var(--spacing-xs);
   content: '/';
-  color: var(--color-gray-70);
+  color: var(--color-border);
 }
 
 .breadcrumb--single-item .breadcrumb__current::before {
@@ -55,7 +55,7 @@
 .breadcrumb__delimiter::after {
   margin: 0 var(--spacing-xs);
   content: '/';
-  color: var(--color-gray-70);
+  color: var(--color-border);
 }
 
 .breadcrumb__delimiter:last-child {

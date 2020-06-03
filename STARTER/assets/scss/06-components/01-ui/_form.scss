@@ -14,7 +14,7 @@
   display: block;
   margin-top: var(--spacing-xs);
   margin-bottom: var(--spacing-xs);
-  color: var(--color-gray-70);
+  color: var(--color-border);
 }
 
 .form-item__input {
@@ -80,7 +80,7 @@
   --form-control-padding-y: 0.5em;
   --form-control-padding-x: 0.75em;
   --form-control-border-radius: var(--radius-xxs);
-  --form-control-focus-shadow-color: var(--color-blue-30);
+  --form-control-focus-shadow-color: var(--color-blue-focus);
 }
 
 .form-control {
@@ -91,7 +91,7 @@
   max-width: 100%;
   padding: var(--form-control-padding-y) var(--form-control-padding-x);
   color: var(--form-control-color);
-  border: 1px solid var(--color-gray-20);
+  border: 1px solid var(--color-border);
   border-radius: var(--form-control-border-radius);
   background-color: var(--form-control-background);
 }
@@ -104,7 +104,7 @@
 
 .form-control:disabled {
   cursor: not-allowed;
-  --form-control-background: var(--color-black-03);
+  --form-control-background: var(--color-disabled);
 }
 
 .form-control.error {

@@ -1,17 +1,23 @@
-// =============================================================================
-// Button mixins and styles. Including Drupal buttons.
-// =============================================================================
-
+/**
+ * Button styles.
+ */
 :root {
-  --button-background-color: var(--color-gray-10);
+  --button-background-color: #D4D4D8;
+  --button-background-color-active: #ADAEB3;
+  --button-background-color-disabled: #EBEBED;
+  --button-background-color-focus: #D8D9E0;
+  --button-background-color-hover: #CACBD5;
   --button-border: 2px solid transparent;
+  --button-border-disabled: var(--button-border);
   --button-border-radius: var(--radius-xxs);
-  --button-color: inherit;
+  --button-color: var(--text-color);
+  --button-color-disabled: var(--color-gray-blue);
+  --button-color-hover: var(--text-color);
   --button-font-size: var(--font-size-base);
+  --button-font-weight: 700;
   --button-line-height: var(--form-control-line-height, 1.5);
   --button-padding-x: var(--spacing-lg);
   --button-padding-y: var(--spacing-sm);
-  --button-font-weight: 700;
 }
 
 .button {
@@ -23,22 +29,33 @@
   cursor: pointer;
   display: inline-flex;
   font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
   justify-content: center;
   line-height: var(--button-line-height);
   padding: var(--button-padding-y) var(--button-padding-x);
   position: relative;
   text-decoration: none;
   white-space: nowrap;
-  font-weight: var(--button-font-weight);
 }
 
 .button:hover {
-  background-color: var(--button-background-color);
-  color: var(--button-color);
+  --button-background-color: var(--button-background-color-hover);
+  --button-color: var(--button-color-hover);
+}
+
+.button:active {
+  --button-background-color: var(--button-background-color-active);
 }
 
 .button:focus {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 5px #26a769;
+  --button-background-color: var(--button-background-color-focus);
+}
+
+.button:disabled {
+  --button-background-color: var(--button-background-color-disabled);
+  --button-border: var(--button-border-disabled);
+  --button-color: var(--button-color-disabled);
+  cursor: not-allowed;
 }
 
 /**
@@ -60,23 +77,49 @@
  * Button coloration variations.
  */
 .button--primary {
-  --button-background-color: var(--color-primary);
+  --button-background-color: var(--color-blue);
+  --button-background-color-active: var(--color-blue-active);
+  --button-background-color-disabled: #D4D4D8;
+  --button-background-color-focus: var(--color-blue);
+  --button-background-color-hover: var(--color-blue-hover);
   --button-color: var(--color-white);
+  --button-color-disabled: var(--color-old-silver);
+  --button-color-hover: var(--color-white);
 }
 
 .button--secondary {
   --button-background-color: transparent;
-  --button-color: var(--color-primary);
-  --button-border: 2px solid var(--color-primary);
+  --button-background-color-active: #E6ECF8;
+  --button-background-color-disabled: transparent;
+  --button-background-color-focus: transparent;
+  --button-background-color-hover: #F0F5FD;
+  --button-border: 2px solid var(--color-blue);
+  --button-border-disabled: 2px solid #D4D4D8;
+  --button-color: var(--color-blue);
+  --button-color-disabled: var(--color-old-silver);
+  --button-color-hover: var(--color-blue);
 }
 
 .button--danger {
-  --button-background-color: var(--color-danger);
+  --button-background-color: var(--color-red);
+  --button-background-color-active: var(--color-red-active);
+  --button-background-color-disabled: #D4D4D8;
+  --button-background-color-focus: var(--color-red);
+  --button-background-color-hover: #c61c1c;
   --button-color: var(--color-white);
+  --button-color-disabled: var(--color-old-silver);
+  --button-color-hover: var(--color-white);
 }
 
 .button--danger-secondary {
   --button-background-color: transparent;
-  --button-color: var(--color-danger);
-  --button-border: 2px solid var(--color-danger);
+  --button-background-color-active: var(--color-red-active);
+  --button-background-color-disabled: transparent;
+  --button-background-color-focus: transparent;
+  --button-background-color-hover: var(--color-red-hover);
+  --button-border: 2px solid var(--color-red);
+  --button-border-disabled: 2px solid #D4D4D8;
+  --button-color: var(--color-red);
+  --button-color-disabled: var(--color-old-silver);
+  --button-color-hover: var(--color-red);
 }

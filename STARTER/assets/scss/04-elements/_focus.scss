@@ -5,7 +5,11 @@
 // you have other visual implementation for focused elements!
 // @see http://www.outlinenone.com/
 // =============================================================================
+:root {
+  --focus-box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--color-green);
+}
 
 :focus {
   outline: none;
+  box-shadow: var(--focus-box-shadow);
 }
