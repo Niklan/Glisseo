@@ -4,22 +4,21 @@
 
 :root {
   // Text sizes.
-  --text-base-size: 16px;
-  --text-xxs: 13px;
-  --text-xs: 14px;
-  --text-sm: 15px;
-  --text-md: 18px;
-  --text-lg: 24px;
-  --text-xl: 28px;
-  --text-xxl: 32px;
+  --line-height: 1.5;
+  --font-size-base: 1rem; /* 1rem = 16px if font root is 100% ands browser defaults are used. */
+  --font-size-h1: 2.027rem; /* ~32px */
+  --font-size-h2: 1.802rem; /* ~29px */
+  --font-size-h3: 1.602rem; /* ~26px */
+  --font-size-h4: 1.424rem; /* ~23px */
+  --font-size-h5: 1.266rem; /* ~20px */
+  --font-size-h6: 1.125rem; /* 18px */
+  --font-size-sm: 0.889rem; /* ~14px */
+  --font-size-xs: 0.79rem; /* ~13px */
+  --font-size-xxs: 0.702rem; /* ~11px */
+
+  --font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   --text-color: hsl(0, 0%, 7%);
-
-  --font-primary: sans-serif;
-  --font-secondary: serif;
-  --font-monospace: monospace;
-  --font-family: var(--font-primary);
-  --body-line-height: 1.4;
 
   --mark-background: hsl(60, 100%, 50%);
   --code-background: var(--page-background);
@@ -29,8 +28,8 @@
 
 body {
   font-family: var(--font-family);
-  font-size: var(--text-base-size);
-  line-height: var(--body-line-height);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
   color: var(--text-color);
 }
 

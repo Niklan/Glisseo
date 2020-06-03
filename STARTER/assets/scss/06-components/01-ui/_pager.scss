@@ -32,7 +32,7 @@
   display: inline-flex;
   align-items: center;
   padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xxs);
 }
 
 .pager__item a:hover {
@@ -53,7 +53,7 @@
   display: inline-flex;
   align-items: center;
   padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xxs);
 }
 
 // views-mini-pager.html.twig
@@ -61,5 +61,5 @@
   display: inline-flex;
   align-items: center;
   padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius);
+  border-radius: var(--radius-xxs);
 }

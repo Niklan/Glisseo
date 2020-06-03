@@ -10,7 +10,7 @@
 }
 
 .form-item__description {
-  font-size: var(--text-sm);
+  font-size: var(--font-size-xs);
   display: block;
   margin-top: var(--spacing-xs);
   margin-bottom: var(--spacing-xs);
@@ -22,7 +22,7 @@
 }
 
 .form-item__label {
-  font-size: var(--text-sm);
+  font-size: var(--font-size-sm);
   display: inline-block;
   margin-bottom: var(--spacing-xs);
   cursor: pointer;
@@ -79,7 +79,7 @@
   --form-control-line-height: 1.5;
   --form-control-padding-y: 0.5em;
   --form-control-padding-x: 0.75em;
-  --form-control-border-radius: var(--radius);
+  --form-control-border-radius: var(--radius-xxs);
   --form-control-focus-shadow-color: var(--color-blue-30);
 }
 
