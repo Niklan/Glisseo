@@ -3,27 +3,30 @@
 // =============================================================================
 
 :root {
-  --message-background: transparent;
-  --message-color: var(--text-color);
+  --message-background-color: #222330;
+  --message-color: var(--color-white);
+  --message-border--color: var(--color-light-gray);
+  --message-border-radius: var(--radius-xs);
 }
 
 .messages {
   position: relative;
   margin-bottom: var(--spacing-sm);
   padding: var(--spacing-sm);
-  border-radius: var(--radius-xxs);
-  background: var(--message-background);
+  border-radius: var(--message-border-radius);
+  background: var(--message-background-color);
   color: var(--message-color);
+  border-left: 6px solid var(--message-border--color);
 }
 
 .messages--error {
-  --message-background: #ff9e80;
+  --message-border--color: var(--color-red);
 }
 
 .messages--status {
-  --message-background: #ccff90;
+  --message-border--color: var(--color-green);
 }
 
 .messages--warning {
-  --message-background: #ffe57f;
+  --message-border--color: var(--color-yellow);
 }
