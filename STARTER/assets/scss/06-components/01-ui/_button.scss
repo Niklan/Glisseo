@@ -55,6 +55,7 @@
 
 .button:focus {
   --button-background-color: var(--button-background-color--focus);
+  --button-box-shadow: var(--focus-box-shadow);
 }
 
 .button:disabled {
@@ -62,6 +63,7 @@
   --button-background-color: var(--button-background-color--disabled);
   --button-border--color: var(--button-border--color-disabled);
   --button-color: var(--button-color--disabled);
+  --button-box-shadow: none;
 }
 
 /**

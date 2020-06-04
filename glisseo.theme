@@ -334,11 +334,26 @@ function glisseo_preprocess_form(array &$variables) {
  */
 function glisseo_preprocess_input(array &$variables) {
   $element = $variables['element'];
-  // Elements which doesn't need class ".form-control.".
+  // Elements which doesn't need class ".form-element".
   $blacklist = ['checkbox', 'radio', 'submit'];
 
   if (!in_array($element['#type'], $blacklist)) {
-    $variables['attributes']['class'][] = 'form-control';
+    $variables['attributes']['class'][] = 'form-element';
+  }
+
+  // Add ".form-boolean" for checkboxes and radios.
+  if (in_array($element['#type'], ['checkbox', 'radio'])) {
+    $variables['attributes']['class'][] = 'form-boolean';
+
+    switch ($element['#type']) {
+      case 'checkbox':
+        $variables['attributes']['class'][] = 'form-boolean--type-checkbox';
+        break;
+
+      case 'radio':
+        $variables['attributes']['class'][] = 'form-boolean--type-radio';
+        break;
+    }
   }
 }
 
@@ -346,14 +361,14 @@ function glisseo_preprocess_input(array &$variables) {
  * Implements hook_preprocess_HOOK() for textarea.html.twig.
  */
 function glisseo_preprocess_textarea(array &$variables) {
-  $variables['attributes']['class'][] = 'form-control';
+  $variables['attributes']['class'][] = 'form-element';
 }
 
 /**
  * Implements hook_preprocess_HOOK() for select.html.twig.
  */
 function glisseo_preprocess_select(array &$variables) {
-  $variables['attributes']['class'][] = 'form-control';
+  $variables['attributes']['class'][] = 'form-element';
 }
 
 /**

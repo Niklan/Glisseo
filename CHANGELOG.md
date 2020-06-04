@@ -41,6 +41,8 @@
 - Added `.form-boolean` styles for checkboxes and radios.
 - Shadow variables updated to match Drupal Design System.
 - Buttons now have light shadow.
+- Fixed button focus.
+- For checkboxes and radios added new class with styles.
 
 ## [1.0-alpha15]
 
