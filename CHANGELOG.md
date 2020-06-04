@@ -35,6 +35,7 @@
 - Default font-family is now use system fonts.
 - All unused CSS variables were removed.
 - Component layout folder got weight 2. This is folder for common layout styles, all others must have ability to override it.
+- CSS variables variations now followed by double dash.
 
 ## [1.0-alpha15]
 
