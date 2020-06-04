@@ -1,0 +1,88 @@
+/**
+ * The file contains styles for form boolean elements: radio, checkbox.
+ */
+:root {
+  --form-boolean-width: 18px;
+  --form-boolean-height: 18px;
+  --form-boolean-border--width: 1px;
+  --form-boolean-border--style: solid;
+  --form-boolean-border--color: var(--color-gray-blue);
+  --form-boolean-box-shadow: unset;
+  --form-boolean-background-image: none;
+  --form-boolean-border--color-active: #222330;
+  --form-boolean-border--color-hover: #222330;
+  --form-boolean-background-color: var(--color-white);
+  --form-boolean-border-radius: 2px;
+}
+
+.form-boolean {
+  display: inline-block;
+  width: var(--form-boolean-width);
+  height: var(--form-boolean-height);
+  vertical-align: text-bottom;
+  border: var(--form-boolean-border);
+  border-radius: var(--form-boolean-border-radius);
+  background-color: var(--form-boolean-background-color);
+  background-image: var(--form-boolean-background-image);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  box-shadow: var(--form-boolean-box-shadow);
+  appearance: none;
+  --form-boolean-border: var(--form-boolean-border--width) var(--form-boolean-border--style) var(--form-boolean-border--color);
+}
+
+.form-boolean:active {
+  --form-boolean-border--color: var(--form-boolean-border--color-active);
+  --form-boolean-box-shadow: inset 0 0 0 1px #222330;
+}
+
+.form-boolean:hover {
+  --form-boolean-border--color: var(--form-boolean-border--color-hover);
+  --form-boolean-box-shadow: inset 0 0 0 1px #222330;
+}
+
+.form-boolean:focus {
+  --form-boolean: inset 0 0 0 1px var(--form-control-border--color), var(--focus-box-shadow);
+}
+
+.form-boolean:disabled {
+  cursor: not-allowed;
+  --form-boolean-border--color: #bababf;
+  --form-boolean-background-color: #f2f2f3;
+  --form-boolean-box-shadow: none;
+}
+
+/**
+ * Form boolean variations.
+ */
+.form-boolean--type-radio {
+  --form-boolean-border-radius: 19px;
+  --form-boolean-width: 19px;
+  --form-boolean-height: 19px;
+}
+
+.form-boolean--type-radio:checked {
+  --form-boolean-border--color: var(--color-blue);
+  --form-boolean-background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%23003cc5'/%3E%3C/svg%3E");
+  --form-boolean-box-shadow: inset 0 0 0 1px var(--color-blue);
+}
+
+.form-boolean--type-radio:checked:disabled {
+  --form-boolean-border--color: #bababf;
+  --form-boolean-background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='4.5' cx='8.5' cy='8.5' fill='%23bababf'/%3E%3C/svg%3E");
+  --form-boolean-box-shadow: inset 0 0 0 1px #bababf;
+}
+
+.form-boolean--type-checkbox:checked {
+  --form-boolean-border--color: var(--color-blue);
+  --form-boolean-background-color: var(--color-blue);
+  --form-boolean-background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.7949219,7.095703 6.1816406,9.601563 12.205078,3.2753906 13.689453,4.8359375 6.1816406,12.724609 2.3105469,8.65625 Z' fill='white'/%3E%3C/svg%3E");
+}
+
+.form-boolean--type-checkbox:checked:disabled {
+  --form-boolean-border--color: #bababf;
+  --form-boolean-background-color: #f2f2f3;
+  --form-boolean-box-shadow: none;
+  --form-boolean-background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.7949219,7.095703 6.1816406,9.601563 12.205078,3.2753906 13.689453,4.8359375 6.1816406,12.724609 2.3105469,8.65625 Z' fill='%23bababf'/%3E%3C/svg%3E");
+}

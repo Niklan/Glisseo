@@ -1,0 +1,64 @@
+/**
+ * Form element styles.
+ */
+:root {
+  --form-control-background: var(--color-white);
+  --form-control-background--disabled: #EBEBED;
+  --form-control-color: var(--text-color);
+  --form-control-font-size: var(--font-size-base);
+  --form-control-line-height: var(--line-height);
+  --form-control-padding--y: var(--spacing-sm);
+  --form-control-padding--x: var(--spacing-lg);
+  --form-control-border-radius: var(--radius-xxs);
+  --form-control-border--color: var(--color-gray-blue);
+  --form-control-border--width: 1px;
+  --form-control-border--style: solid;
+  --form-control-box-shadow: unset;
+}
+
+.form-element {
+  font-size: var(--form-control-font-size);
+  line-height: var(--form-control-line-height);
+  display: inline-block;
+  max-width: 100%;
+  padding: var(--form-control-padding);
+  color: var(--form-control-color);
+  border: var(--form-control-border);
+  border-radius: var(--form-control-border-radius);
+  background-color: var(--form-control-background);
+  --form-control-padding: calc(var(--form-control-padding--y) - var(--form-control-border--width)) calc(var(--form-control-padding--x) - var(--form-control-border--width));
+  --form-control-border: var(--form-control-border--width) var(--form-control-border--style) var(--form-control-border--color);
+  box-shadow: var(--form-control-box-shadow);
+  appearance: none;
+}
+
+.form-element:active {
+  --form-control-border--color: #222330;
+}
+
+.form-element:hover {
+  --form-control-border--color: #222330;
+  --form-control-box-shadow: inset 0 0 0 1px var(--form-control-border--color);
+}
+
+.form-element:focus {
+  --form-control-box-shadow: inset 0 0 0 1px var(--form-control-border--color), var(--focus-box-shadow);
+}
+
+.form-element:disabled {
+  --form-control-background: var(--form-control-background--disabled);
+  --form-control-border--color: #D4D4D8;
+  --form-control-box-shadow: unset;
+  cursor: not-allowed;
+}
+
+/**
+ * Form element variations.
+ */
+.form-element--type-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3E%3Cpath fill='none' stroke-width='1.5' d='M1 1L7 7L13 1' stroke='%23545560'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 2.75rem 0.5625rem;
+  padding-right: calc(var(--form-control-padding--x) - var(--form-control-border--width) + var(--form-control-padding--x));
+}

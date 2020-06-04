@@ -36,6 +36,9 @@
 - All unused CSS variables were removed.
 - Component layout folder got weight 2. This is folder for common layout styles, all others must have ability to override it.
 - CSS variables variations now followed by double dash.
+- Reworked `.form-control` styles.
+- `.form-control` is now `.form-element` (like in Drupal core).
+- Added `.form-boolean` styles for checkboxed and radios.
 
 ## [1.0-alpha15]
 
