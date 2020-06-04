@@ -38,7 +38,9 @@
 - CSS variables variations now followed by double dash.
 - Reworked `.form-control` styles.
 - `.form-control` is now `.form-element` (like in Drupal core).
-- Added `.form-boolean` styles for checkboxed and radios.
+- Added `.form-boolean` styles for checkboxes and radios.
+- Shadow variables updated to match Drupal Design System.
+- Buttons now have light shadow.
 
 ## [1.0-alpha15]
 

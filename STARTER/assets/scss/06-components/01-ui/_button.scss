@@ -20,6 +20,7 @@
   --button-line-height: var(--form-control-line-height, 1.5);
   --button-padding--x: var(--spacing-lg);
   --button-padding--y: var(--spacing-sm);
+  --button-box-shadow: var(--shadow-xs);
 }
 
 .button {
@@ -38,6 +39,7 @@
   border: var(--button-border);
   border-radius: var(--button-border-radius);
   background-color: var(--button-background-color);
+  box-shadow: var(--button-box-shadow);
   --button-border: var(--button-border--width) var(--button-border--style) var(--button-border--color);
   --button-padding: var(--button-padding--y) var(--button-padding--x);
 }
