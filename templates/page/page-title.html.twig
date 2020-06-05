@@ -13,13 +13,8 @@
  */
 #}
 {% set bem_block = 'page-title' %}
-{%
-  set classes = [
-    bem_block,
-  ]
-%}
 {{ title_prefix }}
 {% if title %}
-  <h1{{ title_attributes.addClass(classes) }}>{{ title }}</h1>
+  <h1{{ title_attributes.addClass(bem_block) }}>{{ title }}</h1>
 {% endif %}
 {{ title_suffix }}

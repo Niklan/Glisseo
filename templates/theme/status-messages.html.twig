@@ -19,38 +19,32 @@
  *   displaying messages of that specific type.
  */
 #}
+{% set bem_block = 'messages' %}
 {% block messages %}
   {% for type, messages in message_list %}
-    {%
-      set classes = [
-        'messages',
-        'messages--' ~ type,
-      ]
-    %}
-    <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-      {% if type == 'error' %}
-      <div role="alert">
-        {% endif %}
-        {% if status_headings[type] %}
-          <div class="messages__header">
-            <h2 class="messages__title">{{ status_headings[type] }}</h2>
-          </div>
-        {% endif %}
-        <div class="messages__content">
-          {% if messages|length > 1 %}
-            <ul class="messages__list">
-              {% for message in messages %}
-                <li class="messages__item">{{ message }}</li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            {{ messages|first }}
-          {% endif %}
-        </div>
+    {% set bem_modifiers = [type] %}
+    <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(bem(bem_block, bem_modifiers))|without('role', 'aria-label') }}>
+      {% if status_headings[type] %}
+        {% set header_attributes = create_attribute() %}
         {% if type == 'error' %}
-      </div>
+          {% do header_attributes.setAttribute('role', 'alert') %}
+        {% endif %}
+        <div{{ header_attributes.addClass(bem('header', [], bem_block)) }}>
+          <h2 class="{{ bem('title', [], bem_block) }}">{{ status_headings[type] }}</h2>
+        </div>
       {% endif %}
-    </div>
+      <div class="{{ bem('content', [], bem_block) }}">
+        {% if messages|length > 1 %}
+          <ul class="{{ bem('list', [], bem_block) }}">
+            {% for message in messages %}
+              <li class="{{ bem('item', [], bem_block) }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {{ messages|first }}
+        {% endif %}
+      </div>
+  </div>
     {# Remove type specific classes. #}
     {% set attributes = attributes.removeClass(classes) %}
   {% endfor %}

@@ -65,17 +65,17 @@
     - [ ] pager.html.twig
     - [ ] vertical-tabs.html.twig
 - page
-    - [ ] html.html.twig
-    - [ ] page-title.html.twig
+    - [x] html.html.twig
+    - [x] page-title.html.twig
 - region
-    - [ ] region.html.twig
-    - [ ] region--footer.html.twig
-    - [ ] region--header.html.twig
-    - [ ] region--navigation.html.twig
-    - [ ] region--sidebar-first.html.twig
-    - [ ] region--sidebar-second.html.twig
+    - [x] region.html.twig
+    - [x] region--footer.html.twig
+    - [x] region--header.html.twig
+    - [x] region--navigation.html.twig
+    - [x] region--sidebar-first.html.twig
+    - [x] region--sidebar-second.html.twig
 - theme
-    - [ ] status-messages.html.twig
+    - [x] status-messages.html.twig
 - views
     - [ ] views-mini-pager.html.twig
     - [ ] views-view.html.twig
