@@ -1,22 +1,91 @@
-// =============================================================================
-// Drupal hook theme pager.
-//
-// Improve styles and template if this issue will be resolved:
-// https://www.drupal.org/project/drupal/issues/3067584
-// =============================================================================
-
-.pager {}
+/**
+ * Style for pager element.
+ */
+.pager {
+  margin: var(--spacing-md) 0;
+}
 
 .pager__items {
+  font-weight: bold;
   display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: unset;
   padding: unset;
-  list-style: none outside none;
+  list-style: none;
 }
 
 .pager__item {
-  margin: 0 var(--spacing-xs);
+  display: inline-block;
+  margin: 0 var(--spacing-xxs);
+  vertical-align: top;
+}
+
+.pager__item-title--backwards {
+  margin-left: var(--spacing-xs);
+}
+
+.pager__item-title--forward {
+  margin-right: var(--spacing-xs);
+}
+
+.pager__link {
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: 2rem;
+  height: 2rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  text-decoration: none;
+  color: #545560;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+}
+
+.pager__link:hover {
+  color: #545560;
+  background: #E6ECF8;
+}
+
+.pager__link--is-active {
+  color: var(--color-white);
+  background: var(--color-blue);
+}
+
+.pager__link--action-link {
+  border-radius: var(--radius-xxs);
+}
+
+.pager__item--first .pager__link::before,
+.pager__item--previous .pager__link::before,
+.pager__item--next .pager__link::after,
+.pager__item--last .pager__link::after {
+  position: relative;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  content: '';
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pager__item--first .pager__link::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2V14' stroke='%23545560' stroke-width='2'/%3E%3Cpath d='M14 2L8 8L14 14' stroke='%23545560' stroke-width='2'/%3E%3C/svg%3E%0A");
+}
+
+.pager__item--previous .pager__link::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 2L5 8L11 14' stroke='%23545560' stroke-width='2'/%3E%3C/svg%3E%0A");
+}
+
+.pager__item--next .pager__link::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 14L11 8L5 2' stroke='%23545560' stroke-width='2'/%3E%3C/svg%3E%0A");
+}
+
+.pager__item--last .pager__link::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 14L14 2.00001' stroke='%23545560' stroke-width='2'/%3E%3Cpath d='M2 14L8 8.00001L2 2.00001' stroke='%23545560' stroke-width='2'/%3E%3C/svg%3E%0A");
 }
 
 // Show only next and prev for low-res displays.
@@ -26,40 +95,4 @@
   @media (--md) {
     display: block;
   }
-}
-
-.pager__item a {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-xxs);
-}
-
-.pager__item a:hover {
-  background-color: var(--color-border);
-}
-
-.pager__item--active a {
-  color: var(--color-white);
-  background-color: var(--color-primary);
-}
-
-.pager__item--active a:hover {
-  color: var(--color-white);
-  background-color: var(--color-primary);
-}
-
-.pager__item--ellipsis {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-xxs);
-}
-
-// views-mini-pager.html.twig
-.pager--mini .pager__item--active {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-xxs);
 }

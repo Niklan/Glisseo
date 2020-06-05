@@ -45,6 +45,7 @@
 - For checkboxes and radios added new class with styles.
 - Added styles for tabs and messages.
 - Updated styles and markup for status messages.
+- Improved pager style.
 
 ## [1.0-alpha15]
 
