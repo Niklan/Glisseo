@@ -3,15 +3,27 @@
  * @file
  * Theme override to display a block.
  *
+ * Available variables:
+ * - block_id: The block ID. The block ID will differ depends on what block type
+ *   is used.
+ * - block_content_bundle: The block bundle if block is content block.
+ *
  * @see template_preprocess_block()
  */
 #}
+{% set bem_block = 'block' %}
+{%
+  set bem_modifiers = [
+    block_id,
+    block_content_bundle,
+  ]
+%}
 {% do attributes.removeAttribute('id') %}
-<div{{ attributes.addClass(bem_classes) }}>
+<div{{ attributes.addClass(bem(bem_block, bem_modifiers)) }}>
   {% block block %}
     {{ title_prefix }}
     {% if label %}
-      <div{{ title_attributes.addClass(bem_block ~ '__title') }}>
+      <div{{ title_attributes.addClass(bem('title', [], bem_block)) }}>
         {% block title %}
           {{ label }}
         {% endblock title %}
@@ -19,7 +31,7 @@
     {% endif %}
     {{ title_suffix }}
 
-    <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
+    <div{{ content_attributes.addClass(bem('content', [], bem_block)) }}>
       {% block content %}
         {{ content }}
       {% endblock content %}

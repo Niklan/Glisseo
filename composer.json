@@ -13,5 +13,7 @@
     "issues": "https://www.drupal.org/project/issues/glisseo"
   },
   "license": "GPL-2.0-or-later",
-  "require": { }
+  "require": {
+      "drupal/twig_tweak": "^3.0.0@dev"
+  }
 }

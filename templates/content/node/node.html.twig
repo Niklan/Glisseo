@@ -1,35 +1,34 @@
 {%
-  set bem_classes = bem_classes|merge([
-    node.isPromoted() ? bem_block ~ '--promoted',
-    node.isSticky() ? bem_block ~ '--sticky',
-    not node.isPublished() ? bem_block ~ '--unpublished',
+  set bem_block = bem_block([
+    node.entityTypeId(),
+    node.bundle(),
+    view_mode != 'default' ? view_mode,
   ])
 %}
 {%
-  set title_classes = [
-    bem_block ~ '__label',
-    label_hidden ? 'visually-hidden',
+  set bem_modifiers = [
+    node.isPromoted() ? 'promoted',
+    node.isSticky() ? 'sticky',
+    not node.isPublished() ? 'unpublished',
   ]
 %}
-<article{{ attributes.addClass(bem_classes) }}>
+<article{{ attributes.addClass(bem(bem_block, bem_modifiers)) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 
   {% block node %}
-
     {% if display_submitted %}
-      <header class="{{ bem_block }}__header">
+      <header class="{{ bem('header', [], bem_block) }}">
         {% block header %}
-
           {% if not page %}
-            <h2{{ title_attributes.addClass(bem_block ~ '__title') }}>
+            <h2{{ title_attributes.addClass(bem('title', [], bem_block)) }}>
               {% block title %}
-                <a class="{{ bem_block }}__link" href="{{ url }}" rel="bookmark">{{ label }}</a>
+                <a class="{{ bem('link', [], bem_block) }}" href="{{ url }}" rel="bookmark">{{ label }}</a>
               {% endblock %}
             </h2>
           {% endif %}
 
-          <div{{ author_attributes.addClass(bem_block ~ '__submitted') }}>
+          <div{{ author_attributes.addClass(bem('submitted', [], bem_block)) }}>
             {% block submitted %}
               {{ date }}
               {{ metadata }}
@@ -40,14 +39,14 @@
       </header>
     {% endif %}
 
-    <div{{ content_attributes.addClass(bem_block ~ '__content') }}>
+    <div{{ content_attributes.addClass(bem('content', [], bem_block)) }}>
       {% block content %}
         {{ content|without('links') }}
       {% endblock %}
     </div>
 
     {% if content.links %}
-      <div class="{{ bem_block }}__links">
+      <div class="{{ bem('links', [], bem_block) }}">
         {% block links %}
           {{ content.links }}
         {% endblock %}

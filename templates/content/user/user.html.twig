@@ -1,9 +1,11 @@
 {%
-  set bem_classes = bem_classes|merge([
-    user.isBlocked() ? bem_block ~ '--blocked',
+  set bem_block = bem_block([
+    user.entityTypeId(),
+    user.bundle() != user.entityTypeId() ? user.bundle(),
+    view_mode != 'default' ? view_mode,
   ])
 %}
-<article{{ attributes.addClass(bem_classes) }}>
+<article{{ attributes.addClass(bem_block) }}>
   {% block user %}
     {% if content %}
       {% block content %}

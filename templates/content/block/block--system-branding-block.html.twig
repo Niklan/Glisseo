@@ -15,12 +15,12 @@
 #}
 {% block content %}
   {% if site_logo %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem_block }}__logo">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="{{ bem_block }}__img" />
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem('logo', ['test'], bem_block) }}">
+      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="{{ bem('img', [], bem_block) }}" />
     </a>
   {% endif %}
   {% if site_name %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem_block }}__name">{{ site_name }}</a>
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem('name', [], bem_block) }}">{{ site_name }}</a>
   {% endif %}
-  <span class="{{ bem_block }}__slogan">{{ site_slogan }}</span>
+  <span class="{{ bem('slogan', [], bem_block) }}">{{ site_slogan }}</span>
 {% endblock %}

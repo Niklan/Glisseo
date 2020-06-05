@@ -15,6 +15,70 @@
 - `base theme` set to `stable`.
 - Fixed hierarchy menu generation.
 - Added templates for forms from Claro (they use BEM naming) as starting point.
+- Added dependency on `drupal/twig_tweak` module. It allows to define custom Twig functions in theme.
+- Added two custom Twig function: `bem()`, `bem_block()`.
+
+#### BEM to template using Twig function checklist
+
+- content
+    - block
+        - [x] block.html.twig
+        - [x] block--system-branding-block.html.twig
+        - [x] block--system-menu-block.html.twig
+    - comment
+        - [x] comment.html.twig
+    - commerce-product
+        - [x] commerce-product.html.twig
+    - media
+        - [x] media.html.twig
+    - node
+        - [x] node.html.twig
+    - paragraph
+        - [x] paragraph.html.twig
+    - taxonomy-term
+        - [x] taxonomy-term.html.twig
+    - user
+        - [x] user.html.twig
+- field
+    - [x] field.html.twig
+    - [x] field--comment.html.twig
+- form
+    - [ ] checkboxes.html.twig
+    - [ ] field-multiple-value-form.html.twig
+    - [ ] form-element.html.twig
+    - [ ] form-element-label.html.twig
+    - [ ] input.html.twig
+    - [ ] radios.html.twig
+- layout
+    - [ ] layout.html.twig
+    - [ ] layout--onecol.html.twig
+    - [ ] layout--twocol.html.twig
+    - [ ] layout--twocol-bricks.html.twig
+- navigation
+    - [x] breadcrumb.html.twig
+    - [ ] links.html.twig
+    - [ ] menu.html.twig
+    - [ ] menu-local-action.html.twig
+    - [ ] menu-local-task.html.twig
+    - [ ] menu-local-tasks.html.twig
+    - [ ] pager.html.twig
+    - [ ] vertical-tabs.html.twig
+- page
+    - [ ] html.html.twig
+    - [ ] page-title.html.twig
+- region
+    - [ ] region.html.twig
+    - [ ] region--footer.html.twig
+    - [ ] region--header.html.twig
+    - [ ] region--navigation.html.twig
+    - [ ] region--sidebar-first.html.twig
+    - [ ] region--sidebar-second.html.twig
+- theme
+    - [ ] status-messages.html.twig
+- views
+    - [ ] views-mini-pager.html.twig
+    - [ ] views-view.html.twig
+    - [ ] views-view-unformatted.html.twig
 
 ### Starter theme
 

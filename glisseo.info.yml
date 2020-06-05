@@ -4,5 +4,7 @@ name: Glisseo (base theme)
 type: theme
 description: 'Glisseo is a base theme for fast and easy start to theme your project.'
 package: Glisseo
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8.8 || ^9
 base theme: stable
+dependencies:
+  - drupal:twig_tweak (>=3.0.0)

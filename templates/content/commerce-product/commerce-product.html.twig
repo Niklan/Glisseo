@@ -1,4 +1,11 @@
-<article{{ attributes.addClass(bem_classes) }}>
+{%
+  set bem_block = bem_block([
+    product_entity.getEntityTypeId(),
+    product_entity.bundle(),
+    view_mode != 'default' ? view_mode,
+  ])
+%}
+<article{{ attributes.addClass(bem_block) }}>
   {% block commerce_product %}
     {{ title_prefix }}
     {{ title_suffix }}

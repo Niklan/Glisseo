@@ -14,22 +14,33 @@
  * @see glisseo_preprocess_field()
  */
 #}
+{# Common field BEM naming. #}
+{% set field_bem_block = 'field' %}
 {%
-  set bem_classes = bem_classes|merge([
-    label_display == 'inline' ? bem_block ~ '--label-inline',
+  set field_bem_modifiers = [
+    'name-' ~ field_name|clean_class,
+    'type-' ~ field_type|clean_class,
+    'label-' ~ label_display|clean_class
+  ]
+%}
+{# Entity-specific BEM naming. #}
+{%
+  set entity_bem_block = bem_block([
+    entity_type,
+    bundle != entity_type ? bundle,
+    field_name,
   ])
 %}
 {%
-  set title_classes = [
-    bem_block ~ '__label',
-    label_hidden ? 'visually-hidden',
+  set entity_bem_modifiers = [
+    view_mode,
   ]
 %}
-<div{{ attributes.addClass(bem_classes) }}>
+<div{{ attributes.addClass(bem(field_bem_block, field_bem_modifiers), bem(entity_bem_block, entity_bem_modifiers)) }}>
   {% block field %}
 
     {% if not label_hidden %}
-      <div{{ title_attributes.addClass(title_classes) }}>
+      <div{{ title_attributes.addClass(bem('label', [], field_bem_block), bem('label', [], entity_bem_block)) }}>
         {% block label %}
           {{ label }}
         {% endblock %}
@@ -39,15 +50,15 @@
     {% block items %}
       {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
       {% if (multiple) %}
-        <div{{ content_attributes.addClass(bem_block ~ '__items') }}>
+        <div{{ content_attributes.addClass(bem('items', [], field_bem_block), bem('items', [], entity_bem_block)) }}>
       {% else %}
-        <div{{ content_attributes.addClass(bem_block ~ '__value') }}>
+        <div{{ content_attributes.addClass(bem('value', [], field_bem_block), bem('value', [], entity_bem_block)) }}>
       {% endif %}
 
       {% for item in items %}
         {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
         {% if multiple or item_attributes_not_empty %}
-          <div{{ item.attributes.addClass(bem_block ~ '__item') }}>
+          <div{{ item.attributes.addClass(bem('item', [], field_bem_block), bem('item', [], entity_bem_block)) }}>
         {% endif -%}
 
         {% block item %}

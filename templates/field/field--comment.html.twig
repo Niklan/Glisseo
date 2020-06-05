@@ -1,29 +1,40 @@
+{# Common field BEM naming. #}
+{% set field_bem_block = 'field' %}
 {%
-  set bem_classes = bem_classes|merge([
-  label_display == 'inline' ? bem_block ~ '--label-inline',
-])
+  set field_bem_modifiers = [
+    'name-' ~ field_name|clean_class,
+    'type-' ~ field_type|clean_class,
+    'label-' ~ label_display|clean_class
+  ]
+%}
+{# Entity-specific BEM naming. #}
+{%
+  set entity_bem_block = bem_block([
+    entity_type,
+    bundle != entity_type ? bundle,
+    field_name,
+  ])
 %}
 {%
-  set title_classes = [
-  bem_block ~ '__label',
-  label_hidden ? 'visually-hidden',
-]
+  set entity_bem_modifiers = [
+    view_mode,
+  ]
 %}
 <a id="comments"></a>
-<section{{ attributes.addClass(bem_classes) }}>
+<section{{ attributes.addClass(bem(field_bem_block, field_bem_modifiers), bem(entity_bem_block, entity_bem_modifiers)) }}>
   {% if comments and not label_hidden %}
     {{ title_prefix }}
-    <h2{{ title_attributes.addClass(bem_block ~ '__title') }}>{{ label|t }}</h2>
+    <h2{{ title_attributes.addClass(bem('title', [], field_bem_block), bem('title', [], entity_bem_block)) }}>{{ label|t }}</h2>
     {{ title_suffix }}
   {% endif %}
 
-  <div class="{{ bem_block }}__content">
+  <div class="{{ bem('content', [], field_bem_block) }} {{ bem('content', [], entity_bem_block) }}">
     {{ comments }}
   </div>
 
   {% if comment_form %}
-    <div class="{{ bem_block }}__form-container">
-      <h2{{ content_attributes.addClass(bem_block ~ '__form-title') }}>{{ 'Add new comment'|t }}</h2>
+    <div class="{{ bem('form-container', [], field_bem_block) }} {{ bem('form-container', [], entity_bem_block) }}">
+      <h2{{ content_attributes.addClass(bem('form-title', [], field_bem_block), bem('form-title', [], entity_bem_block)) }}>{{ 'Add new comment'|t }}</h2>
       {{ comment_form }}
     </div>
   {% endif %}

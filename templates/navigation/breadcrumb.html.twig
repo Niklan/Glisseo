@@ -6,30 +6,36 @@
  * @see template_preprocess_breadcrumb().
  */
 #}
+{% set bem_block = 'breadcrumb' %}
+{%
+  set bem_modifiers = [
+    breadcrumb|length == 1 ? 'single-item',
+  ]
+%}
 {% if breadcrumb %}
-  <nav{{ attributes.addClass(bem_classes) }}>
+  <nav{{ attributes.addClass(bem(bem_block, bem_modifiers)) }}>
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
     {% spaceless %}
       {% if breadcrumb|length > 1 %}
-        <div class="{{ bem_block }}__path">
+        <div class="{{ bem('path', [], bem_block) }}">
           {% for item in breadcrumb %}
             {% if not loop.last %}
               {% if item.url %}
-                <a href="{{ item.url }}" class="{{ bem_block }}__item-link">{{ item.text }}</a>
-                <span class="{{ bem_block }}__delimiter"></span>
+                <a href="{{ item.url }}" class="{{ bem('item-link', [], bem_block) }}">{{ item.text }}</a>
+                <span class="{{ bem('delimeter', [], bem_block) }}"></span>
               {% else %}
-                <span class="{{ bem_block }}__item-link {{ bem_block }}__item-link--text">{{ item.text }}</span>
+                <span class="{{ bem('item-link', ['text'], bem_block) }}">{{ item.text }}</span>
               {% endif %}
             {% endif %}
           {% endfor %}
         </div>
       {% endif %}
-      <div class="{{ bem_block }}__current">
+      <div class="{{ bem('current', [], bem_block) }}">
         {% set last = breadcrumb|last %}
         {% if last.url %}
-          <a href="{{ last.url }}" class="{{ bem_block }}__item-link {{ bem_block }}__item-link--current">{{ last.text }}</a>
+          <a href="{{ last.url }}" class="{{ bem('item-link', ['current'], bem_block) }}">{{ last.text }}</a>
         {% else %}
-          <span class="{{ bem_block }}__item-link {{ bem_block }}__item-link--text {{ bem_block }}__item-link--current">{{ last.text }}</span>
+          <span class="{{ bem('path', ['text', 'current'], bem_block) }}">{{ last.text }}</span>
         {% endif %}
       </div>
     {% endspaceless %}

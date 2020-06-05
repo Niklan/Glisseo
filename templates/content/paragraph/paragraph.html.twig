@@ -1,7 +1,14 @@
-<div{{ attributes.addClass(bem_classes) }}>
+{%
+  set bem_block = bem_block([
+    paragraph.entityTypeId(),
+    paragraph.bundle() != paragraph.entityTypeId() ? paragraph.bundle(),
+    view_mode != 'default' ? view_mode,
+  ])
+%}
+<div{{ attributes.addClass(bem_block) }}>
   {% block paragraph %}
 
-    <div class="{{ bem_block }}__content">
+    <div class="{{ bem('content', [], bem_block) }}">
       {% block content %}
         {{ content }}
       {% endblock %}

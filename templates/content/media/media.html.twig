@@ -1,4 +1,11 @@
-<article{{ attributes.addClass(bem_classes) }}>
+{%
+  set bem_block = bem_block([
+    media.getEntityTypeId(),
+    media.bundle() != media.getEntityTypeId() ? media.bundle(),
+    view_mode != 'default' ? view_mode,
+  ])
+%}
+<article{{ attributes.addClass(bem_block) }}>
   {% block media %}
     {{ title_suffix.contextual_links }}
     {% if content %}

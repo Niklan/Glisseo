@@ -31,10 +31,17 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
+{% set bem_block = 'block' %}
+{%
+  set bem_modifiers = [
+    block_id,
+    block_content_bundle,
+  ]
+%}
 {% set heading_id = plugin_id ~ '-menu'|clean_id %}
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(bem_classes)|without('role', 'aria-labelledby') }}>
+<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(bem(bem_block, bem_modifiers))|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
-  {% set title_attributes = title_attributes.addClass(bem_block ~ '__title') %}
+  {% set title_attributes = title_attributes.addClass(bem('title', [], bem_block)) %}
   {% if not configuration.label_display %}
     {% set title_attributes = title_attributes.addClass('visually-hidden') %}
   {% endif %}
