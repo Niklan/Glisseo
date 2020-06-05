@@ -17,6 +17,7 @@
 - Added templates for forms from Claro (they use BEM naming) as starting point.
 - Added dependency on `drupal/twig_tweak` module. It allows to define custom Twig functions in theme.
 - Added two custom Twig function: `bem()`, `bem_block()`.
+- [#3111051](https://www.drupal.org/project/glisseo/issues/3111051) Fixed and improved region naming.
 
 #### BEM to template using Twig function checklist
 

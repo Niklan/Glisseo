@@ -1,6 +1,8 @@
+{% set bem_block = 'region' %}
+{% set bem_modifiers = [region] %}
 {% if content %}
   {% block region %}
-    <div{{ attributes.addClass(bem_classes) }}>
+    <div{{ attributes.addClass(bem(bem_block, bem_modifiers)) }}>
       {% block content %}
         {{ content }}
       {% endblock %}

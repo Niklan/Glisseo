@@ -490,12 +490,3 @@ function glisseo_preprocess_user(array &$variables) {
     $variables['view_mode'] = 'default';
   }
 }
-
-/**
- * Implements hook_preprocess_HOOK() for 'region.html.twig'.
- */
-function glisseo_preprocess_region(array &$variables) {
-//  if (isset($variables['region'])) {
-//    $variables['bem_modifiers'][] = Html::getClass($variables['region']);
-//  }
-}

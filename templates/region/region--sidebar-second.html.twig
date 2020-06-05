@@ -1,7 +1,7 @@
 {% extends 'region.html.twig' %}
 
 {% block region %}
-  <aside{{ attributes.addClass(bem_classes) }}>
+  <aside{{ attributes.addClass(bem(bem_block, bem_modifiers)) }}>
     {{ block('content') }}
   </aside>
 {% endblock %}
