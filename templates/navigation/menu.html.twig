@@ -4,49 +4,48 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
+{% set block = 'menu' %}
+{% set modifiers = [menu_name] %}
+{{ menus.menu_links(items, attributes, 0, block, modifiers) }}
 
-{{ menus.menu_links(items, attributes, 0, bem_block, bem_modifiers) }}
-
-{% macro menu_links(items, attributes, menu_level, bem_block, bem_modifiers) %}
+{% macro menu_links(items, attributes, menu_level, block, modifiers) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      {% set classes = [
-        bem_block,
-      ] %}
-      {% for bem_modifier in bem_modifiers %}
-        {% if bem_modifier|length %}
-          {% set classes = classes|merge([bem_block ~ '--' ~ bem_modifier]) %}
-        {% endif %}
-      {% endfor %}
+      {% set classes = bem(block, modifiers) %}
       <ul{{ attributes.addClass(classes) }}>
         {% for item in items %}
-          {% set classes = [
-            bem_block ~ '__item',
-            item.is_expanded ? bem_block ~ '__item--expanded',
-            item.is_collapsed ? bem_block ~ '__item--collapsed',
-            item.in_active_trail ? bem_block ~ '__item--active-trail',
-          ] %}
-          <li{{ item.attributes.addClass(classes) }}>
-            {{ link(item.title, item.url, { 'class': [bem_block ~ '__link'] }) }}
+          {%
+            set item_modifiers = [
+              item.is_expanded ? 'expanded',
+              item.is_collapsed ? 'collapsed',
+              item.in_active_trail ? 'active-trail',
+            ]
+          %}
+          {% set item_classes = [bem('item', item_modifiers, block)] %}
+          <li{{ item.attributes.addClass(item_classes) }}>
+            {{ link(item.title, item.url, { 'class': [bem('link', [], block)] }) }}
             {% if item.below %}
-              {{ menus.menu_links(item.below, attributes, menu_level + 1, bem_block) }}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1, block) }}
             {% endif %}
           </li>
         {% endfor %}
       </ul>
     {% else %}
-      <ul{{ attributes.addClass(bem_block ~ '__submenu') }}>
+      {% set classes = [bem('submenu', [], block)] %}
+      <ul{{ attributes.addClass(classes) }}>
         {% for item in items %}
-          {% set classes = [
-            bem_block ~ '__item',
-            bem_block ~ '__item--submenu',
-            item.is_expanded ? bem_block ~ '__item--expanded',
-            item.is_collapsed ? bem_block ~ '__item--collapsed',
-            item.in_active_trail ? bem_block ~ '__item--active-trail',
-          ] %}
-          <li{{ item.attributes.addClass(classes) }}>
-            {{ link(item.title, item.url, { 'class': [bem_block ~ '__link', bem_block ~ '__link--submenu'] }) }}
+          {%
+            set item_modifiers = [
+              'submenu',
+              item.is_expanded ? 'expanded',
+              item.is_collapsed ? 'collapsed',
+              item.in_active_trail ? 'active-trail',
+            ]
+          %}
+          {% set item_classes = [bem('item', item_modifiers, block)] %}
+          <li{{ item.attributes.addClass(item_classes) }}>
+            {{ link(item.title, item.url, { 'class': [bem('link', ['submenu'], block)] }) }}
             {% if item.below %}
               {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
             {% endif %}

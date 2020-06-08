@@ -1,24 +1,25 @@
 {%
-  set bem_block = bem_block([
+  set block = bem_block([
     term.entityTypeId(),
     term.bundle() != term.entityTypeId() ? term.bundle(),
     view_mode != 'default' ? view_mode,
   ])
 %}
-<div{{ attributes.addClass(bem_block) }}>
+{% set classes = [block] %}
+<div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
 
   {% block taxonomy_term %}
     {% if not page %}
-      <h2 class="{{ bem('title', [], bem_block) }}">
+      <h2 class="{{ bem('title', [], block) }}">
         {% block title %}
           <a href="{{ url }}">{{ name }}</a>
         {% endblock %}
       </h2>
     {% endif %}
 
-    <div class="{{ bem('content', [], bem_block) }}">
+    <div class="{{ bem('content', [], block) }}">
       {% block content %}
         {{ content }}
       {% endblock %}

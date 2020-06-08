@@ -3,8 +3,6 @@
  * @file
  * Theme override for a form element.
  *
- * @todo Remove when https://www.drupal.org/node/3010558 is fixed.
- *
  * @see template_preprocess_form_element()
  */
 #}
@@ -12,47 +10,74 @@
   Most of core-provided js assumes that the CSS class pattern js-form-item-[something] or
   js-form-type-[something] exists on form items. We have to keep them.
 #}
+{% set block = 'form-item' %}
 {%
-  set classes = [
-    'js-form-item',
-    'form-item',
-    'js-form-type-' ~ type|clean_class,
-    'form-type--' ~ type|clean_class,
-    type in ['checkbox', 'radio'] ? 'form-type--boolean',
-    'js-form-item-' ~ name|clean_class,
-    'form-item--' ~ name|clean_class,
-    title_display not in ['after', 'before'] ? 'form-item--no-label',
-    disabled == 'disabled' ? 'form-item--disabled',
-    errors ? 'form-item--error',
+  set modifiers = [
+    'name-' ~ name,
+    'type-' ~ type,
+    type in ['checkbox', 'radio'] ? 'boolean',
+    title_display not in ['after', 'before'] ? 'no-label',
+    disabled == 'disabled' ? 'disabled',
+    errors ? 'error'
   ]
 %}
 {%
+  set classes = [
+    bem(block, modifiers),
+    'js-form-item',
+    'js-form-type-' ~ type|clean_class,
+    'js-form-item-' ~ name|clean_class,
+  ]
+%}
+{# Description. #}
+{%
   set description_classes = [
-    'form-item__description',
+    bem('description', [], block),
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
+{# Content. #}
+{% set content_class = bem('content', [], block) %}
+{# Prefix. #}
+{%
+  set prefix_modifiers = [
+    disabled == 'disabled' ? 'disabled',
+  ]
+%}
+{% set prefix_class = bem('prefix', prefix_modifiers, block) %}
+{# Suffix. #}
+{%
+  set suffix_modifiers = [
+    disabled == 'disabled' ? 'disabled',
+  ]
+%}
+{% set suffix_class = bem('prefix', prefix_modifiers, block) %}
+{# Error message. #}
+{% set error_message_class = bem('error-message', [], block) %}
+
 <div{{ attributes.addClass(classes) }}>
   {% if label_display in ['before', 'invisible'] %}
     {{ label }}
   {% endif %}
   {% if prefix is not empty %}
-    <span class="form-item__prefix{{disabled == 'disabled' ? ' is-disabled'}}">{{ prefix }}</span>
+    <span class="{{ prefix_class }}">{{ prefix }}</span>
   {% endif %}
   {% if description_display == 'before' and description.content %}
     <div{{ description.attributes.addClass(description_classes) }}>
       {{ description.content }}
     </div>
   {% endif %}
-  {{ children }}
+  <div class="{{ content_class }}">
+    {{ children }}
+  </div>
   {% if suffix is not empty %}
-    <span class="form-item__suffix{{disabled == 'disabled' ? ' is-disabled'}}">{{ suffix }}</span>
+    <span class="{{ suffix_class }}">{{ suffix }}</span>
   {% endif %}
   {% if label_display == 'after' %}
     {{ label }}
   {% endif %}
   {% if errors %}
-    <div class="form-item__error-message">
+    <div class="{{ error_message_class }}">
       {{ errors }}
     </div>
   {% endif %}

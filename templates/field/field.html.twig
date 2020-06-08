@@ -6,7 +6,6 @@
  * Available variables:
  * - attributes: HTML attributes for containing element.
  * - classes: An array of classes for main wrapper.
- * - bem_block: The BEM block class.
  * - entity_type: The name of entity type, which field belongs to.
  * - bundle: The entity bundle name for the field.
  * - view_mode: The view mode used to render field.
@@ -15,32 +14,44 @@
  */
 #}
 {# Common field BEM naming. #}
-{% set field_bem_block = 'field' %}
+{% set field_block = 'field' %}
 {%
-  set field_bem_modifiers = [
-    'name-' ~ field_name|clean_class,
-    'type-' ~ field_type|clean_class,
-    'label-' ~ label_display|clean_class
+  set field_modifiers = [
+    'name-' ~ field_name,
+    'type-' ~ field_type,
+    'label-' ~ label_display,
   ]
 %}
 {# Entity-specific BEM naming. #}
 {%
-  set entity_bem_block = bem_block([
+  set entity_block = bem_block([
     entity_type,
     bundle != entity_type ? bundle,
     field_name,
   ])
 %}
 {%
-  set entity_bem_modifiers = [
+  set entity_modifiers = [
     view_mode,
   ]
 %}
-<div{{ attributes.addClass(bem(field_bem_block, field_bem_modifiers), bem(entity_bem_block, entity_bem_modifiers)) }}>
+{%
+  set classes = [
+    bem(entity_block, entity_modifiers),
+    bem(field_block, field_modifiers),
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
   {% block field %}
 
     {% if not label_hidden %}
-      <div{{ title_attributes.addClass(bem('label', [], field_bem_block), bem('label', [], entity_bem_block)) }}>
+      {%
+        set title_classes = [
+          bem('label', [], entity_block),
+          bem('label', [], field_block),
+        ]
+      %}
+      <div{{ title_attributes.addClass(title_classes) }}>
         {% block label %}
           {{ label }}
         {% endblock %}
@@ -50,28 +61,38 @@
     {% block items %}
       {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
       {% if (multiple) %}
-        <div{{ content_attributes.addClass(bem('items', [], field_bem_block), bem('items', [], entity_bem_block)) }}>
+        {% set content_element = 'items' %}
       {% else %}
-        <div{{ content_attributes.addClass(bem('value', [], field_bem_block), bem('value', [], entity_bem_block)) }}>
+        {% set content_element = 'value' %}
       {% endif %}
+      {%
+        set content_classes = [
+          bem(content_element, [], entity_block),
+          bem(content_element, [], field_block),
+        ]
+      %}
+      <div{{ content_attributes.addClass(content_classes) }}>
+        {% for item in items %}
+          {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
+          {% if multiple or item_attributes_not_empty %}
+            {%
+              set item_classes = [
+                bem('item', [], entity_block),
+                bem('item', [], field_block)
+              ]
+            %}
+            <div{{ item.attributes.addClass(item_classes) }}>
+          {% endif -%}
 
-      {% for item in items %}
-        {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
-        {% if multiple or item_attributes_not_empty %}
-          <div{{ item.attributes.addClass(bem('item', [], field_bem_block), bem('item', [], entity_bem_block)) }}>
-        {% endif -%}
+          {% block item %}
+            {{- item.content -}}
+          {% endblock %}
 
-        {% block item %}
-          {{- item.content -}}
-        {% endblock %}
-
-        {% if multiple or item_attributes_not_empty %}
-          </div>
-        {% endif -%}
-      {% endfor %}
-
-      {# for __items and __value #}
-        </div>
+          {% if multiple or item_attributes_not_empty %}
+            </div> {# /__item #}
+          {% endif -%}
+        {% endfor %}
+      </div> {# /__items and __value #}
     {% endblock %}
 
   {% endblock %}

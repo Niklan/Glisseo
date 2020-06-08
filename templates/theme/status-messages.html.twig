@@ -19,25 +19,27 @@
  *   displaying messages of that specific type.
  */
 #}
-{% set bem_block = 'messages' %}
+{% set block = 'messages' %}
 {% block messages %}
   {% for type, messages in message_list %}
-    {% set bem_modifiers = [type] %}
-    <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(bem(bem_block, bem_modifiers))|without('role', 'aria-label') }}>
+    {% set modifiers = [type] %}
+    {% set classes = [bem(block, modifiers)] %}
+    <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
       {% if status_headings[type] %}
         {% set header_attributes = create_attribute() %}
         {% if type == 'error' %}
           {% do header_attributes.setAttribute('role', 'alert') %}
         {% endif %}
-        <div{{ header_attributes.addClass(bem('header', [], bem_block)) }}>
-          <h2 class="{{ bem('title', [], bem_block) }}">{{ status_headings[type] }}</h2>
+        {% set header_classes = [bem('header', [], block)] %}
+        <div{{ header_attributes.addClass(header_classes) }}>
+          <h2 class="{{ bem('title', [], block) }}">{{ status_headings[type] }}</h2>
         </div>
       {% endif %}
-      <div class="{{ bem('content', [], bem_block) }}">
+      <div class="{{ bem('content', [], block) }}">
         {% if messages|length > 1 %}
-          <ul class="{{ bem('list', [], bem_block) }}">
+          <ul class="{{ bem('list', [], block) }}">
             {% for message in messages %}
-              <li class="{{ bem('item', [], bem_block) }}">{{ message }}</li>
+              <li class="{{ bem('item', [], block) }}">{{ message }}</li>
             {% endfor %}
           </ul>
         {% else %}
@@ -45,7 +47,5 @@
         {% endif %}
       </div>
   </div>
-    {# Remove type specific classes. #}
-    {% set attributes = attributes.removeClass(classes) %}
   {% endfor %}
 {% endblock messages %}

@@ -15,6 +15,7 @@ use Twig\TwigFunction;
  * Provides macro function to generate BEM classes.
  *
  * Examples:
+ *
  * @code
  *   {{ bem('a') }} // a
  * @endcode
@@ -359,40 +360,33 @@ function _glisseo_process_form_element(array &$element, FormStateInterface $form
 }
 
 /**
- * Implements hook_preprocess_HOOK() for form.html.twig.
- */
-function glisseo_preprocess_form(array &$variables) {
-//  $element = &$variables['element'];
-//  // This element contains form_id and base_form_id.
-//  $variables['bem_modifiers'] = $element['#theme'];
-}
-
-/**
  * Implements hook_preprocess_HOOK() for input.html.twig.
  */
 function glisseo_preprocess_input(array &$variables) {
   $element = $variables['element'];
-  // Elements which doesn't need class ".form-element".
-  $blacklist = ['checkbox', 'radio', 'submit'];
-
-  if (!in_array($element['#type'], $blacklist)) {
-    $variables['attributes']['class'][] = 'form-element';
+  $variables['element_type'] = $element['#type'];
+  if (isset($element['#name'])) {
+    $variables['element_name'] = $element['#name'];
   }
-
-  // Add ".form-boolean" for checkboxes and radios.
-  if (in_array($element['#type'], ['checkbox', 'radio'])) {
-    $variables['attributes']['class'][] = 'form-boolean';
-
-    switch ($element['#type']) {
-      case 'checkbox':
-        $variables['attributes']['class'][] = 'form-boolean--type-checkbox';
-        break;
-
-      case 'radio':
-        $variables['attributes']['class'][] = 'form-boolean--type-radio';
-        break;
+  // Remove duplicate classes. We handle them in template.
+  if ($element['#type'] == 'submit') {
+    $button_classes = ['button'];
+    if (isset($element['#button_type'])) {
+      $variables['button_type'] = $element['#button_type'];
+      $button_classes[] = 'button--' . Html::getClass($variables['button_type']);
     }
+
+    $variables['attributes']['class'] = array_filter($variables['attributes']['class'], function ($class) use ($button_classes) {
+      return !in_array($class, $button_classes);
+    });
   }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for select.html.twig.
+ */
+function glisseo_preprocess_select(array &$variables) {
+  $variables['multiple'] = $variables['element']['#multiple'];
 }
 
 /**
@@ -403,80 +397,38 @@ function glisseo_preprocess_textarea(array &$variables) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for select.html.twig.
- */
-function glisseo_preprocess_select(array &$variables) {
-  $variables['attributes']['class'][] = 'form-element';
-}
-
-/**
- * Implements hook_preprocess_HOOK() for menu-local-action.html.twig.
- */
-function glisseo_preprocess_menu_local_action(array &$variables) {
-//  $classes = &$variables['link']['#options']['attributes']['class'];
-//  foreach ($classes as &$class) {
-//    if ($class == 'button-action') {
-//      $class = 'button--action';
-//    }
-//  }
-//  $classes[] = 'local-actions__link';
-}
-
-/**
- * Implements hook_preprocess_HOOK() for menu-local-task.html.twig.
- */
-function glisseo_preprocess_menu_local_task(array &$variables) {
-//  $classes = &$variables['link']['#options']['attributes']['class'];
-//  $classes[] = 'tabs__link';
-//
-//  if (!empty($variables['element']['#active'])) {
-//    $classes[] = 'tabs__link--active';
-//  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for 'menu.html.twig'.
- */
-function glisseo_preprocess_menu(array &$variables) {
-//  $variables['bem_block'] = 'menu';
-//
-//  if (isset($variables['menu_name'])) {
-//    $variables['bem_modifiers'][] = $variables['menu_name'];
-//  }
-}
-
-/**
  * Implements hook_preprocess_HOOK() links.html.twig.
  */
 function glisseo_preprocess_links(array &$variables) {
-//  $attributes = &$variables['attributes'];
-//
-//  // Improve BEM block classes.
-//  foreach ($attributes['class'] as &$class) {
-//    if ($class == 'inline') {
-//      $class = 'links--inline';
-//    }
-//  }
-//
-//  // Improve list item BEM classes.
-//  foreach ($variables['links'] as &$link) {
-//    /** @var \Drupal\Core\Template\Attribute $list_item_attributes */
-//    $list_item_attributes = &$link['attributes'];
-//    if (in_array('class', array_keys($list_item_attributes->toArray()))) {
-//      $list_item_classes = $list_item_attributes->toArray()['class'];
-//
-//      foreach ($list_item_classes as $list_item_class) {
-//        $list_item_attributes->removeClass($list_item_class);
-//        $list_item_attributes->addClass('links__item');
-//        $list_item_attributes->addClass('links__item--' . $list_item_class);
-//      }
-//    }
-//  }
-//
-//  // Improve list <a> BEM classes.
-//  foreach ($variables['links'] as &$link) {
-//    $link['link']['#options']['attributes']['class'][] = 'links__item-link';
-//  }
+  // @todo move this logic into template.
+  //  $attributes = &$variables['attributes'];
+  //
+  //  // Improve BEM block classes.
+  //  foreach ($attributes['class'] as &$class) {
+  //    if ($class == 'inline') {
+  //      $class = 'links--inline';
+  //    }
+  //  }
+  //
+  //  // Improve list item BEM classes.
+  //  foreach ($variables['links'] as &$link) {
+  //    /** @var \Drupal\Core\Template\Attribute $list_item_attributes */
+  //    $list_item_attributes = &$link['attributes'];
+  //    if (in_array('class', array_keys($list_item_attributes->toArray()))) {
+  //      $list_item_classes = $list_item_attributes->toArray()['class'];
+  //
+  //      foreach ($list_item_classes as $list_item_class) {
+  //        $list_item_attributes->removeClass($list_item_class);
+  //        $list_item_attributes->addClass('links__item');
+  //        $list_item_attributes->addClass('links__item--' . $list_item_class);
+  //      }
+  //    }
+  //  }
+  //
+  //  // Improve list <a> BEM classes.
+  //  foreach ($variables['links'] as &$link) {
+  //    $link['link']['#options']['attributes']['class'][] = 'links__item-link';
+  //  }
 }
 
 /**

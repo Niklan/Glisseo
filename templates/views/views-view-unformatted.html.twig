@@ -1,30 +1,13 @@
 {% if title %}
-<div class="{{ bem_block }}-group">
-  <h3 class="{{ bem_block }}-group__title">
-    {% block title %}
-      {{ title }}
-    {% endblock %}
-  </h3>
-  <div class="{{ bem_block }}-group__content">
-    {% endif %}
-
-    {% block rows %}
-      {% for row in rows %}
-        {% block row %}
-          {% set row_classes = [
-            default_row_class ? bem_block,
-          ] %}
-
-          <div{{ row.attributes.addClass(row_classes) }}>
-            {% block content %}
-              {{ row.content }}
-            {% endblock %}
-          </div>
-        {% endblock %}
-      {% endfor %}
-    {% endblock %}
-
-    {% if title %}
-  </div>
-</div>
+  <h3>{{ title }}</h3>
 {% endif %}
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{- row.content -}}
+  </div>
+{% endfor %}

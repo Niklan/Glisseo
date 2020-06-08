@@ -1,40 +1,58 @@
 {# Common field BEM naming. #}
-{% set field_bem_block = 'field' %}
+{% set field_block = 'field' %}
 {%
-  set field_bem_modifiers = [
-    'name-' ~ field_name|clean_class,
-    'type-' ~ field_type|clean_class,
-    'label-' ~ label_display|clean_class
+  set field_modifiers = [
+    'name-' ~ field_name,
+    'type-' ~ field_type,
+    'label-' ~ label_display,
   ]
 %}
 {# Entity-specific BEM naming. #}
 {%
-  set entity_bem_block = bem_block([
+  set entity_block = bem_block([
     entity_type,
     bundle != entity_type ? bundle,
     field_name,
   ])
 %}
 {%
-  set entity_bem_modifiers = [
+  set entity_modifiers = [
     view_mode,
   ]
 %}
+{%
+  set classes = [
+    bem(entity_block, entity_modifiers),
+    bem(field_block, field_modifiers),
+  ]
+%}
 <a id="comments"></a>
-<section{{ attributes.addClass(bem(field_bem_block, field_bem_modifiers), bem(entity_bem_block, entity_bem_modifiers)) }}>
+<section{{ attributes.addClass(classes) }}>
   {% if comments and not label_hidden %}
     {{ title_prefix }}
-    <h2{{ title_attributes.addClass(bem('title', [], field_bem_block), bem('title', [], entity_bem_block)) }}>{{ label|t }}</h2>
+    {%
+      set title_classes = [
+        bem('title', [], entity_block),
+        bem('title', [], field_block),
+      ]
+    %}
+    <h2{{ title_attributes.addClass(title_classes) }}>{{ label|t }}</h2>
     {{ title_suffix }}
   {% endif %}
 
-  <div class="{{ bem('content', [], field_bem_block) }} {{ bem('content', [], entity_bem_block) }}">
+  <div class="{{ bem('content', [], entity_block) }} {{ bem('content', [], field_block) }}">
     {{ comments }}
   </div>
 
   {% if comment_form %}
-    <div class="{{ bem('form-container', [], field_bem_block) }} {{ bem('form-container', [], entity_bem_block) }}">
-      <h2{{ content_attributes.addClass(bem('form-title', [], field_bem_block), bem('form-title', [], entity_bem_block)) }}>{{ 'Add new comment'|t }}</h2>
+    <div class="{{ bem('form-container', [], entity_block) }} {{ bem('form-container', [], field_block) }}">
+      {%
+        set content_classes = [
+          bem('form-title', [], entity_block),
+          bem('form-title', [], field_block),
+        ]
+      %}
+      <h2{{ content_attributes.addClass(content_classes) }}>{{ 'Add new comment'|t }}</h2>
       {{ comment_form }}
     </div>
   {% endif %}

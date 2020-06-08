@@ -6,19 +6,31 @@
  * Available variables:
  * - attributes: A list of HTML attributes for the input element.
  * - children: Optional additional rendered elements.
+ * - element_type: The element type name.
+ * - element_name: The element name.
+ * - button_type: If element is button and button type is set, it will contain
+ *   the type name.
  *
  * @see template_preprocess_input()
- * @see claro_preprocess_input()
+ * @see glisseo_preprocess_input()
  */
 #}
-{% apply spaceless %}
-{% if autocomplete_message %}
-  <div class="claro-autocomplete">
-    <input{{ attributes }}/>
-    <div hidden class="claro-autocomplete__message">{{autocomplete_message}}</div>
-  </div>
-  {{ children }}
-{% else %}
-  <input{{ attributes }}/>{{ children }}
+{% set block = 'form-element' %}
+{%
+  set modifiers = [
+    button_type ? button_type,
+    'type-' ~ element_type,
+    'name-' ~ element_name,
+  ]
+%}
+{% if element_type in ['checkbox', 'radio'] %}
+  {% set block = 'form-boolean' %}
+{% elseif element_type in ['submit'] %}
+  {% set block = 'button' %}
 {% endif %}
-{% endapply %}
+{%
+  set classes = [
+    bem(block, modifiers),
+  ]
+%}
+<input{{ attributes.addClass(classes) }} />{{ children }}

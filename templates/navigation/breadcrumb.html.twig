@@ -6,36 +6,37 @@
  * @see template_preprocess_breadcrumb().
  */
 #}
-{% set bem_block = 'breadcrumb' %}
+{% set block = 'breadcrumb' %}
 {%
-  set bem_modifiers = [
+  set modifiers = [
     breadcrumb|length == 1 ? 'single-item',
   ]
 %}
+{% set classes = [bem(block, modifiers)] %}
 {% if breadcrumb %}
-  <nav{{ attributes.addClass(bem(bem_block, bem_modifiers)) }}>
+  <nav{{ attributes.addClass(classes) }}>
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
     {% spaceless %}
       {% if breadcrumb|length > 1 %}
-        <div class="{{ bem('path', [], bem_block) }}">
+        <div class="{{ bem('path', [], block) }}">
           {% for item in breadcrumb %}
             {% if not loop.last %}
               {% if item.url %}
-                <a href="{{ item.url }}" class="{{ bem('item-link', [], bem_block) }}">{{ item.text }}</a>
-                <span class="{{ bem('delimeter', [], bem_block) }}"></span>
+                <a href="{{ item.url }}" class="{{ bem('item-link', [], block) }}">{{ item.text }}</a>
+                <span class="{{ bem('delimeter', [], block) }}"></span>
               {% else %}
-                <span class="{{ bem('item-link', ['text'], bem_block) }}">{{ item.text }}</span>
+                <span class="{{ bem('item-link', ['text'], block) }}">{{ item.text }}</span>
               {% endif %}
             {% endif %}
           {% endfor %}
         </div>
       {% endif %}
-      <div class="{{ bem('current', [], bem_block) }}">
+      <div class="{{ bem('current', [], block) }}">
         {% set last = breadcrumb|last %}
         {% if last.url %}
-          <a href="{{ last.url }}" class="{{ bem('item-link', ['current'], bem_block) }}">{{ last.text }}</a>
+          <a href="{{ last.url }}" class="{{ bem('item-link', ['current'], block) }}">{{ last.text }}</a>
         {% else %}
-          <span class="{{ bem('path', ['text', 'current'], bem_block) }}">{{ last.text }}</span>
+          <span class="{{ bem('path', ['text', 'current'], block) }}">{{ last.text }}</span>
         {% endif %}
       </div>
     {% endspaceless %}

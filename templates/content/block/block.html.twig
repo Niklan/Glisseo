@@ -11,19 +11,16 @@
  * @see template_preprocess_block()
  */
 #}
-{% set bem_block = 'block' %}
-{%
-  set bem_modifiers = [
-    block_id,
-    block_content_bundle,
-  ]
-%}
+{% set block = 'block' %}
+{% set modifiers = [block_id, block_content_bundle] %}
+{% set classes = [bem(block, modifiers)] %}
 {% do attributes.removeAttribute('id') %}
-<div{{ attributes.addClass(bem(bem_block, bem_modifiers)) }}>
+<div{{ attributes.addClass(classes) }}>
   {% block block %}
     {{ title_prefix }}
     {% if label %}
-      <div{{ title_attributes.addClass(bem('title', [], bem_block)) }}>
+      {% set title_classes = [bem('title', [], block)] %}
+      <div{{ title_attributes.addClass(title_classes) }}>
         {% block title %}
           {{ label }}
         {% endblock title %}
@@ -31,7 +28,8 @@
     {% endif %}
     {{ title_suffix }}
 
-    <div{{ content_attributes.addClass(bem('content', [], bem_block)) }}>
+    {% set content_classes = [bem('content', [], block)] %}
+    <div{{ content_attributes.addClass(content_classes) }}>
       {% block content %}
         {{ content }}
       {% endblock content %}

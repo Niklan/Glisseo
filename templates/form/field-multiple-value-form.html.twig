@@ -21,19 +21,23 @@
  * @see claro_preprocess_field_multiple_value_form()
  */
 #}
+{% set block = 'form-item' %}
+{%
+  set modifiers = [
+    'multiple',
+    disabled ? 'disabled',
+  ]
+%}
 {% if multiple %}
   {%
     set classes = [
+      bem(block, modifiers),
       'js-form-item',
-      'form-item',
-      'form-item--multiple',
-      disabled ? 'form-item--disabled',
     ]
   %}
   {%
     set description_classes = [
-      'form-item__description',
-      disabled ? 'is-disabled',
+      bem('description', [disabled ? 'is-disabled'], block),
     ]
   %}
   <div{{ attributes.addClass(classes) }}>

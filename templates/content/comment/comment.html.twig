@@ -1,11 +1,12 @@
 {%
-  set bem_block = bem_block([
+  set block = bem_block([
     comment.getEntityTypeId(),
     comment.bundle() != comment.getEntityTypeId() ? comment.bundle(),
     view_mode != 'default' ? view_mode,
   ])
 %}
-<article{{ attributes.addClass('js-comment', bem_block) }}>
+{% set classes = [block] %}
+<article{{ attributes.addClass('js-comment', classes) }}>
   {% block comment %}
     {#
       Hide the "new" indicator by default, let a piece of JavaScript ask the
@@ -14,11 +15,13 @@
     #}
     <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
-    <div{{ content_attributes.addClass(bem('content', [], bem_block)) }}>
+    {% set content_classes = [bem('content', [], block)] %}
+    <div{{ content_attributes.addClass(content_classes) }}>
       {% block content %}
         {% if title %}
           {{ title_prefix }}
-          <h3{{ title_attributes.addClass(bem('title', [], bem_block)) }}>
+          {% set title_classes = [bem('title', [], block)] %}
+          <h3{{ title_attributes.addClass(title_classes) }}>
             {% block title %}
               {{ title }}
             {% endblock %}
@@ -30,7 +33,7 @@
       {% endblock %}
     </div>
 
-    <footer class="{{ bem('footer', [], bem_block) }}">
+    <footer class="{{ bem('footer', [], block) }}">
       {% block footer %}
         {{ user_picture }}
         <p>{{ submitted }}</p>

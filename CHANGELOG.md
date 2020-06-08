@@ -19,7 +19,7 @@
 - Added two custom Twig function: `bem()`, `bem_block()`.
 - [#3111051](https://www.drupal.org/project/glisseo/issues/3111051) Fixed and improved region naming.
 
-#### BEM to template using Twig function checklist
+#### BEM preprocess to template migration using Twig function checklist
 
 - content
     - block
@@ -44,29 +44,28 @@
     - [x] field.html.twig
     - [x] field--comment.html.twig
 - form
-    - [ ] checkboxes.html.twig
-    - [ ] field-multiple-value-form.html.twig
-    - [ ] form-element.html.twig
-    - [ ] form-element-label.html.twig
-    - [ ] input.html.twig
-    - [ ] radios.html.twig
+    - [x] checkboxes.html.twig
+    - [x] field-multiple-value-form.html.twig
+    - [x] form-element.html.twig
+    - [x] form-element-label.html.twig
+    - [x] input.html.twig
+    - [x] radios.html.twig
 - layout
-    - [ ] layout.html.twig
-    - [ ] layout--onecol.html.twig
-    - [ ] layout--twocol.html.twig
-    - [ ] layout--twocol-bricks.html.twig
+    - [x] layout.html.twig
+    - [x] layout--onecol.html.twig
+    - [x] layout--twocol.html.twig
+    - [x] layout--twocol-bricks.html.twig
 - navigation
     - [x] breadcrumb.html.twig
-    - [ ] links.html.twig
-    - [ ] menu.html.twig
-    - [ ] menu-local-action.html.twig
-    - [ ] menu-local-task.html.twig
-    - [ ] menu-local-tasks.html.twig
-    - [ ] pager.html.twig
-    - [ ] vertical-tabs.html.twig
+    - [x] links.html.twig
+    - [x] menu.html.twig
+    - [x] menu-local-action.html.twig
+    - [x] menu-local-task.html.twig
+    - [x] menu-local-tasks.html.twig
+    - [x] pager.html.twig
+    - [x] vertical-tabs.html.twig
 - page
     - [x] html.html.twig
-    - [x] page-title.html.twig
 - region
     - [x] region.html.twig
     - [x] region--footer.html.twig
@@ -76,10 +75,11 @@
     - [x] region--sidebar-second.html.twig
 - theme
     - [x] status-messages.html.twig
+    - [x] page-title.html.twig
 - views
-    - [ ] views-mini-pager.html.twig
-    - [ ] views-view.html.twig
-    - [ ] views-view-unformatted.html.twig
+    - [x] views-mini-pager.html.twig
+    - [x] views-view.html.twig
+    - [x] views-view-unformatted.html.twig
 
 ### Starter theme
 
