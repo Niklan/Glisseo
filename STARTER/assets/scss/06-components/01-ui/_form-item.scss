@@ -34,6 +34,11 @@
   margin-left: var(--spacing-xxs);
 }
 
+.form-item__label--inline {
+  display: inline;
+  font-weight: normal;
+}
+
 .form-item__description {
   color: var(--form-item-description-color);
   font-size: var(--form-item-description-font-size);

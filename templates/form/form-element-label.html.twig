@@ -17,6 +17,7 @@
 {%
   set modifiers = [
     required ? 'required',
+    title_display == 'after' ? 'inline',
   ]
 %}
 {%
@@ -24,7 +25,6 @@
     bem(element, modifiers, block),
     required ? 'js-form-required',
     required ? 'form-required',
-    title_display == 'after' ? 'option',
     title_display == 'invisible' ? 'visually-hidden',
   ]
 %}
