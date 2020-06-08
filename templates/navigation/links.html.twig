@@ -31,6 +31,11 @@
  * @see template_preprocess_links()
  */
 #}
+{% do attributes.removeClass('links') %}
+{% set block = 'links' %}
+{% set classes = [bem(block)] %}
+{# Item. #}
+{% set classes = [bem('item', [], block)] %}
 {% if links -%}
   {%- if heading -%}
     {%- if heading.level -%}
@@ -39,9 +44,9 @@
       <h2{{ heading.attributes }}>{{ heading.text }}</h2>
     {%- endif -%}
   {%- endif -%}
-  <ul{{ attributes }}>
+  <ul{{ attributes.addClass(classes) }}>
     {%- for item in links -%}
-      <li{{ item.attributes }}>
+      <li{{ item.attributes.addClass(classes) }}>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}

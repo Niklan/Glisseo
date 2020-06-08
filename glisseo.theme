@@ -8,6 +8,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element\FormElementInterface;
 use Drupal\Core\Template\Attribute;
 use Twig\TwigFunction;
 
@@ -113,15 +114,6 @@ function glisseo_twig_tweak_functions_alter(array &$functions) {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for page.html.twig.
- */
-function glisseo_preprocess_page(array &$variables) {
-  // Adds empty Attribute object for main element.
-  $main_layout_attributes = new Attribute();
-  $variables['main_layout_attributes'] = $main_layout_attributes;
-}
-
-/**
  * Implements hook_preprocess_HOOK() for block.html.twig.
  */
 function glisseo_preprocess_block(array &$variables) {
@@ -201,14 +193,6 @@ function glisseo_theme_suggestions_block_alter(array &$suggestions, $variables, 
   if (isset($variables['elements']['content']['#block_content'])) {
     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
   }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for 'comment.html.twig'.
- */
-function glisseo_preprocess_comment(array &$variables) {
-  /** @var \Drupal\comment\CommentInterface $comment */
-  $comment = $variables['elements']['#comment'];
 }
 
 /**
@@ -312,20 +296,10 @@ function glisseo_theme_suggestions_input_alter(array &$suggestions, array $varia
 function glisseo_preprocess_details(array &$variables) {
   $element = &$variables['element'];
 
-  $variables['form_id'] = isset($element['#bem_form_id']) ? $element['#bem_form_id'] : '';
   $variables['name'] = isset($element['#id']) ? preg_replace([
     '/^edit\-/',
     '/\-\d+$/',
   ], '', $element['#id']) : '';
-}
-
-/**
- * Implements hook_preprocess_HOOK() for form-element.html.twig.
- */
-function glisseo_preprocess_form_element(array &$variables) {
-  $element = &$variables['element'];
-
-  $variables['form_id'] = isset($element['#bem_form_id']) ? $element['#bem_form_id'] : '';
 }
 
 /**
@@ -334,14 +308,9 @@ function glisseo_preprocess_form_element(array &$variables) {
  * Add additional processing for some elements.
  */
 function glisseo_element_info_alter(array &$types) {
-  foreach ($types as $name => $type) {
-    if (isset($type['#theme_wrappers']) && in_array('form_element', $type['#theme_wrappers'])) {
-      $types[$name]['#process'][] = '_glisseo_process_form_element';
-    }
-    if (isset($type['#theme_wrappers']) && in_array('details', $type['#theme_wrappers'])) {
-      $types[$name]['#process'][] = '_glisseo_process_form_element';
-    }
-    if (isset($type['#theme_wrappers']) && in_array('fieldset', $type['#theme_wrappers'])) {
+  foreach ($types as $name => $element_info) {
+    // Add process callback to all @FormElement elements.
+    if (isset($element_info['#input']) && $element_info['#input']) {
       $types[$name]['#process'][] = '_glisseo_process_form_element';
     }
   }
@@ -349,14 +318,25 @@ function glisseo_element_info_alter(array &$types) {
 
 /**
  * Additional processing for specific form elements.
+ *
+ * @todo consider use it or remove.
  */
 function _glisseo_process_form_element(array &$element, FormStateInterface $form_state, &$complete_form) {
   if (!empty($complete_form['#form_id'])) {
     // Add additional variable to element to determine parent form id.
-    $element['#bem_form_id'] = $complete_form['#form_id'];
+    $element['#form_element_form_id'] = $complete_form['#form_id'];
   }
 
   return $element;
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function glisseo_preprocess(array &$variables, $hook) {
+  if (isset($variables['element']) && isset($variables['element']['#form_element_form_id'])) {
+    $variables['form_element_form_id'] = $variables['element']['#form_element_form_id'];
+  }
 }
 
 /**
@@ -387,48 +367,6 @@ function glisseo_preprocess_input(array &$variables) {
  */
 function glisseo_preprocess_select(array &$variables) {
   $variables['multiple'] = $variables['element']['#multiple'];
-}
-
-/**
- * Implements hook_preprocess_HOOK() for textarea.html.twig.
- */
-function glisseo_preprocess_textarea(array &$variables) {
-  $variables['attributes']['class'][] = 'form-element';
-}
-
-/**
- * Implements hook_preprocess_HOOK() links.html.twig.
- */
-function glisseo_preprocess_links(array &$variables) {
-  // @todo move this logic into template.
-  //  $attributes = &$variables['attributes'];
-  //
-  //  // Improve BEM block classes.
-  //  foreach ($attributes['class'] as &$class) {
-  //    if ($class == 'inline') {
-  //      $class = 'links--inline';
-  //    }
-  //  }
-  //
-  //  // Improve list item BEM classes.
-  //  foreach ($variables['links'] as &$link) {
-  //    /** @var \Drupal\Core\Template\Attribute $list_item_attributes */
-  //    $list_item_attributes = &$link['attributes'];
-  //    if (in_array('class', array_keys($list_item_attributes->toArray()))) {
-  //      $list_item_classes = $list_item_attributes->toArray()['class'];
-  //
-  //      foreach ($list_item_classes as $list_item_class) {
-  //        $list_item_attributes->removeClass($list_item_class);
-  //        $list_item_attributes->addClass('links__item');
-  //        $list_item_attributes->addClass('links__item--' . $list_item_class);
-  //      }
-  //    }
-  //  }
-  //
-  //  // Improve list <a> BEM classes.
-  //  foreach ($variables['links'] as &$link) {
-  //    $link['link']['#options']['attributes']['class'][] = 'links__item-link';
-  //  }
 }
 
 /**

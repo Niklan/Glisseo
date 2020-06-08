@@ -13,11 +13,17 @@
  * @see template_preprocess_textarea()
  */
 #}
+{% set block = 'form-textarea' %}
 {%
-  set classes = [
-    'form-textarea',
+  set modifiers = [
     resizable ? 'resize-' ~ resizable,
     required ? 'required',
+  ]
+%}
+{%
+  set classes = [
+    'form-element',
+    bem(block, modifiers),
   ]
 %}
 <div{{ wrapper_attributes.addClass('form-textarea-wrapper') }}>
