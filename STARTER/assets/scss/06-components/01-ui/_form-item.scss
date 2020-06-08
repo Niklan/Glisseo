@@ -14,10 +14,6 @@
   --form-item-margin: var(--form-item-margin--y) var(--form-item-margin--x);
 }
 
-.form-item__content {
-  display: inline-block;
-}
-
 .form-item__label {
   font-size: var(--form-item-label-font-size);
   font-weight: bold;
