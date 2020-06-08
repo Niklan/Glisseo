@@ -3,8 +3,8 @@
 // =============================================================================
 
 :root {
-  --link-color: var(--color-primary);
-  --link-color-hover: var(--color-primary);
+  --link-color: var(--color-blue);
+  --link-color--hover: var(--color-blue--hover);
 }
 
 a {
@@ -13,6 +13,6 @@ a {
 }
 
 a:hover {
-  color: var(--link-color-hover);
+  color: var(--link-color--hover);
   text-decoration: none;
 }
