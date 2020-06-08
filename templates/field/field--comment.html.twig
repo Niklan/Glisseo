@@ -1,4 +1,3 @@
-{# Common field BEM naming. #}
 {% set field_block = 'field' %}
 {%
   set field_modifiers = [
@@ -7,7 +6,6 @@
     'label-' ~ label_display,
   ]
 %}
-{# Entity-specific BEM naming. #}
 {%
   set entity_block = bem_block([
     entity_type,
@@ -26,16 +24,22 @@
     bem(field_block, field_modifiers),
   ]
 %}
+{%
+  set title_classes = [
+    bem('title', [], entity_block),
+    bem('title', [], field_block),
+  ]
+%}
+{%
+  set content_classes = [
+    bem('form-title', [], entity_block),
+    bem('form-title', [], field_block),
+  ]
+%}
 <a id="comments"></a>
 <section{{ attributes.addClass(classes) }}>
   {% if comments and not label_hidden %}
     {{ title_prefix }}
-    {%
-      set title_classes = [
-        bem('title', [], entity_block),
-        bem('title', [], field_block),
-      ]
-    %}
     <h2{{ title_attributes.addClass(title_classes) }}>{{ label|t }}</h2>
     {{ title_suffix }}
   {% endif %}
@@ -46,12 +50,6 @@
 
   {% if comment_form %}
     <div class="{{ bem('form-container', [], entity_block) }} {{ bem('form-container', [], field_block) }}">
-      {%
-        set content_classes = [
-          bem('form-title', [], entity_block),
-          bem('form-title', [], field_block),
-        ]
-      %}
       <h2{{ content_attributes.addClass(content_classes) }}>{{ 'Add new comment'|t }}</h2>
       {{ comment_form }}
     </div>

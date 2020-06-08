@@ -1,4 +1,3 @@
-{% extends "block.html.twig" %}
 {#
 /**
  * @file
@@ -13,7 +12,13 @@
  * - site_slogan: Slogan for site as defined in Site information settings.
  */
 #}
-{% block content %}
+{% set block = 'branding' %}
+{%
+  set classes = [
+    bem(block),
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
   {% if site_logo %}
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem('logo', [], block) }}">
       <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="{{ bem('img', [], block) }}" />
@@ -22,5 +27,7 @@
   {% if site_name %}
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem('name', [], block) }}">{{ site_name }}</a>
   {% endif %}
-  <span class="{{ bem('slogan', [], block) }}">{{ site_slogan }}</span>
-{% endblock %}
+  {% if site_slogan %}
+    <span class="{{ bem('slogan', [], block) }}">{{ site_slogan }}</span>
+  {% endif %}
+</div>

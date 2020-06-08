@@ -5,7 +5,11 @@
     view_mode != 'default' ? view_mode,
   ])
 %}
-{% set classes = [block] %}
+{%
+  set classes = [
+    bem(block),
+  ]
+%}
 <article{{ attributes.addClass(classes) }}>
   {% block media %}
     {{ title_suffix.contextual_links }}

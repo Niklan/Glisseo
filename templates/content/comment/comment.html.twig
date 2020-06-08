@@ -5,7 +5,22 @@
     view_mode != 'default' ? view_mode,
   ])
 %}
-{% set classes = [block] %}
+{%
+  set classes = [
+    bem(block),
+  ]
+%}
+{%
+  set content_classes = [
+    bem('content', [], block),
+  ]
+%}
+{%
+  set title_classes = [
+    bem('title', [], block),
+  ]
+%}
+{% set footer_class = bem('footer',[], block) %}
 <article{{ attributes.addClass('js-comment', classes) }}>
   {% block comment %}
     {#
@@ -14,13 +29,10 @@
       indicator here would break the render cache.
     #}
     <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
-
-    {% set content_classes = [bem('content', [], block)] %}
     <div{{ content_attributes.addClass(content_classes) }}>
       {% block content %}
         {% if title %}
           {{ title_prefix }}
-          {% set title_classes = [bem('title', [], block)] %}
           <h3{{ title_attributes.addClass(title_classes) }}>
             {% block title %}
               {{ title }}
@@ -33,7 +45,7 @@
       {% endblock %}
     </div>
 
-    <footer class="{{ bem('footer', [], block) }}">
+    <footer class="{{ footer_class }}">
       {% block footer %}
         {{ user_picture }}
         <p>{{ submitted }}</p>

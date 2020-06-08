@@ -33,9 +33,16 @@
 #}
 {% do attributes.removeClass('links') %}
 {% set block = 'links' %}
-{% set classes = [bem(block)] %}
-{# Item. #}
-{% set classes = [bem('item', [], block)] %}
+{%
+  set classes = [
+    bem(block),
+  ]
+%}
+{%
+  set item_classes = [
+    bem('item', [], block),
+  ]
+%}
 {% if links -%}
   {%- if heading -%}
     {%- if heading.level -%}
@@ -46,7 +53,7 @@
   {%- endif -%}
   <ul{{ attributes.addClass(classes) }}>
     {%- for item in links -%}
-      <li{{ item.attributes.addClass(classes) }}>
+      <li{{ item.attributes.addClass(item_classes) }}>
         {%- if item.link -%}
           {{ item.link }}
         {%- elseif item.text_attributes -%}

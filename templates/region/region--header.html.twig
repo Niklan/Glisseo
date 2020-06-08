@@ -1,7 +1,6 @@
 {% extends 'region.html.twig' %}
 
 {% block region %}
-  {% set classes = bem(block, modifiers) %}
   <header{{ attributes.addClass(classes) }}>
     <div class="{{ bem('content', [], block) }}">
       {{ block('content') }}

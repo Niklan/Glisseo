@@ -5,7 +5,11 @@
     view_mode != 'default' ? view_mode,
   ])
 %}
-{% set classes = [block] %}
+{%
+  set classes = [
+    bem(block),
+  ]
+%}
 <div{{ attributes.addClass(classes) }}>
   {% block paragraph %}
     <div class="{{ bem('content', [], block) }}">

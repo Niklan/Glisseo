@@ -1,5 +1,10 @@
 {% set block = css_name ? css_name : 'views' %}
-{% set modifiers = [id, display_id] %}
+{%
+  set modifiers = [
+    id,
+    display_id,
+  ]
+%}
 {%
   set classes = [
     bem(block, modifiers),

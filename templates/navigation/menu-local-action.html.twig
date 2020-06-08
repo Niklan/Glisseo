@@ -4,16 +4,20 @@
     is_active ? 'active'
   ]
 %}
-{% set classes = [bem('item', modifiers, block)] %}
+{%
+  set classes = [
+    bem('item', modifiers, block),
+  ]
+%}
 {%
   set link = link|merge({
-  '#options': {
-    'attributes': {
-      'class': [
-        bem('link', modifiers, block),
-      ]
+    '#options': {
+      'attributes': {
+        'class': [
+          bem('link', modifiers, block),
+        ]
+      }
     }
-  }
-})
+  })
 %}
 <li{{ attributes.addClass(classes) }}>{{ link }}</li>

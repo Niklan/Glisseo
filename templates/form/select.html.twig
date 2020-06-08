@@ -18,7 +18,11 @@
     multiple ? 'multiple',
   ]
 %}
-{% set classes = [bem(block, modifiers)] %}
+{%
+  set classes = [
+    bem(block, modifiers),
+  ]
+%}
 {% apply spaceless %}
   <select{{ attributes.addClass(classes) }}>
     {% for option in options %}

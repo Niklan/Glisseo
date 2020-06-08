@@ -20,17 +20,29 @@
  */
 #}
 {% set block = 'messages' %}
+{%
+  set header_classes = [
+    bem('header', [], block),
+  ]
+%}
 {% block messages %}
   {% for type, messages in message_list %}
-    {% set modifiers = [type] %}
-    {% set classes = [bem(block, modifiers)] %}
+    {%
+      set modifiers = [
+        type,
+      ]
+    %}
+    {%
+      set classes = [
+        bem(block, modifiers),
+      ]
+    %}
     <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
       {% if status_headings[type] %}
         {% set header_attributes = create_attribute() %}
         {% if type == 'error' %}
           {% do header_attributes.setAttribute('role', 'alert') %}
         {% endif %}
-        {% set header_classes = [bem('header', [], block)] %}
         <div{{ header_attributes.addClass(header_classes) }}>
           <h2 class="{{ bem('title', [], block) }}">{{ status_headings[type] }}</h2>
         </div>

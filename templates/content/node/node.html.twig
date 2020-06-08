@@ -12,7 +12,26 @@
     not node.isPublished() ? 'unpublished',
   ]
 %}
-{% set classes = [bem(block, modifiers)] %}
+{%
+  set classes = [
+    bem(block, modifiers),
+  ]
+%}
+{%
+  set title_classes = [
+    bem('title', [], block),
+  ]
+%}
+{%
+  set author_classes = [
+    bem('submitted', [], block),
+  ]
+%}
+{%
+  set content_classes = [
+    bem('content', [], block),
+  ]
+%}
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
@@ -22,7 +41,6 @@
       <header class="{{ bem('header', [], block) }}">
         {% block header %}
           {% if not page %}
-            {% set title_classes = [bem('title', [], block)] %}
             <h2{{ title_attributes.addClass(title_classes) }}>
               {% block title %}
                 <a class="{{ bem('link', [], block) }}" href="{{ url }}" rel="bookmark">{{ label }}</a>
@@ -30,7 +48,6 @@
             </h2>
           {% endif %}
 
-          {% set author_classes = [bem('submitted', [], block)] %}
           <div{{ author_attributes.addClass(author_classes) }}>
             {% block submitted %}
               {{ date }}
@@ -42,7 +59,6 @@
       </header>
     {% endif %}
 
-    {% set content_classes = [bem('content', [], block)] %}
     <div{{ content_attributes.addClass(content_classes) }}>
       {% block content %}
         {{ content|without('links') }}

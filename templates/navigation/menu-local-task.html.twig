@@ -1,10 +1,14 @@
 {% set block = 'tabs' %}
 {%
   set modifiers = [
-    is_active ? 'active'
+    is_active ? 'active',
   ]
 %}
-{% set classes = [bem('item', modifiers, block)] %}
+{%
+  set classes = [
+    bem('item', modifiers, block),
+  ]
+%}
 {%
   set link = link|merge({
     '#options': {

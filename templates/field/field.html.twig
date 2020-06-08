@@ -13,7 +13,6 @@
  * @see glisseo_preprocess_field()
  */
 #}
-{# Common field BEM naming. #}
 {% set field_block = 'field' %}
 {%
   set field_modifiers = [
@@ -22,7 +21,6 @@
     'label-' ~ label_display,
   ]
 %}
-{# Entity-specific BEM naming. #}
 {%
   set entity_block = bem_block([
     entity_type,
@@ -41,16 +39,29 @@
     bem(field_block, field_modifiers),
   ]
 %}
+{%
+  set title_classes = [
+    bem('label', [], entity_block),
+    bem('label', [], field_block),
+  ]
+%}
+{% set content_element = multiple ? 'items' : 'value' %}
+{%
+  set content_classes = [
+    bem(content_element, [], entity_block),
+    bem(content_element, [], field_block),
+  ]
+%}
+{%
+  set item_classes = [
+    bem('item', [], entity_block),
+    bem('item', [], field_block)
+  ]
+%}
 <div{{ attributes.addClass(classes) }}>
   {% block field %}
 
     {% if not label_hidden %}
-      {%
-        set title_classes = [
-          bem('label', [], entity_block),
-          bem('label', [], field_block),
-        ]
-      %}
       <div{{ title_attributes.addClass(title_classes) }}>
         {% block label %}
           {{ label }}
@@ -60,27 +71,10 @@
 
     {% block items %}
       {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
-      {% if (multiple) %}
-        {% set content_element = 'items' %}
-      {% else %}
-        {% set content_element = 'value' %}
-      {% endif %}
-      {%
-        set content_classes = [
-          bem(content_element, [], entity_block),
-          bem(content_element, [], field_block),
-        ]
-      %}
       <div{{ content_attributes.addClass(content_classes) }}>
         {% for item in items %}
           {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
           {% if multiple or item_attributes_not_empty %}
-            {%
-              set item_classes = [
-                bem('item', [], entity_block),
-                bem('item', [], field_block)
-              ]
-            %}
             <div{{ item.attributes.addClass(item_classes) }}>
           {% endif -%}
 
