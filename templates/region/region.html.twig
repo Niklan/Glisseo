@@ -1,12 +1,7 @@
-{% set block = 'region' %}
-{%
-  set modifiers = [
-    region,
-  ]
-%}
+{% set block = 'region-' ~ region %}
 {%
   set classes = [
-    bem(block, modifiers),
+    bem(block),
   ]
 %}
 {% if content %}

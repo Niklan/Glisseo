@@ -18,6 +18,7 @@
 - Added dependency on `drupal/twig_tweak` module. It allows to define custom Twig functions in theme.
 - Added two custom Twig function: `bem()`, `bem_block()`.
 - [#3111051](https://www.drupal.org/project/glisseo/issues/3111051) Fixed and improved region naming.
+- [#3151303](https://www.drupal.org/project/glisseo/issues/3151303) Improved region Block class.
 
 #### BEM preprocess to template migration using Twig function checklist
 
