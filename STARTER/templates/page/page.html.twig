@@ -11,7 +11,11 @@
     page.sidebar_first and page.sidebar_second ? 'two-sidebars',
   ]
 %}
-{% set main_layout_classes = [bem(main_layout_block, main_layout_modifiers)] %}
+{%
+  set main_layout_classes = [
+    bem(main_layout_block, null, main_layout_modifiers),
+  ]
+%}
 
 {{ page.header }}
 {{ page.navigation }}

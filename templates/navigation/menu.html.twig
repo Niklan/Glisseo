@@ -16,7 +16,7 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      {% set classes = bem(block, modifiers) %}
+      {% set classes = bem(block, null, modifiers) %}
       <ul{{ attributes.addClass(classes) }}>
         {% for item in items %}
           {%
@@ -28,11 +28,11 @@
           %}
           {%
             set item_classes = [
-              bem('item', item_modifiers, block),
+              bem(block, 'item', item_modifiers),
             ]
           %}
           <li{{ item.attributes.addClass(item_classes) }}>
-            {{ link(item.title, item.url, { 'class': [bem('link', [], block)] }) }}
+            {{ link(item.title, item.url, { 'class': [bem(block, 'link')] }) }}
             {% if item.below %}
               {{ menus.menu_links(item.below, attributes, menu_level + 1, block) }}
             {% endif %}
@@ -42,7 +42,7 @@
     {% else %}
       {%
         set classes = [
-          bem('submenu', [], block),
+          bem(block, 'submenu'),
         ]
       %}
       <ul{{ attributes.addClass(classes) }}>
@@ -57,11 +57,11 @@
           %}
           {%
             set item_classes = [
-              bem('item', item_modifiers, block),
+              bem(block, 'item', item_modifiers),
             ]
           %}
           <li{{ item.attributes.addClass(item_classes) }}>
-            {{ link(item.title, item.url, { 'class': [bem('link', ['submenu'], block)] }) }}
+            {{ link(item.title, item.url, { 'class': [bem(block, 'link', ['submenu'])] }) }}
             {% if item.below %}
               {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
             {% endif %}

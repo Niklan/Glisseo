@@ -1,12 +1,12 @@
 {% set block = 'layout' %}
 {%
   set classes = [
-    bem(block, [layout.id]),
+    bem(block, null, [layout.id]),
   ]
 %}
 {%
   set region_classes = [
-    bem('region', [region], block),
+    bem(block, 'region', [region]),
   ]
 %}
 {% if content %}

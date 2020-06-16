@@ -22,7 +22,7 @@
 {% set block = 'messages' %}
 {%
   set header_classes = [
-    bem('header', [], block),
+    bem(block, 'header'),
   ]
 %}
 {% block messages %}
@@ -34,7 +34,7 @@
     %}
     {%
       set classes = [
-        bem(block, modifiers),
+        bem(block, null, modifiers),
       ]
     %}
     <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
@@ -44,14 +44,14 @@
           {% do header_attributes.setAttribute('role', 'alert') %}
         {% endif %}
         <div{{ header_attributes.addClass(header_classes) }}>
-          <h2 class="{{ bem('title', [], block) }}">{{ status_headings[type] }}</h2>
+          <h2 class="{{ bem(block, 'title') }}">{{ status_headings[type] }}</h2>
         </div>
       {% endif %}
-      <div class="{{ bem('content', [], block) }}">
+      <div class="{{ bem(block, 'content') }}">
         {% if messages|length > 1 %}
-          <ul class="{{ bem('list', [], block) }}">
+          <ul class="{{ bem(block, 'list') }}">
             {% for message in messages %}
-              <li class="{{ bem('item', [], block) }}">{{ message }}</li>
+              <li class="{{ bem(block, 'item') }}">{{ message }}</li>
             {% endfor %}
           </ul>
         {% else %}

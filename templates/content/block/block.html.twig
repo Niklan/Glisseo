@@ -21,17 +21,17 @@
 %}
 {%
   set classes = [
-    bem(block, modifiers),
+    bem(block, null, modifiers),
   ]
 %}
 {%
   set title_classes = [
-    bem('title', [], block),
+    bem(block, 'title'),
   ]
 %}
 {%
   set content_classes = [
-    bem('content', [], block),
+    bem(block, 'content'),
   ]
 %}
 <div{{ attributes.addClass(classes) }}>

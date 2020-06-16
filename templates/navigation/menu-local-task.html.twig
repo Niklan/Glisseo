@@ -6,7 +6,7 @@
 %}
 {%
   set classes = [
-    bem('item', modifiers, block),
+    bem(block, 'item', modifiers),
   ]
 %}
 {%
@@ -14,7 +14,7 @@
     '#options': {
       'attributes': {
         'class': [
-          bem('link', modifiers, block),
+          bem(block, 'link', modifiers),
         ]
       }
     }

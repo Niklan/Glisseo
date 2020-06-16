@@ -38,14 +38,14 @@
 {% if items %}
   <nav class="{{ bem(block) }}" role="navigation" aria-labelledby="{{ heading_id }}">
     <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
-    <ul class="{{ bem('items', [], block) }} js-pager__items">
+    <ul class="{{ bem(block, 'items') }} js-pager__items">
       {# Print first item if we are not on the first page. #}
       {% if items.first %}
         {% apply spaceless %}
-        <li class="{{ bem('item', ['action', 'first'], block) }}">
-          <a href="{{ items.first.href }}" class="{{ bem('link', ['action-link'], block) }}" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
+        <li class="{{ bem(block, 'item', ['action', 'first']) }}">
+          <a href="{{ items.first.href }}" class="{{ bem(block, 'link', ['action-link']) }}" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
             <span class="visually-hidden">{{ 'First page'|t }}</span>
-            <span class="{{ bem('item-title', ['backwards'], block) }}" aria-hidden="true">
+            <span class="{{ bem(block, 'item-title', ['backwards']) }}" aria-hidden="true">
               {{ items.first.text|default('First'|t)|replace({'«': ''}) }}
             </span>
           </a>
@@ -56,10 +56,10 @@
       {# Print previous item if we are not on the first page. #}
       {% if items.previous %}
         {% apply spaceless %}
-        <li class="{{ bem('item', ['action', 'previous'], block) }}">
-          <a href="{{ items.previous.href }}" class="{{ bem('link', ['action-link'], block) }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+        <li class="{{ bem(block, 'item', ['action', 'previous']) }}">
+          <a href="{{ items.previous.href }}" class="{{ bem(block, 'link', ['action-link']) }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
             <span class="visually-hidden">{{ 'Previous page'|t }}</span>
-            <span class="{{ bem('item-title', ['backwards'], block) }}" aria-hidden="true">
+            <span class="{{ bem(block, 'item-title', ['backwards']) }}" aria-hidden="true">
               {{ items.previous.text|default('Previous'|t)|replace({'‹': ''}) }}
             </span>
           </a>
@@ -69,19 +69,19 @@
 
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
-        <li class="{{ bem('item', ['ellipsis'], block) }}" role="presentation">&hellip;</li>
+        <li class="{{ bem(block, 'item', ['ellipsis']) }}" role="presentation">&hellip;</li>
       {% endif %}
 
       {# Now generate the actual pager piece. #}
       {% for key, item in items.pages %}
         {% apply spaceless %}
-        <li class="{{ bem('item', [current == key ? 'is-active', 'number'], block) }}">
+        <li class="{{ bem(block, 'item', [current == key ? 'is-active', 'number']) }}">
           {% if current == key %}
             {% set title = 'Current page'|t %}
           {% else %}
             {% set title = 'Go to page @key'|t({'@key': key}) %}
           {% endif %}
-          <a href="{{ item.href }}" class="{{ bem('link', [current == key ? 'is-active'], block) }}" title="{{ title }}"{{ item.attributes|without('href', 'title', 'class') }}>
+          <a href="{{ item.href }}" class="{{ bem(block, 'link', [current == key ? 'is-active']) }}" title="{{ title }}"{{ item.attributes|without('href', 'title', 'class') }}>
             <span class="visually-hidden">
               {{ current == key ? 'Current page'|t : 'Page'|t }}
             </span>
@@ -93,16 +93,16 @@
 
       {# Add an ellipsis if there are further next pages. #}
       {% if ellipses.next %}
-        <li class="{{ bem('item', ['ellipsis'], block) }}" role="presentation">&hellip;</li>
+        <li class="{{ bem(block, 'item', ['ellipsis']) }}" role="presentation">&hellip;</li>
       {% endif %}
 
       {# Print next item if we are not on the last page. #}
       {% if items.next %}
         {% apply spaceless %}
-        <li class="{{ bem('item', ['action', 'next'], block) }}">
-          <a href="{{ items.next.href }}" class="{{ bem('link', ['action-link'], block) }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
+        <li class="{{ bem(block, 'item', ['action', 'next']) }}">
+          <a href="{{ items.next.href }}" class="{{ bem(block, 'link', ['action-link']) }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
             <span class="visually-hidden">{{ 'Next page'|t }}</span>
-            <span class="{{ bem('item-title', ['forward'], block) }}" aria-hidden="true">
+            <span class="{{ bem(block, 'item-title', ['forward']) }}" aria-hidden="true">
               {{ items.next.text|default('Next'|t)|replace({'›': ''}) }}
             </span>
           </a>
@@ -113,10 +113,10 @@
       {# Print last item if we are not on the last page. #}
       {% if items.last %}
         {% apply spaceless %}
-        <li class="{{ bem('item', ['action',' last'], block) }}">
-          <a href="{{ items.last.href }}" class="{{ bem('link', ['action-link'], block) }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
+        <li class="{{ bem(block, 'item', ['action',' last']) }}">
+          <a href="{{ items.last.href }}" class="{{ bem(block, 'link', ['action-link']) }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
             <span class="visually-hidden">{{ 'Last page'|t }}</span>
-            <span class="{{ bem('item-title', ['forward'], block) }}" aria-hidden="true">
+            <span class="{{ bem(block, 'item-title', ['forward']) }}" aria-hidden="true">
               {{ items.last.text|default('Last'|t)|replace({'»': ''}) }}
             </span>
           </a>

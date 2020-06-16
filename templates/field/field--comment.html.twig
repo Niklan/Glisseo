@@ -20,20 +20,20 @@
 %}
 {%
   set classes = [
-    bem(entity_block, entity_modifiers),
-    bem(field_block, field_modifiers),
+    bem(entity_block, null, entity_modifiers),
+    bem(field_block, null, field_modifiers),
   ]
 %}
 {%
   set title_classes = [
-    bem('title', [], entity_block),
-    bem('title', [], field_block),
+    bem(entity_block, 'title'),
+    bem(field_block, 'title'),
   ]
 %}
 {%
   set content_classes = [
-    bem('form-title', [], entity_block),
-    bem('form-title', [], field_block),
+    bem(entity_block, 'form-title'),
+    bem(field_block, 'form-title'),
   ]
 %}
 <a id="comments"></a>
@@ -44,12 +44,12 @@
     {{ title_suffix }}
   {% endif %}
 
-  <div class="{{ bem('content', [], entity_block) }} {{ bem('content', [], field_block) }}">
+  <div class="{{ bem(entity_block, 'content') }} {{ bem(field_block, 'content') }}">
     {{ comments }}
   </div>
 
   {% if comment_form %}
-    <div class="{{ bem('form-container', [], entity_block) }} {{ bem('form-container', [], field_block) }}">
+    <div class="{{ bem(entity_block, 'form-container') }} {{ bem(field_block, 'form-container') }}">
       <h2{{ content_attributes.addClass(content_classes) }}>{{ 'Add new comment'|t }}</h2>
       {{ comment_form }}
     </div>

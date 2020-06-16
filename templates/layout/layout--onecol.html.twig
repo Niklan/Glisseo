@@ -6,12 +6,12 @@
 %}
 {%
   set classes = [
-    bem(block, modifiers),
+    bem(block, null, modifiers),
   ]
 %}
 {%
   set region_classes = [
-    bem('region', ['content'], block),
+    bem(block, 'region', ['content']),
   ]
 %}
 {% if content %}

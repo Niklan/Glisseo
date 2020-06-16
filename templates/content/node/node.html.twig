@@ -14,22 +14,22 @@
 %}
 {%
   set classes = [
-    bem(block, modifiers),
+    bem(block, null, modifiers),
   ]
 %}
 {%
   set title_classes = [
-    bem('title', [], block),
+    bem(block, 'title'),
   ]
 %}
 {%
   set author_classes = [
-    bem('submitted', [], block),
+    bem(block, 'submitted'),
   ]
 %}
 {%
   set content_classes = [
-    bem('content', [], block),
+    bem(block, 'content'),
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
@@ -38,12 +38,12 @@
 
   {% block node %}
     {% if display_submitted %}
-      <header class="{{ bem('header', [], block) }}">
+      <header class="{{ bem(block, 'header') }}">
         {% block header %}
           {% if not page %}
             <h2{{ title_attributes.addClass(title_classes) }}>
               {% block title %}
-                <a class="{{ bem('link', [], block) }}" href="{{ url }}" rel="bookmark">{{ label }}</a>
+                <a class="{{ bem(block, 'link') }}" href="{{ url }}" rel="bookmark">{{ label }}</a>
               {% endblock %}
             </h2>
           {% endif %}
@@ -66,7 +66,7 @@
     </div>
 
     {% if content.links %}
-      <div class="{{ bem('links', [], block) }}">
+      <div class="{{ bem(block, 'links') }}">
         {% block links %}
           {{ content.links }}
         {% endblock %}

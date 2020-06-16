@@ -2,7 +2,7 @@
 
 {% block region %}
   <section{{ attributes.addClass(classes) }}>
-    <div class="{{ bem('content', [], block) }}">
+    <div class="{{ bem(block, 'content') }}">
       {{ block('content') }}
     </div>
   </section>

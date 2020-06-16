@@ -35,12 +35,12 @@
 {% set modifiers = [block_id, block_content_bundle] %}
 {%
   set classes = [
-    bem(block, modifiers),
+    bem(block, null, modifiers),
   ]
 %}
 {%
   set title_classes = [
-    bem('title', [], block)
+    bem(block, 'title'),
   ]
 %}
 {% set heading_id = plugin_id ~ '-menu'|clean_id %}

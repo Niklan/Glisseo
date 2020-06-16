@@ -30,7 +30,7 @@
 {% endif %}
 {%
   set classes = [
-    bem(block, modifiers),
+    bem(block, null, modifiers),
   ]
 %}
 <input{{ attributes.addClass(classes) }} />{{ children }}

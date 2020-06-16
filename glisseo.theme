@@ -22,43 +22,35 @@ use Twig\TwigFunction;
  * @endcode
  *
  * @code
- *   {{ bem('a', 'b') }} // a a--b
+ *   {{ bem('a', null, ['b']) }} // a a--b
  * @endcode
  *
  * @code
- *  {{ bem('a', ['b', 'c']) }} // a a--b a--c
+ *   {{ bem('a', 'b') }} // a a__b
  * @endcode
  *
  * @code
- *   {{ bem('b', '', 'a') }} // a__b
- * @endocde
- *
- * @code
- *   {{ bem('b', 'c', 'a') }} // a__b a__b--c
+ *  {{ bem('a', 'b', ['c', 'd']) }} // a__b a__b--c a__b--d
  * @endcode
  *
- * @param string $base_class
- *   The Block name. If third param 'blockname' is passed, than this param
- *   responsible for Element name.
+ * @param string $block
+ *   The Block name.
+ * @param string|null $element
+ *   The Element name. If not needed pass empty string or null.
  * @param array|null $modifiers
  *   An array with Block Modifiers.
- * @param string|null $blockname
- *   The Block name. If this value is set 'base_class' will become Element name
- *   for provided 'blockname'.
  *
  * @return string
  *   String with classes.
  */
-function _glisseo_bem(string $base_class, array $modifiers = NULL, string $blockname = NULL) {
+function _glisseo_bem(string $block, string $element = NULL, array $modifiers = NULL) {
   $classes = [];
 
-  $bem_block = $blockname ? $blockname : $base_class;
-  $bem_element = $blockname ? $base_class : NULL;
   $bem_modifiers = is_array($modifiers) ? $modifiers : [];
 
-  $class = $bem_block;
-  if ($bem_element) {
-    $class .= "__{$bem_element}";
+  $class = $block;
+  if ($element && strlen($element) > 0) {
+    $class .= "__{$element}";
   }
   $classes[] = Html::getClass($class);
 

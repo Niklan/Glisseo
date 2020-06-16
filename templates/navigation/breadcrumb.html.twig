@@ -12,31 +12,35 @@
     breadcrumb|length == 1 ? 'single-item',
   ]
 %}
-{% set classes = [bem(block, modifiers)] %}
+{%
+  set classes = [
+    bem(block, null, modifiers),
+  ]
+%}
 {% if breadcrumb %}
   <nav{{ attributes.addClass(classes) }}>
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
     {% spaceless %}
       {% if breadcrumb|length > 1 %}
-        <div class="{{ bem('path', [], block) }}">
+        <div class="{{ bem(block, 'path') }}">
           {% for item in breadcrumb %}
             {% if not loop.last %}
               {% if item.url %}
-                <a href="{{ item.url }}" class="{{ bem('item-link', [], block) }}">{{ item.text }}</a>
-                <span class="{{ bem('delimeter', [], block) }}"></span>
+                <a href="{{ item.url }}" class="{{ bem(block, 'item-link') }}">{{ item.text }}</a>
+                <span class="{{ bem(block, 'delimiter') }}"></span>
               {% else %}
-                <span class="{{ bem('item-link', ['text'], block) }}">{{ item.text }}</span>
+                <span class="{{ bem(block, 'item-link', ['text']) }}">{{ item.text }}</span>
               {% endif %}
             {% endif %}
           {% endfor %}
         </div>
       {% endif %}
-      <div class="{{ bem('current', [], block) }}">
+      <div class="{{ bem(block, 'current') }}">
         {% set last = breadcrumb|last %}
         {% if last.url %}
-          <a href="{{ last.url }}" class="{{ bem('item-link', ['current'], block) }}">{{ last.text }}</a>
+          <a href="{{ last.url }}" class="{{ bem(block, 'item-link', ['current']) }}">{{ last.text }}</a>
         {% else %}
-          <span class="{{ bem('path', ['text', 'current'], block) }}">{{ last.text }}</span>
+          <span class="{{ bem(block, 'path', ['text', 'current']) }}">{{ last.text }}</span>
         {% endif %}
       </div>
     {% endspaceless %}

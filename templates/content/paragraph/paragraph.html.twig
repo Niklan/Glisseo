@@ -12,7 +12,7 @@
 %}
 <div{{ attributes.addClass(classes) }}>
   {% block paragraph %}
-    <div class="{{ bem('content', [], block) }}">
+    <div class="{{ bem(block, 'content') }}">
       {% block content %}
         {{ content }}
       {% endblock %}

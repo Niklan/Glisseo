@@ -22,7 +22,7 @@
 %}
 {%
   set classes = [
-    bem(element, modifiers, block),
+    bem(block, element, modifiers),
     required ? 'js-form-required',
     required ? 'form-required',
     title_display == 'invisible' ? 'visually-hidden',

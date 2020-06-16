@@ -16,14 +16,14 @@
 
   {% block taxonomy_term %}
     {% if not page %}
-      <h2 class="{{ bem('title', [], block) }}">
+      <h2 class="{{ bem(block, 'title') }}">
         {% block title %}
           <a href="{{ url }}">{{ name }}</a>
         {% endblock %}
       </h2>
     {% endif %}
 
-    <div class="{{ bem('content', [], block) }}">
+    <div class="{{ bem(block, 'content') }}">
       {% block content %}
         {{ content }}
       {% endblock %}

@@ -12,15 +12,14 @@
 %}
 {%
   set content_classes = [
-    bem('content', [], block),
+    bem(block, 'content'),
   ]
 %}
 {%
   set title_classes = [
-    bem('title', [], block),
+    bem(block, 'title'),
   ]
 %}
-{% set footer_class = bem('footer',[], block) %}
 <article{{ attributes.addClass('js-comment', classes) }}>
   {% block comment %}
     {#

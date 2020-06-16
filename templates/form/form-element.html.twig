@@ -23,7 +23,7 @@
 %}
 {%
   set classes = [
-    bem(block, modifiers),
+    bem(block, null, modifiers),
     'js-form-item',
     'js-form-type-' ~ type|clean_class,
     'js-form-item-' ~ name|clean_class,
@@ -31,7 +31,7 @@
 %}
 {%
   set description_classes = [
-    bem('description', [], block),
+    bem(block, 'description'),
     description_display == 'invisible' ? 'visually-hidden',
   ]
 %}
@@ -50,7 +50,7 @@
     {{ label }}
   {% endif %}
   {% if prefix is not empty %}
-    <span class="{{ bem('prefix', prefix_modifiers, block) }}">{{ prefix }}</span>
+    <span class="{{ bem(block, 'prefix', prefix_modifiers) }}">{{ prefix }}</span>
   {% endif %}
   {% if description_display == 'before' and description.content %}
     <div{{ description.attributes.addClass(description_classes) }}>
@@ -59,13 +59,13 @@
   {% endif %}
   {{ children }}
   {% if suffix is not empty %}
-    <span class="{{ bem('prefix', prefix_modifiers, block) }}">{{ suffix }}</span>
+    <span class="{{ bem(block, 'prefix', prefix_modifiers) }}">{{ suffix }}</span>
   {% endif %}
   {% if label_display == 'after' %}
     {{ label }}
   {% endif %}
   {% if errors %}
-    <div class="{{ bem('error-message', [], block) }}">
+    <div class="{{ bem(block, 'error-message') }}">
       {{ errors }}
     </div>
   {% endif %}
