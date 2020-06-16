@@ -1,7 +1,0 @@
-.app {
-  display: grid;
-  grid-template-areas: "header" "content" "footer";
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-  min-height: 100vh;
-}

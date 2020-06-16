@@ -2,7 +2,7 @@
 
 {% block region %}
   <header{{ attributes.addClass(classes) }}>
-    <div class="{{ bem(block, 'content') }}">
+    <div class="layout-container {{ bem(block, 'content') }}">
       {{ block('content') }}
     </div>
   </header>

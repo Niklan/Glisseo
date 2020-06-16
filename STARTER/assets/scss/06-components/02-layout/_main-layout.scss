@@ -1,7 +1,20 @@
 .main-layout {
   display: grid;
-  width: 100%;
-  max-width: var(--grid-container-max-width);
-  margin: var(--spacing-md) auto;
   grid-gap: var(--grid-gap);
+}
+
+.main-layout--no-sidebar {
+  grid-template-columns: 1fr;
+}
+
+.main-layout--one-sidebar.main-layout--sidebar-first {
+  grid-template-columns: 280px 1fr;
+}
+
+.main-layout--one-sidebar.main-layout--sidebar-second {
+  grid-template-columns: 1fr 280px;
+}
+
+.main-layout--two-sidebar {
+  grid-template-columns: 280px 1fr 280px;
 }
