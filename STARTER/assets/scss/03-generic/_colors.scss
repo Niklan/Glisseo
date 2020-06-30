@@ -1,21 +1,25 @@
 :root {
-  // Base colors.
+  // Color palette.
   --color-white: #ffffff;
-  --color-black: #000000;
-  --color-light-gray: #D8D9E0;
-  --color-gray-blue: #8E929C;
-  --color-old-silver: #82828C;
-  --color-blue: #003CC5;
-  --color-blue--hover: #0036B1;
-  --color-blue--active: #00339A;
-  --color-blue--focus: #B3C9F5;
-  --color-red: #D72222;
-  --color-red--hover: #FDF5F5;
-  --color-red--active: #FCEDED;
-  --color-green: #26A769;
-  --color-yellow: #FFD23F;
+  --color-platinum: #EBEBED;
+  --color-light-gray: #D4D4D8;
+  --color-gainsboro: #D8D9E0;
+  --color-silver-metallic: #ADAEB3;
+  --color-manatee: #8E929C;
+  --color-roman-silver: #82828C;
+  --color-raisin-black: #222330;
+  --color-persian-blue: #003CC5;
+  --color-persian-blue--dark-1: #0036B1;
+  --color-persian-blue--light-1: #0042DD;
+  --color-persian-blue--light-2: #E9EFFF;
+  --color-maximum-red: #D72222;
+  --color-maximum-red--dark-1: #C91F1F;
+  --color-maximum-red--light-1: #DE2E2E;
+  --color-maximum-red--light-2: #FCEFEF;
+  --color-jade: #26A769;
+  --color-sunglow: #FFD23F;
 
   // Utility colors.
-  --color-border: var(--color-gray-blue);
-  --color-disabled: #727780;
+  --color-border: var(--color-manatee);
+  --color-disabled: var(--color-platinum);
 }

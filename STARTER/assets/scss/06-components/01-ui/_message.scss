@@ -3,9 +3,9 @@
 // =============================================================================
 
 :root {
-  --message-background-color: #222330;
+  --message-background-color: var(--color-raisin-black);
   --message-color: var(--color-white);
-  --message-border--color: var(--color-light-gray);
+  --message-border--color: var(--color-gainsboro);
   --message-border-radius: var(--radius-xxs);
   --message-header-background: unset;
 }
@@ -34,17 +34,17 @@
 }
 
 .messages--error {
-  --message-border--color: #e34f4f;
-  --message-header-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 14 14'%3E%3Cpath d='M3 11.1931L11.4501 2.99995' stroke='%23e34f4f' stroke-width='2'/%3E%3Ccircle cx='7' cy='7' r='6' fill='none' stroke='%23e34f4f' stroke-width='2'/%3E%3C/svg%3E%0A") no-repeat center left;
+  --message-border--color: var(--color-maximum-red);
+  --message-header-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 14 14'%3E%3Cpath d='M3 11.1931L11.4501 2.99995' stroke='%23D72222' stroke-width='2'/%3E%3Ccircle cx='7' cy='7' r='6' fill='none' stroke='%23e34f4f' stroke-width='2'/%3E%3C/svg%3E%0A") no-repeat center left;
 }
 
 .messages--status {
-  --message-border--color: #42a877;
-  --message-header-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 13'%3E%3Cpath d='M2 6.57143L5.6 10L14 2' fill='none' stroke='%2342a877' stroke-width='3'/%3E%3C/svg%3E%0A") no-repeat center left;
+  --message-border--color: var(--color-jade);
+  --message-header-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 13'%3E%3Cpath d='M2 6.57143L5.6 10L14 2' fill='none' stroke='%2326A769' stroke-width='3'/%3E%3C/svg%3E%0A") no-repeat center left;
 }
 
 .messages--warning {
-  --message-border--color: #e0ac00;
-  --message-header-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 4 14' fill='%23e0ac00'%3E%3Crect x='0.5' width='3' height='9'/%3E%3Ccircle cx='2' cy='12.5' r='1.5'/%3E%3C/svg%3E%0A") no-repeat center left;
+  --message-border--color: var(--color-sunglow);
+  --message-header-background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 4 14' fill='%23FFD23F'%3E%3Crect x='0.5' width='3' height='9'/%3E%3Ccircle cx='2' cy='12.5' r='1.5'/%3E%3C/svg%3E%0A") no-repeat center left;
 
 }

@@ -3,14 +3,14 @@
  */
 :root {
   --form-control-background: var(--color-white);
-  --form-control-background--disabled: #EBEBED;
+  --form-control-background--disabled: var(--color-disabled);
   --form-control-color: var(--text-color);
   --form-control-font-size: var(--font-size-base);
   --form-control-line-height: var(--line-height);
   --form-control-padding--y: var(--spacing-sm);
   --form-control-padding--x: var(--spacing-lg);
   --form-control-border-radius: var(--radius-xxs);
-  --form-control-border--color: var(--color-gray-blue);
+  --form-control-border--color: var(--color-border);
   --form-control-border--width: 1px;
   --form-control-border--style: solid;
   --form-control-box-shadow: unset;
