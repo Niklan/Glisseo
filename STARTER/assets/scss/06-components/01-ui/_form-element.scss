@@ -33,11 +33,11 @@
 }
 
 .form-element:active {
-  --form-control-border--color: #222330;
+  --form-control-border--color: var(--color-raisin-black);
 }
 
 .form-element:hover {
-  --form-control-border--color: #222330;
+  --form-control-border--color: var(--color-raisin-black);
   --form-control-box-shadow: inset 0 0 0 1px var(--form-control-border--color);
 }
 
@@ -47,7 +47,7 @@
 
 .form-element:disabled {
   --form-control-background: var(--form-control-background--disabled);
-  --form-control-border--color: #D4D4D8;
+  --form-control-border--color: var(--color-light-gray);
   --form-control-box-shadow: unset;
   cursor: not-allowed;
 }

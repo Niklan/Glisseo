@@ -39,14 +39,14 @@
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   text-decoration: none;
-  color: #545560;
+  color: var(--color-dark-silver);
   border-radius: var(--radius-lg);
   background: var(--color-white);
 }
 
 .pager__link:hover {
-  color: #545560;
-  background: #E6ECF8;
+  color: var(--color-dark-silver);
+  background: var(--color-persian-blue--light-2);
 }
 
 .pager__link--is-active {
