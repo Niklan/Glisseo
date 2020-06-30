@@ -1,5 +1,5 @@
 {
-  "name": "glisseo",
+  "name": "STARTER",
   "version": "1.0.0",
   "description": "Glisseo is a base theme for Drupal 8 with starterkit theme.",
   "repository": {
@@ -19,13 +19,6 @@
   },
   "homepage": "https://github.com/Niklan/Glisseo#readme",
   "dependencies": {
-
-  },
-  "scripts": {
-    "build:theme": "gulp watch:css",
-    "watch:theme": "gulp build:css"
-  },
-  "devDependencies": {
     "autoprefixer": "^9.4.3",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
@@ -33,5 +26,9 @@
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^2.6.4",
     "postcss-custom-media": "^7.0.8"
+  },
+  "scripts": {
+    "build:theme": "gulp build:css",
+    "watch:theme": "gulp watch:css"
   }
 }
