@@ -2,6 +2,14 @@
 
 ## [Unreleased][unreleased]
 
+## Base theme
+
+- Removed ability to pass data-hook value to add suggestions for inputs. Rarely useful.
+
+## Starter theme
+
+## [1.0-alpha16]
+
 ### Base theme
 
 - **Backwards Compatibility break.** Most of views template was deleted. The base one was updated to support new bem naming system.
@@ -415,7 +423,8 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha15...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha16...HEAD
+[1.0-alpha16]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha15...8.x-1.0-alpha16
 [1.0-alpha15]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha14...8.x-1.0-alpha15
 [1.0-alpha14]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha13...8.x-1.0-alpha14
 [1.0-alpha13]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha12...8.x-1.0-alpha13
