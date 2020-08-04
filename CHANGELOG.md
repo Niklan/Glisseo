@@ -9,6 +9,8 @@
 ## Starter theme
 
 - `STARTER.info.yml` renamed into `STARTER.info.yml.txt` because the old way trigger Drupal.org package system and adds packaging information which is not needed at all.
+- gulpfile update to modern syntax.
+- Stylelint rules removed, because they are outdated and this rules aplies only for Drupal Core themes.
 
 ## [1.0-alpha16]
 
