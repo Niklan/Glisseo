@@ -17,7 +17,7 @@
     "postcss-custom-media": "^7.0.8"
   },
   "scripts": {
-    "build:theme": "gulp build:css",
-    "watch:theme": "gulp watch:css"
+    "build:css": "gulp buildCss",
+    "watch:css": "gulp watchCss"
   }
 }

@@ -21,12 +21,12 @@ yarn install
 
 Theme provides two script inside `package.json` file:
 
-- `build:css` — build SCSS files on run and exit.
-- `watch:css` — watch changes for SCSS and build on detection. Works in a loop until stopped.
+- `buildCss` — build SCSS files on run and exit.
+- `watchCss` — watch changes for SCSS and build on detection. Works in a loop until stopped.
 
 ```bash
 cd /theme/custom/THEMENAME
-yarn run watch:css
+yarn run watchScss
 ```
 
 ## Project package.json
@@ -49,7 +49,7 @@ Also you can move scripts into root project file.
 
 ```
   "scripts": {
-    "build:theme:css": "THEME_PATH=web/themes/custom/THEMENAME; gulp build:css --gulpfile=$THEME_PATH/gulpfile.js;",
-    "watch:theme:css": "THEME_PATH=web/themes/custom/THEMENAME; gulp watch:css --gulpfile=$THEME_PATH/gulpfile.js;"
+    "build:theme:css": "THEME_PATH=web/themes/custom/THEMENAME; gulp buildCss --gulpfile=$THEME_PATH/gulpfile.js;",
+    "watch:theme:css": "THEME_PATH=web/themes/custom/THEMENAME; gulp watchCss --gulpfile=$THEME_PATH/gulpfile.js;"
   },
 ```

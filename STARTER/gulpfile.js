@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+const { src, dest, watch, parallel } = require('gulp');
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
 const sourcemaps = require('gulp-sourcemaps');
@@ -6,8 +6,13 @@ const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
 const postcssCustomMedia = require('postcss-custom-media');
 
-gulp.task('build:css', function() {
-  return gulp.src([
+/**
+ * Builds CSS files from SCSS.
+ *
+ * @return {*}
+ */
+function buildCss() {
+  return src([
     'assets/scss/03-generic/generic.scss',
     'assets/scss/04-elements/elements.scss',
     'assets/scss/05-objects/objects.scss',
@@ -22,9 +27,15 @@ gulp.task('build:css', function() {
       autoprefixer(),
     ]))
     .pipe(sourcemaps.write('maps'))
-    .pipe(gulp.dest('assets/css/'));
-});
+    .pipe(dest('assets/css/'));
+}
 
-gulp.task('watch:css', function() {
-  gulp.watch('assets/scss/**', gulp.parallel('build:css'));
-});
+/**
+ * Watch for SCSS file changes and build CSS if any of them changed.
+ */
+function watchCss() {
+  watch('assets/scss/**', parallel(buildCss));
+}
+
+exports.buildCss = buildCss;
+exports.default = exports.watchCss = watchCss;
