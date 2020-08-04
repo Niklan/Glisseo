@@ -1,23 +1,12 @@
 {
   "name": "STARTER",
   "version": "1.0.0",
-  "description": "Glisseo is a base theme for Drupal 8 with starterkit theme.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Niklan/Glisseo.git"
-  },
+  "description": "STARTER theme.",
+  "private": true,
   "keywords": [
     "Drupal",
-    "theme",
-    "SCSS",
-    "Lost Grid"
+    "theme"
   ],
-  "author": "Niklan",
-  "license": "GPL-2.0",
-  "bugs": {
-    "url": "https://github.com/Niklan/Glisseo/issues"
-  },
-  "homepage": "https://github.com/Niklan/Glisseo#readme",
   "dependencies": {
     "autoprefixer": "^9.4.3",
     "gulp": "^4.0.0",

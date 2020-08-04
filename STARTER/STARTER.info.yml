@@ -5,7 +5,7 @@ type: theme
 base theme: glisseo
 description: 'Glisseo is a base theme for fast and easy start to theme your project.'
 package: Glisseo
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9
 
 # Remove this line after you copy starter theme.
 hidden: true

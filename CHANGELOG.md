@@ -112,6 +112,8 @@
 - Added styles for tabs and messages.
 - Updated styles and markup for status messages.
 - Improved pager style.
+- Improved `package.json`.
+- Drupal 9 is minimum supported core because of Twig Tweak 3 dependency.
 
 ## [1.0-alpha15]
 
