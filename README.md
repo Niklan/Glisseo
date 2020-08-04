@@ -10,8 +10,7 @@
 
 * **Modern CSS**, which includes **CSS variables** for styling and **CSS grids** for layouts!
 * [SCSS](https://sass-lang.com/) for some improvements to CSS. The theme does not abuse SCSS, on the contrary, uses only a small part of its capabilities. This makes styles clean, easy to read, maintain and understand. Even nesting is used only for such selectors as `:focus`, `:hover`, `::before`, `::after`.
-* (optional) [PostCSS](https://postcss.org/) for some additional improvements and processing that allows getting rid of most of the mixins of SCSS and focus on native CSS.
-* (optional) [Stylelint](https://stylelint.io/) if you prefer to apply some standards to your theme.
+* [PostCSS](https://postcss.org/) for some additional improvements and processing that allows getting rid of most of the mixins of SCSS and focus on native CSS.
 * [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for style structure. If you're not familiar with ITCSS, it's recommended to watch [this presentation](https://www.youtube.com/watch?v=1OKZOV-iLj4&feature=youtu.be&t=524) by Harry Roberts (@csswizardry) to get inspired.
 * [BEM methodology](https://bem.info/) for template class naming. In [variation](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) of Harry Roberts (@csswizardry) as well.
 
