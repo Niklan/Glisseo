@@ -1,7 +1,7 @@
 {% set block = css_name ? css_name : 'views' %}
 {%
   set modifiers = [
-    id,
+    block == 'views' ? id,
     display_id,
   ]
 %}
