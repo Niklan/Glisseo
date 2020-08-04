@@ -8,6 +8,8 @@
 
 ## Starter theme
 
+- `STARTER.info.yml` renamed into `STARTER.info.yml.txt` because the old way trigger Drupal.org package system and adds packaging information which is not needed at all.
+
 ## [1.0-alpha16]
 
 ### Base theme
