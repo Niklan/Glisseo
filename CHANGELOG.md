@@ -2,7 +2,17 @@
 
 ## [Unreleased][unreleased]
 
-## Base theme
+### Base theme
+
+No changes has been made.
+
+## Starter theme
+
+No changes has been made.
+
+## [1.0-alpha17]
+
+### Base theme
 
 - Removed ability to pass data-hook value to add suggestions for inputs. Rarely useful.
 - Issue #3175487 by Ramya Balasubramanian, hstrindb: Link to documenation not working.
@@ -14,7 +24,7 @@
 - Where possible, `block` variables is respects value from `block` variable from preprocess. So it's possible to change BEM Block from preprocess by setting `$variables['block'] = 'example'`.
 - Added `view_mode` variable for `commerce-product.html.twig`.
 
-## Starter theme
+### Starter theme
 
 - `STARTER.info.yml` renamed into `STARTER.info.yml.txt` because the old way trigger Drupal.org package system and adds packaging information which is not needed at all.
 - gulpfile update to modern syntax.
@@ -440,7 +450,8 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha16...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha17...HEAD
+[1.0-alpha17]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha16...8.x-1.0-alpha17
 [1.0-alpha16]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha15...8.x-1.0-alpha16
 [1.0-alpha15]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha14...8.x-1.0-alpha15
 [1.0-alpha14]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha13...8.x-1.0-alpha14
