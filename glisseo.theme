@@ -57,7 +57,7 @@ function _glisseo_bem(string $block, string $element = NULL, array $modifiers = 
       if (!is_string($modifier) || strlen($modifier) < 1) {
         continue;
       }
-      $classes[] = $class . '--' . Html::getClass($modifier);
+      $classes[] = Html::getClass($class . '--' . $modifier);
     }
   }
 
