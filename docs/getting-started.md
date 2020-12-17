@@ -26,7 +26,7 @@ Theme provides two script inside `package.json` file:
 
 ```bash
 cd /theme/custom/THEMENAME
-yarn run watchScss
+yarn run watch:theme
 ```
 
 ## Project package.json
