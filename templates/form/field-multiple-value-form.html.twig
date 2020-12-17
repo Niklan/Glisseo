@@ -21,7 +21,7 @@
  * @see claro_preprocess_field_multiple_value_form()
  */
 #}
-{% set block = 'form-item' %}
+{% set block = block ?? 'form-item' %}
 {%
   set modifiers = [
     'multiple',

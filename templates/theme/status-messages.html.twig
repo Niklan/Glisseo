@@ -19,7 +19,7 @@
  *   displaying messages of that specific type.
  */
 #}
-{% set block = 'messages' %}
+{% set block = block ?? 'messages' %}
 {%
   set header_classes = [
     bem(block, 'header'),

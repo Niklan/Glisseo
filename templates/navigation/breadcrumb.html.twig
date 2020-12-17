@@ -6,7 +6,7 @@
  * @see template_preprocess_breadcrumb().
  */
 #}
-{% set block = 'breadcrumb' %}
+{% set block = block ?? 'breadcrumb' %}
 {%
   set modifiers = [
     breadcrumb|length == 1 ? 'single-item',

@@ -10,7 +10,7 @@
   Most of core-provided js assumes that the CSS class pattern js-form-item-[something] or
   js-form-type-[something] exists on form items. We have to keep them.
 #}
-{% set block = 'form-item' %}
+{% set block = block ?? 'form-item' %}
 {%
   set modifiers = [
     'name-' ~ name,

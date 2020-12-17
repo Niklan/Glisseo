@@ -12,7 +12,7 @@
  *   displayed after the main title tag that appears in the template.
  */
 #}
-{% set block = 'page-title' %}
+{% set block = block ?? 'page-title' %}
 {%
   set title_classes = [
     bem(block),

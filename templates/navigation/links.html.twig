@@ -32,7 +32,7 @@
  */
 #}
 {% do attributes.removeClass('links') %}
-{% set block = 'links' %}
+{% set block = block ?? 'links' %}
 {%
   set classes = [
     bem(block),

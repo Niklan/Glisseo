@@ -34,7 +34,7 @@
  *   likely change when that issue is completed.
  */
 #}
-{% set block = 'pager' %}
+{% set block = block ?? 'pager' %}
 {% if items %}
   <nav class="{{ bem(block) }}" role="navigation" aria-labelledby="{{ heading_id }}">
     <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
@@ -113,7 +113,7 @@
       {# Print last item if we are not on the last page. #}
       {% if items.last %}
         {% apply spaceless %}
-        <li class="{{ bem(block, 'item', ['action',' last']) }}">
+          <li class="{{ bem(block, 'item', ['action', 'last']) }}">
           <a href="{{ items.last.href }}" class="{{ bem(block, 'link', ['action-link']) }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
             <span class="visually-hidden">{{ 'Last page'|t }}</span>
             <span class="{{ bem(block, 'item-title', ['forward']) }}" aria-hidden="true">

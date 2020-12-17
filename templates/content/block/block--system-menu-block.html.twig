@@ -31,7 +31,7 @@
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 #}
-{% set block = 'block' %}
+{% set block = block ?? 'block' %}
 {% set modifiers = [block_id, block_content_bundle] %}
 {%
   set classes = [

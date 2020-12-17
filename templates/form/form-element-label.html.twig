@@ -12,7 +12,7 @@
  * @see template_preprocess_form_element_label()
  */
 #}
-{% set block = 'form-item' %}
+{% set block = block ?? 'form-item' %}
 {% set element = 'label' %}
 {%
   set modifiers = [

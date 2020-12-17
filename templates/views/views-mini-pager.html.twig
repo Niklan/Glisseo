@@ -1,4 +1,4 @@
-{% set block = 'pager' %}
+{% set block = block ?? 'pager' %}
 {% if items.previous or items.next %}
   {% set heading_id = 'pagination-heading'|clean_id %}
   <nav class="{{ bem(block, null, ['mini']) }}" aria-labelledby="{{ heading_id }}">

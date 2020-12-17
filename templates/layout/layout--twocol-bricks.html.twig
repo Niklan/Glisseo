@@ -1,4 +1,4 @@
-{% set block = 'layout' %}
+{% set block = block ?? 'layout' %}
 {%
   set classes = [
     bem(block, null, [layout.id]),

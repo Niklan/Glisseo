@@ -5,12 +5,25 @@
 ## Base theme
 
 - Removed ability to pass data-hook value to add suggestions for inputs. Rarely useful.
+- Issue #3175487 by Ramya Balasubramanian, hstrindb: Link to documenation not working.
+- Issue #3175496 by Pooja Ganjage, hstrindb: Wrong yarn command in Getting started.
+- Issue #3181419 by lukasss: Clearing the modifier completely.
+- Added `view_mode` variable for `comment.html.twig`.
+- From branding links removed `title` equals "Home". According to [#3084441](https://www.drupal.org/project/drupal/issues/3084441), there is no use for it.
+- Fixed wrong element name for last pager link.
+- Where possible, `block` variables is respects value from `block` variable from preprocess. So it's possible to change BEM Block from preprocess by setting `$variables['block'] = 'example'`.
+- Added `view_mode` variable for `commerce-product.html.twig`.
 
 ## Starter theme
 
 - `STARTER.info.yml` renamed into `STARTER.info.yml.txt` because the old way trigger Drupal.org package system and adds packaging information which is not needed at all.
 - gulpfile update to modern syntax.
 - Stylelint rules removed, because they are outdated and this rules aplies only for Drupal Core themes.
+- Margins for list now uses margins from paragraph.
+- Bit improed styles for `code` element.
+- Fixed wrong var call for `--form-item-description-color`.
+- `--button-font-weight` is now 500 by default.
+- Set font-size 16px for `html` element as base for (R)EM values. Without it, leads to unexpected results in certain conditions.
 
 ## [1.0-alpha16]
 

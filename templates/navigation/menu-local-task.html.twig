@@ -1,4 +1,4 @@
-{% set block = 'tabs' %}
+{% set block = block ?? 'tabs' %}
 {%
   set modifiers = [
     is_active ? 'active',

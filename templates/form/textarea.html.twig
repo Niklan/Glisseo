@@ -13,7 +13,7 @@
  * @see template_preprocess_textarea()
  */
 #}
-{% set block = 'form-textarea' %}
+{% set block = block ?? 'form-textarea' %}
 {%
   set modifiers = [
     resizable ? 'resize-' ~ resizable,

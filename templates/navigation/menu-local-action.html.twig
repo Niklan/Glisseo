@@ -1,4 +1,4 @@
-{% set block = 'local-actions' %}
+{% set block = block ?? 'local-actions' %}
 {%
   set modifiers = [
     is_active ? 'active'

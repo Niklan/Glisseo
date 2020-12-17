@@ -11,7 +11,7 @@
  * @see template_preprocess_select()
  */
 #}
-{% set block = 'form-element' %}
+{% set block = block ?? 'form-element' %}
 {%
   set modifiers = [
     'type-select',

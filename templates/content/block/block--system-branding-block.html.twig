@@ -12,7 +12,7 @@
  * - site_slogan: Slogan for site as defined in Site information settings.
  */
 #}
-{% set block = 'branding' %}
+{% set block = block ?? 'branding' %}
 {%
   set classes = [
     bem(block),
@@ -20,12 +20,12 @@
 %}
 <div{{ attributes.addClass(classes) }}>
   {% if site_logo %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem(block, 'logo') }}">
+    <a href="{{ path('<front>') }}" rel="home" class="{{ bem(block, 'logo') }}">
       <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="{{ bem(block, 'img') }}" />
     </a>
   {% endif %}
   {% if site_name %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="{{ bem(block, 'name') }}">{{ site_name }}</a>
+    <a href="{{ path('<front>') }}" rel="home" class="{{ bem(block, 'name') }}">{{ site_name }}</a>
   {% endif %}
   {% if site_slogan %}
     <span class="{{ bem(block, 'slogan') }}">{{ site_slogan }}</span>

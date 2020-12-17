@@ -15,7 +15,7 @@
  * @see glisseo_preprocess_input()
  */
 #}
-{% set block = 'form-element' %}
+{% set block = block ?? 'form-element' %}
 {%
   set modifiers = [
     button_type ? button_type,

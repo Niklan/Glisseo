@@ -354,3 +354,27 @@ function glisseo_preprocess_user(array &$variables) {
     $variables['view_mode'] = 'default';
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for comment.html.twig.
+ */
+function glisseo_preprocess_comment(array &$variables) {
+  if (isset($variables['elements']['#view_mode'])) {
+    $variables['view_mode'] = $variables['elements']['#view_mode'];
+  }
+  else {
+    $variables['view_mode'] = 'default';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for commerce-product.html.twig.
+ */
+function glisseo_preprocess_commerce_product(array &$variables) {
+  if (isset($variables['elements']['#view_mode'])) {
+    $variables['view_mode'] = $variables['elements']['#view_mode'];
+  }
+  else {
+    $variables['view_mode'] = 'default';
+  }
+}

@@ -12,7 +12,7 @@
  */
 #}
 {% do attributes.removeAttribute('id') %}
-{% set block = 'block' %}
+{% set block = block ?? 'block' %}
 {%
   set modifiers = [
     block_id,
