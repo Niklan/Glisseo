@@ -20,4 +20,4 @@ Thanks to the fact that everything is separated by components and purpose, you c
 
 ## Documentation
 
-Read [documentation](docs/docs.md) for more info.
+Read [documentation](https://git.drupalcode.org/project/glisseo/-/blob/8.x-1.x/docs/docs.md) for more info.
