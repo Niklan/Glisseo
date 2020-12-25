@@ -44,7 +44,7 @@
   ]
 %}
 {% set heading_id = plugin_id ~ '-menu'|clean_id %}
-<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
+<nav aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
 
   {% set title_attributes = title_attributes.addClass(title_classes) %}

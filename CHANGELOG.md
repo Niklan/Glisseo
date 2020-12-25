@@ -4,7 +4,7 @@
 
 ### Base theme
 
-No changes has been made.
+- `block--system-menu-block.html.twig` doesn't add 'role="navigation"' to `nav` element anymire. This is invalid.
 
 ## Starter theme
 
