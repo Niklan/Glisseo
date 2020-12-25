@@ -5,6 +5,7 @@
 ### Base theme
 
 - `block--system-menu-block.html.twig` doesn't add 'role="navigation"' to `nav` element anymire. This is invalid.
+- Issue [#3189776](https://www.drupal.org/project/glisseo/issues/3189776): some fixes for mini pager template
 
 ## Starter theme
 
