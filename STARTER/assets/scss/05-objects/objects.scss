@@ -2,5 +2,11 @@
 // Common non-cosmetic structural design patterns.
 // =============================================================================
 
+// Settings.
+@import "../01-settings/core";
+
+// Tools.
+@import "../02-tools/core";
+
 // Objects.
 @import "**/*.scss";

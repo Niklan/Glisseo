@@ -9,7 +9,7 @@
 
 ## Starter theme
 
-No changes has been made.
+- Issue [#3192333](https://www.drupal.org/project/glisseo/issues/3192333) by hstrindb, Niklan: Files from 01-settings and 02-tools are not included
 
 ## [1.0-alpha17]
 
