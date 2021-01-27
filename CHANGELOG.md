@@ -6,6 +6,7 @@
 
 - `block--system-menu-block.html.twig` doesn't add 'role="navigation"' to `nav` element anymire. This is invalid.
 - Issue [#3189776](https://www.drupal.org/project/glisseo/issues/3189776): some fixes for mini pager template
+- `menu-local-task.html.twig` and `menu-local-tasks.html.twig` (Drupal tabs) is now using `local-tasks` as Block name instead of `tabs`, because it can intersect with third-party tabs and mess the styles. Also it's will be consisten with menu local actions. SCSS selectors were updated appropriate.
 
 ## Starter theme
 

@@ -2,7 +2,7 @@
 // Drupal tabs.
 // =============================================================================
 
-.tabs {
+.local-tasks {
   display: flex;
   align-items: center;
   flex-flow: wrap;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.tabs__link {
+.local-tasks__link {
   line-height: 1.2rem;
   position: relative;
   display: flex;
@@ -27,17 +27,17 @@
   font-weight: bold;
 }
 
-.tabs__link:hover {
+.local-tasks__link:hover {
   background-color: var(--color-persian-blue--light-2);
 }
 
-.tabs__link--active {
+.local-tasks__link--active {
   color: var(--color-persian-blue);
   position: relative;
   z-index: 1;
 }
 
-.tabs__link--active::before {
+.local-tasks__link--active::before {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -47,11 +47,11 @@
   border-bottom: 3px solid var(--color-persian-blue);
 }
 
-ul.tabs--secondary {
+ul.local-tasks--secondary {
   margin-bottom: var(--spacing-md);
 }
 
-.tabs--secondary::after {
+.local-tasks--secondary::after {
   position: absolute;
   bottom: 0;
   left: 0;

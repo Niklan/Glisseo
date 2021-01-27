@@ -1,8 +1,8 @@
 {% if primary %}
   <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  <ul class="{{ bem('tabs', null, ['primary']) }}">{{ primary }}</ul>
+  <ul class="{{ bem('local-tasks', null, ['primary']) }}">{{ primary }}</ul>
 {% endif %}
 {% if secondary %}
   <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
-  <ul class="{{ bem('tabs', null, ['secondary']) }}">{{ secondary }}</ul>
+  <ul class="{{ bem('local-tasks', null, ['secondary']) }}">{{ secondary }}</ul>
 {% endif %}
