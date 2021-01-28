@@ -11,6 +11,7 @@
 ## Starter theme
 
 - Issue [#3192333](https://www.drupal.org/project/glisseo/issues/3192333) by hstrindb, Niklan: Files from 01-settings and 02-tools are not included
+- Introduced new starter theme: STARTER_PCSS. This theme built around PostCSS and give you control over every bit of styles you write.
 
 ## [1.0-alpha17]
 

@@ -1,0 +1,64 @@
+/**
+ * Styles for Drupal breadcrumbs.
+ */
+
+.breadcrumb {
+  font-size: var(--font-size-sm);
+  display: flex;
+}
+
+.breadcrumb__path {
+  display: block;
+  overflow: hidden;
+  flex-grow: 0;
+  flex-shrink: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @media (--sm) {
+    display: inline;
+    overflow: visible;
+  }
+}
+
+.breadcrumb__item-link {
+  --link-color: var(--color-border);
+}
+
+.breadcrumb__item-link--current {
+  --link-color: var(--color-persian-blue);
+}
+
+.breadcrumb__item-link--text {
+  color: var(--text-color);
+}
+
+.breadcrumb__current {
+  display: block;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  @media (--sm) {
+    display: inline;
+  }
+}
+
+.breadcrumb__current::before {
+  margin: 0 var(--spacing-xs);
+  content: '/';
+  color: var(--color-border);
+}
+
+.breadcrumb--single-item .breadcrumb__current::before {
+  display: none;
+}
+
+.breadcrumb__delimiter::after {
+  margin: 0 var(--spacing-xs);
+  content: '/';
+  color: var(--color-border);
+}
+
+.breadcrumb__delimiter:last-child {
+  display: none;
+}

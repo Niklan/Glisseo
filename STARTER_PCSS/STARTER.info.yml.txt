@@ -1,0 +1,26 @@
+# Theme base information.
+screenshot: screenshot.png
+name: Glisseo (PCSS starter theme)
+type: theme
+base theme: glisseo
+description: 'Glisseo is a base theme for fast and easy start to theme your project.'
+package: Glisseo
+core_version_requirement: ^9
+
+libraries:
+  - STARTER/global.style.generic
+  - STARTER/global.style.elements
+  - STARTER/global.style.components
+  - STARTER/global.style.utilities
+
+regions:
+  header: Header
+  navigation: Navigation
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+
+# Disable system libraries.
+libraries-override:
+  system/base: false

@@ -1,6 +1,6 @@
 # Theme base information.
 screenshot: screenshot.png
-name: Glisseo (starter theme)
+name: Glisseo (SCSS starter theme)
 type: theme
 base theme: glisseo
 description: 'Glisseo is a base theme for fast and easy start to theme your project.'

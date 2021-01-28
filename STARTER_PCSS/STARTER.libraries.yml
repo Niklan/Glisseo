@@ -1,0 +1,103 @@
+# Global libraries.
+global.style.generic:
+  css:
+    base:
+      assets/css/01-generic/modern-css-reset.css: { }
+      assets/css/01-generic/colors.css: { }
+      assets/css/01-generic/radius.css: { }
+      assets/css/01-generic/spacing.css: { }
+      assets/css/01-generic/grid.css: { }
+      assets/css/01-generic/shadow.css: { }
+
+global.style.elements:
+  css:
+    base:
+      assets/css/02-elements/globals.css: { }
+      assets/css/02-elements/focus.css: { }
+      assets/css/02-elements/selection.css: { }
+      assets/css/02-elements/page.css: { }
+      assets/css/02-elements/links.css: { }
+      assets/css/02-elements/typography.css: { }
+      assets/css/02-elements/headings.css: { }
+      assets/css/02-elements/lists.css: { }
+      assets/css/02-elements/images.css: { }
+      assets/css/02-elements/horizontal-rules.css: { }
+      assets/css/02-elements/fieldset.css: { }
+      assets/css/02-elements/blockquotes.css: { }
+
+global.style.components:
+  css:
+    layout:
+      assets/css/04-components/layout/layout.css: { }
+      assets/css/04-components/layout/main-layout.css: { }
+    theme:
+      assets/css/04-components/ui/button.css: { }
+      assets/css/04-components/ui/table.css: { }
+      assets/css/04-components/ui/form-element.css: { }
+      assets/css/04-components/ui/form-boolean.css: { }
+      assets/css/04-components/ui/form-textarea.css: { }
+      assets/css/04-components/ui/form-item.css: { }
+
+global.style.utilities:
+  css:
+    state:
+      assets/css/05-utilities/visually-hidden.css: { }
+
+# Drupal specific libraries loaded only on demand.
+# These libraries attached in .theme file.
+component.ui.breadcrumb:
+  css:
+    theme:
+      assets/css/04-components/ui/breadcrumb.css: { }
+
+component.ui.links:
+  css:
+    theme:
+      assets/css/04-components/ui/links.css: { }
+
+component.ui.local-tasks:
+  css:
+    theme:
+      assets/css/04-components/ui/local-tasks.css: { }
+
+component.ui.local-actions:
+  css:
+    theme:
+      assets/css/04-components/ui/local-actions.css: { }
+
+component.ui.vertical-tabs:
+  css:
+    theme:
+      assets/css/04-components/ui/vertical-tabs.css: { }
+
+component.ui.menu:
+  css:
+    theme:
+      assets/css/04-components/ui/menu.css: { }
+
+component.ui.page-title:
+  css:
+    theme:
+      assets/css/04-components/ui/page-title.css: { }
+
+component.ui.pager:
+  css:
+    theme:
+      assets/css/04-components/ui/pager.css: { }
+
+component.ui.status-messages:
+  css:
+    theme:
+      assets/css/04-components/ui/status-messages.css: { }
+
+# Custom libraries.
+#google.fonts:
+#  css:
+#    theme:
+#      //fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&subset=cyrillic&display=swap:
+#        type: external
+#        minified: true
+#        # @see https://csswizardry.com/2020/05/the-fastest-google-fonts/
+#        attributes:
+#          media: 'print'
+#          onload: "this.media='all'"

@@ -1,0 +1,14 @@
+// =============================================================================
+// Drupal local actions.
+// =============================================================================
+
+.local-actions {
+  display: flex;
+  margin: 0 0 var(--spacing-sm);
+  padding: 0;
+  list-style: none;
+}
+
+.local-actions__item:not(:last-child) {
+  margin-right: var(--spacing-xs);
+}

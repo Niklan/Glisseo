@@ -1,0 +1,29 @@
+{# Main lauout classes. #}
+{% set main_layout_attributes = create_attribute() %}
+{% set main_layout_block = 'main-layout' %}
+{%
+  set main_layout_modifiers = [
+    page.sidebar_first ? 'sidebar-first',
+    page.sidebar_second ? 'sidebar-second',
+    not page.sidebar_first and not page.sidebar_second ? 'no-sidebars',
+    not page.sidebar_first and page.sidebar_second ? 'one-sidebar',
+    page.sidebar_first and not page.sidebar_second ? 'one-sidebar',
+    page.sidebar_first and page.sidebar_second ? 'two-sidebars',
+  ]
+%}
+{%
+  set main_layout_classes = [
+    bem(main_layout_block, null, main_layout_modifiers),
+  ]
+%}
+
+{{ page.header }}
+{{ page.navigation }}
+
+<main{{ main_layout_attributes.addClass('layout-container').addClass(main_layout_classes) }}>
+  {{ page.sidebar_first }}
+  {{ page.content }}
+  {{ page.sidebar_second }}
+</main>
+
+{{ page.footer }}

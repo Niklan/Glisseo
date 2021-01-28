@@ -1,0 +1,46 @@
+:root {
+  --form-item-margin--y: var(--spacing-lg);
+  --form-item-margin--x: 0;
+  --form-item-label-margin--y: var(--spacing-xxs);
+  --form-item-label-font-size: var(--font-size-sm);
+  --form-item-label-line-height: 1.125rem;
+  --form-item-description-color: var(--color-dark-silver);
+  --form-item-description-font-size: var(--font-size-xs);
+  --form-item-description-margin--y: var(--spacing-xxs);
+}
+
+.form-item {
+  margin: var(--form-item-margin);
+  --form-item-margin: var(--form-item-margin--y) var(--form-item-margin--x);
+}
+
+.form-item__label {
+  font-size: var(--form-item-label-font-size);
+  font-weight: bold;
+  line-height: var(--form-item-label-line-height);
+  display: table;
+  margin: var(--form-item-label-margin--y) 0;
+}
+
+.form-item__label[for] {
+  cursor: pointer;
+}
+
+.form-item__label--required::after {
+  display: inline-block;
+  content: '*';
+  color: var(--color-maximum-red);
+  font-weight: bold;
+  margin-left: var(--spacing-xxs);
+}
+
+.form-item__label--inline {
+  display: inline;
+  font-weight: normal;
+}
+
+.form-item__description {
+  color: var(--form-item-description-color);
+  font-size: var(--form-item-description-font-size);
+  margin: var(--form-item-description-margin--y) 0;
+}
