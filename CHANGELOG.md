@@ -4,6 +4,16 @@
 
 ### Base theme
 
+No changes has been made.
+
+## Starter theme
+
+No changes has been made.
+
+## [1.0-alpha18]
+
+### Base theme
+
 - `block--system-menu-block.html.twig` doesn't add 'role="navigation"' to `nav` element anymire. This is invalid.
 - Issue [#3189776](https://www.drupal.org/project/glisseo/issues/3189776): some fixes for mini pager template
 - `menu-local-task.html.twig` and `menu-local-tasks.html.twig` (Drupal tabs) is now using `local-tasks` as Block name instead of `tabs`, because it can intersect with third-party tabs and mess the styles. Also it's will be consisten with menu local actions. SCSS selectors were updated appropriate.
@@ -453,7 +463,8 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha17...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha18...HEAD
+[1.0-alpha17]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha17...8.x-1.0-alpha18
 [1.0-alpha17]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha16...8.x-1.0-alpha17
 [1.0-alpha16]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha15...8.x-1.0-alpha16
 [1.0-alpha15]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha14...8.x-1.0-alpha15
