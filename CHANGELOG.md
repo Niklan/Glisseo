@@ -9,6 +9,9 @@ No changes has been made.
 ## Starter theme
 
 - [PostCSS] Removed extra word from 'STARTER_preprocess()' function name.
+- [PostCSS] Changed the way how PostCSS compiles. The result file will be placed in source's path. Sourcemaps will be places to source as well.
+- [PostCSS] `pcss` folder renamed to `css`.
+- [PostCSS] `buildCss` task is now colled `compileCss`.
 
 ## [1.0-alpha18]
 

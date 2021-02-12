@@ -8,38 +8,41 @@ const postcssCustomMedia = require('postcss-custom-media');
 const postcssImport = require('postcss-import');
 const postcssNesting = require('postcss-nesting');
 
+const destinationToSource = function (file) {
+  // Save result file in the folder of it's source.
+  return file.base;
+};
+
 /**
  * Builds CSS files from PostCSS.
- *
- * @return {*}
  */
-function buildCss() {
+function compileCss() {
   let plugins = [
     postcssImport(),
     postcssNesting(),
     postcssCustomMedia({
-      importFrom: 'assets/pcss/01-generic/media-breakpoints.pcss',
+      importFrom: 'assets/css/01-generic/media-breakpoints.pcss',
     }),
     autoprefixer(),
     cssnano({ preset: 'default' }),
   ];
 
-  return src(['assets/pcss/**/*.pcss'])
+  return src(['assets/css/**/*.pcss'])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(rename({
       extname: '.css',
     }))
-    .pipe(sourcemaps.write('maps'))
-    .pipe(dest('assets/css/'));
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(destinationToSource));
 }
 
 /**
  * Watch for SCSS file changes and build CSS if any of them changed.
  */
 function watchCss() {
-  watch('assets/pcss/**/*.pcss', parallel(buildCss));
+  watch('assets/pcss/**/*.pcss', parallel(compileCss));
 }
 
-exports.buildCss = buildCss;
+exports.compileCss = compileCss;
 exports.default = exports.watchCss = watchCss;

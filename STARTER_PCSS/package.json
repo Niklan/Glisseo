@@ -21,7 +21,7 @@
     "postcss-nesting": "^7.0.1"
   },
   "scripts": {
-    "build:css": "gulp buildCss",
+    "compile:css": "gulp compileCss",
     "watch:css": "gulp watchCss"
   }
 }
