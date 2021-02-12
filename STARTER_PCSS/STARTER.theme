@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess().
  */
-function STARTER_pcss_preprocess(array &$variables): void {
+function STARTER_preprocess(array &$variables): void {
   // An array with libraries that must be attached on demand. This is done here
   // to simplify things for starter theme. You can attach them whatever you
   // want.

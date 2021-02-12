@@ -8,7 +8,7 @@ No changes has been made.
 
 ## Starter theme
 
-No changes has been made.
+- [PostCSS] Removed extra word from 'STARTER_preprocess()' function name.
 
 ## [1.0-alpha18]
 
