@@ -4,7 +4,8 @@
 
 ### Base theme
 
-No changes has been made.
+- Removed `role="navigation"` from `pager.html.twig`. It's invalid and [core bug](https://www.drupal.org/project/drupal/issues/3117230).
+- Removed `role="article"` from `node.html.twig`. It's invalid and [core bug](https://www.drupal.org/project/drupal/issues/3117230).
 
 ## Starter theme
 

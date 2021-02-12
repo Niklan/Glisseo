@@ -36,7 +36,7 @@
 #}
 {% set block = block ?? 'pager' %}
 {% if items %}
-  <nav class="{{ bem(block) }}" role="navigation" aria-labelledby="{{ heading_id }}">
+  <nav class="{{ bem(block) }}" aria-labelledby="{{ heading_id }}">
     <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
     <ul class="{{ bem(block, 'items') }} js-pager__items">
       {# Print first item if we are not on the first page. #}

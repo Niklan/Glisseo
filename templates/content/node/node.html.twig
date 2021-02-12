@@ -32,6 +32,10 @@
     bem(block, 'content'),
   ]
 %}
+{# @see https://www.drupal.org/project/drupal/issues/3117230 #}
+{% if attributes.hasAttribute('role') %}
+  {% do attributes.removeAttribute('role') %}
+{% endif %}
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
