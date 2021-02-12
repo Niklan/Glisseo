@@ -4,10 +4,20 @@
 
 ### Base theme
 
+No changes.
+
+## Starter theme
+
+No changes.
+
+## [1.0-alpha19]
+
+### Base theme
+
 - Removed `role="navigation"` from `pager.html.twig`. It's invalid and [core bug](https://www.drupal.org/project/drupal/issues/3117230).
 - Removed `role="article"` from `node.html.twig`. It's invalid and [core bug](https://www.drupal.org/project/drupal/issues/3117230).
 
-## Starter theme
+### Starter theme
 
 - [PostCSS] Removed extra word from 'STARTER_preprocess()' function name.
 - [PostCSS] Changed the way how PostCSS compiles. The result file will be placed in source's path. Sourcemaps will be places to source as well.
@@ -24,7 +34,7 @@
 - Issue [#3189776](https://www.drupal.org/project/glisseo/issues/3189776): some fixes for mini pager template
 - `menu-local-task.html.twig` and `menu-local-tasks.html.twig` (Drupal tabs) is now using `local-tasks` as Block name instead of `tabs`, because it can intersect with third-party tabs and mess the styles. Also it's will be consisten with menu local actions. SCSS selectors were updated appropriate.
 
-## Starter theme
+### Starter theme
 
 - Issue [#3192333](https://www.drupal.org/project/glisseo/issues/3192333) by hstrindb, Niklan: Files from 01-settings and 02-tools are not included
 - Introduced new starter theme: STARTER_PCSS. This theme built around PostCSS and give you control over every bit of styles you write.
@@ -469,8 +479,9 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha18...HEAD
-[1.0-alpha17]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha17...8.x-1.0-alpha18
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha19...HEAD
+[1.0-alpha19]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha18...8.x-1.0-alpha19
+[1.0-alpha18]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha17...8.x-1.0-alpha18
 [1.0-alpha17]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha16...8.x-1.0-alpha17
 [1.0-alpha16]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha15...8.x-1.0-alpha16
 [1.0-alpha15]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha14...8.x-1.0-alpha15
