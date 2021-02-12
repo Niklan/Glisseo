@@ -11,7 +11,9 @@ No changes has been made.
 - [PostCSS] Removed extra word from 'STARTER_preprocess()' function name.
 - [PostCSS] Changed the way how PostCSS compiles. The result file will be placed in source's path. Sourcemaps will be places to source as well.
 - [PostCSS] `pcss` folder renamed to `css`.
-- [PostCSS] `buildCss` task is now colled `compileCss`.
+- `buildCss` task is now called `compileCss`.
+- Added ability to compile, compress and optimize JavaScript files. They must be under assets/js directory and have `.es6.js` extension. (As Drupal Core does)
+- Added new gulp tasks: `compileJs`, `watchJs`, `compileAll`, `watchAll`. Also added oppropriate npm scripts for them.
 
 ## [1.0-alpha18]
 

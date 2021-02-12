@@ -14,10 +14,15 @@
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-terser": "^2.0.1",
     "postcss-custom-media": "^7.0.8"
   },
   "scripts": {
-    "build:css": "gulp buildCss",
-    "watch:css": "gulp watchCss"
+    "compile:css": "gulp compileCss",
+    "compile:js": "gulp compileJs",
+    "compile": "gulp compileAll",
+    "watch:css": "gulp watchCss",
+    "watch:js": "gulp watchJs",
+    "watch": "gulp watchAll"
   }
 }
