@@ -11,6 +11,7 @@
 
 * [SCSS] Added missing dependency `gulp-rename`.
 * Update Modern CSS reset styles.
+* Default media breakpoints (`@custom-media`) changed to match Google Chrome responsive mode breakpoints.
 
 ## [1.0-alpha19]
 
