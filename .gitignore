@@ -4,3 +4,11 @@
 .directory
 
 yarn.lock
+
+# Exclude compiled styles and JSs.
+# Used mainly for development when assets are attached via symlink and theme
+# is tested to work as expected.
+*.css
+*.css.map
+*.js
+!*.es6.js
