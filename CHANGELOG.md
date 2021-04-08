@@ -4,7 +4,7 @@
 
 ### Base theme
 
-No changes.
+* Issue [#3207746](https://www.drupal.org/project/glisseo/issues/3207746) by hstrindb: includes/structure.inc?
 
 ## Starter theme
 

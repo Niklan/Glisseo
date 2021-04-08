@@ -4,7 +4,8 @@
 
 1. Copy and paste **STARTER** folder to `/theme` or `/theme/custom` (recommended) directory.
 2. Rename **STARTER** folder to name of your theme. The name must be unique. I.e. my_theme
-3. In the root of your new theme, also rename each file that contains **STARTER** by replacing it's on your theme name. The replacement must be the same as theme folder named. Don't forget to rename or remove hook in **includes/structure.inc**.
+3. In the root of your new theme, also rename each file that contains **STARTER** by replacing it's on your theme name. The replacement must be the same as theme folder named.
+   * PostCSS: Rename hook in **STARTER.theme**.
 4. Rename **STARTER.info.yml.txt** to **THEMENAME.info.yml**. Just remove .txt so Drupal can find the theme.
 5. In **STARTER.info.yml** also don't forget to replace each **STARTER** by your theme name. Otherwise, styles will not be included on the pages.
 
