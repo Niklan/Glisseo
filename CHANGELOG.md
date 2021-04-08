@@ -8,7 +8,7 @@
 
 ## Starter theme
 
-No changes.
+* [SCSS] Added missing dependency `gulp-rename`.
 
 ## [1.0-alpha19]
 
