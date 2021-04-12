@@ -6,6 +6,7 @@
 
 * Issue [#3207746](https://www.drupal.org/project/glisseo/issues/3207746) by hstrindb: includes/structure.inc?
 * The `base theme` switched to `stable9`. If you have and error "Base theme stable9 has not been installed.", just run `drush theme:enable stable9`. This shouldn't break anything or much. Test if before do it on production.
+* Remove docs and improve README.md.
 
 ## Starter theme
 
