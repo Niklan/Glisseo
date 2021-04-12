@@ -4,11 +4,17 @@
 
 ### Base theme
 
+### Starter theme
+
+## [1.0-alpha20]
+
+### Base theme
+
 * Issue [#3207746](https://www.drupal.org/project/glisseo/issues/3207746) by hstrindb: includes/structure.inc?
 * The `base theme` switched to `stable9`. If you have and error "Base theme stable9 has not been installed.", just run `drush theme:enable stable9`. This shouldn't break anything or much. Test if before do it on production.
 * Remove docs and improve README.md.
 
-## Starter theme
+### Starter theme
 
 * [SCSS] Added missing dependency `gulp-rename`.
 * Update Modern CSS reset styles.
@@ -484,7 +490,8 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha19...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha20...HEAD
+[1.0-alpha20]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha19...8.x-1.0-alpha20
 [1.0-alpha19]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha18...8.x-1.0-alpha19
 [1.0-alpha18]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha17...8.x-1.0-alpha18
 [1.0-alpha17]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha16...8.x-1.0-alpha17
