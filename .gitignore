@@ -4,6 +4,7 @@
 .directory
 
 yarn.lock
+package-lock.json
 
 # Exclude compiled styles and JSs.
 # Used mainly for development when assets are attached via symlink and theme
