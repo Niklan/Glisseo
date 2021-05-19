@@ -3,28 +3,28 @@ STARTER.xs:
   mediaQuery: '(min-width: 0px)'
   weight: 0
   multipliers:
-  - 1x
+    - 1x
 STARTER.sm:
   label: SM
-  mediaQuery: '(min-width: 576px)'
+  mediaQuery: '(min-width: 425px)'
   weight: 0
   multipliers:
-  - 1x
+    - 1x
 STARTER.md:
   label: MD
   mediaQuery: '(min-width: 768px)'
   weight: 0
   multipliers:
-  - 1x
+    - 1x
 STARTER.lg:
   label: LG
-  mediaQuery: '(min-width: 992px)'
+  mediaQuery: '(min-width: 1024px)'
   weight: 0
   multipliers:
-  - 1x
+    - 1x
 STARTER.xl:
   label: XL
-  mediaQuery: '(min-width: 1140px)'
+  mediaQuery: '(min-width: 1440px)'
   weight: 0
   multipliers:
-  - 1x
+    - 1x

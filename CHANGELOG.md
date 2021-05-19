@@ -10,6 +10,7 @@
 
 * For configuration file now is always array of sources for easier modification.
 * **[SCSS STARTER]** Removed old `gulpfile.js`.
+* `STARTER.breakpoints.yml` media queries update to be in sync with `media-breakpoint` PCSS / SCSS file. These breakpoints rules are from Google Chrome responsive mode.
 
 ## [1.0-alpha20]
 
