@@ -9,6 +9,7 @@
 ### Starter theme
 
 * For configuration file now is always array of sources for easier modification.
+* **[SCSS STARTER]** Removed old `gulpfile.js`.
 
 ## [1.0-alpha20]
 
