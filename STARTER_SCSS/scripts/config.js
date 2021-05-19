@@ -29,7 +29,9 @@ const paths = {
     destination: PROJECT_ROOT + '/assets/css/',
   },
   js: {
-    source: PROJECT_ROOT + '/assets/js/**/*.es6.js',
+    source: [
+      PROJECT_ROOT + '/assets/js/**/*.es6.js'
+    ],
     destination: destinationToSource,
   }
 }

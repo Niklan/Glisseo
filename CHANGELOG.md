@@ -8,6 +8,8 @@
 
 ### Starter theme
 
+* For configuration file now is always array of sources for easier modification.
+
 ## [1.0-alpha20]
 
 ### Base theme
