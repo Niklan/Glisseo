@@ -4,6 +4,8 @@
 
 ### Base theme
 
+* Fixed `status-messages.html.twig` template. Now it correctly removes previously used classes and will not mess up styles.
+
 ### Starter theme
 
 ## [1.0-alpha20]
