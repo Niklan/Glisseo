@@ -99,8 +99,10 @@
 // Show only next and prev for low-res displays.
 .pager__item:not(.pager__item--previous):not(.pager__item--next) {
   display: none;
+}
 
-  @media (--md) {
+@media (--md) {
+  .pager__item:not(.pager__item--previous):not(.pager__item--next) {
     display: flex;
   }
 }

@@ -14,11 +14,6 @@
   flex-shrink: 1;
   white-space: nowrap;
   text-overflow: ellipsis;
-
-  @media (--sm) {
-    display: inline;
-    overflow: visible;
-  }
 }
 
 .breadcrumb__item-link {
@@ -37,10 +32,6 @@
   display: block;
   flex-grow: 1;
   flex-shrink: 0;
-
-  @media (--sm) {
-    display: inline;
-  }
 }
 
 .breadcrumb__current::before {
@@ -61,4 +52,15 @@
 
 .breadcrumb__delimiter:last-child {
   display: none;
+}
+
+@media (--sm) {
+  .breadcrumb__path {
+    display: inline;
+    overflow: visible;
+  }
+
+  .breadcrumb__current {
+    display: inline;
+  }
 }

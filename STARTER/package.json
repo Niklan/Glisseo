@@ -17,9 +17,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-terser": "^2.0.1",
     "postcss": "^8.2.10",
-    "postcss-custom-media": "^7.0.8",
-    "postcss-import": "^14.0.0",
-    "postcss-nesting": "^7.0.1"
+    "postcss-custom-media": "^7.0.8"
   },
   "scripts": {
     "compile": "gulp compile --gulpfile=scripts/gulpfile.esm.js;",
