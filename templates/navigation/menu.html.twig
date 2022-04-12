@@ -63,7 +63,7 @@
           <li{{ item.attributes.addClass(item_classes) }}>
             {{ link(item.title, item.url, { 'class': [bem(block, 'link', ['submenu'])] }) }}
             {% if item.below %}
-              {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+              {{ menus.menu_links(item.below, attributes, menu_level + 1, block) }}
             {% endif %}
           </li>
         {% endfor %}
