@@ -4,7 +4,18 @@
 
 ### Base theme
 
+* No changes has been made.
+
+### Starter theme
+
+* No changes has been made.
+
+## [1.0-alpha21]
+
+### Base theme
+
 * Fixed `status-messages.html.twig` template. Now it correctly removes previously used classes and will not mess up styles.
+* Issue [#3258041](https://www.drupal.org/project/glisseo/issues/3258041): Bug in template menu.html.twig
 
 ### Starter theme
 
@@ -496,7 +507,8 @@ Since release of first alpha, now we can use composer to lock theme version, and
 - Added CHANGELOG.md to track all changes.
 - Changed composer.json for the theme to be `drupal-theme` instead of being `drupal-custom-theme`.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha20...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha21...HEAD
+[1.0-alpha21]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha20...8.x-1.0-alpha201
 [1.0-alpha20]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha19...8.x-1.0-alpha20
 [1.0-alpha19]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha18...8.x-1.0-alpha19
 [1.0-alpha18]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha17...8.x-1.0-alpha18
