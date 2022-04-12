@@ -1,0 +1,30 @@
+# There libraries are needed to simplify attaching libraries for custom theme
+# via libraries-extends. Otherwise template with libraries should be placed
+# into custom theme and customize each template for it.
+component.ui.breadcrumb:
+  version: VERSION
+  css: []
+component.ui.links:
+  version: VERSION
+  css: []
+component.ui.local-tasks:
+  version: VERSION
+  css: []
+component.ui.local-actions:
+  version: VERSION
+  css: []
+component.ui.vertical-tabs:
+  version: VERSION
+  css: []
+component.ui.menu:
+  version: VERSION
+  css: []
+component.ui.page-title:
+  version: VERSION
+  css: []
+component.ui.pager:
+  version: VERSION
+  css: []
+component.ui.status-messages:
+  version: VERSION
+  css: []

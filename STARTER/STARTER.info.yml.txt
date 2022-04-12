@@ -1,6 +1,6 @@
 # Theme base information.
 screenshot: screenshot.png
-name: Glisseo (PCSS starter theme)
+name: Glisseo STARTER theme
 type: theme
 base theme: glisseo
 description: 'Glisseo is a base theme for fast and easy start to theme your project.'
@@ -24,3 +24,26 @@ regions:
 # Disable system libraries.
 libraries-override:
   system/base: false
+
+libraries-extend:
+  # These libraries extends empty ones provided by base theme. You can copy
+  # template from the base template and attach custom library manually and
+  # remove these overrides.
+  glisseo/component.ui.breadcrumb:
+    - STARTER/component.ui.breadcrumb
+  glisseo/component.ui.links:
+    - STARTER/component.ui.links
+  glisseo/component.ui.local-tasks:
+    - STARTER/component.ui.local-tasks
+  glisseo/component.ui.local-actions:
+    - STARTER/component.ui.local-actions
+  glisseo/component.ui.vertical-tabs:
+    - STARTER/component.ui.vertical-tabs
+  glisseo/component.ui.menu:
+    - STARTER/component.ui.menu
+  glisseo/component.ui.page-title:
+    - STARTER/component.ui.page-title
+  glisseo/component.ui.pager:
+    - STARTER/component.ui.pager
+  glisseo/component.ui.status-messages:
+    - STARTER/component.ui.status-messages

@@ -4,33 +4,3 @@
  * @file
  * Custom hooks and functions special for theme.
  */
-
-/**
- * Implements hook_preprocess().
- */
-function STARTER_preprocess(array &$variables): void {
-  // An array with libraries that must be attached on demand. This is done here
-  // to simplify things for starter theme. You can attach them whatever you
-  // want.
-  // An array contains:
-  // - theme_hook_original: The theme hook to attach to.
-  //   - libraries: An array with libraries to attach to that theme hook.
-  $dynamic_libraries = [
-    'breadcrumb' => ['STARTER/component.ui.breadcrumb'],
-    'links' => ['STARTER/component.ui.links'],
-    'menu_local_tasks' => ['STARTER/component.ui.local-tasks'],
-    'menu_local_action' => ['STARTER/component.ui.local-actions'],
-    'vertical_tabs' => ['STARTER/component.ui.vertical-tabs'],
-    'menu' => ['STARTER/component.ui.menu'],
-    'page_title' => ['STARTER/component.ui.page-title'],
-    'pager' => ['STARTER/component.ui.pager'],
-    'status_messages' => ['STARTER/component.ui.status-messages'],
-  ];
-
-  $theme_hook_original = $variables['theme_hook_original'];
-  if (array_key_exists($theme_hook_original, $dynamic_libraries)) {
-    foreach ($dynamic_libraries[$theme_hook_original] as $library) {
-      $variables['#attached']['library'][] = $library;
-    }
-  }
-}

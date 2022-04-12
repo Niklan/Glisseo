@@ -31,6 +31,7 @@
  * @see template_preprocess_links()
  */
 #}
+{{ attach_library('glisseo/component.ui.links') }}
 {% do attributes.removeClass('links') %}
 {% set block = block ?? 'links' %}
 {%

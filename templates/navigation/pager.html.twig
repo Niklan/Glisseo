@@ -34,6 +34,7 @@
  *   likely change when that issue is completed.
  */
 #}
+{{ attach_library('glisseo/component.ui.pager') }}
 {% set block = block ?? 'pager' %}
 {% if items %}
   <nav class="{{ bem(block) }}" aria-labelledby="{{ heading_id }}">

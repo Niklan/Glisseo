@@ -12,6 +12,7 @@
  *   displayed after the main title tag that appears in the template.
  */
 #}
+{{ attach_library('glisseo/component.ui.page-title') }}
 {% set block = block ?? 'page-title' %}
 {%
   set title_classes = [
