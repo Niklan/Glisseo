@@ -9,9 +9,6 @@
 ## Features
 
 - **Modern CSS**, which includes **CSS variables** for styling and **CSS grids** for layouts!
-- Two starter themes:
-  - **SCSS:** The [SCSS](https://sass-lang.com/) based starter theme.
-  - **PostCSS:** The [PostCSS](https://postcss.org/) based starter theme. This one will give you full control over your styles and when they must be attached.
 - [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for style structure. If you're not familiar with ITCSS, it's recommended to watch [this presentation](https://www.youtube.com/watch?v=1OKZOV-iLj4&feature=youtu.be&t=524) by Harry Roberts (@csswizardry) to get inspired.
 - [BEM methodology](https://bem.info/) for template class naming. In [variation](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) of Harry Roberts (@csswizardry) as well.
 
@@ -19,7 +16,7 @@ The theme provides only a basic styles for HTML elements (and some Drupal specif
 
 ## Getting started
 
-### Structure of SCSS
+### Structure of CSS
 
 This theme is uses [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss).
 
@@ -33,31 +30,9 @@ At the best, utilities is never used, because they meant to have styles with `!i
 
 **PostCSS** starter doesn't have SETTINGS and TOOLS levels, because they are intended for SASS-only features.
 
-### Chose your starter
+## Starter theme
 
-#### PostCSS starter
-
-**STARTER_PCSS** — starter theme based on PostCSS. It's most closely to vanilla CSS. Only several plugins are used. It's intended to give you absolute control of your styles with small QoL improvements. Mostly it gives you some future CSS syntax and CSS optimization, nothing else.
-
-When to use:
-
-* You want to attach styles only where they're used and have better results for 'unused styles' coverage report from Lighthouse.
-* You want better performance for Web Vitals (PageSpeed). Less CSS is better for mobile.
-* You don't need SCSS features like mixins and functions (nesting is supported in PostCSS if you need it).
-* You want to be closer to native CSS syntax over than sugar.
-
-#### SCSS starter
-
-**STARTER_SCSS** - this starter is similar to PostCSS, but styles additionally processed by SASS compiler. That means you will have access to all features provided by SASS.
-
-This starter by default will provide 5 CSS in total, so you will not have such control over each individual file like in PostCSS, if you need it, you can alter that behavior, but better consider to use PostCSS in that case, most likely you don't need SASS.
-
-When to use:
-
-* You want SASS features like mixins, functions...
-* You don't want bother yourself with Drupal libraries and attaching them on demand.
-
-Before using this starter ask yourself, do you really need SASS features in 2021+? Most likely the answer will be - «no».
+**STARTER** — starter theme based on PostCSS. It's most closely to vanilla CSS. Only several plugins are used. It's intended to give you absolute control of your styles with small QoL improvements. Mostly it gives you some future CSS syntax and CSS optimization, nothing else.
 
 ### Create theme from starter
 
