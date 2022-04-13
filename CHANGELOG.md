@@ -4,6 +4,14 @@
 
 ### Base theme
 
+- No changes has been made.
+
+### Starter theme
+
+- No changes has been made.
+
+## [2.0-alpha2]
+
 - Added an empty libraries and attached them in templates which has styles in STARTER theme. Starter theme doesn't has these templates, this means to attach custom libraries for each of them it should be copied and updated, but his is too much work. For that, an empty libraries was attached into them and starter libraries just extends them with their own.
 - [#3274961](https://www.drupal.org/node/3274961) Improved README.
 - [#3275003](https://www.drupal.org/node/3275003) Rename STARTER in package.json?
@@ -29,4 +37,5 @@ This is a small release that is mostly equals to 8.x-1.0-alpha21.
 - STARTER_PCSS is now STARTER.
 
 [unreleased]: https://github.com/Niklan/Glisseo/compare/2.0.x...HEAD
+[2.0-alpha2]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha1...2.0.x
 [2.0-alpha1]: https://github.com/Niklan/Glisseo/compare/8.x-1.0-alpha21...2.0.x
