@@ -8,7 +8,7 @@
 
 ### Starter theme
 
-- No changes has been made.
+- Improved `.form-element` with `size` attribute set on mobile devices.
 
 ## [2.0-alpha2]
 

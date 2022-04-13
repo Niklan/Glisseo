@@ -52,6 +52,10 @@
   cursor: not-allowed;
 }
 
+.form-element[size] {
+  width: 100%;
+}
+
 /**
  * Form element variations.
  */
@@ -61,4 +65,10 @@
   background-position: 100% 50%;
   background-size: 2.75rem 0.5625rem;
   padding-right: calc(var(--form-control-padding--x) - var(--form-control-border--width) + var(--form-control-padding--x));
+}
+
+@media (--sm) {
+  .form-element[size] {
+    width: initial;
+  }
 }
