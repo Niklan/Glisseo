@@ -12,6 +12,7 @@
 - Added `libraries-extends` into `*.info.yml` file. This replaces `STARTER_preprocess()` implementation.
 - `STARTER_preprocess()` implementation was removed.
 - Remove unnecessary PostCSS dependencies: `postcss-nesting` (used only in `breadcrumb.pcss` and `pager.pcss`), `postcss-import` (not used at all).
+- [#3274992](https://www.drupal.org/node/3274992) Fixed wrong comments.
 
 ## [2.0-alpha1]
 
