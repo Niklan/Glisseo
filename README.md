@@ -37,10 +37,17 @@ At the best, utilities is never used, because they meant to have styles with `!i
 ### Create theme from starter
 
 1. Copy and paste **STARTER_*** folder to `/themes/custom` directory.
-2. Rename **STARTER_*** folder to name of your theme.
-3. Inside your theme folder rename every **STARTER** mention with your theme name.
-5. Rename **STARTER.info.yml.txt** to **THEMENAME.info.yml**. Just remove .txt so Drupal can find the theme.
-6. In **STARTER.info.yml** also don't forget to replace each **STARTER** by your theme name. Otherwise, styles will not be included on the pages.
+2. Rename **STARTER*** folder to name of your theme.
+3. Remove **.txt** suffix from **STARTER.info.yml.txt** filename. You should have **STARTER.info.yml**.
+4. Rename all files with **STARTER** in its filename:
+   1. **STARTER**.breakpoints.yml
+   2. **STARTER**.info.yml
+   3. **STARTER**.layouts.yml
+   4. **STARTER**.libraries.yml
+   5. **STARTER**.theme
+5. Replace all **STARTER** strings with your theme name in that files:
+   1. **STARTER**.breakpoints.yml
+   2. **STARTER**.info.yml.txt
 
 If you did it right, you can find your theme on the Appearance page and install it. To avoid some problems, it's recommended to enable base theme as well, which is Glisseo. You don't need to make it default, just enable.
 
