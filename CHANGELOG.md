@@ -6,6 +6,7 @@
 
 - Added an empty libraries and attached them in templates which has styles in STARTER theme. Starter theme doesn't has these templates, this means to attach custom libraries for each of them it should be copied and updated, but his is too much work. For that, an empty libraries was attached into them and starter libraries just extends them with their own.
 - [#3274961](https://www.drupal.org/node/3274961) Improved README.
+- [#3275003](https://www.drupal.org/node/3275003) Rename STARTER in package.json?
 
 ### Starter theme
 

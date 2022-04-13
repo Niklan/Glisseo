@@ -48,6 +48,7 @@ At the best, utilities is never used, because they meant to have styles with `!i
 5. Replace all **STARTER** strings with your theme name in that files:
    1. **STARTER**.breakpoints.yml
    2. **STARTER**.info.yml.txt
+   3. package.json
 
 If you did it right, you can find your theme on the Appearance page and install it. To avoid some problems, it's recommended to enable base theme as well, which is Glisseo. You don't need to make it default, just enable.
 
