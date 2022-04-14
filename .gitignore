@@ -12,4 +12,5 @@ package-lock.json
 *.css
 *.css.map
 *.js
+*.js.map
 !*.es6.js

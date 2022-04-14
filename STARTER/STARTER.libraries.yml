@@ -90,6 +90,13 @@ component.ui.status-messages:
     theme:
       assets/css/04-components/ui/status-messages.css: { }
 
+ajax:
+  js:
+    assets/js/Ajax.js: { minified: true }
+  css:
+    theme:
+      assets/css/04-components/ui/ajax-progress.css: { }
+
 # Custom libraries.
 #google.fonts:
 #  css:

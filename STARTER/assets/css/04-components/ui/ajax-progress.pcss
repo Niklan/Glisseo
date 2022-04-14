@@ -1,0 +1,35 @@
+.is-ajax-loading {
+  position: relative;
+  --throbber-size: 2rem;
+}
+
+.ajax-progress--throbber {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: var(--color-white-o-25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.ajax-progress__throbber {
+  width: var(--throbber-size);
+  height: var(--throbber-size);
+  background-image: url('../../../icons/000000/loading.svg');
+  background-size: var(--throbber-size);
+  animation: throbber-spin 1s infinite linear;
+}
+
+@keyframes throbber-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

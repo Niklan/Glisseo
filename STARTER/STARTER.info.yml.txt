@@ -46,6 +46,8 @@ libraries-extend:
     - STARTER/component.ui.status-messages
   core/drupal.dialog:
     - STARTER/component.ui.dialog
+  core/drupal.ajax:
+    - STARTER/ajax
 
 # Disable system libraries.
 libraries-override:
