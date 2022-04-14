@@ -23,7 +23,7 @@ libraries:
   - STARTER/global.style.utilities
 
 libraries-extend:
-  # These libraries extends empty ones provided by a base theme. You can copy
+  # These libraries extends empty ones provided by base theme. You can copy
   # template from the base template and attach custom library manually and
   # remove these overrides.
   glisseo/component.ui.breadcrumb:
@@ -44,14 +44,99 @@ libraries-extend:
     - STARTER/component.ui.pager
   glisseo/component.ui.status-messages:
     - STARTER/component.ui.status-messages
+  core/drupal.dialog:
+    - STARTER/component.ui.dialog
 
+# Disable system libraries.
 libraries-override:
-  # Default styles for elements. Disabled because theme overrides these styles
-  # and they simply overhead page and styles.
-  system/base: false
-  core/drupal.autocomplete: false
-  core/drupal.tabbingmanager: false
-  core/drupal.dialog: false
-  core/jquery.ui: false
-  core/jquery.ui.dialog: false
-  core/jquery.ui.button: false
+  system/base:
+    css:
+      component:
+        /core/themes/stable9/css/system/components/ajax-progress.module.css: false
+        /core/themes/stable9/css/system/components/align.module.css: false
+        /core/themes/stable9/css/system/components/autocomplete-loading.module.css: false
+        /core/themes/stable9/css/system/components/fieldgroup.module.css: false
+        /core/themes/stable9/css/system/components/container-inline.module.css: false
+        /core/themes/stable9/css/system/components/clearfix.module.css: false
+        /core/themes/stable9/css/system/components/details.module.css: false
+        /core/themes/stable9/css/system/components/hidden.module.css: false
+        /core/themes/stable9/css/system/components/item-list.module.css: false
+        /core/themes/stable9/css/system/components/js.module.css: false
+        /core/themes/stable9/css/system/components/nowrap.module.css: false
+        /core/themes/stable9/css/system/components/position-container.module.css: false
+        /core/themes/stable9/css/system/components/progress.module.css: false
+        /core/themes/stable9/css/system/components/reset-appearance.module.css: false
+        /core/themes/stable9/css/system/components/resize.module.css: false
+        /core/themes/stable9/css/system/components/sticky-header.module.css: false
+        /core/themes/stable9/css/system/components/system-status-counter.css: false
+        /core/themes/stable9/css/system/components/system-status-report-counters.css: false
+        /core/themes/stable9/css/system/components/system-status-report-general-info.css: false
+        /core/themes/stable9/css/system/components/tabledrag.module.css: false
+        /core/themes/stable9/css/system/components/tablesort.module.css: false
+        /core/themes/stable9/css/system/components/tree-child.module.css: false
+  core/drupal.autocomplete:
+    css:
+      component:
+        /core/assets/vendor/jquery.ui/themes/base/dialog.css: false
+        /core/assets/vendor/jquery.ui/themes/base/core.css: false
+        /core/assets/vendor/jquery.ui/themes/base/controlgroup.css: false
+        /core/assets/vendor/jquery.ui/themes/base/checkboxradio.css: false
+        /core/assets/vendor/jquery.ui/themes/base/resizable.css: false
+        /core/assets/vendor/jquery.ui/themes/base/button.css: false
+      theme:
+        /core/assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/drupal.tabbingmanager:
+    css:
+      component:
+        /core/assets/vendor/jquery.ui/themes/base/dialog.css: false
+        /core/assets/vendor/jquery.ui/themes/base/core.css: false
+        /core/assets/vendor/jquery.ui/themes/base/controlgroup.css: false
+        /core/assets/vendor/jquery.ui/themes/base/checkboxradio.css: false
+        /core/assets/vendor/jquery.ui/themes/base/resizable.css: false
+        /core/assets/vendor/jquery.ui/themes/base/button.css: false
+      theme:
+        /core/assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/drupal.dialog:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+        assets/vendor/jquery.ui/themes/base/core.css: false
+        assets/vendor/jquery.ui/themes/base/controlgroup.css: false
+        assets/vendor/jquery.ui/themes/base/checkboxradio.css: false
+        assets/vendor/jquery.ui/themes/base/resizable.css: false
+        assets/vendor/jquery.ui/themes/base/button.css: false
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/jquery.ui:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+        assets/vendor/jquery.ui/themes/base/core.css: false
+        assets/vendor/jquery.ui/themes/base/controlgroup.css: false
+        assets/vendor/jquery.ui/themes/base/checkboxradio.css: false
+        assets/vendor/jquery.ui/themes/base/resizable.css: false
+        assets/vendor/jquery.ui/themes/base/button.css: false
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/jquery.ui.dialog:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+        assets/vendor/jquery.ui/themes/base/core.css: false
+        assets/vendor/jquery.ui/themes/base/controlgroup.css: false
+        assets/vendor/jquery.ui/themes/base/checkboxradio.css: false
+        assets/vendor/jquery.ui/themes/base/resizable.css: false
+        assets/vendor/jquery.ui/themes/base/button.css: false
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
+  core/jquery.ui.button:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/dialog.css: false
+        assets/vendor/jquery.ui/themes/base/core.css: false
+        assets/vendor/jquery.ui/themes/base/controlgroup.css: false
+        assets/vendor/jquery.ui/themes/base/checkboxradio.css: false
+        assets/vendor/jquery.ui/themes/base/resizable.css: false
+        assets/vendor/jquery.ui/themes/base/button.css: false
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false

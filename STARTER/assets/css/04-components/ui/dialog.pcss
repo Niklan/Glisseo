@@ -1,0 +1,76 @@
+:root {
+  --ui-dialog-titlebar-height: 4rem;
+  --ui-dialog-icon-size: 1.5rem;
+}
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black-o-25);
+  z-index: 1000;
+}
+
+.ui-dialog {
+  z-index: 1001;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.ui-dialog--fullscreen {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ui-dialog-titlebar {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-lg);
+  height: var(--ui-dialog-titlebar-height);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ui-dialog-title {
+  font-size: var(--font-size-h6);
+  margin-right: var(--spacing-sm);
+}
+
+.ui-dialog-titlebar-close {
+  margin-left: auto;
+  border: unset;
+  background: transparent url('../../../icons/000000/close.svg') center no-repeat;
+  background-size: var(--ui-dialog-icon-size);
+  width: var(--ui-dialog-icon-size);
+  height: var(--ui-dialog-icon-size);
+  cursor: pointer;
+  opacity: 0.6;
+  text-indent: -999999px;
+}
+
+.ui-dialog-titlebar-close:hover {
+  opacity: 1;
+}
+
+.ui-dialog-content {
+  padding: var(--spacing-md) var(--spacing-lg);
+  overflow-y: auto;
+  position: relative;
+}
+
+.ui-dialog--no-content-padding .ui-dialog-content {
+  padding: unset;
+}
+
+.ui-dialog-buttonpane {
+  padding: var(--spacing-md) var(--spacing-lg);
+  padding-top: 0;
+}
+
+.ui-dialog .is-ajax-loading {
+  position: initial;
+}
