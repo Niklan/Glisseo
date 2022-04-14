@@ -22,17 +22,18 @@
   min-height: 3rem;
   padding: var(--spacing-sm) var(--spacing-lg);
   text-decoration: none;
-  color: var(--color-dark-silver);
+  color: var(--color-text);
   border-radius: var(--radius-xxs) var(--radius-xxs) 0 0;
   font-weight: bold;
 }
 
 .local-tasks__link:hover {
-  background-color: var(--color-persian-blue--light-2);
+  color: var(--color-on-primary);
+  background-color: var(--color-primary-dark);
 }
 
 .local-tasks__link--active {
-  color: var(--color-persian-blue);
+  color: var(--link-color);
   position: relative;
   z-index: 1;
 }
@@ -44,7 +45,7 @@
   display: block;
   width: 100%;
   content: '';
-  border-bottom: 3px solid var(--color-persian-blue);
+  border-bottom: 3px solid var(--link-color);
 }
 
 ul.local-tasks--secondary {
@@ -58,5 +59,5 @@ ul.local-tasks--secondary {
   display: block;
   content: '';
   width: 100%;
-  border-bottom: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-border);
 }

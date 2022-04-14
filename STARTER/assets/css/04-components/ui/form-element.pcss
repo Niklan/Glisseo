@@ -4,7 +4,7 @@
 :root {
   --form-control-background: var(--color-white);
   --form-control-background--disabled: var(--color-disabled);
-  --form-control-color: var(--text-color);
+  --form-control-color: var(--color-text);
   --form-control-font-size: var(--font-size-base);
   --form-control-line-height: var(--line-height);
   --form-control-padding--y: var(--spacing-sm);
@@ -33,11 +33,11 @@
 }
 
 .form-element:active {
-  --form-control-border--color: var(--color-raisin-black);
+  --form-control-border--color: var(--color-border-dark);
 }
 
 .form-element:hover {
-  --form-control-border--color: var(--color-raisin-black);
+  --form-control-border--color: var(--color-border-dark);
   --form-control-box-shadow: inset 0 0 0 1px var(--form-control-border--color);
 }
 
@@ -47,9 +47,13 @@
 
 .form-element:disabled {
   --form-control-background: var(--form-control-background--disabled);
-  --form-control-border--color: var(--color-light-gray);
+  --form-control-border--color: var(--color-border);
   --form-control-box-shadow: unset;
   cursor: not-allowed;
+}
+
+.form-element.error {
+  --form-control-border--color: var(--color-error);
 }
 
 .form-element[size] {

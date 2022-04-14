@@ -2,19 +2,19 @@
  * Button styles.
  */
 :root {
-  --button-background-color: var(--color-gainsboro);
-  --button-background-color--active: var(--color-silver-metallic);
-  --button-background-color--hover: var(--color-silver-metallic);
-  --button-background-color--focus: var(--color-gainsboro);
-  --button-background-color--disabled: var(--color-disabled);
-  --button-border--color: transparent;
+  --button-background-color: initial;
+  --button-background-color--active: initial;
+  --button-background-color--hover: initial;
+  --button-background-color--focus: initial;
+  --button-background-color--disabled: initial;
+  --button-border--color: initial;
   --button-border--color-disabled: var(--button-border--color);
   --button-border--style: solid;
   --button-border--width: 0;
   --button-border-radius: var(--radius-xxs);
-  --button-color: var(--text-color);
-  --button-color--disabled: var(--color-manatee);
-  --button-color--hover: var(--text-color);
+  --button-color: initial;
+  --button-color--disabled: var(--color-disabled);
+  --button-color--hover: initial;
   --button-font-size: var(--font-size-base);
   --button-font-weight: 500;
   --button-line-height: var(--form-control-line-height, 1.5);
@@ -85,51 +85,28 @@
  * Button coloration variations.
  */
 .button--primary {
-  --button-background-color: var(--color-persian-blue);
-  --button-background-color--active: var(--color-persian-blue--dark-1);
-  --button-background-color--hover: var(--color-persian-blue--dark-1);
-  --button-background-color--focus: var(--color-persian-blue--light-1);
-  --button-color: var(--color-white);
-  --button-color--disabled: var(--color-roman-silver);
-  --button-color--hover: var(--color-white);
+  --button-background-color: var(--color-primary);
+  --button-background-color--active: var(--color-primary-dark);
+  --button-background-color--hover: var(--color-primary-dark);
+  --button-background-color--focus: var(--color-primary-dark);
+  --button-color: var(--color-on-primary);
+  --button-color--hover: var(--color-on-primary);
 }
 
 .button--secondary {
-  --button-background-color: transparent;
-  --button-background-color--active: var(--color-persian-blue--light-2);
-  --button-background-color--disabled: transparent;
-  --button-background-color--focus: transparent;
-  --button-background-color--hover: var(--color-persian-blue--light-2);
-  --button-border--color: var(--color-persian-blue);
-  --button-border--color-disabled: var(--color-disabled);
-  --button-border--width: 2px;
-  --button-color: var(--color-persian-blue);
-  --button-color--disabled: var(--color-roman-silver);
-  --button-color--hover: var(--color-persian-blue);
-  --button-padding: calc(var(--button-padding--y) - var(--button-border--width)) calc(var(--button-padding--x) - var(--button-border--width));
+  --button-background-color: var(--color-secondary);
+  --button-background-color--active: var(--color-secondary-dark);
+  --button-background-color--hover: var(--color-secondary-dark);
+  --button-background-color--focus: var(--color-secondary-dark);
+  --button-color: var(--color-on-secondary);
+  --button-color--hover: var(--color-on-secondary);
 }
 
 .button--danger {
-  --button-background-color: var(--color-maximum-red);
-  --button-background-color--active: var(--color-maximum-red--dark-1);
-  --button-background-color--focus: var(--color-maximum-red--light-1);
-  --button-background-color--hover: var(--color-maximum-red--dark-1);
-  --button-color: var(--color-white);
-  --button-color--disabled: var(--color-roman-silver);
-  --button-color--hover: var(--color-white);
-}
-
-.button--danger-secondary {
-  --button-background-color: transparent;
-  --button-background-color--active: var(--color-maximum-red--light-2);
-  --button-background-color--disabled: transparent;
-  --button-background-color--focus: transparent;
-  --button-background-color--hover: var(--color-maximum-red--light-2);
-  --button-border--color: var(--color-maximum-red);
-  --button-border--color-disabled: var(--color-disabled);
-  --button-border--width: 2px;
-  --button-color: var(--color-maximum-red);
-  --button-color--disabled: var(--color-roman-silver);
-  --button-color--hover: var(--color-maximum-red);
-  --button-padding: calc(var(--button-padding--y) - var(--button-border--width)) calc(var(--button-padding--x) - var(--button-border--width));
+  --button-background-color: var(--color-error);
+  --button-background-color--active: var(--color-error-dark);
+  --button-background-color--focus: var(--color-error-dark);
+  --button-background-color--hover: var(--color-error-dark);
+  --button-color: var(--color-on-error);
+  --button-color--hover: var(--color-on-error);
 }
