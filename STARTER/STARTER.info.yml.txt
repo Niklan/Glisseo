@@ -7,12 +7,6 @@ description: 'Glisseo is a base theme for fast and easy start to theme your proj
 package: Glisseo
 core_version_requirement: ^9
 
-libraries:
-  - STARTER/global.style.generic
-  - STARTER/global.style.elements
-  - STARTER/global.style.components
-  - STARTER/global.style.utilities
-
 regions:
   header: Header
   navigation: Navigation
@@ -21,12 +15,15 @@ regions:
   sidebar_second: 'Sidebar second'
   footer: Footer
 
-# Disable system libraries.
-libraries-override:
-  system/base: false
+# Global libraries.
+libraries:
+  - STARTER/global.style.generic
+  - STARTER/global.style.elements
+  - STARTER/global.style.components
+  - STARTER/global.style.utilities
 
 libraries-extend:
-  # These libraries extends empty ones provided by base theme. You can copy
+  # These libraries extends empty ones provided by a base theme. You can copy
   # template from the base template and attach custom library manually and
   # remove these overrides.
   glisseo/component.ui.breadcrumb:
@@ -47,3 +44,14 @@ libraries-extend:
     - STARTER/component.ui.pager
   glisseo/component.ui.status-messages:
     - STARTER/component.ui.status-messages
+
+libraries-override:
+  # Default styles for elementы. Disabled because theme overrides these styles
+  # and they simply overhead page and styles.
+  system/base: false
+  core/drupal.autocomplete: false
+  core/drupal.tabbingmanager: false
+  core/drupal.dialog: false
+  core/jquery.ui: false
+  core/jquery.ui.dialog: false
+  core/jquery.ui.button: false

@@ -10,6 +10,7 @@
 
 - Improved `.form-element` with `size` attribute set on mobile devices.
 - Improved color variables.
+- Added more `libraries-override` to reduce amount of unused styles on the page.
 
 ## [2.0-alpha2]
 
