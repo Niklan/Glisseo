@@ -46,7 +46,7 @@ libraries-extend:
     - STARTER/component.ui.status-messages
 
 libraries-override:
-  # Default styles for elementы. Disabled because theme overrides these styles
+  # Default styles for elements. Disabled because theme overrides these styles
   # and they simply overhead page and styles.
   system/base: false
   core/drupal.autocomplete: false
