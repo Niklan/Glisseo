@@ -2,12 +2,16 @@
   --grid-gap: var(--spacing-sm);
   --grid-container-max-width: 100%;
   --grid-template-columns-12: repeat(12, [col] 1fr);
+}
 
-  @media (--lg) {
+@media (--lg) {
+  :root {
     --grid-container-max-width: 940px;
   }
+}
 
-  @media (--xl) {
+@media (--xl) {
+  :root {
     --grid-container-max-width: 1120px;
   }
 }

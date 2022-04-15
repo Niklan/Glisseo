@@ -8,7 +8,7 @@
 
 ### Starter theme
 
-- No changes has been made.
+- Issue [#3275268](https://www.drupal.org/node/3275268): Fix media queries in `grid.pcss`.
 
 ## [2.0-alpha3]
 
