@@ -49,3 +49,56 @@ At the best, utilities is never used, because they meant to have styles with `!i
    2. **STARTER**.info.yml.txt
 
 If you did it right, you can find your theme on the Appearance page and install it. To avoid some problems, it's recommended to enable base theme as well, which is Glisseo. You don't need to make it default, just enable.
+
+## Predefined field templates
+
+Theme provides multiple predefined Twig templates with a field markup and classes. Depending on what you want to achieve and how clean it should be, you can freely switch on a global scope or a specific field.
+
+These templates are:
+
+- `field-with-full-markup.twig`: (default) Adds multiple classes on each wrapper. Classes will be entity-specific and common at the same time. This provides flexibility and full control over you styles.
+- `field-with-entity-markup.twig`: Adds only entity-specific BEM classes.
+- `field-with-common-markup.twig`: Adds common BEM classes like `field field--name`.
+- `field-with-no-markup.twig`: Just field values without any classes and wrappers (label is missing too, even if it's enabled).
+
+Markup examples:
+
+```html
+<!-- field-with-full-markup.twig (default) -->
+<div class="node-test-body node-test-body--full field field--name-body field--type-text-with-summary field--label-above">
+  <div class="node-test-body__label field__label">
+    Body
+  </div>
+
+  <div class="node-test-body__value field__value">
+    <p>Hello, world!</p>
+  </div>
+</div>
+
+<!-- field-with-entity-markup.twig -->
+<div class="node-test-body node-test-body--full">
+  <div class="node-test-body__label">
+    Body
+  </div>
+
+  <div class="node-test-body__value">
+    <p>Hello, world!</p>
+  </div>
+</div>
+
+<!-- field-with-common-markup.twig -->
+<div class="field field--name-body field--type-text-with-summary field--label-above">
+  <div class="field__label">
+    Body
+  </div>
+
+  <div class="field__value">
+    <p>Hello, world!</p>
+  </div>
+</div>
+
+<!-- field-with-no-markup.twig -->
+<p>Hello, world!</p>
+```
+
+**How to use:** Just include any of this template in any `field*.html.twig` templates like `{{ include('@glisseo/field/field-with-no-markup.twig') }}`. You can override `field.html.twig` and include required template to apply globally or using theme suggestion. That's it!

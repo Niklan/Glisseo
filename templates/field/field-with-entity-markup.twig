@@ -1,0 +1,89 @@
+{#
+/**
+ * @file
+ * Predefined template for field with entity specific markup and wrappers.
+ *
+ * This template provides entity specific classes for each wrapper:
+ * - Main wrapper:
+ *   - "[entity-type-id]-[entity-bundle]-[field-name]"
+ * - Label wrapper:
+ *   - "[entity-type-id]-[entity-bundle]-[field-name]__label"
+ * - Single value wrapper:
+ *   - "[entity-type-id]-[entity-bundle]-[field-name]__value"
+ * - Multi-value wrapper:
+ *   - "[entity-type-id]-[entity-bundle]-[field-name]__items"
+ * - Multi-value item wrapper:
+ *   - "[entity-type-id]-[entity-bundle]-[field-name]__item"
+ *
+ * Usage: You can use it in any field*.html.twig template:
+ * @code
+ * {{ include('@glisseo/field/field-with-entity-markup.twig') }}
+ * @endcode
+ */
+#}
+{%
+  set entity_block = bem_block([
+    entity_type,
+    bundle != entity_type ? bundle,
+    field_name,
+  ])
+%}
+{%
+  set entity_modifiers = [
+    view_mode,
+  ]
+%}
+{%
+  set classes = [
+    bem(entity_block, null, entity_modifiers),
+  ]
+%}
+{%
+  set title_classes = [
+    bem(entity_block, 'label'),
+  ]
+%}
+{% set content_element = multiple ? 'items' : 'value' %}
+{%
+  set content_classes = [
+    bem(entity_block, content_element),
+  ]
+%}
+{%
+  set item_classes = [
+    bem(entity_block, 'item'),
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% block field %}
+
+    {% if not label_hidden %}
+      <div{{ title_attributes.addClass(title_classes) }}>
+        {% block label %}
+          {{ label }}
+        {% endblock %}
+      </div>
+    {% endif %}
+
+    {% block items %}
+      {% set content_attributes_not_empty -%}{{ content_attributes }}{%- endset %}
+      <div{{ content_attributes.addClass(content_classes) }}>
+        {% for item in items %}
+          {% set item_attributes_not_empty -%}{{ item.attributes }}{%- endset %}
+          {% if multiple or item_attributes_not_empty %}
+            <div{{ item.attributes.addClass(item_classes) }}>
+          {% endif -%}
+
+          {% block item %}
+            {{- item.content -}}
+          {% endblock %}
+
+          {% if multiple or item_attributes_not_empty %}
+            </div> {# /__item #}
+          {% endif -%}
+        {% endfor %}
+      </div> {# /__items and __value #}
+    {% endblock %}
+
+  {% endblock %}
+</div>

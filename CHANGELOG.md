@@ -7,6 +7,7 @@
 - Rename variables `title_classes` to `classes` in `page-title.html.twig`.
 - Fixed `menu.html.twig` which didn't reset `attributes` for submenu which leads to duplicated classes and wrong BEM structure.
 - All base theme templates is now checks for `block` variables definition. This allows to override its value in extended templates without need to rewrite whole template just for it.
+- Added predefined field templates with different markups and classes (mostly). Check README for more info. This changes nothing until you use that feature.
 
 ### Starter theme
 

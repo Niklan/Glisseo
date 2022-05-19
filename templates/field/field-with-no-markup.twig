@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Predefined template for field without any wrappers, just field values.
+ *
+ * Usage: You can use it in any field*.html.twig template:
+ * @code
+ * {{ include('@glisseo/field/field-with-no-markup.twig') }}
+ * @endcode
+ */
+#}
+{% for item in items %}
+  {{- item.content -}}
+{% endfor %}
