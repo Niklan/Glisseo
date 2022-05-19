@@ -92,7 +92,7 @@ component.ui.status-messages:
 
 ajax:
   js:
-    assets/js/Ajax.js: { minified: true }
+    assets/js/ajax.js: { minified: true }
   css:
     theme:
       assets/css/04-components/ui/ajax-progress.css: { }
