@@ -4,6 +4,16 @@
 
 ### Base theme
 
+- No changes has been made.
+
+### Starter theme
+
+- No changes has been made.
+
+## [2.0.0-alpha5]
+
+### Base theme
+
 - Rename variables `title_classes` to `classes` in `page-title.html.twig`.
 - Fixed `menu.html.twig` which didn't reset `attributes` for submenu which leads to duplicated classes and wrong BEM structure.
 - All base theme templates is now checks for `block` variables definition. This allows to override its value in extended templates without need to rewrite whole template just for it.
@@ -66,7 +76,8 @@ This is a small release that is mostly equals to 8.x-1.0-alpha21.
 - Removed STARTER_SCSS. I'm no longer use SCSS for a more than year, I don't want to support 'dead' starter. There is no any reason in it, since the PostCSS does the same and closer to a vanialla CSS. If you still need it, it downs to rename *.pcss to *.scss and replace PostCSS watcher with SASS compiler.
 - STARTER_PCSS is now STARTER.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/2.0.x-alpha4...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/2.0.x-alpha5...HEAD
+[2.0.0-alpha5]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha4...2.0.0-alpha5
 [2.0.0-alpha4]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha3...2.0.0-alpha4
 [2.0.0-alpha3]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha2...2.0.0-alpha3
 [2.0.0-alpha2]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha1...2.0.0-alpha2
