@@ -4,7 +4,7 @@
 
 ### Base theme
 
-- No changes has been made.
+- Remove JavaScript build scripts. `*.es6.js` files replaced by `*.js`. All modern browsers are supporting ES6 syntax now. Drupal core does [the same thing](https://www.drupal.org/node/3278413), so this is absolutely safe now.
 
 ### Starter theme
 

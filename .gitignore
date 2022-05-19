@@ -11,6 +11,3 @@ package-lock.json
 # is tested to work as expected.
 *.css
 *.css.map
-*.js
-*.js.map
-!*.es6.js

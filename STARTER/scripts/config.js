@@ -24,12 +24,6 @@ const paths = {
     ],
     destination: destinationToSource,
   },
-  js: {
-    source: [
-      PROJECT_ROOT + '/assets/js/**/*.es6.js'
-    ],
-    destination: destinationToSource,
-  }
 }
 
 export {
