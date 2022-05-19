@@ -9,10 +9,12 @@
   --form-control-line-height: var(--line-height);
   --form-control-padding--y: var(--spacing-sm);
   --form-control-padding--x: var(--spacing-lg);
+  --form-control-padding: calc(var(--form-control-padding--y) - var(--form-control-border--width)) calc(var(--form-control-padding--x) - var(--form-control-border--width));
   --form-control-border-radius: var(--radius-xxs);
   --form-control-border--color: var(--color-border);
   --form-control-border--width: 1px;
   --form-control-border--style: solid;
+  --form-control-border: var(--form-control-border--width) var(--form-control-border--style) var(--form-control-border--color);
   --form-control-box-shadow: unset;
 }
 
@@ -26,8 +28,6 @@
   border: var(--form-control-border);
   border-radius: var(--form-control-border-radius);
   background-color: var(--form-control-background);
-  --form-control-padding: calc(var(--form-control-padding--y) - var(--form-control-border--width)) calc(var(--form-control-padding--x) - var(--form-control-border--width));
-  --form-control-border: var(--form-control-border--width) var(--form-control-border--style) var(--form-control-border--color);
   box-shadow: var(--form-control-box-shadow);
   appearance: none;
 }
