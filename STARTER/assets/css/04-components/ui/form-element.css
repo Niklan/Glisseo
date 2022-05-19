@@ -71,7 +71,7 @@
   padding-right: calc(var(--form-control-padding--x) - var(--form-control-border--width) + var(--form-control-padding--x));
 }
 
-@media (--sm) {
+@media (min-width: 425px) {
   .form-element[size] {
     width: initial;
   }

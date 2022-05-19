@@ -101,7 +101,7 @@
   display: none;
 }
 
-@media (--md) {
+@media (min-width: 768px) {
   .pager__item:not(.pager__item--previous):not(.pager__item--next) {
     display: flex;
   }

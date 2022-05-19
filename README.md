@@ -8,7 +8,8 @@
 
 ## Features
 
-- **Modern CSS**, which includes **CSS variables** for styling and **CSS grids** for layouts!
+- **Modern CSS** — which includes **CSS variables** for styling and **CSS grids** for layouts!
+- **Fully native** — not requires node.js or anything similar, ready to use without any extra steps.
 - [ITCSS architecture](https://github.com/ahmadajmi/awesome-itcss) for style structure. If you're not familiar with ITCSS, it's recommended to watch [this presentation](https://www.youtube.com/watch?v=1OKZOV-iLj4&feature=youtu.be&t=524) by Harry Roberts (@csswizardry) to get inspired.
 - [BEM methodology](https://bem.info/) for template class naming. In [variation](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) of Harry Roberts (@csswizardry) as well.
 
@@ -28,11 +29,9 @@ Each level of triangle is much narrow and used for specific usecase.
 
 At the best, utilities is never used, because they meant to have styles with `!important` key. Use it in the cases where you can't do it without it.
 
-**PostCSS** starter doesn't have SETTINGS and TOOLS levels, because they are intended for SASS-only features.
-
 ## Starter theme
 
-**STARTER** — starter theme based on PostCSS. It's most closely to vanilla CSS. Only several plugins are used. It's intended to give you absolute control of your styles with small QoL improvements. Mostly it gives you some future CSS syntax and CSS optimization, nothing else.
+**STARTER** — the only starter theme. It's fully vanilla CSS and JavaScript.
 
 ### Create theme from starter
 
@@ -48,17 +47,5 @@ At the best, utilities is never used, because they meant to have styles with `!i
 5. Replace all **STARTER** strings with your theme name in that files:
    1. **STARTER**.breakpoints.yml
    2. **STARTER**.info.yml.txt
-   3. package.json
 
 If you did it right, you can find your theme on the Appearance page and install it. To avoid some problems, it's recommended to enable base theme as well, which is Glisseo. You don't need to make it default, just enable.
-
-### Compile CSS and JS
-
-1. Install all dependencies `npm install`
-
-Then use one of the scripts:
-
-1. `npm run compile`: Compile CSS and JS one time.
-1. `npm run watch`: Watch for CSS and JS sources and compile them on change.
-
-Since these scripts will be part of your theme, you can safely modify everything for your needs.

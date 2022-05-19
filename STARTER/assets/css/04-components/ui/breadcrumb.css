@@ -54,7 +54,7 @@
   display: none;
 }
 
-@media (--sm) {
+@media (min-width: 425px) {
   .breadcrumb__path {
     display: inline;
     overflow: visible;

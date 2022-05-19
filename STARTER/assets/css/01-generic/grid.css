@@ -4,13 +4,13 @@
   --grid-template-columns-12: repeat(12, [col] 1fr);
 }
 
-@media (--lg) {
+@media (min-width: 1024px) {
   :root {
     --grid-container-max-width: 940px;
   }
 }
 
-@media (--xl) {
+@media (min-width: 1440px) {
   :root {
     --grid-container-max-width: 1120px;
   }
