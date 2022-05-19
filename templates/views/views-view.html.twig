@@ -1,4 +1,4 @@
-{% set block = css_name ? css_name : 'views' %}
+{% set block = block ?? css_name ? css_name : 'views' %}
 {%
   set modifiers = [
     block == 'views' ? id,

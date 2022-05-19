@@ -1,5 +1,5 @@
 {%
-  set block = bem_block([
+  set block = block ?? bem_block([
     term.entityTypeId(),
     term.bundle() != term.entityTypeId() ? term.bundle(),
     view_mode != 'default' ? view_mode,
