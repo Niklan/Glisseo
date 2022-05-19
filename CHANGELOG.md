@@ -5,6 +5,7 @@
 ### Base theme
 
 - Rename variables `title_classes` to `classes` in `page-title.html.twig`.
+- Fixed `menu.html.twig` which didn't reset `attributes` for submenu which leads to duplicated classes and wrong BEM structure.
 
 ### Starter theme
 
