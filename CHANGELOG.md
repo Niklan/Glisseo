@@ -4,14 +4,14 @@
 
 ### Base theme
 
+- Rename variables `title_classes` to `classes` in `page-title.html.twig`.
+
+### Starter theme
+
 - Remove JavaScript build scripts. `*.es6.js` files renamed to `*.js`. All modern browsers are supporting ES6 syntax now. Drupal core does [the same thing](https://www.drupal.org/node/3278413), so this is absolutely safe now.
 - Remove PostCSS build scrips. `*.pcss` files renamed to `*.css`. There is absolutely no need into PostCSS build script in the theme at this point. The only thing is actually used from PostCSS was [postcss-custom-media](https://github.com/postcss/postcss-custom-media). This plugin by default is used in 4 CSS file.
 - There is no more NodeJS dependencies on theme. The whole process with build step is more complicated than benefits provided by it. This will allow to use theme without any NodeJS at all, fully native everything. Just copy-paste and you are ready, no extra steps!
 - `--form-control-padding` and `--form-control-border` moved into `:root` section, otherwise these two variables can't be easily overridden.
-
-### Starter theme
-
-- No changes has been made.
 
 ## [2.0.0-alpha4]
 
