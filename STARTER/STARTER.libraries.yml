@@ -90,6 +90,11 @@ component.ui.status-messages:
     theme:
       assets/css/04-components/ui/status-messages.css: { }
 
+component.ui.dialog:
+  css:
+    theme:
+      assets/css/04-components/ui/dialog.css: { }
+
 ajax:
   js:
     assets/js/ajax.js: { minified: true }
