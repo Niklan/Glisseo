@@ -8,7 +8,8 @@
 
 ### Starter theme
 
-- No changes has been made.
+- [#3293988](https://www.drupal.org/project/glisseo/issues/3293988): Uncaught TypeError: Cannot read properties of undefined (reading 'remove')
+- [#3293987](https://www.drupal.org/project/glisseo/issues/3293987): Missing library component.ui.dialog
 
 ## [2.0.0-alpha5]
 

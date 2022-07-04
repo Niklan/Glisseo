@@ -73,6 +73,11 @@
    */
   Drupal.Ajax.prototype.success = function (response, status) {
     originalSuccessCallback.call(this, response, status);
+    // Do nothing on empty element. This most likely is BigPipe manual call for
+    // AJAX success without any AJAX being called.
+    if (!this.element) {
+      return;
+    }
     this.element.classList.remove('is-ajax-loading');
     this.element.parentNode.classList.remove('is-ajax-loading');
   }
@@ -87,6 +92,10 @@
    */
   Drupal.Ajax.prototype.error = function (xmlhttprequest, uri, customMessage) {
     originalErrorCallback.call(this, xmlhttprequest, uri, customMessage);
+    // @see Drupal.Ajax.prototype.success for explanation.
+    if (!this.element) {
+      return;
+    }
     this.element.classList.remove('is-ajax-loading');
     this.element.parentNode.classList.remove('is-ajax-loading');
   }
