@@ -10,6 +10,16 @@
 
 - No changes has been made.
 
+## [2.0.0-alpha7]
+
+### Base theme
+
+- [#3297312](https://www.drupal.org/node/3297312) Drupal 10 compatibility.
+
+### Starter theme
+
+- No changes has been made.
+
 ## [2.0.0-alpha6]
 
 ### Base theme
@@ -116,7 +126,9 @@ This is a small release that is mostly equals to 8.x-1.0-alpha21.
   compiler.
 - STARTER_PCSS is now STARTER.
 
-[unreleased]: https://github.com/Niklan/Glisseo/compare/2.0.x-alpha6...HEAD
+[unreleased]: https://github.com/Niklan/Glisseo/compare/2.0.x-alpha7...HEAD
+[2.0.0-alpha7]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha6...2.0.
+0-alpha7
 [2.0.0-alpha6]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha5...2.0.0-alpha6
 [2.0.0-alpha5]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha4...2.0.0-alpha5
 [2.0.0-alpha4]: https://github.com/Niklan/Glisseo/compare/2.0.0-alpha3...2.0.0-alpha4
