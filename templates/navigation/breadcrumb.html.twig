@@ -21,7 +21,7 @@
 {% if breadcrumb %}
   <nav{{ attributes.addClass(classes) }}>
     <h2 class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
-    {% spaceless %}
+    {% apply spaceless %}
       {% if breadcrumb|length > 1 %}
         <div class="{{ bem(block, 'path') }}">
           {% for item in breadcrumb %}
@@ -44,6 +44,6 @@
           <span class="{{ bem(block, 'path', ['text', 'current']) }}">{{ last.text }}</span>
         {% endif %}
       </div>
-    {% endspaceless %}
+    {% endapply %}
   </nav>
 {% endif %}
