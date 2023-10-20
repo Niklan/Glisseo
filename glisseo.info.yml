@@ -7,4 +7,4 @@ package: Glisseo
 core_version_requirement: ^9 || ^10
 base theme: stable9
 dependencies:
-  - drupal:twig_tweak (>=3.0.0)
+  - twig_tweak:twig_tweak (>=3.0.0)
